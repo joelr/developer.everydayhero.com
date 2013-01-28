@@ -2,27 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>A Brand New nanoc Site - <%= @item[:title] %></title>
+    <title><%= "EverydayHero API: " + @item[:title].to_s %></title>
     <link rel="stylesheet" href="/style.css">
-
-    <!-- you don't need to keep this, but it's cool for stats! -->
-    <meta name="generator" content="nanoc <%= Nanoc::VERSION %>"> 
   </head>
   <body>
     <div id="main">
+      <h1><%= @item[:title] %></h1>
       <%= yield %>
     </div>
     <div id="sidebar">
-      <h2>Documentation</h2>
       <ul>
-        <li><a href="http://nanoc.stoneship.org/docs/">Documentation</a></li>
-        <li><a href="http://nanoc.stoneship.org/docs/3-getting-started/">Getting Started</a></li>
-      </ul>
-      <h2>Community</h2>
-      <ul>
-        <li><a href="http://groups.google.com/group/nanoc/">Discussion Group</a></li>
-        <li><a href="irc://chat.freenode.net/#nanoc">IRC Channel</a></li>
-        <li><a href="http://projects.stoneship.org/trac/nanoc/">Wiki</a></li>
+        <li>
+          <a href="/overview/">Overview</a>
+          <ul>
+            <li><a href="/overview/#schema">Schema</a></li>
+            <li><a href="/overview/#parameters">Parameters</a></li>
+            <li><a href="/overview/#auth-errors">Auth Errors</a></li>
+            <li><a href="/overview/#client-errors">Client Errors</a></li>
+            <li><a href="/overview/#authentication">Authentication</a></li>
+            <li><a href="/overview/#glossary">Glossary</a></li>
+          </ul>
+        </li>
+        <li><a href="/campaigns/">Campaigns</a></li>
+        <li><a href="/charities/">Charities</a></li>
+        <li><a href="/pages/">Pages</a></li>
       </ul>
     </div>
   </body>
