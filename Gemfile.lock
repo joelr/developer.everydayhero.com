@@ -10,6 +10,7 @@ GEM
     nanoc (3.5.0)
       cri (~> 2.2)
     rack (1.5.0)
+    rake (10.0.3)
 
 PLATFORMS
   ruby
@@ -18,3 +19,4 @@ DEPENDENCIES
   adsf (~> 1.1.1)
   kramdown (~> 0.14.2)
   nanoc (~> 3.5.0)
+  rake (~> 10.0.3)
