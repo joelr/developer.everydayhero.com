@@ -5,6 +5,7 @@ gem 'nanoc', '~> 3.5.0'
 gem 'nokogiri', '~> 1.5.6'
 gem 'pygments.rb', '~> 0.3.7'
 gem 'rake', '~> 10.0.3'
+gem 'sass', '~> 3.2.5'
 gem 'yajl-ruby', '~> 1.1.0'
 
 group :development do
