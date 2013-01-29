@@ -2,7 +2,10 @@
 title: Overview
 ---
 
-## Schema {#schema}
+* TOC
+{:toc}
+
+## Schema
 
 All API access is over HTTPS, and accessed from the everydayhero.com/api/v1 domain. All data is sent and received as JSON.
 
@@ -33,7 +36,7 @@ All timestamps are returned in ISO 8601 format:
 YYYY-MM-DDTHH:MM:SSZ
 ```
 
-## Parameters {#parameters}
+## Parameters
 
 Many API methods take optional parameters. For GET requests, any
 parameters not specified as a segment in the path can be passed as an
@@ -53,7 +56,7 @@ $ curl -i -H "Authorization: Token token=your-token" -d '{}' \
     https://everydayhero.com/api/v1
 ```
 
-## Auth Errors {#auth-errors}
+## Auth Errors
 
 There are two possible auth errors supported by the API:
 
@@ -101,7 +104,7 @@ Transfer-Encoding: chunked
 }
 ```
 
-## Client Errors {#client-errors}
+## Client Errors
 
 TODO: currently we `object.errors.to_json` but it's probably better to
 provide something like GitHub do - it would be nice to have a standard
@@ -120,7 +123,7 @@ error response that is consistent between auth and resources.
  }
 ```
 
-## HTTP Verbs {#http-verbs}
+## HTTP Verbs
 
 Where possible, the API uses the appropriate HTTP verbs
 
@@ -133,7 +136,7 @@ PUT
 DELETE
 : Used when deleting resources
 
-## Authentication {#authentication}
+## Authentication
 
 There is only one authentication scheme in place for the API: Token Authentication. Requests that require authentication will return a status of 401.
 
@@ -141,7 +144,7 @@ There is only one authentication scheme in place for the API: Token Authenticati
 $ curl -i -H "Authorization: Token token=your-token" https://everydayhero.com/api/v1
 ```
 
-## Glossary {#glossary}
+## Glossary
 
 Individual Page
 : A Supporter Page that is not participating in a team and is not a

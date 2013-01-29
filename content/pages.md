@@ -2,6 +2,9 @@
 title: Pages
 ---
 
+* TOC
+{:toc}
+
 ## List all User Pages
 
 ## View a single Page (Individual or Team)
