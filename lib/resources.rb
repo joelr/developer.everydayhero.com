@@ -7,9 +7,11 @@ module EverydayHero
       # resources.
       #
       # example:
-      #   json :campaign
+      #   json :campaign  # => {'campaign': {}}
+      #   json :campaigns # => {'campaigns': [{}]}
       def json resource
-        hash = Resources.const_get resource.to_s.capitalize
+        hash = Resources.const_get resource.capitalize
+
         %(<pre class="highlight"><code class="language-javascript">) +
           pretty_json(hash) + "</code></pre>"
       end
@@ -60,6 +62,24 @@ module EverydayHero
 
     Campaigns = {
       campaigns: [CampaignData]
+    }
+
+    CharityData = {
+      id: 'au-1',
+      name: 'Starlight',
+      slug: 'starlight',
+      country_code: 'au',
+      description: nil,
+      gift_aid: false,
+      logo_url: 'http://'
+    }
+
+    Charity = {
+      charity: CharityData
+    }
+
+    Charities = {
+      charities: [CharityData]
     }
   end
 end

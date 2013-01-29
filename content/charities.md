@@ -4,9 +4,7 @@ title: Charities
 
 ## List all Charities
 
-```
-GET /charities
-```
+    GET /charities
 
 ### Visibility
 
@@ -20,13 +18,11 @@ campaign.
 
 ### Response
 
-TODO: add response
+<%= json :charities %>
 
 ## View a single Charity
 
-```
-GET /charities/:id
-```
+    GET /charities/:id
 
 ### Visibility
 
@@ -34,4 +30,4 @@ Public.
 
 ### Response
 
-TODO: add response
+<%= json :charity %>
