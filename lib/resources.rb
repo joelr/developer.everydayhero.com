@@ -10,7 +10,14 @@ module EverydayHero
       #   json :campaign  # => {'campaign': {}}
       #   json :campaigns # => {'campaigns': [{}]}
       def json resource
-        hash = Resources.const_get resource.capitalize
+        # hash = Resources.const_get resource.capitalize
+        hash = case resource
+        when Hash
+          h = {}
+          resource.each { |k, v| h[k.to_s] = v }
+          h
+        else Resources.const_get(resource.to_s.capitalize)
+        end
 
         %(<pre class="highlight"><code class="language-javascript">) +
           pretty_json(hash) + "</code></pre>"
