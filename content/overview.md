@@ -9,32 +9,28 @@ title: Overview
 
 All API access is over HTTPS, and accessed from the everydayhero.com/api/v1 domain. All data is sent and received as JSON.
 
-``` sh
-$ curl -i https://everydayhero.com/api/v1/leaderboards
+    $ curl -i https://everydayhero.com/api/v1/leaderboards
 
-HTTP/1.1 200 OK
-Etag: "953c3675962fbabd0bc23fc2072ac018"
-Last-Modified: Sat, 05 Jan 2013 07:17:33 GMT
-Content-Type: application/json; charset=utf-8
-Cache-Control: max-age=0, private, must-revalidate
-X-Ua-Compatible: IE=Edge
-X-Request-Id: 8ceea1bf56032cadf9a91c4365450e0e
-X-Runtime: 0.056746
-Content-Length: 19
-Server: WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
-Date: Sat, 05 Jan 2013 11:40:26 GMT
-Connection: Keep-Alive
+    HTTP/1.1 200 OK
+    Etag: "953c3675962fbabd0bc23fc2072ac018"
+    Last-Modified: Sat, 05 Jan 2013 07:17:33 GMT
+    Content-Type: application/json; charset=utf-8
+    Cache-Control: max-age=0, private, must-revalidate
+    X-Ua-Compatible: IE=Edge
+    X-Request-Id: 8ceea1bf56032cadf9a91c4365450e0e
+    X-Runtime: 0.056746
+    Content-Length: 19
+    Server: WEBrick/1.3.1 (Ruby/1.9.3/2012-04-20)
+    Date: Sat, 05 Jan 2013 11:40:26 GMT
+    Connection: Keep-Alive
 
-{"leaderboards":[]}
-```
+    {"leaderboards":[]}
 
 Blank fields are included as null instead of being omitted.
 
 All timestamps are returned in ISO 8601 format:
 
-```
-YYYY-MM-DDTHH:MM:SSZ
-```
+    YYYY-MM-DDTHH:MM:SSZ
 
 ## Parameters
 
@@ -42,19 +38,15 @@ Many API methods take optional parameters. For GET requests, any
 parameters not specified as a segment in the path can be passed as an
 HTTP query string parameter:
 
-``` sh
-$ curl -i https://everydayhero.com/api/v1/leaderboards?ids=123
-```
+    $ curl -i https://everydayhero.com/api/v1/leaderboards?ids=123
 
 In this example the `:ids` parameter is passed in query string.
 
 For POST requests, parameters not included in the URL should be encoded
 as JSON with a Content-Type of ‘application/x-www-form-urlencoded’:
 
-``` sh
-$ curl -i -H "Authorization: Token token=your-token" -d '{}' \
-    https://everydayhero.com/api/v1
-```
+    $ curl -i -H "Authorization: Token token=your-token" -d '{}' \
+        https://everydayhero.com/api/v1
 
 ## Auth Errors
 
@@ -63,46 +55,42 @@ There are two possible auth errors supported by the API:
 1. Requesting resources that require authentication will result in a
 `401 Unauthorized` response.
 
-``` sh
-HTTP/1.1 401 Unauthorized
-Date: Sun, 20 Jan 2013 21:58:06 GMT
-Status: 401 Unauthorized
-Strict-Transport-Security: max-age=31536000
-Content-Type: application/json; charset=utf-8
-X-UA-Compatible: IE=Edge,chrome=1
-Cache-Control: no-cache
-X-Request-Id: a024f7bfdcd8174551b46f8a15cfdac5
-X-Runtime: 0.007114
-X-Rack-Cache: miss
-Transfer-Encoding: chunked
+    HTTP/1.1 401 Unauthorized
+    Date: Sun, 20 Jan 2013 21:58:06 GMT
+    Status: 401 Unauthorized
+    Strict-Transport-Security: max-age=31536000
+    Content-Type: application/json; charset=utf-8
+    X-UA-Compatible: IE=Edge,chrome=1
+    Cache-Control: no-cache
+    X-Request-Id: a024f7bfdcd8174551b46f8a15cfdac5
+    X-Runtime: 0.007114
+    X-Rack-Cache: miss
+    Transfer-Encoding: chunked
 
-{
-  "message": "You need to authenticate.",
-  "status": 401
-}
-```
+    {
+      "message": "You need to authenticate.",
+      "status": 401
+    }
 
 2. Requesting resources that you do not have permission to request will
 result in a `403 Forbidden` response.
 
-``` sh
-HTTP/1.1 403 Forbidden
-Date: Sun, 20 Jan 2013 21:58:08 GMT
-Status: 403 Forbidden
-Strict-Transport-Security: max-age=31536000
-Content-Type: application/json; charset=utf-8
-X-UA-Compatible: IE=Edge,chrome=1
-Cache-Control: no-cache
-X-Request-Id: a024f7bfdcd8174551b46f8a15cfdac5
-X-Runtime: 0.007114
-X-Rack-Cache: miss
-Transfer-Encoding: chunked
+    HTTP/1.1 403 Forbidden
+    Date: Sun, 20 Jan 2013 21:58:08 GMT
+    Status: 403 Forbidden
+    Strict-Transport-Security: max-age=31536000
+    Content-Type: application/json; charset=utf-8
+    X-UA-Compatible: IE=Edge,chrome=1
+    Cache-Control: no-cache
+    X-Request-Id: a024f7bfdcd8174551b46f8a15cfdac5
+    X-Runtime: 0.007114
+    X-Rack-Cache: miss
+    Transfer-Encoding: chunked
 
-{
-  "message": "You are not authorized to view this page.",
-  "status": 403
-}
-```
+    {
+      "message": "You are not authorized to view this page.",
+      "status": 403
+    }
 
 ## Client Errors
 
@@ -110,18 +98,16 @@ TODO: currently we `object.errors.to_json` but it's probably better to
 provide something like GitHub do - it would be nice to have a standard
 error response that is consistent between auth and resources.
 
-``` sh
-{
-   "message": "Validation Failed",
-   "errors": [
-     {
-       "resource": "Issue",
-       "field": "title",
-       "code": "missing_field"
+    {
+       "message": "Validation Failed",
+       "errors": [
+         {
+           "resource": "Issue",
+           "field": "title",
+           "code": "missing_field"
+         }
+       ]
      }
-   ]
- }
-```
 
 ## HTTP Verbs
 
@@ -140,9 +126,7 @@ DELETE
 
 There is only one authentication scheme in place for the API: Token Authentication. Requests that require authentication will return a status of 401.
 
-``` sh
-$ curl -i -H "Authorization: Token token=your-token" https://everydayhero.com/api/v1
-```
+    $ curl -i -H "Authorization: Token token=your-token" https://everydayhero.com/api/v1
 
 ## Glossary
 
