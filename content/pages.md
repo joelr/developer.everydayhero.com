@@ -30,24 +30,21 @@ Restricted. Requires an authenticated user.
 
 ### Payload
 
-<dl>
-  <dt>url</dt>
-  <dd>_Required_ string. The desired url for your new supporter page.
-https://give.everydayhero.com/au/tim-cooper.</dd>
-  <dt>expires_at</dt>
-  <dd>_Required_ datetime. The date and time you want the page to
-expire.</dd>
-  <dt>target<dt>
-  <dd>_Optional_ string. The dollar amount that you are aiming to raise.
-Defaults to $700.</dd>
-  <dt>birthday<dt>
-  <dd>_Optional_ string. Your birthday. In some countries there are age
+slug
+: _Optional_ **string**. The desired url for your new supporter page.
+https://give.everydayhero.com/au/tim-cooper.
+expires_at
+: _Required_ **datetime**. The date and time you want the page to
+expire.
+target
+: _Optional_ **string**. The dollar amount that you are aiming to raise.
+birthday
+: _Optional_ **string**. Your birthday. In some countries there are age
 restrictions on fundraising and further action might need to be taken
 depending on the age provided. Defaults (and prefers) the age supplied
-for your user.</dd>
-  <dt>gift_aid_eligible<dt>
-  <dd>_Optional_ boolean. UK specific fundraising criteria.</dd>
-</dl>
+for your user.
+gift_aid_eligible
+: _Optional_ **boolean**. UK specific fundraising criteria.
 
 ``` json
 {

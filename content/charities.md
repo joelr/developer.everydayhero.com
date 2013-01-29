@@ -14,11 +14,9 @@ Public.
 
 ### Parameters
 
-<dl>
-  <dt>campaign_id</dt>
-  <dd>_Optional_ string. Retrieve only the charities participating in a
-campaign.</dd>
-</dl>
+campaign_id
+: _Optional_ **string**. Retrieve only the charities participating in a
+campaign.
 
 ### Response
 

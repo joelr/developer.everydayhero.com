@@ -124,16 +124,14 @@ error response that is consistent between auth and resources.
 
 Where possible, the API uses the appropriate HTTP verbs
 
-<dl>
-  <dt>GET</dt>
-  <dd>Used for retrieving resources</dd>
-  <dt>POST</dt>
-  <dd>Used when creating resources</dd>
-  <dt>PUT</dt>
-  <dd>Used when updating resources</dd>
-  <dt>DELETE</dt>
-  <dd>Used when deleting resources</dd>
-</dl>
+GET
+: Used for retrieving resources
+POST
+: Used when creating resources
+PUT
+: Used when updating resources
+DELETE
+: Used when deleting resources
 
 ## Authentication
 
@@ -145,8 +143,6 @@ $ curl -i -H "Authorization: Token token=your-token" https://everydayhero.com/ap
 
 ## Glossary
 
-<dl>
-  <dt>Individual Page</dt>
-  <dd>A Supporter Page that is not participating in a team and is not a
-team page.</dd>
-</dl>
+Individual Page<
+: A Supporter Page that is not participating in a team and is not a
+team page.

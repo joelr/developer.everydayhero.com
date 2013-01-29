@@ -16,11 +16,9 @@ Public.
 
 ### Parameters
 
-<dl>
-  <dt>charity_id</dt>
-  <dd>_Optional_ string. Retrieve only the campaigns that he specified
-charity is participating in.</dd>
-</dl>
+charity_id
+: _Optional_ **string**. Retrieve only the campaigns that the specified
+charity is participating in.
 
 ### Response
 
