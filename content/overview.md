@@ -115,10 +115,13 @@ Where possible, the API uses the appropriate HTTP verbs
 
 GET
 : Used for retrieving resources
+
 POST
 : Used when creating resources
+
 PUT
 : Used when updating resources
+
 DELETE
 : Used when deleting resources
 
