@@ -17,6 +17,9 @@ compile '/stylesheets/*/' do
   filter :sass, syntax: :scss
 end
 
+compile '/CNAME/' do
+end
+
 compile '*' do
   filter :erb
   filter :kramdown, :toc_levels => [2]
@@ -26,6 +29,10 @@ end
 
 route '/stylesheets/*/' do
   item.identifier.chop + '.css'
+end
+
+route '/CNAME/' do
+  '/CNAME'
 end
 
 route '*' do
