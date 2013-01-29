@@ -6,9 +6,7 @@ The Campaigns API allows you to list and view campaigns.
 
 ## List all Campaigns
 
-```
-GET /campaigns
-```
+    GET /campaigns
 
 ### Visibility
 
@@ -22,13 +20,11 @@ charity is participating in.
 
 ### Response
 
-TODO: add response
+<%= json :campaigns %>
 
 ## View a single Campaign
 
-```
-GET /campaigns/:id
-```
+    GET /campaigns/:id
 
 ### Visibility
 
@@ -36,4 +32,4 @@ Public.
 
 ### Response
 
-TODO: add response
+<%= json :campaign %>
