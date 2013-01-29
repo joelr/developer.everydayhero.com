@@ -3,18 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title>EverydayHero API: Pages</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/stylesheets/pygments.css">
+    <link rel="stylesheet" href="/stylesheets/app.css">
   </head>
   <body>
     <div id="main">
       <h1>Pages</h1>
-      <h2 id="list-all-user-pages">List all User Pages</h2>
+      <ul id="markdown-toc">
+<li><a href="#list-all-pages">List all Pages</a></li>
+  <li><a href="#view-a-single-page">View a single Page</a></li>
+  <li><a href="#create-an-individual-page">Create an Individual Page</a></li>
+</ul><h2 id="list-all-pages">List all Pages</h2>
 
-<h2 id="view-a-single-page-individual-or-team">View a single Page (Individual or Team)</h2>
-
-<p><code>
-GET /pages/:id
-</code></p>
+<pre><code>GET /pages
+</code></pre>
 
 <h3 id="visibility">Visibility</h3>
 
@@ -24,50 +26,74 @@ GET /pages/:id
 
 <p>TODO: add response</p>
 
-<h2 id="create-an-individual-page">Create an Individual Page</h2>
+<h2 id="view-a-single-page">View a single Page</h2>
 
-<p><code>
-POST /pages
-</code></p>
+<pre><code>GET /pages/:id
+</code></pre>
 
 <h3 id="visibility-1">Visibility</h3>
+
+<p>Public.</p>
+
+<h3 id="response-1">Response</h3>
+
+<p>TODO: add response</p>
+
+<h2 id="create-an-individual-page">Create an Individual Page</h2>
+
+<pre><code>POST /pages
+</code></pre>
+
+<h3 id="visibility-2">Visibility</h3>
 
 <p>Restricted. Requires an authenticated user.</p>
 
 <h3 id="payload">Payload</h3>
 
 <dl>
-  <dt>slug</dt>
-  <dd><em>Optional</em> <strong>string</strong>. The desired url for your new supporter page.
-https://give.everydayhero.com/au/tim-cooper.
-expires_at</dd>
-  <dd><em>Required</em> <strong>datetime</strong>. The date and time you want the page to
-expire.
-target</dd>
-  <dd><em>Optional</em> <strong>string</strong>. The dollar amount that you are aiming to raise.
-birthday</dd>
-  <dd><em>Optional</em> <strong>string</strong>. Your birthday. In some countries there are age
+<dt>slug</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. The desired url for your new supporter page.
+https://give.everydayhero.com/au/tim-cooper.</dd>
+  <dt>expires_at</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>. The date and time you want the page to
+expire. ISO8601 format.</dd>
+  <dt>target</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. The dollar amount that you are aiming to raise.</dd>
+  <dt>uid</dt>
+  <dd>
+<em>Required</em> <strong>integer</strong>. The <code>uid</code> of the user that you want to create
+a page for.</dd>
+  <dt>birthday</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. Your birthday. In some countries there are age
 restrictions on fundraising and further action might need to be taken
 depending on the age provided. Defaults (and prefers) the age supplied
-for your user.
-gift_aid_eligible</dd>
-  <dd><em>Optional</em> <strong>boolean</strong>. UK specific fundraising criteria.</dd>
-</dl>
+for your user.</dd>
+  <dt>charity_id</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. The <code>id</code> of the charity to create the page for.
+In a single charity campaign this will be defaulted and in multi
+charity campaigns a random charity will be chosen if no <code>id</code> is
+provided.</dd>
+  <dt>gift_aid_eligible</dt>
+  <dd>
+<em>Optional</em> <strong>boolean</strong>. UK specific fundraising criteria.</dd>
+</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"tim-cooper"</span><span class="p">,</span>
+  <span class="s2">"expires_at"</span><span class="o">:</span> <span class="s2">"2013-10-21T17:15:08+10:00"</span><span class="p">,</span>
+  <span class="s2">"target"</span><span class="o">:</span> <span class="s2">"500.50"</span><span class="p">,</span>
+  <span class="s2">"birthday"</span><span class="o">:</span> <span class="s2">"1987-04-16T00:00:00+10:00"</span><span class="p">,</span>
+  <span class="s2">"gift_aid_eligible"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">"charity_id"</span><span class="o">:</span> <span class="s2">"au-1"</span>
+<span class="p">}</span></code></pre>
 
-<p><code>json
-{
-  "url": "tim-cooper",
-  "expires_at": "2013-10-21T17:15:08+10:00",
-  "target": "500.50",
-  "birthday": "1987-04-16T00:00:00+10:00",
-  "gift_aid_eligible": null
-}
-</code></p>
-
-<h3 id="response-1">Response</h3>
+<h3 id="response-2">Response</h3>
 
 <p>TODO: add response</p>
-
     </div>
     <div id="sidebar">
       <ul>
@@ -78,6 +104,7 @@ gift_aid_eligible</dd>
             <li><a href="/overview/#parameters">Parameters</a></li>
             <li><a href="/overview/#auth-errors">Auth Errors</a></li>
             <li><a href="/overview/#client-errors">Client Errors</a></li>
+            <li><a href="/overview/#http-verbs">HTTP Verbs</a></li>
             <li><a href="/overview/#authentication">Authentication</a></li>
             <li><a href="/overview/#glossary">Glossary</a></li>
           </ul>
