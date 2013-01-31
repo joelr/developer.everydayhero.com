@@ -36,3 +36,14 @@ user you are dealing with will be the same person person that is
 represented in any Everyday Hero product.
 
 ## Third Party Registration Product Integration
+
+A [sample application](example-rego-integration.herokuapp.com) has been
+built to show one possible end to end third party registration scenario.
+Source code for the application can be found on
+[GitHub](https://github.com/everydayhero/example_registrations)
+This application demonstrates:
+
+* authentication with the Giving Passport
+* using the Everyday Hero API to create a supporter page and view
+information on the campaign
+* while still giving you ultimate control over your registration system
