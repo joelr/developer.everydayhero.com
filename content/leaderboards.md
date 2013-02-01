@@ -37,3 +37,28 @@ Public.
 ### Response
 
 <%= json :leaderboard %>
+
+## View a Campaign Leaderboard
+
+Campaign Leaderboards are a way of showing the top supporter pages for a
+particular campaign.
+
+    GET /campaigns/:id/leaderboard
+
+### Visibility
+
+Public.
+
+### Parameters
+
+type
+: _Optional_ **string**. The types of pages that are required. Supported
+values include `all`, `individual` and `team`. Defaults to `all`.
+
+limit
+: _Optional_ **integer**. The number of records retrieved. This is useful
+for showing a "top 10 supporters leaderboard". Defaults to `10`.
+
+### Response
+
+<%= json :campaign_leaderboard %>

@@ -10,13 +10,12 @@ module EverydayHero
       #   json :campaign  # => {'campaign': {}}
       #   json :campaigns # => {'campaigns': [{}]}
       def json resource
-        # hash = Resources.const_get resource.capitalize
         hash = case resource
         when Hash
           h = {}
           resource.each { |k, v| h[k.to_s] = v }
           h
-        else Resources.const_get(resource.to_s.capitalize)
+        else Resources.const_get(constantize(resource))
         end
 
         %(<pre class="highlight"><code class="language-javascript">) +
@@ -24,6 +23,10 @@ module EverydayHero
       end
 
       private
+
+      def constantize resource
+        resource.to_s.split('_').map(&:capitalize).join
+      end
 
       def pretty_json hash
         JSON.pretty_generate hash
@@ -102,6 +105,16 @@ module EverydayHero
 
     Leaderboards = {
       leaderboards: [LeaderboardData]
+    }
+
+    CampaignLeaderboardData = {
+      campaign_id: 'au-1',
+      amount: Money.new('1000', 'au').attributes,
+      page_ids: [1, 2]
+    }
+
+    CampaignLeaderboard = {
+      leaderboard: CampaignLeaderboardData
     }
   end
 end
