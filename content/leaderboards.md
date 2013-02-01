@@ -2,6 +2,9 @@
 title: Leaderboards
 ---
 
+* TOC
+{:toc}
+
 The Leaderboards API allows you to retrieve leaderboards and their
 assocated pages.
 
