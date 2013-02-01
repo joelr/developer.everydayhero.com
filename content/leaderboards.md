@@ -24,7 +24,7 @@ the ids 1, 5 and 20
 
 ### Response
 
-TODO: add response
+<%= json :leaderboards %>
 
 ## View a single Leaderboard
 
@@ -36,4 +36,4 @@ Public.
 
 ### Response
 
-TODO: add response
+<%= json :leaderboard %>

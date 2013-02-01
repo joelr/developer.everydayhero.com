@@ -88,6 +88,21 @@ module EverydayHero
     Charities = {
       charities: [CharityData]
     }
+
+    LeaderboardData = {
+      id: 1,
+      amount: Money.new('1000', 'au').attributes,
+      name: 'My Leaderboard',
+      pages_ids: [1, 2]
+    }
+
+    Leaderboard = {
+      leaderboard: LeaderboardData
+    }
+
+    Leaderboards = {
+      leaderboards: [LeaderboardData]
+    }
   end
 end
 
