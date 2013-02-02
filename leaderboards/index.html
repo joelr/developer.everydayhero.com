@@ -12,6 +12,7 @@
       <ul id="markdown-toc">
 <li><a href="#list-all-leaderboards">List all Leaderboards</a></li>
   <li><a href="#view-a-single-leaderboard">View a single Leaderboard</a></li>
+  <li><a href="#view-a-campaign-leaderboard">View a Campaign Leaderboard</a></li>
 </ul><p>The Leaderboards API allows you to retrieve leaderboards and their
 assocated pages.</p>
 
@@ -83,6 +84,49 @@ the ids 1, 5 and 20</dd>
     <span class="p">]</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
+
+<h2 id="view-a-campaign-leaderboard">View a Campaign Leaderboard</h2>
+
+<p>Campaign Leaderboards are a way of showing the top supporter pages for a
+particular campaign.</p>
+
+<pre><code>GET /campaigns/:id/leaderboard
+</code></pre>
+
+<h3 id="visibility-2">Visibility</h3>
+
+<p>Public.</p>
+
+<h3 id="parameters-1">Parameters</h3>
+
+<dl>
+<dt>type</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. The types of pages that are required. Supported
+values include <code>all</code>, <code>individual</code> and <code>team</code>. Defaults to <code>all</code>.</dd>
+  <dt>limit</dt>
+  <dd>
+<em>Optional</em> <strong>integer</strong>. The number of records retrieved. This is useful
+for showing a “top 10 supporters leaderboard”. Defaults to <code>10</code>.</dd>
+</dl><h3 id="response-2">Response</h3>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"leaderboard"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"campaign_id"</span><span class="o">:</span> <span class="s2">"au-1"</span><span class="p">,</span>
+    <span class="s2">"amount"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"cents"</span><span class="o">:</span> <span class="s2">"1000"</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"iso_code"</span><span class="o">:</span> <span class="s2">"AUD"</span><span class="p">,</span>
+        <span class="s2">"symbol"</span><span class="o">:</span> <span class="s2">"$"</span><span class="p">,</span>
+        <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Australian Dollar"</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">"page_ids"</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mi">1</span><span class="p">,</span>
+      <span class="mi">2</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
     </div>
     <div id="sidebar">
       <ul>
@@ -103,7 +147,11 @@ the ids 1, 5 and 20</dd>
         <li><a href="/leaderboards/">Leaderboards</a></li>
         <li><a href="/pages/">Pages</a></li>
         <li><a href="/integration/">Integration</a></li>
+        <li id="api-status">API Status: <span>Loading</span></li>
       </ul>
     </div>
+
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/app.js"></script>
   </body>
 </html>
