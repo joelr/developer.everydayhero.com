@@ -14,7 +14,18 @@ Everyday Hero offer several integration points with third party software
 authentication and secondly registration before creating supporter
 pages.
 
-## Authentication with Everyday Hero's Giving Passport
+## Why integrate with Everyday Hero for Authentication
+
+* Ability to gain more detailed information on users because you can
+leverage any information provided by Everyday Hero
+* Build upon data provided by Everyday Hero to customise an experience
+for you users
+* Global user identification. Once authenticated you will be given a
+universal identifier (uid) which is our guarantee to you that this is
+the same user within Everyday Hero and your product. This is especially
+useful for year on year campaigns.
+
+## How to Authenticate with Everyday Hero's Giving Passport
 
 Everyday Hero's Giving Passport is our way of globally recognising a
 user within any one of our products. We are now opening this
@@ -37,13 +48,33 @@ represented in any Everyday Hero product.
 
 ## Third Party Registration Product Integration
 
-A [sample application](example-rego-integration.herokuapp.com) has been
+A [sample application](http://example-rego-integration.herokuapp.com) has been
 built to show one possible end to end third party registration scenario.
 Source code for the application can be found on
-[GitHub](https://github.com/everydayhero/example_registrations)
+[GitHub](https://github.com/everydayhero/example_registrations).
 This application demonstrates:
 
 * authentication with the Giving Passport
 * using the Everyday Hero API to create a supporter page and view
 information on the campaign
 * while still giving you ultimate control over your registration system
+
+For this type of integration you will need the following:
+
+* An OAuth2 application
+* An API key
+* Registering a third party integration application
+
+All of this can be obtained by emailing
+[support](mailto:support@everydayhero.com).
+
+Generally there are going to be two entry points into your campaign, the
+first will be through your website and the second will be through an
+Everyday Hero supporter page. The two flows are slightly different and
+deserve separate discussions.
+
+### Your Website
+
+It is much more likely that the bulk of participants will 
+
+### Everyday Hero Supporter Page
