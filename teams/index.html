@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>EverydayHero API: Teams</title>
+    <link rel="stylesheet" href="/stylesheets/pygments.css">
+    <link rel="stylesheet" href="/stylesheets/app.css">
+  </head>
+  <body>
+    <div id="main">
+      <h1>Teams</h1>
+      <h2 id="create-a-team">Create a Team</h2>
+
+<ul>
+<li>Must be created from an existing individual page</li>
+  <li>
+    <p>Creates a Team, Team Page and sets individual page as team leader</p>
+
+    <p>POST /teams</p>
+  </li>
+</ul><h3 id="visibility">Visibility</h3>
+
+<p>Restricted. Requires an authenticated user.</p>
+
+<h3 id="payload">Payload</h3>
+
+<dl>
+<dt>individual_page_id</dt>
+  <dd>
+<em>Required</em> <strong>integer</strong>. The <code>id</code> of the individual page to create the
+team from.</dd>
+  <dt>name</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. The name of the team. This needs to be unique
+within the campaign.</dd>
+</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"individual_page_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"My New Team"</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="response">Response</h3>
+
+<p>TODO: add response</p>
+    </div>
+    <div id="sidebar">
+      <ul>
+        <li>
+          <a href="/overview/">Overview</a>
+          <ul>
+            <li><a href="/overview/#schema">Schema</a></li>
+            <li><a href="/overview/#parameters">Parameters</a></li>
+            <li><a href="/overview/#auth-errors">Auth Errors</a></li>
+            <li><a href="/overview/#client-errors">Client Errors</a></li>
+            <li><a href="/overview/#http-verbs">HTTP Verbs</a></li>
+            <li><a href="/overview/#authentication">Authentication</a></li>
+            <li><a href="/overview/#glossary">Glossary</a></li>
+          </ul>
+        </li>
+        <li><a href="/campaigns/">Campaigns</a></li>
+        <li><a href="/charities/">Charities</a></li>
+        <li><a href="/leaderboards/">Leaderboards</a></li>
+        <li><a href="/pages/">Pages</a></li>
+        <li><a href="/integration/">Integration</a></li>
+        <li id="api-status">API Status: <span>Loading</span></li>
+      </ul>
+    </div>
+
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/app.js"></script>
+  </body>
+</html>
