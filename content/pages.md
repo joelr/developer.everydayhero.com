@@ -49,20 +49,20 @@ Restricted. Requires an authenticated user.
 
 ### Payload
 
-slug
+uid
+: _Required_ **integer**. The `uid` of the user that you want to create
+a page for.
+
+url
 : _Optional_ **string**. The desired url for your new supporter page.
 https://give.everydayhero.com/au/tim-cooper.
 
 expires_at
-: _Required_ **string**. The date and time you want the page to
+: _Optional_ **string**. The date and time you want the page to
 expire. ISO8601 format.
 
 target
 : _Optional_ **string**. The dollar amount that you are aiming to raise.
-
-uid
-: _Required_ **integer**. The `uid` of the user that you want to create
-a page for.
 
 birthday
 : _Optional_ **string**. Your birthday. In some countries there are age
@@ -80,7 +80,7 @@ gift_aid_eligible
 : _Optional_ **boolean**. UK specific fundraising criteria.
 
 <%= json \
-  slug: "tim-cooper",
+  url: "tim-cooper",
   expires_at: "2013-10-21T17:15:08+10:00",
   target: "500.50",
   birthday: "1987-04-16T00:00:00+10:00",
