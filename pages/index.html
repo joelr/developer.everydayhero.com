@@ -62,21 +62,21 @@ values include <code>all</code>, <code>individual</code> and <code>team</code>. 
 <h3 id="payload">Payload</h3>
 
 <dl>
-<dt>slug</dt>
+<dt>uid</dt>
+  <dd>
+<em>Required</em> <strong>integer</strong>. The <code>uid</code> of the user that you want to create
+a page for.</dd>
+  <dt>url</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>. The desired url for your new supporter page.
 https://give.everydayhero.com/au/tim-cooper.</dd>
   <dt>expires_at</dt>
   <dd>
-<em>Required</em> <strong>string</strong>. The date and time you want the page to
+<em>Optional</em> <strong>string</strong>. The date and time you want the page to
 expire. ISO8601 format.</dd>
   <dt>target</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>. The dollar amount that you are aiming to raise.</dd>
-  <dt>uid</dt>
-  <dd>
-<em>Required</em> <strong>integer</strong>. The <code>uid</code> of the user that you want to create
-a page for.</dd>
   <dt>birthday</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>. Your birthday. In some countries there are age
@@ -93,7 +93,7 @@ provided.</dd>
   <dd>
 <em>Optional</em> <strong>boolean</strong>. UK specific fundraising criteria.</dd>
 </dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"tim-cooper"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"tim-cooper"</span><span class="p">,</span>
   <span class="s2">"expires_at"</span><span class="o">:</span> <span class="s2">"2013-10-21T17:15:08+10:00"</span><span class="p">,</span>
   <span class="s2">"target"</span><span class="o">:</span> <span class="s2">"500.50"</span><span class="p">,</span>
   <span class="s2">"birthday"</span><span class="o">:</span> <span class="s2">"1987-04-16T00:00:00+10:00"</span><span class="p">,</span>
