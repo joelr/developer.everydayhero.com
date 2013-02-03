@@ -2,6 +2,9 @@
 title: Teams
 ---
 
+* TOC
+{:toc}
+
 ## Create a Team
 
 * Must be created from an existing individual page
