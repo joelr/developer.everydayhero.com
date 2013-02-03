@@ -13,6 +13,16 @@ title: Pages
 
 Public.
 
+### Parameters
+
+ids
+: _Optional_ **string**. Only retrieve pages with the ids specified.
+`1,5,20` will retrieve pages with the ids 1, 5 and 20.
+
+type
+: _Optional_ **string**. The types of pages that are required. Supported
+values include `all`, `individual` and `team`. Defaults to `all`.
+
 ### Response
 
 TODO: add response
