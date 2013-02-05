@@ -116,6 +116,17 @@ module EverydayHero
     CampaignLeaderboard = {
       leaderboard: CampaignLeaderboardData
     }
+
+    PageData = {
+    }
+
+    Page = {
+      page: PageData
+    }
+
+    Pages = {
+      pages: [PageData]
+    }
   end
 end
 
