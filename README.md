@@ -12,3 +12,4 @@ To get the project running locally you will need to:
 * `cd developer.everydayhero.com`
 * `gem install nanoc`
 * `script/bootstrap`
+* `script/server` to run locally
