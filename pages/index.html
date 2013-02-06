@@ -35,7 +35,13 @@
 values include <code>all</code>, <code>individual</code> and <code>team</code>. Defaults to <code>all</code>.</dd>
 </dl><h3 id="response">Response</h3>
 
-<p>TODO: add response</p>
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"pages"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
 
 <h2 id="view-a-single-page">View a single Page</h2>
 
@@ -48,7 +54,11 @@ values include <code>all</code>, <code>individual</code> and <code>team</code>. 
 
 <h3 id="response-1">Response</h3>
 
-<p>TODO: add response</p>
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"page"</span><span class="o">:</span> <span class="p">{</span>
+
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
 
 <h2 id="create-an-individual-page">Create an Individual Page</h2>
 
@@ -66,34 +76,31 @@ values include <code>all</code>, <code>individual</code> and <code>team</code>. 
   <dd>
 <em>Required</em> <strong>integer</strong>. The <code>uid</code> of the user that you want to create
 a page for.</dd>
-  <dt>url</dt>
+  <dt>birthday</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>. Your birthday. In some countries there are age
+restrictions on fundraising and further action might need to be taken
+depending on the age provided.</dd>
+  <dt>slug</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>. The desired url for your new supporter page.
 https://give.everydayhero.com/au/tim-cooper.</dd>
   <dt>expires_at</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>. The date and time you want the page to
-expire. ISO8601 format.</dd>
+expire. ISO8601 format. Defaults to 1 month after the campaign end date.</dd>
   <dt>target</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>. The dollar amount that you are aiming to raise.</dd>
-  <dt>birthday</dt>
-  <dd>
-<em>Optional</em> <strong>string</strong>. Your birthday. In some countries there are age
-restrictions on fundraising and further action might need to be taken
-depending on the age provided. Defaults (and prefers) the age supplied
-for your user.</dd>
   <dt>charity_id</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>. The <code>id</code> of the charity to create the page for.
-In a single charity campaign this will be defaulted and in multi
-charity campaigns a random charity will be chosen if no <code>id</code> is
-provided.</dd>
+Defaulted to a random charity.</dd>
   <dt>gift_aid_eligible</dt>
   <dd>
 <em>Optional</em> <strong>boolean</strong>. UK specific fundraising criteria.</dd>
 </dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"tim-cooper"</span><span class="p">,</span>
+  <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"tim-cooper"</span><span class="p">,</span>
   <span class="s2">"expires_at"</span><span class="o">:</span> <span class="s2">"2013-10-21T17:15:08+10:00"</span><span class="p">,</span>
   <span class="s2">"target"</span><span class="o">:</span> <span class="s2">"500.50"</span><span class="p">,</span>
   <span class="s2">"birthday"</span><span class="o">:</span> <span class="s2">"1987-04-16T00:00:00+10:00"</span><span class="p">,</span>
@@ -104,7 +111,11 @@ provided.</dd>
 
 <h3 id="response-2">Response</h3>
 
-<p>TODO: add response</p>
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"page"</span><span class="o">:</span> <span class="p">{</span>
+
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
     </div>
     <div id="sidebar">
       <ul>

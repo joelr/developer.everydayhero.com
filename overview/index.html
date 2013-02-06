@@ -13,7 +13,7 @@
 <li><a href="#schema">Schema</a></li>
   <li><a href="#parameters">Parameters</a></li>
   <li><a href="#auth-errors">Auth Errors</a></li>
-  <li><a href="#client-errors">Client Errors</a></li>
+  <li><a href="#validation-errors">Validation Errors</a></li>
   <li><a href="#http-verbs">HTTP Verbs</a></li>
   <li><a href="#authentication">Authentication</a></li>
   <li><a href="#glossary">Glossary</a></li>
@@ -85,9 +85,8 @@ as JSON with a Content-Type of ‘application/x-www-form-urlencoded’:</p>
  X-Rack-Cache: miss
  Transfer-Encoding: chunked</p>
 
-    <p>{
-   “message”: “You need to authenticate.”,
-   “status”: 401
+    <p>“error”: {
+   “message”: “You need to authenticate for this resource”
  }</p>
   </li>
   <li>
@@ -106,24 +105,22 @@ result in a <code>403 Forbidden</code> response.</p>
  X-Rack-Cache: miss
  Transfer-Encoding: chunked</p>
 
-    <p>{
-   “message”: “You are not authorized to view this page.”,
-   “status”: 403
+    <p>“error”: {
+   “message”: “You are not authorized to view this resource”
  }</p>
   </li>
-</ol><h2 id="client-errors">Client Errors</h2>
+</ol><h2 id="validation-errors">Validation Errors</h2>
 
-<p>TODO: currently we <code>object.errors.to_json</code> but it’s probably better to
-provide something like GitHub do - it would be nice to have a standard
-error response that is consistent between auth and resources.</p>
+<p>All validation errors resulting from a POST or PUT request will contain
+a message and an array of errors. For more information on fixing the
+validation errors see the corresponding documentation for the request.</p>
 
-<pre><code>{
-   "message": "Validation Failed",
+<pre><code>"error": {
+   "message": "Validation failed",
    "errors": [
      {
-       "resource": "Issue",
-       "field": "title",
-       "code": "missing_field"
+       "field": "uid",
+       "code": "invalid"
      }
    ]
  }
