@@ -67,9 +67,8 @@ There are two possible auth errors supported by the API:
     X-Rack-Cache: miss
     Transfer-Encoding: chunked
 
-    {
-      "message": "You need to authenticate.",
-      "status": 401
+    "error": {
+      "message": "You need to authenticate for this resource"
     }
 
 2. Requesting resources that you do not have permission to request will
@@ -87,24 +86,22 @@ result in a `403 Forbidden` response.
     X-Rack-Cache: miss
     Transfer-Encoding: chunked
 
-    {
-      "message": "You are not authorized to view this page.",
-      "status": 403
+    "error": {
+      "message": "You are not authorized to view this resource"
     }
 
-## Client Errors
+## Validation Errors
 
-TODO: currently we `object.errors.to_json` but it's probably better to
-provide something like GitHub do - it would be nice to have a standard
-error response that is consistent between auth and resources.
+All validation errors resulting from a POST or PUT request will contain
+a message and an array of errors. For more information on fixing the
+validation errors see the corresponding documentation for the request.
 
-    {
-       "message": "Validation Failed",
+    "error": {
+       "message": "Validation failed",
        "errors": [
          {
-           "resource": "Issue",
-           "field": "title",
-           "code": "missing_field"
+           "field": "uid",
+           "code": "invalid"
          }
        ]
      }
