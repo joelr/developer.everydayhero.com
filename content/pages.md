@@ -23,6 +23,10 @@ type
 : _Optional_ **string**. The types of pages that are required. Supported
 values include `all`, `individual` and `team`. Defaults to `all`.
 
+campaign_id
+: _Optional_ **string**. Only retrieve pages participating in the
+campaign specified.
+
 ### Response
 
 <%= json :pages %>
