@@ -127,6 +127,23 @@ module EverydayHero
     Pages = {
       pages: [PageData]
     }
+
+    InvitationData = {
+      id: 1,
+      email: 'support@everydayhero.com',
+      accepted_at: '2013-04-01T00:00:00Z'
+    }
+
+    JoinTeamInvitationData = InvitationData.merge \
+      team_page_id: 1
+
+    CreateIndividualPageInvitation = {
+      create_individual_page_invitation: InvitationData
+    }
+
+    JoinTeamInvitation = {
+      join_team_invitation: JoinTeamInvitationData
+    }
   end
 end
 

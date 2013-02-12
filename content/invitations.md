@@ -5,13 +5,12 @@ title: Invitations
 * TOC
 {:toc}
 
-## Create Invitations
+## Create Individual Page Invitation
 
-Because of the nature of invitations this is a bulk commit resource
-which means that passing several recipients will create several
-invitations.
+Send an invitation to create an individual supporter page to an email
+address.
 
-    POST /invitations
+    POST /individual-pages/invitations
 
 ### Visibility
 
@@ -19,19 +18,73 @@ Restricted. Requires an authenticated user.
 
 ### Payload
 
-team_page_id
-: _Required_ **integer**. The `id` of the team page that you want to
-create invitations for.
+email
+: _Required_ **string**. The email address you would like the invitation
+sent to. We do not tie this email address to the user's Giving Passport
+in any way, it is only used to deliver the invitation.
 
-recipients
-: _Required_ **array**. An array of email addresses to create
-invitations for.
+full_name
+: _Optional_ **string**. The full name of the person you want to invite
+to create a supporter page.
+
+charity_id
+: _Optional_ **string**. The `id` of the charity that you want set for
+this supporter page. If no charity is supplied the user will be prompted
+to select a charity. Defaults to none.
+
+target
+: _Optional_ **decimal**. The amount of money this page is aiming to
+raise. Defaults to a predetermined value.
 
 <%= json \
-  team_page_id: 1,
-  recipients: ['support@everydayhero.com']
+  email: 'support@everydayhero.com',
+  full_name: 'Everyday Hero Support',
+  charity_id: 'au-1',
+  target: 705.5
 %>
 
 ### Response
 
-TODO: add response
+<%= json :create_individual_page_invitation %>
+
+## Create Join a Team Invitation
+
+Send an invitation to create an individual supporter page for a team to
+an email address.
+
+    POST /team-pages/:team_page_id/invitations
+
+### Visibility
+
+Restricted. Requires an authenticated user.
+
+### Payload
+
+email
+: _Required_ **string**. The email address you would like the invitation
+sent to. We do not tie this email address to the user's Giving Passport
+in any way, it is only used to deliver the invitation.
+
+full_name
+: _Optional_ **string**. The full name of the person you want to invite
+to create a supporter page.
+
+charity_id
+: _Optional_ **string**. The `id` of the charity that you want set for
+this supporter page. If no charity is supplied the user will be prompted
+to select a charity. Defaults to none.
+
+target
+: _Optional_ **decimal**. The amount of money this page is aiming to
+raise. Defaults to a predetermined value.
+
+<%= json \
+  email: 'support@everydayhero.com',
+  full_name: 'Everyday Hero Support',
+  charity_id: 'au-1',
+  target: 705.5
+%>
+
+### Response
+
+<%= json :join_team_invitation %>
