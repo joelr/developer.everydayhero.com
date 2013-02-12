@@ -10,14 +10,14 @@
     <div id="main">
       <h1>Invitations</h1>
       <ul id="markdown-toc">
-<li><a href="#create-invitations">Create Invitations</a></li>
-</ul><h2 id="create-invitations">Create Invitations</h2>
+<li><a href="#create-individual-page-invitation">Create Individual Page Invitation</a></li>
+  <li><a href="#create-join-a-team-invitation">Create Join a Team Invitation</a></li>
+</ul><h2 id="create-individual-page-invitation">Create Individual Page Invitation</h2>
 
-<p>Because of the nature of invitations this is a bulk commit resource
-which means that passing several recipients will create several
-invitations.</p>
+<p>Send an invitation to create an individual supporter page to an email
+address.</p>
 
-<pre><code>POST /invitations
+<pre><code>POST /individual-pages/invitations
 </code></pre>
 
 <h3 id="visibility">Visibility</h3>
@@ -27,24 +27,91 @@ invitations.</p>
 <h3 id="payload">Payload</h3>
 
 <dl>
-<dt>team_page_id</dt>
+<dt>email</dt>
   <dd>
-<em>Required</em> <strong>integer</strong>. The <code>id</code> of the team page that you want to
-create invitations for.</dd>
-  <dt>recipients</dt>
+<em>Required</em> <strong>string</strong>. The email address you would like the invitation
+sent to. We do not tie this email address to the user’s Giving Passport
+in any way, it is only used to deliver the invitation.</dd>
+  <dt>full_name</dt>
   <dd>
-<em>Required</em> <strong>array</strong>. An array of email addresses to create
-invitations for.</dd>
+<em>Optional</em> <strong>string</strong>. The full name of the person you want to invite
+to create a supporter page.</dd>
+  <dt>charity_id</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. The <code>id</code> of the charity that you want set for
+this supporter page. If no charity is supplied the user will be prompted
+to select a charity. Defaults to none.</dd>
+  <dt>target</dt>
+  <dd>
+<em>Optional</em> <strong>decimal</strong>. The amount of money this page is aiming to
+raise. Defaults to a predetermined value.</dd>
 </dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"team_page_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="s2">"recipients"</span><span class="o">:</span> <span class="p">[</span>
-    <span class="s2">"support@everydayhero.com"</span>
-  <span class="p">]</span>
+  <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"support@everydayhero.com"</span><span class="p">,</span>
+  <span class="s2">"full_name"</span><span class="o">:</span> <span class="s2">"Everyday Hero Support"</span><span class="p">,</span>
+  <span class="s2">"charity_id"</span><span class="o">:</span> <span class="s2">"au-1"</span><span class="p">,</span>
+  <span class="s2">"target"</span><span class="o">:</span> <span class="mf">705.5</span>
 <span class="p">}</span></code></pre>
 
 <h3 id="response">Response</h3>
 
-<p>TODO: add response</p>
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"create_individual_page_invitation"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"support@everydayhero.com"</span><span class="p">,</span>
+    <span class="s2">"accepted_at"</span><span class="o">:</span> <span class="s2">"2013-04-01T00:00:00Z"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="create-join-a-team-invitation">Create Join a Team Invitation</h2>
+
+<p>Send an invitation to create an individual supporter page for a team to
+an email address.</p>
+
+<pre><code>POST /team-pages/:team_page_id/invitations
+</code></pre>
+
+<h3 id="visibility-1">Visibility</h3>
+
+<p>Restricted. Requires an authenticated user.</p>
+
+<h3 id="payload-1">Payload</h3>
+
+<dl>
+<dt>email</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>. The email address you would like the invitation
+sent to. We do not tie this email address to the user’s Giving Passport
+in any way, it is only used to deliver the invitation.</dd>
+  <dt>full_name</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. The full name of the person you want to invite
+to create a supporter page.</dd>
+  <dt>charity_id</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. The <code>id</code> of the charity that you want set for
+this supporter page. If no charity is supplied the user will be prompted
+to select a charity. Defaults to none.</dd>
+  <dt>target</dt>
+  <dd>
+<em>Optional</em> <strong>decimal</strong>. The amount of money this page is aiming to
+raise. Defaults to a predetermined value.</dd>
+</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"support@everydayhero.com"</span><span class="p">,</span>
+  <span class="s2">"full_name"</span><span class="o">:</span> <span class="s2">"Everyday Hero Support"</span><span class="p">,</span>
+  <span class="s2">"charity_id"</span><span class="o">:</span> <span class="s2">"au-1"</span><span class="p">,</span>
+  <span class="s2">"target"</span><span class="o">:</span> <span class="mf">705.5</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="response-1">Response</h3>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"join_team_invitation"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"support@everydayhero.com"</span><span class="p">,</span>
+    <span class="s2">"accepted_at"</span><span class="o">:</span> <span class="s2">"2013-04-01T00:00:00Z"</span><span class="p">,</span>
+    <span class="s2">"team_page_id"</span><span class="o">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
     </div>
     <div id="sidebar">
       <ul>
