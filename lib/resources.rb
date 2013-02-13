@@ -144,6 +144,17 @@ module EverydayHero
     JoinTeamInvitation = {
       join_team_invitation: JoinTeamInvitationData
     }
+
+    JoinRequestData = {
+      id: 1,
+      state: 'pending',
+      team_page_id: 1,
+      individual_page_id: 1
+    }
+
+    JoinRequest = {
+      join_request: JoinRequestData
+    }
   end
 end
 
