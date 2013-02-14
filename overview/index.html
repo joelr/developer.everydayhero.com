@@ -141,10 +141,16 @@ validation errors see the corresponding documentation for the request.</p>
   <dd>Used when deleting resources</dd>
 </dl><h2 id="authentication">Authentication</h2>
 
-<p>There is only one authentication scheme in place for the API: Token Authentication. Requests that require authentication will return a status of 401.</p>
+<p>There is only one authentication scheme in place for the API: Token
+Authentication. Requests that require authentication will return a
+status of 401.</p>
 
 <pre><code>$ curl -i -H "Authorization: Token token=your-token" https://everydayhero.com/api/v1
 </code></pre>
+
+<p>Authenticated API access is tied at the campaign level - this means that
+any and all information created or updated can only take place within
+the specified campaign.</p>
 
 <h2 id="glossary">Glossary</h2>
 
@@ -152,6 +158,9 @@ validation errors see the corresponding documentation for the request.</p>
 <dt>Individual Page</dt>
   <dd>A Supporter Page that is not participating in a team and is not a
 team page.</dd>
+  <dt>Team Page</dt>
+  <dd>A Supporter Page that conatains other Individual Pages. These pages
+are said to be participating in a team.</dd>
 </dl>
     </div>
     <div id="sidebar">
@@ -176,6 +185,8 @@ team page.</dd>
         <li><a href="/pages/">Pages</a></li>
         <li><a href="/teams/">Teams</a></li>
         <li><a href="/integration/">Integration</a></li>
+        <li><a href="/third-party-registration-integration/">Third Party
+          Registration Integration</a></li>
         <li id="api-status">API Status: <span>Loading</span></li>
       </ul>
     </div>
