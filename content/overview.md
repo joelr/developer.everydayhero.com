@@ -124,12 +124,22 @@ DELETE
 
 ## Authentication
 
-There is only one authentication scheme in place for the API: Token Authentication. Requests that require authentication will return a status of 401.
+There is only one authentication scheme in place for the API: Token
+Authentication. Requests that require authentication will return a
+status of 401.
 
     $ curl -i -H "Authorization: Token token=your-token" https://everydayhero.com/api/v1
+
+Authenticated API access is tied at the campaign level - this means that
+any and all information created or updated can only take place within
+the specified campaign.
 
 ## Glossary
 
 Individual Page
 : A Supporter Page that is not participating in a team and is not a
 team page.
+
+Team Page
+: A Supporter Page that conatains other Individual Pages. These pages
+are said to be participating in a team.
