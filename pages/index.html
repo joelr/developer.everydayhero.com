@@ -100,6 +100,11 @@ expire. ISO8601 format. Defaults to 1 month after the campaign end date.</dd>
   <dd>
 <em>Optional</em> <strong>string</strong>. The <code>id</code> of the charity to create the page for.
 Defaulted to a random charity.</dd>
+  <dt>token</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. An invitation token to join a team. This
+invitation was created by the team leader and sent to the user that you
+want to create a supporter page for.</dd>
   <dt>gift_aid_eligible</dt>
   <dd>
 <em>Optional</em> <strong>boolean</strong>. UK specific fundraising criteria.</dd>
@@ -110,7 +115,8 @@ Defaulted to a random charity.</dd>
   <span class="s2">"birthday"</span><span class="o">:</span> <span class="s2">"1987-04-16T00:00:00+10:00"</span><span class="p">,</span>
   <span class="s2">"gift_aid_eligible"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
   <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="s2">"charity_id"</span><span class="o">:</span> <span class="s2">"au-1"</span>
+  <span class="s2">"charity_id"</span><span class="o">:</span> <span class="s2">"au-1"</span><span class="p">,</span>
+  <span class="s2">"token"</span><span class="o">:</span> <span class="s2">"1234567890"</span>
 <span class="p">}</span></code></pre>
 
 <h3 id="response-2">Response</h3>
