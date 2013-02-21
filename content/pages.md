@@ -77,6 +77,11 @@ charity_id
 : _Optional_ **string**. The `id` of the charity to create the page for.
 Defaulted to a random charity.
 
+token
+: _Optional_ **string**. An invitation token to join a team. This
+invitation was created by the team leader and sent to the user that you
+want to create a supporter page for.
+
 gift_aid_eligible
 : _Optional_ **boolean**. UK specific fundraising criteria.
 
@@ -87,7 +92,8 @@ gift_aid_eligible
   birthday: "1987-04-16T00:00:00+10:00",
   gift_aid_eligible: nil,
   uid: 1,
-  charity_id: 'au-1'
+  charity_id: 'au-1',
+  token: '1234567890'
 %>
 
 ### Response
