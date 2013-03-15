@@ -17,10 +17,16 @@ compile '/stylesheets/*/' do
   filter :sass, syntax: :scss
 end
 
+
+
 compile '/javascripts/*/' do
 end
 
 compile '/CNAME/' do
+end
+
+compile '/images/*/' do
+  # don't filter or layout
 end
 
 compile '*' do
@@ -37,6 +43,12 @@ end
 route '/javascripts/*/' do
   item.identifier.chop + '.js'
 end
+
+route '/images/*' do
+  item.identifier.chop + '.' + item[:extension]
+end
+
+
 
 route '/CNAME/' do
   '/CNAME'
