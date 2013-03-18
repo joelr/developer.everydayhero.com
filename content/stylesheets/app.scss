@@ -88,6 +88,11 @@ $input_height: 30px;
   font-family: $font_stack;
 }
 
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
 body {
   //background: $background;
   background: $light url("../images/bg.jpeg") left top no-repeat;
