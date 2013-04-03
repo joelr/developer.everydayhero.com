@@ -1,0 +1,182 @@
+* { margin:0px; padding:0px; outline:none; text-decoration:none; border:none; }
+.cf { *zoom:1; }
+.cf:before, .cf:after { content:''; display:table; }
+.cf:after { clear:both; }
+body { background:#cfcfcf; color:#232323; font-family:helvetica,arial,sans-serif; font-size:14px; line-height:1.2; }
+body > div > header, body > section, body > footer, body form { max-width:600px; margin: 0px auto; }
+
+body > div {
+  background: #232323; 
+}
+body > div > header h1 { 
+  font-size:20px; line-height:27px;
+  padding:10px;
+  float:left;
+}
+body > div > header nav { float:right; padding:10px; }
+body > div > header a { color: #fff; }
+
+body > section { padding:10px 10px 0px; }
+body > section > header, body > section > #column_single > header,
+body > section > #column_left > header,
+body > section > #column_left > #registration-cart > header,
+body > section > #column_single > #registration-cart > header, a.option, .card { 
+  background:#fff; color:#232323;
+  padding:10px; margin-bottom:10px; 
+}
+body > footer { font-size:10px; line-height:1; text-align:center; margin-bottom:10px; }
+body > footer a { color:#232323; padding:0px 5px; border-right:1px solid rgba(0,0,0,0.5); }
+body > footer a:last-child { border:none; }
+
+a.option { 
+  display:block;
+  padding-left:120px;
+}
+a.option figure {
+  width: 100px; height:100px;
+  float:left; margin-left:-110px;
+}
+
+.content {}
+.content h2 { font-size: 18px; margin-bottom:5px; border-bottom:1px solid rgba(0,0,0,0.25); }
+.content p { font-size:16px; }
+.content .button { float:right; }
+
+.button { 
+  margin:10px 0px 0px 10px;
+  background:#cccc00; padding:5px 10px 7px; 
+  font-size:14px; line-height:1; font-weight:bold;
+  -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;
+}
+
+.registration-button {
+  width:100%;
+  display:block;
+  padding:10px 0px;
+  background:#ccc;
+  font-size:14px; line-height:1; font-weight:bold;
+  -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;
+}
+
+.registration-button span {
+  padding:10px 10px 10px;
+}
+
+.green-background {
+  background: #159838 !important;
+  color:#fff;
+}
+
+.red-background {
+  background: red !important;
+  color:#fff;
+}
+
+.dropdown { position:relative; }
+.dropdown .dropdown-content { 
+  display:none;
+  position:absolute; top:27px; right:0px; z-index:9;
+  padding:15px 10px 10px; 
+  min-width: 200px;
+}
+.dropdown .dropdown-content:before { 
+  position:absolute; top:6px; right:19px; z-index:10;
+  display:block; content:''; width:0; height:0;
+  border:5px solid transparent;
+  border-bottom-color:#fff;
+}
+.dropdown .dropdown-content a { 
+  display:block; 
+  padding:7px;
+  border-bottom:1px solid rgba(0,0,0,0.25);
+  color:#232323; 
+  font-weight:bold; font-size:16px;
+}
+.dropdown .dropdown-content li:last-child a { border-bottom:none; }
+.dropdown .dropdown-content ul { 
+  list-style:none;
+  background: #fff; color:#232323;
+  border:1px solid rgba(0,0,0,0.25);
+  -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;
+  -webkit-box-shadow:0px 2px 4px rgba(0,0,0,0.25); -moz-box-shadow:0px 2px 4px rgba(0,0,0,0.25); box-shadow:0px 2px 4px rgba(0,0,0,0.25);
+}
+.dropdown .dropdown-trigger-off { display:none; }
+.dropdown .dropdown-trigger-on { display:block; }
+#main-dropdown:target .dropdown-trigger-on { display:none; }
+#main-dropdown:target .dropdown-trigger-off { display:block; }
+#main-dropdown:target .dropdown-content { display:block; }
+
+.icon-bar {
+  display:block; padding:4px 3px 0px;
+  width:20px; height:21px;
+  text-align:center; 
+  font-size:16px; line-height:20px; font-weight:bold;
+  border: 1px solid rgba(255,255,255,0.1);
+  -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;
+}
+.icon-bar .bar { width:20px; height:3px; background:#fff; margin-bottom:4px; }
+
+#errorExplanation { background-color: #F9FCA3; padding:10px; margin:10px }
+#errorExplanation h2, #errorExplanation p { color:red }
+#errorExplanation ul { padding:10px 30px }
+
+/* Registration Form */
+
+form { padding:0px 10px; }
+fieldset { background:#fff; padding:33px 10px 10px; margin-bottom:10px; position:relative; }
+legend { 
+  position:absolute; top:10px; right:10px; left:10px;
+  font-weight:bold; font-size:18px; line-height:18px; border-bottom:1px solid rgba(0,0,0,0.25);
+}
+fieldset .sub_column_right { background:#f8f8f8; font-size:12px !important; margin-bottom:5px; }
+fieldset .sub_column_left { }
+fieldset ol { list-style:none; }
+fieldset ol > li { margin-top:5px; }
+fieldset ol > li.checkbox { position:relative; padding-left:20px; margin-bottom:10px; }
+fieldset ol > li.checkbox input[type="radio"] { position:absolute; top:1px; left:0px; width:15px; }
+fieldset div.questions ol > li.checkbox input[type="radio"] { position:relative;top:1px; left:0px; width:15px; float:left; margin-bottom:10px; } 
+
+fieldset ol > li.checkbox label { max-width:100%; text-align:left; }
+
+fieldset .product-container { padding-left:85px; position:relative; min-height:75px; margin-top:5px; }
+fieldset .product-image { position:absolute; top:0px; left:0px; width:75px; background:#f8f8f8; }
+fieldset .product-container .group-name { margin-top: 5px; margin-bottom: 5px;}
+fieldset .product-price { display:none; }
+fieldset ul.price-quantity-container { background:#ff0066; list-style:none; }
+fieldset ul.price-quantity-container li { float:left; font-size:14px; line-height:14px; }
+fieldset ul.price-quantity-container li.quantity-price { padding:7px 5px; line-height:1.2; font-weight:bold; }
+fieldset .product-quantity input[type=text] { width:100px; }
+fieldset .product-info h4 { clear:both; padding:5px 0px; font-size:16px; }
+fieldset .product-info p { font-size:16px; }
+
+div.questions li.checkbox div.checkbox_container {display:inline-block;}
+
+fieldset input[type=text], fieldset input[type=password], fieldset textarea { background:#f8f8f8; border:1px solid rgba(0,0,0,0.25); padding:5px; font-size:14px; line-height:14px; }
+fieldset input[type=radio] { margin-right:5px; position:relative; top:1px; }
+fieldset label { display:inline-block; text-align:right; min-width: 80px; padding-right:5px; max-width: 80px }
+fieldset label.registration_question {text-align:left; min-width:10px}
+fieldset li.radio label, fieldset label.wide {display:block; text-align:left;min-width:100%; padding-right:0px; margin:5px 0}
+fieldset label.wide {padding-top:10px;}
+input[type=submit], input[type=submit].registration-button {
+  width:100%;
+  background:#ccc; padding:10px; 
+  font-size:18px; line-height:1; font-weight:bold;
+  -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;
+}
+
+#contact_country { width:200px; }
+
+div.instructions_help_support {
+  background:#e8e6bf;
+  border: 1px solid #fffffa;
+  padding:5px;
+  -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px;
+}
+
+.checkbox textarea.auto_width {
+  width: 300px;
+}
+
+.clear_both {
+  clear: both;
+}
