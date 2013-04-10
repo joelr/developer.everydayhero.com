@@ -141,5 +141,5 @@ Individual Page
 team page.
 
 Team Page
-: A Supporter Page that conatains other Individual Pages. These pages
+: A Supporter Page that contains other Individual Pages. These pages
 are said to be participating in a team.
