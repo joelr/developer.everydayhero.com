@@ -39,6 +39,7 @@ Invitation](/invitations#create-individual-page-invitation)
 ## Team Page Creation
 
 [Create an Individual Page](/pages#create-an-individual-page)
+
 [Create a Team](/teams#create-a-team)
 
 ## Joining an Exising Team
