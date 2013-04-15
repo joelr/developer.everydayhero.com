@@ -46,6 +46,17 @@ By authenticating with the Giving Passport you are guaranteed that the
 user you are dealing with will be the same person person that is
 represented in any Everyday Hero product.
 
+The endpoints are:
+GET    passport.edheroz.com/oauth/authorize(.:format)
+POST   passport.edheroz.com/token
+
+Passport will provide an auth hash within the response var 'omniauth.auth', this provides:
+
+* uid: User's ID
+* email
+* name
+* birthday
+
 ## Third Party Registration Product Integration
 
 A [sample application](http://example-rego-integration.herokuapp.com) has been
