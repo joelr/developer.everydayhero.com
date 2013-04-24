@@ -156,6 +156,26 @@ module EverydayHero
     JoinRequest = {
       join_request: JoinRequestData
     }
+
+    UserData = {
+      uid: 1,
+      name: "John O'Donnell",
+      nickname: 'John',
+      email: 'john@example.com',
+      phone: '1300798768',
+      birthday: '1980-01-13',
+      street_address: '87 Wickham Terrace',
+      extended_address: nil,
+      locality: 'Spring Hill',
+      region: 'QLD',
+      postal_code: '4006',
+      country_name: 'Australia',
+      page_ids: [1,2],
+    }
+
+    Users = {
+      users: [UserData]
+    }
   end
 end
 
