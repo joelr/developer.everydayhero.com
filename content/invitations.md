@@ -23,6 +23,10 @@ email
 sent to. We do not tie this email address to the user's Giving Passport
 in any way, it is only used to deliver the invitation.
 
+phone
+: _Optional_ **string**. The phone number of the person you want to
+invite to create a supporter page.
+
 full_name
 : _Optional_ **string**. The full name of the person you want to invite
 to create a supporter page.
@@ -38,6 +42,7 @@ raise. Defaults to a predetermined value.
 
 <%= json \
   email: 'support@everydayhero.com',
+  phone: '1300798768',
   full_name: 'Everyday Hero Support',
   charity_id: 'au-1',
   target: 705.5
