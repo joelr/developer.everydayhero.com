@@ -47,8 +47,28 @@ user you are dealing with will be the same person person that is
 represented in any Everyday Hero product.
 
 The endpoints are:
-GET    passport.edheroz.com/oauth/authorize(.:format)
-POST   passport.edheroz.com/token
+
+## Authorize endpoint
+
+    GET    passport.edheroz.com/oauth/authorize(.:format)
+
+### Prepopulation Parameters
+
+email
+: _Optional_ **string**. The email of the person you want to prepopulate the
+sign-up form for.
+
+phone
+: _Optional_ **string**. The phone number of the person you want to
+prepopulate the sign-up form for.
+
+full_name
+: _Optional_ **string**. The full name of the person you want to
+prepopulate the sign-up form for.
+
+## Token endpoint
+
+    POST   passport.edheroz.com/token
 
 Passport will provide an auth hash within the response var 'omniauth.auth', this provides:
 
