@@ -53,6 +53,8 @@
           <ul id="markdown-toc">
 <li><a href="#why-integrate-with-everyday-hero-for-authentication">Why integrate with Everyday Hero for Authentication</a></li>
   <li><a href="#how-to-authenticate-with-everyday-heros-giving-passport">How to Authenticate with Everyday Hero’s Giving Passport</a></li>
+  <li><a href="#authorize-endpoint">Authorize endpoint</a></li>
+  <li><a href="#token-endpoint">Token endpoint</a></li>
   <li><a href="#third-party-registration-product-integration">Third Party Registration Product Integration</a></li>
 </ul><p>One of the biggest questions we receive from developers is around end to
 end integration - the API is great for pushing and pulling information
@@ -95,9 +97,32 @@ library for you.</p>
 user you are dealing with will be the same person person that is
 represented in any Everyday Hero product.</p>
 
-<p>The endpoints are:
-GET    passport.edheroz.com/oauth/authorize(.:format)
-POST   passport.edheroz.com/token</p>
+<p>The endpoints are:</p>
+
+<h2 id="authorize-endpoint">Authorize endpoint</h2>
+
+<pre><code>GET    passport.edheroz.com/oauth/authorize(.:format)
+</code></pre>
+
+<h3 id="prepopulation-parameters">Prepopulation Parameters</h3>
+
+<dl>
+<dt>email</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. The email of the person you want to prepopulate the
+sign-up form for.</dd>
+  <dt>phone</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. The phone number of the person you want to
+prepopulate the sign-up form for.</dd>
+  <dt>full_name</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. The full name of the person you want to
+prepopulate the sign-up form for.</dd>
+</dl><h2 id="token-endpoint">Token endpoint</h2>
+
+<pre><code>POST   passport.edheroz.com/token
+</code></pre>
 
 <p>Passport will provide an auth hash within the response var ‘omniauth.auth’, this provides:</p>
 
