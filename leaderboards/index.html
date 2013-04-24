@@ -38,6 +38,7 @@
             <li><a href="/invitations/">Invitations</a></li>
             <li><a href="/pages/">Pages</a></li>
             <li><a href="/teams/">Teams</a></li>
+            <li><a href="/users/">Users</a></li>
             <li><a href="/integration/">Integration</a></li>
             <li><a href="/third-party-registration-integration/">Third Party
               Registration Integration</a></li>
@@ -50,12 +51,10 @@
         <div class="inner">
           
           <ul id="markdown-toc">
-  <li><a href="#list-all-leaderboards">List all Leaderboards</a></li>
+<li><a href="#list-all-leaderboards">List all Leaderboards</a></li>
   <li><a href="#view-a-single-leaderboard">View a single Leaderboard</a></li>
   <li><a href="#view-a-campaign-leaderboard">View a Campaign Leaderboard</a></li>
-</ul>
-
-<p>The Leaderboards API allows you to retrieve leaderboards and their
+</ul><p>The Leaderboards API allows you to retrieve leaderboards and their
 assocated pages.</p>
 
 <h2 id="list-all-leaderboards">List all Leaderboards</h2>
@@ -70,13 +69,11 @@ assocated pages.</p>
 <h3 id="parameters">Parameters</h3>
 
 <dl>
-  <dt>ids</dt>
+<dt>ids</dt>
   <dd>
 <em>Optional</em> <strong>string</strong> - <code>1,5,20</code> to only retrieve leaderboards with
 the ids 1, 5 and 20</dd>
-</dl>
-
-<h3 id="response">Response</h3>
+</dl><h3 id="response">Response</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"leaderboards"</span><span class="o">:</span> <span class="p">[</span>
@@ -144,7 +141,7 @@ particular campaign.</p>
 <h3 id="parameters-1">Parameters</h3>
 
 <dl>
-  <dt>type</dt>
+<dt>type</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>. The types of pages that are required. Supported
 values include <code>all</code>, <code>individual</code> and <code>team</code>. Defaults to <code>all</code>.</dd>
@@ -152,9 +149,7 @@ values include <code>all</code>, <code>individual</code> and <code>team</code>. 
   <dd>
 <em>Optional</em> <strong>integer</strong>. The number of records retrieved. This is useful
 for showing a “top 10 supporters leaderboard”. Defaults to <code>10</code>.</dd>
-</dl>
-
-<h3 id="response-2">Response</h3>
+</dl><h3 id="response-2">Response</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"leaderboard"</span><span class="o">:</span> <span class="p">{</span>
@@ -173,7 +168,6 @@ for showing a “top 10 supporters leaderboard”. Defaults to <code>10</code>.<
     <span class="p">]</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
-
           
         </div>
       </section>
