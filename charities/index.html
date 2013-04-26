@@ -51,9 +51,11 @@
         <div class="inner">
           
           <ul id="markdown-toc">
-<li><a href="#list-all-charities">List all Charities</a></li>
+  <li><a href="#list-all-charities">List all Charities</a></li>
   <li><a href="#view-a-single-charity">View a single Charity</a></li>
-</ul><h2 id="list-all-charities">List all Charities</h2>
+</ul>
+
+<h2 id="list-all-charities">List all Charities</h2>
 
 <pre><code>GET /charities
 </code></pre>
@@ -65,11 +67,13 @@
 <h3 id="parameters">Parameters</h3>
 
 <dl>
-<dt>campaign_id</dt>
+  <dt>campaign_id</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>. Retrieve only the charities participating in a
 campaign.</dd>
-</dl><h3 id="response">Response</h3>
+</dl>
+
+<h3 id="response">Response</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"charities"</span><span class="o">:</span> <span class="p">[</span>
@@ -107,6 +111,7 @@ campaign.</dd>
     <span class="s2">"logo_url"</span><span class="o">:</span> <span class="s2">"http://"</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
+
           
         </div>
       </section>

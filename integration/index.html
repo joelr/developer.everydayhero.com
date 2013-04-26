@@ -51,12 +51,14 @@
         <div class="inner">
           
           <ul id="markdown-toc">
-<li><a href="#why-integrate-with-everyday-hero-for-authentication">Why integrate with Everyday Hero for Authentication</a></li>
+  <li><a href="#why-integrate-with-everyday-hero-for-authentication">Why integrate with Everyday Hero for Authentication</a></li>
   <li><a href="#how-to-authenticate-with-everyday-heros-giving-passport">How to Authenticate with Everyday Hero’s Giving Passport</a></li>
   <li><a href="#authorize-endpoint">Authorize endpoint</a></li>
   <li><a href="#token-endpoint">Token endpoint</a></li>
   <li><a href="#third-party-registration-product-integration">Third Party Registration Product Integration</a></li>
-</ul><p>One of the biggest questions we receive from developers is around end to
+</ul>
+
+<p>One of the biggest questions we receive from developers is around end to
 end integration - the API is great for pushing and pulling information
 but what if I want to create a tighter experience with Everyday Hero?</p>
 
@@ -68,7 +70,7 @@ pages.</p>
 <h2 id="why-integrate-with-everyday-hero-for-authentication">Why integrate with Everyday Hero for Authentication</h2>
 
 <ul>
-<li>Ability to gain more detailed information on users because you can
+  <li>Ability to gain more detailed information on users because you can
 leverage any information provided by Everyday Hero</li>
   <li>Build upon data provided by Everyday Hero to customise an experience
 for you users</li>
@@ -76,7 +78,9 @@ for you users</li>
 universal identifier (uid) which is our guarantee to you that this is
 the same user within Everyday Hero and your product. This is especially
 useful for year on year campaigns.</li>
-</ul><h2 id="how-to-authenticate-with-everyday-heros-giving-passport">How to Authenticate with Everyday Hero’s Giving Passport</h2>
+</ul>
+
+<h2 id="how-to-authenticate-with-everyday-heros-giving-passport">How to Authenticate with Everyday Hero’s Giving Passport</h2>
 
 <p>Everyday Hero’s Giving Passport is our way of globally recognising a
 user within any one of our products. We are now opening this
@@ -107,7 +111,7 @@ represented in any Everyday Hero product.</p>
 <h3 id="prepopulation-parameters">Prepopulation Parameters</h3>
 
 <dl>
-<dt>email</dt>
+  <dt>email</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>. The email of the person you want to prepopulate the
 sign-up form for.</dd>
@@ -119,7 +123,9 @@ prepopulate the sign-up form for.</dd>
   <dd>
 <em>Optional</em> <strong>string</strong>. The full name of the person you want to
 prepopulate the sign-up form for.</dd>
-</dl><h2 id="token-endpoint">Token endpoint</h2>
+</dl>
+
+<h2 id="token-endpoint">Token endpoint</h2>
 
 <pre><code>POST   passport.edheroz.com/token
 </code></pre>
@@ -127,11 +133,13 @@ prepopulate the sign-up form for.</dd>
 <p>Passport will provide an auth hash within the response var ‘omniauth.auth’, this provides:</p>
 
 <ul>
-<li>uid: User’s ID</li>
+  <li>uid: User’s ID</li>
   <li>email</li>
   <li>name</li>
   <li>birthday</li>
-</ul><h2 id="third-party-registration-product-integration">Third Party Registration Product Integration</h2>
+</ul>
+
+<h2 id="third-party-registration-product-integration">Third Party Registration Product Integration</h2>
 
 <p>A <a href="http://example-rego-integration.herokuapp.com">sample application</a> has been
 built to show one possible end to end third party registration scenario.
@@ -140,17 +148,21 @@ Source code for the application can be found on
 This application demonstrates:</p>
 
 <ul>
-<li>authentication with the Giving Passport</li>
+  <li>authentication with the Giving Passport</li>
   <li>using the Everyday Hero API to create a supporter page and view
 information on the campaign</li>
   <li>while still giving you ultimate control over your registration system</li>
-</ul><p>For this type of integration you will need the following:</p>
+</ul>
+
+<p>For this type of integration you will need the following:</p>
 
 <ul>
-<li>An OAuth2 application</li>
+  <li>An OAuth2 application</li>
   <li>An API key</li>
   <li>Registering a third party integration application</li>
-</ul><p>All of this can be obtained by emailing
+</ul>
+
+<p>All of this can be obtained by emailing
 <a href="mailto:support@everydayhero.com">support</a>.</p>
 
 <p>Generally there are going to be two entry points into your campaign, the
@@ -163,6 +175,7 @@ deserve separate discussions.</p>
 <p>It is much more likely that the bulk of participants will </p>
 
 <h3 id="everyday-hero-supporter-page">Everyday Hero Supporter Page</h3>
+
           
         </div>
       </section>

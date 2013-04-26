@@ -51,8 +51,11 @@
         <div class="inner">
           
           <ul id="markdown-toc">
-<li><a href="#list-all-users">List all Users</a></li>
-</ul><h2 id="list-all-users">List all Users</h2>
+  <li><a href="#list-all-users">List all Users</a></li>
+  <li><a href="#update-a-new-user-with-attributes">Update a new user with attributes</a></li>
+</ul>
+
+<h2 id="list-all-users">List all Users</h2>
 
 <pre><code>GET /users
 </code></pre>
@@ -89,6 +92,34 @@
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+
+<h2 id="update-a-new-user-with-attributes">Update a new user with attributes</h2>
+
+<pre><code>PUT passport_host/api/v1/users/me
+</code></pre>
+
+<h3 id="visibility-1">Visibility</h3>
+
+<p>Restricted. Requires an authenticated user via access_token param.</p>
+
+<h3 id="parameters-1">Parameters</h3>
+
+<p>access_token : <em>Required</em> <strong>string</strong> User access_token provided by passport auth hash</p>
+
+<p>user[birthday] : <em>optional</em> <strong>string</strong> User birthday, format “YYYY-MM-DD”.</p>
+
+<p>user[address] : <em>optional</em> <strong>string</strong> Full user address, example: “87 Wickham Terrace, Spring Hill, 4055, QLD”</p>
+
+<h3 id="example-request">Example request</h3>
+
+<pre><code>PUT passport_host/api/v1/users/me?access_token=abc&amp;user%5Baddress%5D=someaddress&amp;user%5Bbirthday%5D=1970-01-01
+</code></pre>
+
+<h3 id="repsonse-1">Repsonse</h3>
+
+<pre><code>204 or 40X
+</code></pre>
+
           
         </div>
       </section>

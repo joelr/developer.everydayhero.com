@@ -51,18 +51,20 @@
         <div class="inner">
           
           <ul id="markdown-toc">
-<li><a href="#schema">Schema</a></li>
+  <li><a href="#schema">Schema</a></li>
   <li><a href="#parameters">Parameters</a></li>
   <li><a href="#auth-errors">Auth Errors</a></li>
   <li><a href="#validation-errors">Validation Errors</a></li>
   <li><a href="#http-verbs">HTTP Verbs</a></li>
   <li><a href="#authentication">Authentication</a></li>
   <li><a href="#glossary">Glossary</a></li>
-</ul><h2 id="schema">Schema</h2>
+</ul>
 
-<p>All API access is over HTTPS, and accessed from the everydayhero.com/api/v1 domain. All data is sent and received as JSON.</p>
+<h2 id="schema">Schema</h2>
 
-<pre><code>$ curl -i https://everydayhero.com/api/v1/leaderboards
+<p>All API access is over HTTPS, and accessed from the everydayhero.com/api/v2 domain. All data is sent and received as JSON. A suffix of .json is required for GET requests.</p>
+
+<pre><code>$ curl -i https://everydayhero.com/api/v2/leaderboards
 
 HTTP/1.1 200 OK
 Etag: "953c3675962fbabd0bc23fc2072ac018"
@@ -102,7 +104,7 @@ HTTP query string parameter:</p>
 as JSON with a Content-Type of ‘application/x-www-form-urlencoded’:</p>
 
 <pre><code>$ curl -i -H "Authorization: Token token=your-token" -d '{}' \
-    https://everydayhero.com/api/v1
+    https://everydayhero.com/api/2
 </code></pre>
 
 <h2 id="auth-errors">Auth Errors</h2>
@@ -110,7 +112,7 @@ as JSON with a Content-Type of ‘application/x-www-form-urlencoded’:</p>
 <p>There are two possible auth errors supported by the API:</p>
 
 <ol>
-<li>
+  <li>
     <p>Requesting resources that require authentication will result in a
 <code>401 Unauthorized</code> response.</p>
 
@@ -150,7 +152,9 @@ result in a <code>403 Forbidden</code> response.</p>
    “message”: “You are not authorized to view this resource”
  }</p>
   </li>
-</ol><h2 id="validation-errors">Validation Errors</h2>
+</ol>
+
+<h2 id="validation-errors">Validation Errors</h2>
 
 <p>All validation errors resulting from a POST or PUT request will contain
 a message and an array of errors. For more information on fixing the
@@ -172,7 +176,7 @@ validation errors see the corresponding documentation for the request.</p>
 <p>Where possible, the API uses the appropriate HTTP verbs</p>
 
 <dl>
-<dt>GET</dt>
+  <dt>GET</dt>
   <dd>Used for retrieving resources</dd>
   <dt>POST</dt>
   <dd>Used when creating resources</dd>
@@ -180,13 +184,15 @@ validation errors see the corresponding documentation for the request.</p>
   <dd>Used when updating resources</dd>
   <dt>DELETE</dt>
   <dd>Used when deleting resources</dd>
-</dl><h2 id="authentication">Authentication</h2>
+</dl>
+
+<h2 id="authentication">Authentication</h2>
 
 <p>There is only one authentication scheme in place for the API: Token
 Authentication. Requests that require authentication will return a
 status of 401.</p>
 
-<pre><code>$ curl -i -H "Authorization: Token token=your-token" https://everydayhero.com/api/v1
+<pre><code>$ curl -i -H "Authorization: Token token=your-token" https://everydayhero.com/api/v2
 </code></pre>
 
 <p>Authenticated API access is tied at the campaign level - this means that
@@ -198,13 +204,14 @@ the specified campaign.</p>
 <h2 id="glossary">Glossary</h2>
 
 <dl>
-<dt>Individual Page</dt>
+  <dt>Individual Page</dt>
   <dd>A Supporter Page that is not participating in a team and is not a
 team page.</dd>
   <dt>Team Page</dt>
   <dd>A Supporter Page that contains other Individual Pages. These pages
 are said to be participating in a team.</dd>
 </dl>
+
           
         </div>
       </section>
