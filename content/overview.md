@@ -7,9 +7,9 @@ title: Overview
 
 ## Schema
 
-All API access is over HTTPS, and accessed from the everydayhero.com/api/v1 domain. All data is sent and received as JSON.
+All API access is over HTTPS, and accessed from the everydayhero.com/api/v2 domain. All data is sent and received as JSON. A suffix of .json is required for GET requests.
 
-    $ curl -i https://everydayhero.com/api/v1/leaderboards
+    $ curl -i https://everydayhero.com/api/v2/leaderboards
 
     HTTP/1.1 200 OK
     Etag: "953c3675962fbabd0bc23fc2072ac018"
@@ -46,7 +46,7 @@ For POST requests, parameters not included in the URL should be encoded
 as JSON with a Content-Type of ‘application/x-www-form-urlencoded’:
 
     $ curl -i -H "Authorization: Token token=your-token" -d '{}' \
-        https://everydayhero.com/api/v1
+        https://everydayhero.com/api/2
 
 ## Auth Errors
 
@@ -128,7 +128,7 @@ There is only one authentication scheme in place for the API: Token
 Authentication. Requests that require authentication will return a
 status of 401.
 
-    $ curl -i -H "Authorization: Token token=your-token" https://everydayhero.com/api/v1
+    $ curl -i -H "Authorization: Token token=your-token" https://everydayhero.com/api/v2
 
 Authenticated API access is tied at the campaign level - this means that
 any and all information created or updated can only take place within

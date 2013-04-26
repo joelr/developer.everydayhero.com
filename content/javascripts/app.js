@@ -1,7 +1,7 @@
 $(function() {
   var $container = $('#api-status span');
 
-  $.getJSON('http://localhost:3004/api/v1/status.json', function(data) {
+  $.getJSON('http://everydayhero.com/api/v2/status.json', function(data) {
     $container.text('Available');
   });
 });
