@@ -62,7 +62,7 @@ phone
 : _Optional_ **string**. The phone number of the person you want to
 prepopulate the sign-up form for.
 
-full_name
+name
 : _Optional_ **string**. The full name of the person you want to
 prepopulate the sign-up form for.
 
