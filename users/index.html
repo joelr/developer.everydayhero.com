@@ -52,6 +52,7 @@
           
           <ul id="markdown-toc">
   <li><a href="#list-all-users">List all Users</a></li>
+  <li><a href="#get-current-user">Get current user</a></li>
   <li><a href="#update-a-new-user-with-attributes">Update a new user with attributes</a></li>
 </ul>
 
@@ -93,9 +94,9 @@
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="update-a-new-user-with-attributes">Update a new user with attributes</h2>
+<h2 id="get-current-user">Get current user</h2>
 
-<pre><code>PUT passport_host/api/v1/users/me
+<pre><code>GET passport_host/api/v1/users/me.json?access_token=xxx
 </code></pre>
 
 <h3 id="visibility-1">Visibility</h3>
@@ -103,6 +104,19 @@
 <p>Restricted. Requires an authenticated user via access_token param.</p>
 
 <h3 id="parameters-1">Parameters</h3>
+
+<p>access_token : <em>Required</em> <strong>string</strong> User access_token provided by passport auth hash</p>
+
+<h2 id="update-a-new-user-with-attributes">Update a new user with attributes</h2>
+
+<pre><code>PUT passport_host/api/v1/users/me
+</code></pre>
+
+<h3 id="visibility-2">Visibility</h3>
+
+<p>Restricted. Requires an authenticated user via access_token param.</p>
+
+<h3 id="parameters-2">Parameters</h3>
 
 <p>access_token : <em>Required</em> <strong>string</strong> User access_token provided by passport auth hash</p>
 
