@@ -21,6 +21,18 @@ search : _Optional_ **string**. Retrieve only the users with either a name, nick
 
 <%= json :users %>
 
+## Get current user
+
+    GET passport_host/api/v1/users/me.json?access_token=xxx
+    
+### Visibility
+
+Restricted. Requires an authenticated user via access_token param.
+
+### Parameters
+
+access_token : _Required_ **string** User access_token provided by passport auth hash
+
 ## Update a new user with attributes
 
     PUT passport_host/api/v1/users/me
