@@ -11,7 +11,7 @@ title: Users
 
 ### Visibility
 
-Public.
+Restricted. Requires an authenticated user via access_token param.
 
 ### Parameters
 
