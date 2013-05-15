@@ -15,9 +15,9 @@ Public.
 
 ### Parameters
 
-campaign_id
-: _Optional_ **string**. Retrieve only the charities participating in a
-campaign.
+campaign_ids
+: _Optional_ **string**. A comma-separated list of Campaign IDs, only
+Charities participating in the specified Campaigns will be retrieved.
 
 ### Response
 
