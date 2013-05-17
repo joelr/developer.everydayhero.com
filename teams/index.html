@@ -33,16 +33,27 @@
             </li>
             <li><a href="/campaigns/">Campaigns</a></li>
             <li><a href="/charities/">Charities</a></li>
-            <li><a href="/join-requests/">Join Requests</a></li>
             <li><a href="/leaderboards/">Leaderboards</a></li>
-            <li><a href="/invitations/">Invitations</a></li>
             <li><a href="/pages/">Pages</a></li>
-            <li><a href="/teams/">Teams</a></li>
+            
+            <li><a href="/teams/">Teams</a>
+              <ul>
+                <li><a href="/join-requests/">Join Requests</a></li>
+                <li><a href="/invitations/">Invitations</a>
+                  <ul>
+                    <li><a href="/invitations/#create-individual-page-invitation">Individual Page</a></li>
+                    <li><a href="/invitations/#create-join-a-team-invitation">Join Team Invitation</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            
+           
+            
             <li><a href="/users/">Users</a></li>
-            <li><a href="/integration/">Integration</a></li>
-            <li><a href="/third-party-registration-integration/">Third Party
-              Registration Integration</a></li>
-              <li id="api-status">API Status: <span>Loading</span></li>
+            <li><a href="/oauth-integration/">OAuth Integration</a></li>
+            <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
+              <li id="api-status">API Status: <span class='status down'>Down</span></li>
             </ul>
           </nav>
         </div>
@@ -50,18 +61,17 @@
       <section class="l--70 m--100 right content">
         <div class="inner">
           
-          <ul id="markdown-toc">
-  <li><a href="#create-a-team">Create a Team</a></li>
-</ul>
-
-<h2 id="create-a-team">Create a Team</h2>
+          <h2 id="create-a-team">Create a Team</h2>
 
 <ul>
-  <li>Must be created from an existing individual page</li>
+  <li>
+    <p>Must be created from an existing individual page</p>
+  </li>
   <li>
     <p>Creates a Team, Team Page and sets individual page as team leader</p>
 
-    <p>POST /teams</p>
+    <pre><code>POST /teams
+</code></pre>
   </li>
 </ul>
 
@@ -72,7 +82,7 @@
 <h3 id="payload">Payload</h3>
 
 <dl>
-  <dt>individual_page_id</dt>
+  <dt><code>individual_page_id</code></dt>
   <dd>
 <em>Required</em> <strong>integer</strong>. The <code>id</code> of the individual page to create the
 team from.</dd>

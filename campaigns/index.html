@@ -33,16 +33,27 @@
             </li>
             <li><a href="/campaigns/">Campaigns</a></li>
             <li><a href="/charities/">Charities</a></li>
-            <li><a href="/join-requests/">Join Requests</a></li>
             <li><a href="/leaderboards/">Leaderboards</a></li>
-            <li><a href="/invitations/">Invitations</a></li>
             <li><a href="/pages/">Pages</a></li>
-            <li><a href="/teams/">Teams</a></li>
+            
+            <li><a href="/teams/">Teams</a>
+              <ul>
+                <li><a href="/join-requests/">Join Requests</a></li>
+                <li><a href="/invitations/">Invitations</a>
+                  <ul>
+                    <li><a href="/invitations/#create-individual-page-invitation">Individual Page</a></li>
+                    <li><a href="/invitations/#create-join-a-team-invitation">Join Team Invitation</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            
+           
+            
             <li><a href="/users/">Users</a></li>
-            <li><a href="/integration/">Integration</a></li>
-            <li><a href="/third-party-registration-integration/">Third Party
-              Registration Integration</a></li>
-              <li id="api-status">API Status: <span>Loading</span></li>
+            <li><a href="/oauth-integration/">OAuth Integration</a></li>
+            <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
+              <li id="api-status">API Status: <span class='status down'>Down</span></li>
             </ul>
           </nav>
         </div>
@@ -50,14 +61,7 @@
       <section class="l--70 m--100 right content">
         <div class="inner">
           
-          <p>The Campaigns API allows you to list and view campaigns.</p>
-
-<ul id="markdown-toc">
-  <li><a href="#list-all-campaigns">List all Campaigns</a></li>
-  <li><a href="#view-a-single-campaign">View a single Campaign</a></li>
-</ul>
-
-<h2 id="list-all-campaigns">List all Campaigns</h2>
+          <h2 id="list-all-campaigns">List all Campaigns</h2>
 
 <pre><code>GET /campaigns
 </code></pre>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>EverydayHero API: Third Party Registration Integration</title>
+  <title>EverydayHero API: Registration Integration</title>
   <link rel="stylesheet" href="/stylesheets/pygments.css">
   <link rel="stylesheet" href="/stylesheets/app.css">
   <!--[if lt IE 9]>
@@ -15,7 +15,7 @@
   <section class="main center">
     <aside class="l--30 m--100 left side-bar">
       <div class="inner">
-        <h1>Third Party Registration Integration</h1>
+        <h1>Registration Integration</h1>
 
         <nav>
           <ul>
@@ -33,16 +33,27 @@
             </li>
             <li><a href="/campaigns/">Campaigns</a></li>
             <li><a href="/charities/">Charities</a></li>
-            <li><a href="/join-requests/">Join Requests</a></li>
             <li><a href="/leaderboards/">Leaderboards</a></li>
-            <li><a href="/invitations/">Invitations</a></li>
             <li><a href="/pages/">Pages</a></li>
-            <li><a href="/teams/">Teams</a></li>
+            
+            <li><a href="/teams/">Teams</a>
+              <ul>
+                <li><a href="/join-requests/">Join Requests</a></li>
+                <li><a href="/invitations/">Invitations</a>
+                  <ul>
+                    <li><a href="/invitations/#create-individual-page-invitation">Individual Page</a></li>
+                    <li><a href="/invitations/#create-join-a-team-invitation">Join Team Invitation</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            
+           
+            
             <li><a href="/users/">Users</a></li>
-            <li><a href="/integration/">Integration</a></li>
-            <li><a href="/third-party-registration-integration/">Third Party
-              Registration Integration</a></li>
-              <li id="api-status">API Status: <span>Loading</span></li>
+            <li><a href="/oauth-integration/">OAuth Integration</a></li>
+            <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
+              <li id="api-status">API Status: <span class='status down'>Down</span></li>
             </ul>
           </nav>
         </div>
