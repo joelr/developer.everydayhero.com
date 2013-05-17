@@ -40,7 +40,10 @@ Everyday Hero have written (and maintain) the ruby client for
 interfacing with the Giving Passport and it can be found on
 [GitHub](https://github.com/everydayhero/omniauth-passport). A quick
 google for your language / framework and OAuth2 should yield the best
-library for you.
+library for you. 
+
+Various clients for supporting OAuth 2 in your language of choice are available 
+at [http://oauth.net/2/](http://oauth.net/2/).
 
 By authenticating with the Giving Passport you are guaranteed that the
 user you are dealing with will be the same person person that is
@@ -52,7 +55,21 @@ The endpoints are:
 
     GET    passport.edheroz.com/oauth/authorize(.:format)
 
-### Prepopulation Parameters
+The authorization endpoint is defined in the OAuth 2.0 specification and is used by OAuth to interact with resource owners, authenticate them, and obtains their authorization. An OAuth client makes an authorization request by directing the user to the authorization endpoint. After completing its interaction with the user, the OAuth/Passport service redirects the user back to the client’s redirect URI with the response to the authorization request.
+    
+####Example:
+    https://passport.edheroz.com/oauth/authorize?response_type=code&client_id=XXXX&redirect_uri=http://MYAPP.COM/auth/passport/callback&email=john@smith.com
+
+### Parameters & prepopulation
+
+response_type
+: _Required_ **string** A value of code results in the Authorization Code grant type while a value of token implies the Implicit grant type.
+
+client_id
+: _Required_ **string** The client identifier.
+
+redirect_uri
+: _Optional_ **string** If present, the requested redirect_uri must match the one configured for the client.
 
 email
 : _Optional_ **string**. The email of the person you want to prepopulate the
@@ -68,7 +85,9 @@ prepopulate the sign-up form for.
 
 ## Token endpoint
 
-    POST   passport.edheroz.com/token
+    POST   passport.edheroz.com/oauth/token
+
+The token endpoint is the endpoint on the authorization server where the client application exchanges the authorization code, client ID and client secret, for an access token.
 
 Passport will provide an auth hash within the response var 'omniauth.auth', this provides:
 
