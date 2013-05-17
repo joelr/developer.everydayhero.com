@@ -23,7 +23,7 @@ search : _Optional_ **string**. Retrieve only the users with either a name, nick
 
 ## Get current user
 
-    GET passport_host/api/v1/users/me.json?access_token=xxx
+    GET passport_host/api/v1/me.json?access_token=xxx
     
 ### Visibility
 
