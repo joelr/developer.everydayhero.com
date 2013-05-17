@@ -95,7 +95,10 @@ Everyday Hero have written (and maintain) the ruby client for
 interfacing with the Giving Passport and it can be found on
 <a href="https://github.com/everydayhero/omniauth-passport">GitHub</a>. A quick
 google for your language / framework and OAuth2 should yield the best
-library for you.</p>
+library for you. </p>
+
+<p>Various clients for supporting OAuth 2 in your language of choice are available 
+at <a href="http://oauth.net/2/">http://oauth.net/2/</a>.</p>
 
 <p>By authenticating with the Giving Passport you are guaranteed that the
 user you are dealing with will be the same person person that is
@@ -108,9 +111,24 @@ represented in any Everyday Hero product.</p>
 <pre><code>GET    passport.edheroz.com/oauth/authorize(.:format)
 </code></pre>
 
-<h3 id="prepopulation-parameters">Prepopulation Parameters</h3>
+<p>The authorization endpoint is defined in the OAuth 2.0 specification and is used by OAuth to interact with resource owners, authenticate them, and obtains their authorization. An OAuth client makes an authorization request by directing the user to the authorization endpoint. After completing its interaction with the user, the OAuth/Passport service redirects the user back to the client’s redirect URI with the response to the authorization request.</p>
+
+<h4 id="example">Example:</h4>
+<pre><code>https://passport.edheroz.com/oauth/authorize?response_type=code&amp;client_id=XXXX&amp;redirect_uri=http://MYAPP.COM/auth/passport/callback&amp;email=john@smith.com
+</code></pre>
+
+<h3 id="parameters--prepopulation">Parameters &amp; prepopulation</h3>
 
 <dl>
+  <dt>response_type</dt>
+  <dd>
+<em>Required</em> <strong>string</strong> A value of code results in the Authorization Code grant type while a value of token implies the Implicit grant type.</dd>
+  <dt>client_id</dt>
+  <dd>
+<em>Required</em> <strong>string</strong> The client identifier.</dd>
+  <dt>redirect_uri</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong> If present, the requested redirect_uri must match the one configured for the client.</dd>
   <dt>email</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>. The email of the person you want to prepopulate the
@@ -127,8 +145,10 @@ prepopulate the sign-up form for.</dd>
 
 <h2 id="token-endpoint">Token endpoint</h2>
 
-<pre><code>POST   passport.edheroz.com/token
+<pre><code>POST   passport.edheroz.com/oauth/token
 </code></pre>
+
+<p>The token endpoint is the endpoint on the authorization server where the client application exchanges the authorization code, client ID and client secret, for an access token.</p>
 
 <p>Passport will provide an auth hash within the response var ‘omniauth.auth’, this provides:</p>
 
