@@ -1,10 +1,6 @@
 ---
 title: Overview
 ---
-
-* TOC
-{:toc}
-
 ## Schema
 
 All API access is over HTTPS, and accessed from the everydayhero.com/api/v2 domain. All data is sent and received as JSON. A suffix of .json is required for GET requests.

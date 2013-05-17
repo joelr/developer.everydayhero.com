@@ -1,10 +1,6 @@
 ---
 title: Invitations
 ---
-
-* TOC
-{:toc}
-
 ## Create Individual Page Invitation
 
 Send an invitation to create an individual supporter page to an email

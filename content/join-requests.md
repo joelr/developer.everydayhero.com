@@ -1,10 +1,6 @@
 ---
 title: Join Requests
 ---
-
-* TOC
-{:toc}
-
 ## Create a Join Request
 
 Join an existing team with an existing individual page.

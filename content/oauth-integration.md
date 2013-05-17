@@ -1,5 +1,5 @@
 ---
-title: Integration
+title: OAuth Integration
 ---
 
 * TOC
@@ -14,18 +14,21 @@ Everyday Hero offer several integration points with third party software
 authentication and secondly registration before creating supporter
 pages.
 
-## Why integrate with Everyday Hero for Authentication
+## Why integrate with EDH Passport
 
 * Ability to gain more detailed information on users because you can
 leverage any information provided by Everyday Hero
+
 * Build upon data provided by Everyday Hero to customise an experience
 for you users
+
 * Global user identification. Once authenticated you will be given a
 universal identifier (uid) which is our guarantee to you that this is
 the same user within Everyday Hero and your product. This is especially
 useful for year on year campaigns.
 
-## How to Authenticate with Everyday Hero's Giving Passport
+
+## How to Authenticate with EDH Passport
 
 Everyday Hero's Giving Passport is our way of globally recognising a
 user within any one of our products. We are now opening this
@@ -55,7 +58,7 @@ The endpoints are:
 
     GET    passport.edheroz.com/oauth/authorize(.:format)
 
-The authorization endpoint is defined in the OAuth 2.0 specification and is used by OAuth to interact with resource owners, authenticate them, and obtains their authorization. An OAuth client makes an authorization request by directing the user to the authorization endpoint. After completing its interaction with the user, the OAuth/Passport service redirects the user back to the client’s redirect URI with the response to the authorization request.
+The authorization endpoint is defined in the OAuth 2.0 specification and is used by OAuth to interact with resource owners, authenticate them, and obtains their authorization. An OAuth client makes an authorization request by directing the user to the authorization endpoint. After completing its interaction with the user, the OAuth/Passport service redirects the useZ back to the client’s redirect URI with the response to the authorization request.
     
 ####Example:
     https://passport.edheroz.com/oauth/authorize?response_type=code&client_id=XXXX&redirect_uri=http://MYAPP.COM/auth/passport/callback&email=john@smith.com
@@ -96,7 +99,7 @@ Passport will provide an auth hash within the response var 'omniauth.auth', this
 * name
 * birthday
 
-## Third Party Registration Product Integration
+## Registration Product Integration
 
 A [sample application](http://example-rego-integration.herokuapp.com) has been
 built to show one possible end to end third party registration scenario.
@@ -123,8 +126,4 @@ first will be through your website and the second will be through an
 Everyday Hero supporter page. The two flows are slightly different and
 deserve separate discussions.
 
-### Your Website
 
-It is much more likely that the bulk of participants will 
-
-### Everyday Hero Supporter Page

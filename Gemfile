@@ -6,6 +6,7 @@ gem 'nokogiri', '~> 1.5.6'
 gem 'pygments.rb', '~> 0.3.7'
 gem 'rake', '~> 10.0.3'
 gem 'sass'
+gem 'mime-types'
 
 gem 'yajl-ruby', '1.1.0'
 

@@ -1,10 +1,6 @@
 ---
 title: Charities
 ---
-
-* TOC
-{:toc}
-
 ## List all Charities
 
     GET /charities

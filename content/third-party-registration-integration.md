@@ -1,5 +1,5 @@
 ---
-title: Third Party Registration Integration
+title: Registration Integration
 ---
 
 Through the API we allow campaign builders to extend the functionality
