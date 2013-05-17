@@ -9,10 +9,10 @@ registration solution to hook into the supporter page creation process.
 ## How Does it Work?
 
 The Everyday Hero platform supports two kinds of supporter pages:
-[Individuals pages](/overview#glossary) and [Team
-pages](/overview#glossary). In order to create an Individual Page
+[Individuals pages](/glossary/) and [Team
+pages](/overview#glossary/). In order to create an Individual Page
 through the API you will be required to authenticate the user through
-the Everyday Hero [Giving Passport](/integration/#how-to-authenticate-with-everyday-heros-giving-passport) and store the
+the Everyday Hero [Giving Passport](/oauth-integration/#how-to-authenticate-with-edh-passport) and store the
 returned `uid` - this `uid` is our way of tracking that user within our
 platform and yours.
 

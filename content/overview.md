@@ -130,14 +130,4 @@ Authenticated API access is tied at the campaign level - this means that
 any and all information created or updated can only take place within
 the specified campaign.
 
-For API actions that require a UID, users will be required to authenticate with [Giving Passport](/integration/#how-to-authenticate-with-everyday-heros-giving-passport) which provides a UID in the returned payload.
-
-## Glossary
-
-Individual Page
-: A Supporter Page that is not participating in a team and is not a
-team page.
-
-Team Page
-: A Supporter Page that contains other Individual Pages. These pages
-are said to be participating in a team.
+For API actions that require a UID, users will be required to authenticate with [Giving Passport](/oauth-integration/#how-to-authenticate-with-edh-passport) which provides a UID in the returned payload.
