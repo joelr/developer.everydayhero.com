@@ -19,6 +19,7 @@
 
         <nav>
           <ul>
+            <li><a href="/">Intro</a></li>
             <li>
               <a href="/overview/">Overview</a>
               <ul>
@@ -28,7 +29,7 @@
                 <li><a href="/overview/#validation-errors">Validation Errors</a></li>
                 <li><a href="/overview/#http-verbs">HTTP Verbs</a></li>
                 <li><a href="/overview/#authentication">Authentication</a></li>
-                <li><a href="/overview/#glossary">Glossary</a></li>
+                <li><a href="/glossary/">Glossary</a></li>
               </ul>
             </li>
             <li><a href="/campaigns/">Campaigns</a></li>
@@ -38,13 +39,13 @@
             
             <li><a href="/teams/">Teams</a>
               <ul>
-                <li><a href="/join-requests/">Join Requests</a></li>
                 <li><a href="/invitations/">Invitations</a>
                   <ul>
                     <li><a href="/invitations/#create-individual-page-invitation">Individual Page</a></li>
                     <li><a href="/invitations/#create-join-a-team-invitation">Join Team Invitation</a></li>
                   </ul>
                 </li>
+                <li><a href="/join-requests/">Join Requests</a></li>
               </ul>
             </li>
             
@@ -73,14 +74,12 @@
 <h3 id="parameters">Parameters</h3>
 
 <dl>
-  <dt>charity_ids</dt>
+<dt>charity_ids</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>. A comma-separated list of Charity IDs, only
 Campaigns that the specified Charity is participating in will be
 retrieved.</dd>
-</dl>
-
-<h3 id="response">Response</h3>
+</dl><h3 id="response">Response</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"campaigns"</span><span class="o">:</span> <span class="p">[</span>
@@ -136,7 +135,6 @@ retrieved.</dd>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
-
           
         </div>
       </section>

@@ -19,6 +19,7 @@
 
         <nav>
           <ul>
+            <li><a href="/">Intro</a></li>
             <li>
               <a href="/overview/">Overview</a>
               <ul>
@@ -28,7 +29,7 @@
                 <li><a href="/overview/#validation-errors">Validation Errors</a></li>
                 <li><a href="/overview/#http-verbs">HTTP Verbs</a></li>
                 <li><a href="/overview/#authentication">Authentication</a></li>
-                <li><a href="/overview/#glossary">Glossary</a></li>
+                <li><a href="/glossary/">Glossary</a></li>
               </ul>
             </li>
             <li><a href="/campaigns/">Campaigns</a></li>
@@ -38,13 +39,13 @@
             
             <li><a href="/teams/">Teams</a>
               <ul>
-                <li><a href="/join-requests/">Join Requests</a></li>
                 <li><a href="/invitations/">Invitations</a>
                   <ul>
                     <li><a href="/invitations/#create-individual-page-invitation">Individual Page</a></li>
                     <li><a href="/invitations/#create-join-a-team-invitation">Join Team Invitation</a></li>
                   </ul>
                 </li>
+                <li><a href="/join-requests/">Join Requests</a></li>
               </ul>
             </li>
             
@@ -76,7 +77,7 @@ address.</p>
 <h3 id="payload">Payload</h3>
 
 <dl>
-  <dt>email</dt>
+<dt>email</dt>
   <dd>
 <em>Required</em> <strong>string</strong>. The email address you would like the invitation
 sent to. We do not tie this email address to the user’s Giving Passport
@@ -98,9 +99,7 @@ to select a charity. Defaults to none.</dd>
   <dd>
 <em>Optional</em> <strong>decimal</strong>. The amount of money this page is aiming to
 raise. Defaults to a predetermined value.</dd>
-</dl>
-
-<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"support@everydayhero.com"</span><span class="p">,</span>
   <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1300798768"</span><span class="p">,</span>
   <span class="s2">"full_name"</span><span class="o">:</span> <span class="s2">"Everyday Hero Support"</span><span class="p">,</span>
@@ -134,7 +133,7 @@ an email address.</p>
 <h3 id="payload-1">Payload</h3>
 
 <dl>
-  <dt>email</dt>
+<dt>email</dt>
   <dd>
 <em>Required</em> <strong>string</strong>. The email address you would like the invitation
 sent to. We do not tie this email address to the user’s Giving Passport
@@ -152,9 +151,7 @@ to select a charity. Defaults to none.</dd>
   <dd>
 <em>Optional</em> <strong>decimal</strong>. The amount of money this page is aiming to
 raise. Defaults to a predetermined value.</dd>
-</dl>
-
-<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"support@everydayhero.com"</span><span class="p">,</span>
   <span class="s2">"full_name"</span><span class="o">:</span> <span class="s2">"Everyday Hero Support"</span><span class="p">,</span>
   <span class="s2">"charity_id"</span><span class="o">:</span> <span class="s2">"au-1"</span><span class="p">,</span>
@@ -172,7 +169,6 @@ raise. Defaults to a predetermined value.</dd>
     <span class="s2">"team_page_id"</span><span class="o">:</span> <span class="mi">1</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
-
           
         </div>
       </section>

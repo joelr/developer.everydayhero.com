@@ -19,6 +19,7 @@
 
         <nav>
           <ul>
+            <li><a href="/">Intro</a></li>
             <li>
               <a href="/overview/">Overview</a>
               <ul>
@@ -28,7 +29,7 @@
                 <li><a href="/overview/#validation-errors">Validation Errors</a></li>
                 <li><a href="/overview/#http-verbs">HTTP Verbs</a></li>
                 <li><a href="/overview/#authentication">Authentication</a></li>
-                <li><a href="/overview/#glossary">Glossary</a></li>
+                <li><a href="/glossary/">Glossary</a></li>
               </ul>
             </li>
             <li><a href="/campaigns/">Campaigns</a></li>
@@ -38,13 +39,13 @@
             
             <li><a href="/teams/">Teams</a>
               <ul>
-                <li><a href="/join-requests/">Join Requests</a></li>
                 <li><a href="/invitations/">Invitations</a>
                   <ul>
                     <li><a href="/invitations/#create-individual-page-invitation">Individual Page</a></li>
                     <li><a href="/invitations/#create-join-a-team-invitation">Join Team Invitation</a></li>
                   </ul>
                 </li>
+                <li><a href="/join-requests/">Join Requests</a></li>
               </ul>
             </li>
             
@@ -64,7 +65,7 @@
           <h2 id="create-a-team">Create a Team</h2>
 
 <ul>
-  <li>
+<li>
     <p>Must be created from an existing individual page</p>
   </li>
   <li>
@@ -73,16 +74,14 @@
     <pre><code>POST /teams
 </code></pre>
   </li>
-</ul>
-
-<h3 id="visibility">Visibility</h3>
+</ul><h3 id="visibility">Visibility</h3>
 
 <p>Restricted. Requires an authenticated user.</p>
 
 <h3 id="payload">Payload</h3>
 
 <dl>
-  <dt><code>individual_page_id</code></dt>
+<dt><code>individual_page_id</code></dt>
   <dd>
 <em>Required</em> <strong>integer</strong>. The <code>id</code> of the individual page to create the
 team from.</dd>
@@ -90,9 +89,7 @@ team from.</dd>
   <dd>
 <em>Optional</em> <strong>string</strong>. The name of the team. This needs to be unique
 within the campaign.</dd>
-</dl>
-
-<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"individual_page_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
   <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"My New Team"</span>
 <span class="p">}</span></code></pre>
@@ -100,7 +97,6 @@ within the campaign.</dd>
 <h3 id="response">Response</h3>
 
 <p>TODO: add response</p>
-
           
         </div>
       </section>

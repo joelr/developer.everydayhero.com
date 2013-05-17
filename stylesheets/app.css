@@ -181,7 +181,8 @@ pre {
   color: #393939;
   margin: 10px 0 10px 0; }
   pre code {
-    white-space: pre; }
+    white-space: pre;
+    font-family: Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace; }
 
 dl {
   width: 100%;

@@ -19,6 +19,7 @@
 
         <nav>
           <ul>
+            <li><a href="/">Intro</a></li>
             <li>
               <a href="/overview/">Overview</a>
               <ul>
@@ -28,7 +29,7 @@
                 <li><a href="/overview/#validation-errors">Validation Errors</a></li>
                 <li><a href="/overview/#http-verbs">HTTP Verbs</a></li>
                 <li><a href="/overview/#authentication">Authentication</a></li>
-                <li><a href="/overview/#glossary">Glossary</a></li>
+                <li><a href="/glossary/">Glossary</a></li>
               </ul>
             </li>
             <li><a href="/campaigns/">Campaigns</a></li>
@@ -38,13 +39,13 @@
             
             <li><a href="/teams/">Teams</a>
               <ul>
-                <li><a href="/join-requests/">Join Requests</a></li>
                 <li><a href="/invitations/">Invitations</a>
                   <ul>
                     <li><a href="/invitations/#create-individual-page-invitation">Individual Page</a></li>
                     <li><a href="/invitations/#create-join-a-team-invitation">Join Team Invitation</a></li>
                   </ul>
                 </li>
+                <li><a href="/join-requests/">Join Requests</a></li>
               </ul>
             </li>
             
@@ -68,10 +69,10 @@ registration solution to hook into the supporter page creation process.</p>
 <h2 id="how-does-it-work">How Does it Work?</h2>
 
 <p>The Everyday Hero platform supports two kinds of supporter pages:
-<a href="/overview#glossary">Individuals pages</a> and <a href="/overview#glossary">Team
+<a href="/glossary/">Individuals pages</a> and <a href="/overview#glossary/">Team
 pages</a>. In order to create an Individual Page
 through the API you will be required to authenticate the user through
-the Everyday Hero <a href="/integration/#how-to-authenticate-with-everyday-heros-giving-passport">Giving Passport</a> and store the
+the Everyday Hero <a href="/oauth-integration/#how-to-authenticate-with-edh-passport">Giving Passport</a> and store the
 returned <code>uid</code> - this <code>uid</code> is our way of tracking that user within our
 platform and yours.</p>
 
@@ -105,7 +106,6 @@ Invitation</a></p>
 
 <p><a href="/invitations#create-join-a-team-invitation">Create Join a Team
 Invitation</a></p>
-
           
         </div>
       </section>
