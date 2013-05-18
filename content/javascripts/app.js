@@ -6,4 +6,6 @@ $(function() {
     $container.removeClass('down');
     $container.text('Available');
   });
+  
+  hljs.initHighlightingOnLoad();
 });

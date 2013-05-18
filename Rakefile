@@ -43,7 +43,6 @@ task :publish => [:clean] do
     puts "Created commit #{csha}"
     puts `git show #{csha} --stat`
     puts "Updating gh-pages from #{old_sha}"
-    puts "#{csha} sha"
     `git update-ref refs/heads/gh-pages #{csha}`
     `git push origin gh-pages`
   end

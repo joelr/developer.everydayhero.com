@@ -282,7 +282,6 @@ pre {
   border: 1px solid lighten($dark, 70%);
   line-height: 1.4em;
   font: 12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
-  padding: 10px;
   overflow: auto;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -295,7 +294,6 @@ pre {
   margin: 10px 0 10px 0;
   code {
     white-space: pre;
-    font-family: Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
   }
 }
 
