@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>EverydayHero API: Teams</title>
+  <title>EverydayHero API: Campaign totals</title>
   <link rel="stylesheet" href="/stylesheets/pygments.css">
   <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
   <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>  
@@ -17,7 +17,7 @@
   <section class="main center">
     <aside class="l--30 m--100 left side-bar">
       <div class="inner">
-        <h1>Teams</h1>
+        <h1>Campaign totals</h1>
 
         <nav>
           <ul>
@@ -77,41 +77,47 @@
       <section class="l--70 m--100 right content">
         <div class="inner">
           
-          <h2 id="create-a-team">Create a Team</h2>
+          <h2 id="campaign-leaderboard-and-page-totals">Campaign leaderboard and page totals</h2>
+
+<p>Using the <a href="/leaderboards/">campaigns leaderboard endpoint</a> and the <a href="/pages/">pages endpoint</a> you can include leaderboard and page totals on a page.</p>
+
+<p>Below shows a demo JQuery snippet that will load the campaign leaders, and page totals on to a page.</p>
+
+<pre>
+  <code class="javascript">&lt;script src="http://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt;
+&lt;script type='text/javascript'&gt;
+
+$(function() {
+  $.getJSON('https://everydayhero.com/api/v2/campaigns/au-1234/leaderboard.jsonp?callback=?', {},  function (data) {          
+    var pages = data.leaderboard.page_ids;
+    $.getJSON('https://everydayhero.com/api/v2/pages.jsonp?ids=' + pages.join(',') + '&amp;callback=?', {},  function (data) {          
+
+      $.each(data.pages, function(index, value) {  
+        var raised = value.amount;
+        $("#pages").append('&lt;li&gt;' + value.name + ' raised ' + raised.currency.symbol + (raised.cents / 100) + '&lt;/li&gt;');
+      });   
+    });
+  });
+});  
+
+
+&lt;/script&gt;
+
+&lt;ul id='pages'&gt;&lt;/ul&gt;</code>
+</pre>
+
+<h2 id="this-will-display">This will display:</h2>
 
 <ul>
-<li>
-    <p>Must be created from an existing individual page</p>
-  </li>
-  <li>
-    <p>Creates a Team, Team Page and sets individual page as team leader</p>
-
-    <pre><code>POST /teams
-</code></pre>
-  </li>
-</ul><h3 id="visibility">Visibility</h3>
-
-<p>Restricted. Requires an authenticated user.</p>
-
-<h3 id="payload">Payload</h3>
-
-<dl>
-<dt><code>individual_page_id</code></dt>
-  <dd>
-<em>Required</em> <strong>integer</strong>. The <code>id</code> of the individual page to create the
-team from.</dd>
-  <dt>name</dt>
-  <dd>
-<em>Optional</em> <strong>string</strong>. The name of the team. This needs to be unique
-within the campaign.</dd>
-</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"individual_page_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"My New Team"</span>
-<span class="p">}</span></code></pre>
-
-<h3 id="response">Response</h3>
-
-<p>TODO: add response</p>
+<li>Claire raised $100</li>
+  <li>Sarah raised $70</li>
+  <li>Bill raised $70</li>
+  <li>John raised $50</li>
+  <li>Bill raised $10</li>
+  <li>Chris raised $10</li>
+  <li>Jane raised $10</li>
+  <li>Sam raised $5</li>
+</ul>
           
         </div>
       </section>
