@@ -175,6 +175,15 @@ module EverydayHero
     Users = {
       users: [UserData]
     }
+
+    TeamData = {
+      uid: 1,
+      name: "Team Example"
+    }
+
+    Team = {
+      team: TeamData
+    }
   end
 end
 
