@@ -1,11 +1,8 @@
-require 'nanoc3/tasks'
-
-desc "Compile the site"
+desc "Compile website"
 task :compile do
-  `nanoc compile`
+  `bin/nanoc compile`
 end
 
-# prompt user for a commit message; default: HEAD commit 1-liner
 def commit_message
   last_commit = `git log -1 --pretty=format:"%s"`.chomp.strip
   last_commit = 'Publishing developer content to GitHub pages.' if last_commit == ''
@@ -18,13 +15,9 @@ def commit_message
   mesg.gsub(/'/, '') # to allow this to be handed off via -m '#{message}'
 end
 
-desc "Publish to http://developer.everydayhero.com"
-task :publish => [:clean] do
+desc "Deploy to http://developer.everydayhero.com"
+task :deploy => [:compile] do
   mesg = commit_message
-
-  FileUtils.rm_r('output') if File.exist?('output')
-
-  sh "nanoc compile"
 
   ENV['GIT_DIR'] = File.expand_path(`git rev-parse --git-dir`.chomp)
   old_sha = `git rev-parse refs/remotes/origin/gh-pages`.chomp
