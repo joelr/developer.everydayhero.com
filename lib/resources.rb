@@ -109,7 +109,6 @@ module EverydayHero
 
     CampaignLeaderboardData = {
       campaign_id: 'au-1',
-      amount: Money.new('1000', 'au').attributes,
       page_ids: [1, 2]
     }
 
@@ -175,6 +174,15 @@ module EverydayHero
 
     Users = {
       users: [UserData]
+    }
+
+    TeamData = {
+      uid: 1,
+      name: "Team Example"
+    }
+
+    Team = {
+      team: TeamData
     }
   end
 end
