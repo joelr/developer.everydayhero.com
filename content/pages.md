@@ -62,6 +62,10 @@ birthday
 restrictions on fundraising and further action might need to be taken
 depending on the age provided.
 
+name
+: _Optional_ **string**. The desired name for your new supporter page.
+Defaults to the user's preferred name.
+
 slug
 : _Optional_ **string**. The desired url for your new supporter page.
 https://give.everydayhero.com/au/tim-cooper.
