@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>EverydayHero API: Registration Integration</title>
+  <title>EverydayHero API: Members</title>
   <link rel="stylesheet" href="/stylesheets/pygments.css">
   <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
   <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>  
@@ -17,7 +17,7 @@
   <section class="main center">
     <aside class="l--30 m--100 left side-bar">
       <div class="inner">
-        <h1>Registration Integration</h1>
+        <h1>Members</h1>
 
         <nav>
           <ul>
@@ -78,50 +78,36 @@
       <section class="l--70 m--100 right content">
         <div class="inner">
           
-          <p>Through the API we allow campaign builders to extend the functionality
-of the Everyday Hero platform. We do this by allowing your chosen
-registration solution to hook into the supporter page creation process.</p>
+          <h2 id="add-a-team-member">Add a Team Member</h2>
 
-<h2 id="how-does-it-work">How Does it Work?</h2>
+<p>Add an existing page to an existing team.</p>
 
-<p>The Everyday Hero platform supports two kinds of supporter pages:
-<a href="/glossary/">Individuals pages</a> and <a href="/overview#glossary/">Team
-pages</a>. In order to create an Individual Page
-through the API you will be required to authenticate the user through
-the Everyday Hero <a href="/oauth-integration/#how-to-authenticate-with-edh-passport">Giving Passport</a> and store the
-returned <code>uid</code> - this <code>uid</code> is our way of tracking that user within our
-platform and yours.</p>
+<pre><code>POST /teams/:id/members
+</code></pre>
 
-<p>Once you have a <code>uid</code> you will be able to <a href="/pages#create-an-individual-page">Create an Individual
-Page</a> for your campaign.</p>
+<h3 id="visibility">Visibility</h3>
 
-<h2 id="registering-for-third-party-integration">Registering for Third Party Integration</h2>
+<p>Restricted. Requires an authenticated user.</p>
 
-<p>Please email
-<a href="mailto:support@everydayhero.com">support@everydayhero.com</a>, you will be
-asked to provide two registration urls, one for individuals and one for
-teams. These are used by the Everyday Hero platform to redirect to the
-third party before creating a supporter page.</p>
+<h3 id="payload">Payload</h3>
 
-<h2 id="primary-registrant">Primary Registrant</h2>
+<dl>
+<dt>individual_page_id</dt>
+  <dd>
+<em>Required</em> <strong>integer</strong>. The <code>id</code> of the page you want to join a team
+with.</dd>
+</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"individual_page_id"</span><span class="o">:</span> <span class="mi">1</span>
+<span class="p">}</span></code></pre>
 
-<p><a href="/pages#create-an-individual-page">Create an Individual Page</a></p>
+<h3 id="response">Response</h3>
 
-<h2 id="secondary-registrants">Secondary Registrants</h2>
-
-<p><a href="/invitations#create-individual-page-invitation">Create Individual Page
-Invitation</a></p>
-
-<h2 id="team-page-creation">Team Page Creation</h2>
-
-<p><a href="/pages#create-an-individual-page">Create an Individual Page</a></p>
-
-<p><a href="/teams#create-a-team">Create a Team</a></p>
-
-<h2 id="joining-an-exising-team">Joining an Exising Team</h2>
-
-<p><a href="/invitations#create-join-a-team-invitation">Create Join a Team
-Invitation</a></p>
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"team"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Team Example"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
           
         </div>
       </section>
