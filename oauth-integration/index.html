@@ -5,20 +5,19 @@
   <title>EverydayHero API: OAuth Integration</title>
   <link rel="stylesheet" href="/stylesheets/pygments.css">
   <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
-  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>  
+  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
   <link rel="stylesheet" href="/stylesheets/app.css">
   <!--[if lt IE 9]>
     <script src="/javascripts/html5shiv-printshiv.js"></script>
   <![endif]-->
-
 </head>
 <body>
-  <header class="header top a--100"><a href="/"><h1>Everyday Hero: Developer</h1></a></header>
+  <header class="header top a--100">
+    <a href="/"><h1>Everyday Hero: Developer</h1></a>
+  </header>
   <section class="main center">
     <aside class="l--30 m--100 left side-bar">
       <div class="inner">
-        <h1>OAuth Integration</h1>
-
         <nav>
           <ul>
             <li><a href="/">Intro</a></li>
@@ -38,8 +37,8 @@
             <li><a href="/charities/">Charities</a></li>
             <li><a href="/leaderboards/">Leaderboards</a></li>
             <li><a href="/pages/">Pages</a></li>
-
-            <li><a href="/teams/">Teams</a>
+            <li>
+              <a href="/teams/">Teams</a>
               <ul>
                 <li><a href="/invitations/">Invitations</a>
                   <ul>
@@ -51,13 +50,12 @@
                 <li><a href="/members/">Members</a></li>
               </ul>
             </li>
-
-
-
             <li><a href="/users/">Users</a></li>
+            <li><a href="/branding/">Sign-in Branding</a></li>
             <li><a href="/oauth-integration/">OAuth Integration</a></li>
             <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
-            <li>Client side integration
+            <li>
+              Client side integration
               <ul>
                 <li>Totals
                   <ul>
@@ -66,18 +64,18 @@
                   </ul>
                 </li>
                 <li><a href="/client-side/leaderboards/">Leaderboards</a></li>
-                
+
               </ul>
             </li>
-            
-              <li id="api-status">API Status: <span class='status down'>Down</span></li>
-            </ul>
-          </nav>
-        </div>
-      </aside>
-      <section class="l--70 m--100 right content">
-        <div class="inner">
-          
+            <li id="api-status">API Status: <span class='status down'>Down</span></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    <section class="l--70 m--100 right content">
+      <div class="inner">
+        
+          <h1>OAuth Integration</h1>
           <ul id="markdown-toc">
 <li><a href="#why-integrate-with-edh-passport">Why integrate with EDH Passport</a></li>
   <li><a href="#how-to-authenticate-with-edh-passport">How to Authenticate with EDH Passport</a></li>
@@ -125,14 +123,14 @@ Everyday Hero have written (and maintain) the ruby client for
 interfacing with the Giving Passport and it can be found on
 <a href="https://github.com/everydayhero/omniauth-passport">GitHub</a>. A quick
 google for your language / framework and OAuth2 should yield the best
-library for you. </p>
+library for you.</p>
 
-<p>Various clients for supporting OAuth 2 in your language of choice are available 
-at <a href="http://oauth.net/2/">http://oauth.net/2/</a>.</p>
+<p>Various clients for supporting OAuth 2 in your language of choice are
+available at <a href="http://oauth.net/2/">http://oauth.net/2/</a>.</p>
 
 <p>By authenticating with the Giving Passport you are guaranteed that the
-user you are dealing with will be the same person person that is
-represented in any Everyday Hero product.</p>
+user you are dealing with will be the same person that is represented
+in any Everyday Hero product.</p>
 
 <p>The endpoints are:</p>
 
@@ -141,7 +139,13 @@ represented in any Everyday Hero product.</p>
 <pre><code>GET    passport.edheroz.com/oauth/authorize(.:format)
 </code></pre>
 
-<p>The authorization endpoint is defined in the OAuth 2.0 specification and is used by OAuth to interact with resource owners, authenticate them, and obtains their authorization. An OAuth client makes an authorization request by directing the user to the authorization endpoint. After completing its interaction with the user, the OAuth/Passport service redirects the useZ back to the client’s redirect URI with the response to the authorization request.</p>
+<p>The authorization endpoint is defined in the OAuth 2.0 specification
+and is used by OAuth to interact with resource owners, authenticate
+them, and obtains their authorization. An OAuth client makes an
+authorization request by directing the user to the authorization endpoint.
+After completing its interaction with the user, the OAuth/Passport
+service redirects the useZ back to the client’s redirect URI with the
+response to the authorization request.</p>
 
 <h4 id="example">Example:</h4>
 <pre><code>https://passport.edheroz.com/oauth/authorize?response_type=code&amp;client_id=XXXX&amp;redirect_uri=http://MYAPP.COM/auth/passport/callback&amp;email=john@smith.com
@@ -152,17 +156,19 @@ represented in any Everyday Hero product.</p>
 <dl>
 <dt>response_type</dt>
   <dd>
-<em>Required</em> <strong>string</strong> A value of code results in the Authorization Code grant type while a value of token implies the Implicit grant type.</dd>
+<em>Required</em> <strong>string</strong> A value of code results in the Authorization Code
+grant type while a value of token implies the Implicit grant type.</dd>
   <dt>client_id</dt>
   <dd>
 <em>Required</em> <strong>string</strong> The client identifier.</dd>
   <dt>redirect_uri</dt>
   <dd>
-<em>Optional</em> <strong>string</strong> If present, the requested redirect_uri must match the one configured for the client.</dd>
+<em>Optional</em> <strong>string</strong> If present, the requested redirect_uri must match
+the one configured for the client.</dd>
   <dt>email</dt>
   <dd>
-<em>Optional</em> <strong>string</strong>. The email of the person you want to prepopulate the
-sign-up form for.</dd>
+<em>Optional</em> <strong>string</strong>. The email of the person you want to prepopulate
+the sign-up form for.</dd>
   <dt>phone</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>. The phone number of the person you want to
@@ -171,14 +177,21 @@ prepopulate the sign-up form for.</dd>
   <dd>
 <em>Optional</em> <strong>string</strong>. The full name of the person you want to
 prepopulate the sign-up form for.</dd>
+  <dt>reference</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. The reference of the <a href="/branding/">Sign-in branding</a>
+given to display on the sign-in form if the person is asked to sign-in.</dd>
 </dl><h2 id="token-endpoint">Token endpoint</h2>
 
 <pre><code>POST   passport.edheroz.com/oauth/token
 </code></pre>
 
-<p>The token endpoint is the endpoint on the authorization server where the client application exchanges the authorization code, client ID and client secret, for an access token.</p>
+<p>The token endpoint is the endpoint on the authorization server where the
+client application exchanges the authorization code, client ID and client
+secret, for an access token.</p>
 
-<p>Passport will provide an auth hash within the response var ‘omniauth.auth’, this provides:</p>
+<p>Passport will provide an auth hash within the response var ‘omniauth.auth’,
+this provides:</p>
 
 <ul>
 <li>uid: User’s ID</li>
@@ -211,10 +224,9 @@ information on the campaign</li>
 first will be through your website and the second will be through an
 Everyday Hero supporter page. The two flows are slightly different and
 deserve separate discussions.</p>
-          
-        </div>
-      </section>
-    </div>
+        
+      </div>
+    </section>
   </section>
   <script src="/javascripts/jquery.js"></script>
   <script src="/javascripts/app.js"></script>

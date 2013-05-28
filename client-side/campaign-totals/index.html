@@ -5,20 +5,19 @@
   <title>EverydayHero API: Campaign totals</title>
   <link rel="stylesheet" href="/stylesheets/pygments.css">
   <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
-  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>  
+  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
   <link rel="stylesheet" href="/stylesheets/app.css">
   <!--[if lt IE 9]>
     <script src="/javascripts/html5shiv-printshiv.js"></script>
   <![endif]-->
-
 </head>
 <body>
-  <header class="header top a--100"><a href="/"><h1>Everyday Hero: Developer</h1></a></header>
+  <header class="header top a--100">
+    <a href="/"><h1>Everyday Hero: Developer</h1></a>
+  </header>
   <section class="main center">
     <aside class="l--30 m--100 left side-bar">
       <div class="inner">
-        <h1>Campaign totals</h1>
-
         <nav>
           <ul>
             <li><a href="/">Intro</a></li>
@@ -38,8 +37,8 @@
             <li><a href="/charities/">Charities</a></li>
             <li><a href="/leaderboards/">Leaderboards</a></li>
             <li><a href="/pages/">Pages</a></li>
-
-            <li><a href="/teams/">Teams</a>
+            <li>
+              <a href="/teams/">Teams</a>
               <ul>
                 <li><a href="/invitations/">Invitations</a>
                   <ul>
@@ -51,13 +50,12 @@
                 <li><a href="/members/">Members</a></li>
               </ul>
             </li>
-
-
-
             <li><a href="/users/">Users</a></li>
+            <li><a href="/branding/">Sign-in Branding</a></li>
             <li><a href="/oauth-integration/">OAuth Integration</a></li>
             <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
-            <li>Client side integration
+            <li>
+              Client side integration
               <ul>
                 <li>Totals
                   <ul>
@@ -66,18 +64,18 @@
                   </ul>
                 </li>
                 <li><a href="/client-side/leaderboards/">Leaderboards</a></li>
-                
+
               </ul>
             </li>
-            
-              <li id="api-status">API Status: <span class='status down'>Down</span></li>
-            </ul>
-          </nav>
-        </div>
-      </aside>
-      <section class="l--70 m--100 right content">
-        <div class="inner">
-          
+            <li id="api-status">API Status: <span class='status down'>Down</span></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    <section class="l--70 m--100 right content">
+      <div class="inner">
+        
+          <h1>Campaign totals</h1>
           <h2 id="individual-campaign-total">Individual campaign total</h2>
 
 <p>Using the <a href="/campaigns/">campaigns endpoint</a> with a .jsonp and callback option you can include campaign totals on websites.</p>
@@ -103,10 +101,9 @@
 <p>Will display</p>
 
 <p><em>$1000 raised</em></p>
-          
-        </div>
-      </section>
-    </div>
+        
+      </div>
+    </section>
   </section>
   <script src="/javascripts/jquery.js"></script>
   <script src="/javascripts/app.js"></script>
