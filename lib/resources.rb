@@ -183,7 +183,7 @@ module EverydayHero
       invitation_id: nil
     }
 
-    TeamPage = {
+    Teampage = {
       teampage: [TeamPageData]
     }
 
