@@ -39,34 +39,7 @@ access_token : _Required_ **string** User access_token provided by passport auth
 
 ### Response
 
-<%= json \
-  {
-    "user": {
-      "uid": 1,
-      "id": 1,
-      "name": "joel r",
-      "nickname": "jo",
-      "email": "abcdef@everydayhero.com.au",
-      "phone": "12345",
-      "profile_image": null,
-      "location": "Alderley, Queensland, Australia",
-      "birthday": "1983-05-21",
-      "address": "1234 Campbell Terrace, Alderley, Queensland, Australia",
-      "address_components": {
-        "street_address": "1234 Campbell Terrace",
-        "extended_address": null,
-        "locality": "Alderley",
-        "region": "Queensland",
-        "postal_code": "4051",
-        "country_name": "Australia"
-      },
-      "address_coordinates": {
-        "latitude": -27.421,
-        "longitude": 153.000
-      }
-    }
-  }
-%>
+<%= json :page%>
 
 ## Update a new user with attributes
 

@@ -1,6 +1,6 @@
 desc "Compile website"
 task :compile do
-  `bin/nanoc compile`
+  `nanoc compile`
 end
 
 def commit_message
