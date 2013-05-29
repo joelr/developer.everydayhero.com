@@ -104,34 +104,35 @@ gift_aid_eligible
 
 <%= json \
   {
+    "meta": {
+      "url": "https://TestCampaignForAPI.edherox.com/au/tim"
+    },
     "page": {
       "amount": {
-        "cents": 0,
-        "currency": {
+      "cents": 0,
+      "currency": {
           "iso_code": "AUD",
           "name": "Australian Dollar",
           "symbol": "$"
-        }
+      }
       },
       "cached_offline_amount_cents": 0,
       "campaign_uid": "au-1419",
       "charity_uid": "au-6",
       "expires_at": "2013-08-29T14:00:00Z",
       "gift_aid_eligible": false,
-      "id": 1513,
+      "id": 1511,
       "invitation_id": null,
-      "name": "Team  Tim",
-      "owner_type": "Team",
-      "owner_uid": 211,
-      "slug": "team-tim",
+      "name": "Tim",
+      "owner_type": "User",
+      "owner_uid": 7,
+      "slug": "tim",
       "state": "active",
       "target_cents": 70000,
-      "team_leader_page_uid": 1511,
-      "team_member_uids": [
-        1511
-      ],
+      "team_leader_page_uid": null,
+      "team_member_uids": [],
       "team_uid": null,
-      "uid": 1513
+      "uid": 1511
     }
   }
 %>
