@@ -37,7 +37,7 @@ defaults back to the standard Giving Passport experience.
 
 Adds, or updates, the branding for the given reference.
 
-  PUT passport_host/api/v1/branding/:reference.json
+    PUT passport_host/api/v1/branding/:reference.json
 
 ### Visibility
 
@@ -74,7 +74,7 @@ At least one of these attributes must be supplied to be acceptable.
 
 Deletes the branding.
 
-  DELETE passport_host/api/v1/branding/:reference.json
+    DELETE passport_host/api/v1/branding/:reference.json
 
 ### Response
 
