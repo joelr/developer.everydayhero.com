@@ -99,21 +99,27 @@
   <span class="s2">"users"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"John O'Donnell"</span><span class="p">,</span>
-      <span class="s2">"nickname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
-      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
-      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1300798768"</span><span class="p">,</span>
-      <span class="s2">"birthday"</span><span class="o">:</span> <span class="s2">"1980-01-13"</span><span class="p">,</span>
-      <span class="s2">"street_address"</span><span class="o">:</span> <span class="s2">"87 Wickham Terrace"</span><span class="p">,</span>
-      <span class="s2">"extended_address"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"locality"</span><span class="o">:</span> <span class="s2">"Spring Hill"</span><span class="p">,</span>
-      <span class="s2">"region"</span><span class="o">:</span> <span class="s2">"QLD"</span><span class="p">,</span>
-      <span class="s2">"postal_code"</span><span class="o">:</span> <span class="s2">"4006"</span><span class="p">,</span>
-      <span class="s2">"country_name"</span><span class="o">:</span> <span class="s2">"Australia"</span><span class="p">,</span>
-      <span class="s2">"page_ids"</span><span class="o">:</span> <span class="p">[</span>
-        <span class="mi">1</span><span class="p">,</span>
-        <span class="mi">2</span>
-      <span class="p">]</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"joel r"</span><span class="p">,</span>
+      <span class="s2">"nickname"</span><span class="o">:</span> <span class="s2">"jo"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"abcdef@everydayhero.com.au"</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"12345"</span><span class="p">,</span>
+      <span class="s2">"profile_image"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"location"</span><span class="o">:</span> <span class="s2">"Alderley, Queensland, Australia"</span><span class="p">,</span>
+      <span class="s2">"birthday"</span><span class="o">:</span> <span class="s2">"1983-05-21"</span><span class="p">,</span>
+      <span class="s2">"address"</span><span class="o">:</span> <span class="s2">"1234 Campbell Terrace, Alderley, Queensland, Australia"</span><span class="p">,</span>
+      <span class="s2">"address_components"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"street_address"</span><span class="o">:</span> <span class="s2">"1234 Campbell Terrace"</span><span class="p">,</span>
+        <span class="s2">"extended_address"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">"locality"</span><span class="o">:</span> <span class="s2">"Alderley"</span><span class="p">,</span>
+        <span class="s2">"region"</span><span class="o">:</span> <span class="s2">"Queensland"</span><span class="p">,</span>
+        <span class="s2">"postal_code"</span><span class="o">:</span> <span class="s2">"4051"</span><span class="p">,</span>
+        <span class="s2">"country_name"</span><span class="o">:</span> <span class="s2">"Australia"</span>
+      <span class="p">},</span>
+      <span class="s2">"address_coordinates"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"latitude"</span><span class="o">:</span> <span class="o">-</span><span class="mf">27.421</span><span class="p">,</span>
+        <span class="s2">"longitude"</span><span class="o">:</span> <span class="mf">153.0</span>
+      <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -139,9 +145,32 @@
 <h3 id="response">Response</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"page"</span><span class="o">:</span> <span class="p">{</span>
-
-  <span class="p">}</span>
+  <span class="s2">"users"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"joel r"</span><span class="p">,</span>
+      <span class="s2">"nickname"</span><span class="o">:</span> <span class="s2">"jo"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"abcdef@everydayhero.com.au"</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"12345"</span><span class="p">,</span>
+      <span class="s2">"profile_image"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"location"</span><span class="o">:</span> <span class="s2">"Alderley, Queensland, Australia"</span><span class="p">,</span>
+      <span class="s2">"birthday"</span><span class="o">:</span> <span class="s2">"1983-05-21"</span><span class="p">,</span>
+      <span class="s2">"address"</span><span class="o">:</span> <span class="s2">"1234 Campbell Terrace, Alderley, Queensland, Australia"</span><span class="p">,</span>
+      <span class="s2">"address_components"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"street_address"</span><span class="o">:</span> <span class="s2">"1234 Campbell Terrace"</span><span class="p">,</span>
+        <span class="s2">"extended_address"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">"locality"</span><span class="o">:</span> <span class="s2">"Alderley"</span><span class="p">,</span>
+        <span class="s2">"region"</span><span class="o">:</span> <span class="s2">"Queensland"</span><span class="p">,</span>
+        <span class="s2">"postal_code"</span><span class="o">:</span> <span class="s2">"4051"</span><span class="p">,</span>
+        <span class="s2">"country_name"</span><span class="o">:</span> <span class="s2">"Australia"</span>
+      <span class="p">},</span>
+      <span class="s2">"address_coordinates"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"latitude"</span><span class="o">:</span> <span class="o">-</span><span class="mf">27.421</span><span class="p">,</span>
+        <span class="s2">"longitude"</span><span class="o">:</span> <span class="mf">153.0</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="update-a-new-user-with-attributes">Update a new user with attributes</h2>
