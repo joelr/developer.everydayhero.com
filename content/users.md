@@ -39,7 +39,7 @@ access_token : _Required_ **string** User access_token provided by passport auth
 
 ### Response
 
-<%= json :page%>
+<%= json :page %>
 
 ## Update a new user with attributes
 
