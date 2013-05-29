@@ -19,7 +19,8 @@ search : _Optional_ **string**. Retrieve only the users with either a name, nick
 
 ### Repsonse
 
-<%= json :users %>
+<!-- <%= json :users %> -->
+TODO:
 
 ## Get current user
 
