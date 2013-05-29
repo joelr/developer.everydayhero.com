@@ -131,6 +131,19 @@
 
 <p>access_token : <em>Required</em> <strong>string</strong> User access_token provided by passport auth hash</p>
 
+<h3 id="example-request">Example request</h3>
+
+<pre><code>passport_host/api/v1/me.json?access_token=dc2e3c7c72a297e9df6ffdb60a98e4c841ca384dfeca890b2db9800e830xxxxx
+</code></pre>
+
+<h3 id="response">Response</h3>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"page"</span><span class="o">:</span> <span class="p">{</span>
+
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+
 <h2 id="update-a-new-user-with-attributes">Update a new user with attributes</h2>
 
 <pre><code>PUT passport_host/api/v1/me
@@ -148,7 +161,7 @@
 
 <p>user[address] : <em>optional</em> <strong>string</strong> Full user address, example: “87 Wickham Terrace, Spring Hill, 4055, QLD”</p>
 
-<h3 id="example-request">Example request</h3>
+<h3 id="example-request-1">Example request</h3>
 
 <pre><code>PUT passport_host/api/v1/me?access_token=abc&amp;user%5Baddress%5D=someaddress&amp;user%5Bbirthday%5D=1970-01-01
 </code></pre>
