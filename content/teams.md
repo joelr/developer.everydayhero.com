@@ -31,4 +31,4 @@ within the campaign.
 %>
 
 ### Response
-<%= json :page %>
+<%= json :teampage %>

@@ -117,14 +117,74 @@ module EverydayHero
     }
 
     PageData = {
+      amount: {
+      cents: 0,
+      currency: {
+          iso_code: "AUD",
+          name: "Australian Dollar",
+          symbol: "$"
+      }
+      },
+      cached_offline_amount_cents: 0,
+      campaign_uid: "au-1419",
+      charity_uid: "au-6",
+      expires_at: "2013-08-29T14:00:00Z",
+      gift_aid_eligible: false,
+      id: 1511,
+      invitation_id: nil,
+      name: "Tim",
+      owner_type: "User",
+      owner_uid: 7,
+      slug: "tim",
+      state: "active",
+      target_cents: 70000,
+      team_leader_page_uid: nil,
+      team_member_uids: [],
+      team_uid: nil,
+      uid: 1511
     }
 
     Page = {
+      meta: {
+        url: "https://TestCampaignForAPI.edherox.com/au/tim"
+      },
       page: PageData
     }
 
     Pages = {
       pages: [PageData]
+    }
+
+    TeamPageData = {
+        id: 1513,
+        slug: "team-tim",
+        gift_aid_eligible: false,
+        charity_uid: "au-6",
+        campaign_uid: "au-1419",
+        owner_uid: 211,
+        owner_type: "Team",
+        uid: 1513,
+        state: "active",
+        target_cents: 70000,
+        name: "Team Tim",
+        team_uid: nil,
+        team_member_uids: [1511],
+        team_leader_page_uid: 1511,
+        expires_at: "2013-08-29T14:00:00Z",
+        amount:  {
+          cents: 0,
+          currency:  {
+          iso_code: "AUD",
+          name: "Australian Dollar",
+          symbol: "$"
+        }
+      },
+      cached_offline_amount_cents: 0,
+      invitation_id: nil
+    }
+
+    TeamPage = {
+      teampage: [TeamPageData]
     }
 
     InvitationData = {
@@ -157,19 +217,41 @@ module EverydayHero
     }
 
     UserData = {
+      # uid: 1,
+      # name: "John O'Donnell",
+      # nickname: 'John',
+      # email: 'john@example.com',
+      # phone: '1300798768',
+      # birthday: '1980-01-13',
+      # street_address: '87 Wickham Terrace',
+      # extended_address: nil,
+      # locality: 'Spring Hill',
+      # region: 'QLD',
+      # postal_code: '4006',
+      # country_name: 'Australia',
+      # page_ids: [1,2],
       uid: 1,
-      name: "John O'Donnell",
-      nickname: 'John',
-      email: 'john@example.com',
-      phone: '1300798768',
-      birthday: '1980-01-13',
-      street_address: '87 Wickham Terrace',
-      extended_address: nil,
-      locality: 'Spring Hill',
-      region: 'QLD',
-      postal_code: '4006',
-      country_name: 'Australia',
-      page_ids: [1,2],
+      id: 1,
+      name: "joel r",
+      nickname: "jo",
+      email: "abcdef@everydayhero.com.au",
+      phone: "12345",
+      profile_image: nil,
+      location: "Alderley, Queensland, Australia",
+      birthday: "1983-05-21",
+      address: "1234 Campbell Terrace, Alderley, Queensland, Australia",
+      address_components: {
+        street_address: "1234 Campbell Terrace",
+        extended_address: nil,
+        locality: "Alderley",
+        region: "Queensland",
+        postal_code: "4051",
+        country_name: "Australia"
+      },
+      address_coordinates: {
+        latitude: -27.421,
+        longitude: 153.000
+      }
     }
 
     Users = {

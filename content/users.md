@@ -39,7 +39,7 @@ access_token : _Required_ **string** User access_token provided by passport auth
 
 ### Response
 
-<%= json :page %>
+<%= json :users %>
 
 ## Update a new user with attributes
 
@@ -64,5 +64,3 @@ user[address] : _optional_ **string** Full user address, example: "87 Wickham Te
 ### Repsonse
 
     204 or 40X
-
-
