@@ -33,6 +33,41 @@ Restricted. Requires an authenticated user via access_token param.
 
 access_token : _Required_ **string** User access_token provided by passport auth hash
 
+### Example request
+
+    passport_host/api/v1/me.json?access_token=dc2e3c7c72a297e9df6ffdb60a98e4c841ca384dfeca890b2db9800e830xxxxx
+
+### Response
+
+<%= json \
+  {
+    "user": {
+      "uid": 1,
+      "id": 1,
+      "name": "joel r",
+      "nickname": "jo",
+      "email": "abcdef@everydayhero.com.au",
+      "phone": "12345",
+      "profile_image": null,
+      "location": "Alderley, Queensland, Australia",
+      "birthday": "1983-05-21",
+      "address": "1234 Campbell Terrace, Alderley, Queensland, Australia",
+      "address_components": {
+        "street_address": "1234 Campbell Terrace",
+        "extended_address": null,
+        "locality": "Alderley",
+        "region": "Queensland",
+        "postal_code": "4051",
+        "country_name": "Australia"
+      },
+      "address_coordinates": {
+        "latitude": -27.421,
+        "longitude": 153.000
+      }
+    }
+  }
+%>
+
 ## Update a new user with attributes
 
     PUT passport_host/api/v1/me

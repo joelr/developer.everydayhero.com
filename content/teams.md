@@ -31,5 +31,36 @@ within the campaign.
 %>
 
 ### Response
-
-TODO: add response
+<%= json \
+  {
+    "page": {
+      "amount": {
+        "cents": 0,
+        "currency": {
+          "iso_code": "AUD",
+          "name": "Australian Dollar",
+          "symbol": "$"
+        }
+      },
+      "cached_offline_amount_cents": 0,
+      "campaign_uid": "au-1419",
+      "charity_uid": "au-6",
+      "expires_at": "2013-08-29T14:00:00Z",
+      "gift_aid_eligible": false,
+      "id": 1513,
+      "invitation_id": null,
+      "name": "Team  Tim",
+      "owner_type": "Team",
+      "owner_uid": 211,
+      "slug": "team-tim",
+      "state": "active",
+      "target_cents": 70000,
+      "team_leader_page_uid": 1511,
+      "team_member_uids": [
+        1511
+      ],
+      "team_uid": null,
+      "uid": 1513
+    }
+  }
+%>
