@@ -19,8 +19,7 @@ search : _Optional_ **string**. Retrieve only the users with either a name, nick
 
 ### Repsonse
 
-<!-- <%= json :users %> -->
-TODO:
+<%= json :users %>
 
 ## Get current user
 
@@ -40,7 +39,7 @@ access_token : _Required_ **string** User access_token provided by passport auth
 
 ### Response
 
-<%= json :users %>
+<%= json :passportuser %>
 
 ## Update a new user with attributes
 
