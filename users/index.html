@@ -95,35 +95,46 @@
 
 <h3 id="repsonse">Repsonse</h3>
 
-<!-- <pre class="highlight"><code class="language-javascript">{
-  "users": [
-    {
-      "uid": 1,
-      "id": 1,
-      "name": "joel r",
-      "nickname": "jo",
-      "email": "abcdef@everydayhero.com.au",
-      "phone": "12345",
-      "profile_image": null,
-      "location": "Alderley, Queensland, Australia",
-      "birthday": "1983-05-21",
-      "address": "1234 Campbell Terrace, Alderley, Queensland, Australia",
-      "address_components": {
-        "street_address": "1234 Campbell Terrace",
-        "extended_address": null,
-        "locality": "Alderley",
-        "region": "Queensland",
-        "postal_code": "4051",
-        "country_name": "Australia"
-      },
-      "address_coordinates": {
-        "latitude": -27.421,
-        "longitude": 153.0
-      }
-    }
-  ]
-}</code></pre> -->
-<p>TODO:</p>
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"users"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"John O'Donnell"</span><span class="p">,</span>
+      <span class="s2">"nickname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1300798768"</span><span class="p">,</span>
+      <span class="s2">"birthday"</span><span class="o">:</span> <span class="s2">"1980-01-13"</span><span class="p">,</span>
+      <span class="s2">"street_address"</span><span class="o">:</span> <span class="s2">"87 Wickham Terrace"</span><span class="p">,</span>
+      <span class="s2">"extended_address"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"locality"</span><span class="o">:</span> <span class="s2">"Spring Hill"</span><span class="p">,</span>
+      <span class="s2">"region"</span><span class="o">:</span> <span class="s2">"QLD"</span><span class="p">,</span>
+      <span class="s2">"postal_code"</span><span class="o">:</span> <span class="s2">"4006"</span><span class="p">,</span>
+      <span class="s2">"country_name"</span><span class="o">:</span> <span class="s2">"Australia"</span><span class="p">,</span>
+      <span class="s2">"page_ids"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="mi">2</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"John O'Donnell"</span><span class="p">,</span>
+      <span class="s2">"nickname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1300798768"</span><span class="p">,</span>
+      <span class="s2">"birthday"</span><span class="o">:</span> <span class="s2">"1980-01-13"</span><span class="p">,</span>
+      <span class="s2">"street_address"</span><span class="o">:</span> <span class="s2">"87 Wickham Terrace"</span><span class="p">,</span>
+      <span class="s2">"extended_address"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"locality"</span><span class="o">:</span> <span class="s2">"Spring Hill"</span><span class="p">,</span>
+      <span class="s2">"region"</span><span class="o">:</span> <span class="s2">"QLD"</span><span class="p">,</span>
+      <span class="s2">"postal_code"</span><span class="o">:</span> <span class="s2">"4006"</span><span class="p">,</span>
+      <span class="s2">"country_name"</span><span class="o">:</span> <span class="s2">"Australia"</span><span class="p">,</span>
+      <span class="s2">"page_ids"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="mi">2</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
 
 <h2 id="get-current-user">Get current user</h2>
 
@@ -146,7 +157,7 @@
 <h3 id="response">Response</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"users"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"user"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
