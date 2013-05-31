@@ -109,7 +109,7 @@ secret, for an access token.
 ####Example:
     POST passport_host/oauth/token?code=CODE&client_id=XXXX&client_secret=XXXX&grant_type=authorization_code&redirect_uri=http://myapp.com:3000/auth/passport/callback
 
-### Parameters & prepopulation
+### Parameters
 
 grant_type
 : _Required_ **string** use authorization_code
