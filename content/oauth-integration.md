@@ -107,7 +107,7 @@ client application exchanges the authorization code, client ID and client
 secret, for an access token.
 
 ####Example:
-    POST passport_host/oauth/token?code=CODE&client_id=xxxxxxa2def4105c4bd547435fddbe4512ecb88e248fe1ec21134xxxxxx&client_secret=xxxxxx37aabde1331ffb954586c7718225ffeecb16eb61xxxxxx&grant_type=authorization_code&redirect_uri=http://myapp.com:3000/auth/passport/callback
+    POST passport_host/oauth/token?code=CODE&client_id=XXXX&client_secret=XXXX&grant_type=authorization_code&redirect_uri=http://myapp.com:3000/auth/passport/callback
 
 ### Parameters & prepopulation
 
@@ -131,14 +131,6 @@ the one configured for the client.
 ### Response
 
 <%= json :tokendata %>
-
-Passport will provide an auth hash within the response var 'omniauth.auth',
-this provides:
-
-* uid: User's ID
-* email
-* name
-* birthday
 
 ## Registration Product Integration
 
