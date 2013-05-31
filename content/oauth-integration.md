@@ -118,8 +118,7 @@ client_id
 : _Required_ **string** The client identifier.
 
 client_secret
-: _Required_ **string** If present, the requested redirect_uri must match
-the one configured for the client.
+: _Required_ **string** The client secret.
 
 code
 : _Required_ **string**.
