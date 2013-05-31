@@ -183,22 +183,48 @@ prepopulate the sign-up form for.</dd>
 given to display on the sign-in form if the person is asked to sign-in.</dd>
 </dl><h2 id="token-endpoint">Token endpoint</h2>
 
-<pre><code>POST   passport.edheroz.com/oauth/token
+<pre><code>POST   passport_host/oauth/token
 </code></pre>
 
 <p>The token endpoint is the endpoint on the authorization server where the
 client application exchanges the authorization code, client ID and client
 secret, for an access token.</p>
 
-<p>Passport will provide an auth hash within the response var ‘omniauth.auth’,
-this provides:</p>
+<h4 id="example-1">Example:</h4>
+<pre><code>POST passport_host/oauth/token?code=CODE&amp;client_id=XXXX&amp;client_secret=XXXX&amp;grant_type=authorization_code&amp;redirect_uri=http://myapp.com:3000/auth/passport/callback
+</code></pre>
 
-<ul>
-<li>uid: User’s ID</li>
-  <li>email</li>
-  <li>name</li>
-  <li>birthday</li>
-</ul><h2 id="registration-product-integration">Registration Product Integration</h2>
+<h3 id="parameters--prepopulation-1">Parameters &amp; prepopulation</h3>
+
+<dl>
+<dt>grant_type</dt>
+  <dd>
+<em>Required</em> <strong>string</strong> use authorization_code</dd>
+  <dt>client_id</dt>
+  <dd>
+<em>Required</em> <strong>string</strong> The client identifier.</dd>
+  <dt>client_secret</dt>
+  <dd>
+<em>Required</em> <strong>string</strong> If present, the requested redirect_uri must match
+the one configured for the client.</dd>
+  <dt>code</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>.</dd>
+  <dt>redirect_uri</dt>
+  <dd>
+<em>Required</em> <strong>string</strong> the requested redirect_uri must match
+the one configured for the client.</dd>
+</dl><h3 id="response">Response</h3>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"access_token"</span><span class="o">:</span> <span class="s2">"xxxxxxca4e6d9d09f1d6b1330ccf97d862a7b42e87c737195f90e508d0xxxxxx"</span><span class="p">,</span>
+  <span class="s2">"token_type"</span><span class="o">:</span> <span class="s2">"bearer"</span><span class="p">,</span>
+  <span class="s2">"expires_in"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"refresh_token"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"scope"</span><span class="o">:</span> <span class="s2">""</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="registration-product-integration">Registration Product Integration</h2>
 
 <p>A <a href="http://example-rego-integration.herokuapp.com">sample application</a> has been
 built to show one possible end to end third party registration scenario.
