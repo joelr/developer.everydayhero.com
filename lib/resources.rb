@@ -265,6 +265,14 @@ module EverydayHero
       users: [UserData, UserData]
     }
 
+    Tokendata = {
+      access_token: "xxxxxxca4e6d9d09f1d6b1330ccf97d862a7b42e87c737195f90e508d0xxxxxx",
+      token_type: "bearer",
+      expires_in: nil,
+      refresh_token: nil,
+      scope: "",
+    }
+
     TeamData = {
       uid: 1,
       name: "Team Example"

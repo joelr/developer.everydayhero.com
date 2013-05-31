@@ -100,11 +100,37 @@ given to display on the sign-in form if the person is asked to sign-in.
 
 ## Token endpoint
 
-    POST   passport.edheroz.com/oauth/token
+    POST   passport_host/oauth/token
 
 The token endpoint is the endpoint on the authorization server where the
 client application exchanges the authorization code, client ID and client
 secret, for an access token.
+
+####Example:
+    POST passport_host/oauth/token?code=CODE&client_id=xxxxxxa2def4105c4bd547435fddbe4512ecb88e248fe1ec21134xxxxxx&client_secret=xxxxxx37aabde1331ffb954586c7718225ffeecb16eb61xxxxxx&grant_type=authorization_code&redirect_uri=http://myapp.com:3000/auth/passport/callback
+
+### Parameters & prepopulation
+
+grant_type
+: _Required_ **string** use authorization_code
+
+client_id
+: _Required_ **string** The client identifier.
+
+client_secret
+: _Required_ **string** If present, the requested redirect_uri must match
+the one configured for the client.
+
+code
+: _Required_ **string**.
+
+redirect_uri
+: _Required_ **string** the requested redirect_uri must match
+the one configured for the client.
+
+### Response
+
+<%= json :tokendata %>
 
 Passport will provide an auth hash within the response var 'omniauth.auth',
 this provides:
