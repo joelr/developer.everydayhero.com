@@ -24,6 +24,8 @@ retrieved.
 
     GET /campaigns/:id
 
+[View demo in API console](/console/?query=campaigns/au-0.json) 
+
 ### Visibility
 
 Public.

@@ -35,6 +35,8 @@ campaign specified.
 
     GET /pages/:id
 
+[View demo in API console](/console/?query=pages/1.json) 
+
 ### Visibility
 
 Public.
