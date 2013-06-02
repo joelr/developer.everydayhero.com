@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>EverydayHero API: Registration Integration</title>
+  <title>EverydayHero API: API Console</title>
   <link rel="stylesheet" href="/stylesheets/pygments.css">
   <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
   <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
@@ -76,51 +76,20 @@
     <section class="l--70 m--100 right content">
       <div class="inner">
         
-          <h1>Registration Integration</h1>
-          <p>Through the API we allow campaign builders to extend the functionality
-of the Everyday Hero platform. We do this by allowing your chosen
-registration solution to hook into the supporter page creation process.</p>
+          <h1>API Console</h1>
+          <p>This API console can be used for public GET requests to provide responses from the sandbox environment.</p>
 
-<h2 id="how-does-it-work">How Does it Work?</h2>
+<h3 id="query">Query</h3>
 
-<p>The Everyday Hero platform supports two kinds of supporter pages:
-<a href="/glossary/">Individuals pages</a> and <a href="/overview#glossary/">Team
-pages</a>. In order to create an Individual Page
-through the API you will be required to authenticate the user through
-the Everyday Hero <a href="/oauth-integration/#how-to-authenticate-with-edh-passport">Giving Passport</a> and store the
-returned <code>uid</code> - this <code>uid</code> is our way of tracking that user within our
-platform and yours.</p>
+<p>GET https://edheroz.com/api/v2/<input type="text" id="path" value="pages/1.json"></p>
 
-<p>Once you have a <code>uid</code> you will be able to <a href="/pages#create-an-individual-page">Create an Individual
-Page</a> for your campaign.</p>
+<p><input type="submit" value="Run" id="run"></p>
 
-<h2 id="registering-for-third-party-integration">Registering for Third Party Integration</h2>
-
-<p>Please email
-<a href="mailto:support@everydayhero.com">support@everydayhero.com</a>, you will be
-asked to provide two registration urls, one for individuals and one for
-teams. These are used by the Everyday Hero platform to redirect to the
-third party before creating a supporter page.</p>
-
-<h2 id="primary-registrant">Primary Registrant</h2>
-
-<p><a href="/pages#create-an-individual-page">Create an Individual Page</a></p>
-
-<h2 id="secondary-registrants">Secondary Registrants</h2>
-
-<p><a href="/invitations#create-individual-page-invitation">Create Individual Page
-Invitation</a></p>
-
-<h2 id="team-page-creation">Team Page Creation</h2>
-
-<p><a href="/pages#create-an-individual-page">Create an Individual Page</a></p>
-
-<p><a href="/teams#create-a-team">Create a Team</a></p>
-
-<h2 id="joining-an-exising-team">Joining an Exising Team</h2>
-
-<p><a href="/invitations#create-join-a-team-invitation">Create Join a Team
-Invitation</a></p>
+<h3 id="response">Response</h3>
+<pre class="highlight">
+  <code class="javascript" id="console">
+  </code>
+</pre>
         
       </div>
     </section>

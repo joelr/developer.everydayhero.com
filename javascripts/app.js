@@ -6,6 +6,16 @@ $(function() {
     $container.removeClass('down');
     $container.text('Available');
   });
-  
+
   hljs.initHighlightingOnLoad();
+
+  $('#run').click(function() {  
+    load_api_content($('#path').val());
+  });
+
+  var query = $.url().param('query');
+  if (query) {
+    $('#path').val(query);
+    load_api_content(query);
+  }
 });
