@@ -14,4 +14,4 @@ function load_api_content(url) {
         $('#console').html("Error");
        }
      },8000);
-}
+};
