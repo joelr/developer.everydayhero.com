@@ -63,7 +63,8 @@ module EverydayHero
       country_code: 'au',
       registration_url: 'http://',
       banner_url: '',
-      funds_raised: Money.new('1000', 'au').attributes
+      funds_raised: Money.new('1000', 'au').attributes,
+      custom_metric_total: {amount: '100', unit: 'steps'}
     }
 
     Campaign = {
@@ -141,7 +142,8 @@ module EverydayHero
       team_leader_page_uid: nil,
       team_member_uids: [],
       team_uid: nil,
-      uid: 1511
+      uid: 1511,
+      custom_metric_total: {amount: '100', unit: 'steps'}
     }
 
     Page = {
@@ -180,7 +182,8 @@ module EverydayHero
         }
       },
       cached_offline_amount_cents: 0,
-      invitation_id: nil
+      invitation_id: nil,
+      custom_metric_total: {amount: '100', unit: 'steps'}
     }
 
     Teampage = {
