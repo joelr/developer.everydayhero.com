@@ -112,7 +112,7 @@ Connection: Keep-Alive
 parameters not specified as a segment in the path can be passed as an
 HTTP query string parameter:</p>
 
-<pre><code>$ curl -i https://everydayhero.com/api/v1/leaderboards?ids=123
+<pre><code>$ curl -i https://everydayhero.com/api/v2/leaderboards?ids=123
 </code></pre>
 
 <p>In this example the <code>:ids</code> parameter is passed in query string.</p>
@@ -120,8 +120,7 @@ HTTP query string parameter:</p>
 <p>For POST requests, parameters not included in the URL should be encoded
 as JSON with a Content-Type of ‘application/x-www-form-urlencoded’:</p>
 
-<pre><code>$ curl -i -H "Authorization: Token token=your-token" -d '{}' \
-    https://everydayhero.com/api/2
+<pre><code>$ curl -i -H "Authorization: Token token=your-token" -d '{}' https://everydayhero.com/api/v2
 </code></pre>
 
 <h2 id="auth-errors">Auth Errors</h2>
