@@ -34,15 +34,14 @@ Many API methods take optional parameters. For GET requests, any
 parameters not specified as a segment in the path can be passed as an
 HTTP query string parameter:
 
-    $ curl -i https://everydayhero.com/api/v1/leaderboards?ids=123
+    $ curl -i https://everydayhero.com/api/v2/leaderboards?ids=123
 
 In this example the `:ids` parameter is passed in query string.
 
 For POST requests, parameters not included in the URL should be encoded
 as JSON with a Content-Type of ‘application/x-www-form-urlencoded’:
 
-    $ curl -i -H "Authorization: Token token=your-token" -d '{}' \
-        https://everydayhero.com/api/2
+    $ curl -i -H "Authorization: Token token=your-token" -d '{}' https://everydayhero.com/api/v2
 
 ## Auth Errors
 
