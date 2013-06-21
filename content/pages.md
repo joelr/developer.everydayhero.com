@@ -35,7 +35,7 @@ campaign specified.
 
     GET /pages/:id
 
-[View demo in API console](/console/?query=pages/1.json) 
+[View demo in API console](/console/?query=pages/1.json)
 
 ### Visibility
 
@@ -77,7 +77,7 @@ expires_at
 expire. ISO8601 format. Defaults to 1 month after the campaign end date.
 
 target
-: _Optional_ **string**. The dollar amount that you are aiming to raise.
+: _Optional_ **string**. The dollar amount that you are aiming to raise (must be above 0)
 
 charity_id
 : _Optional_ **string**. The `id` of the charity to create the page for.
