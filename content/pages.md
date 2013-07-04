@@ -5,6 +5,11 @@ title: Pages
 * TOC
 {:toc}
 
+A page can belong to either a user or team (denotd by the 'owner_type' field).
+Pages belonging to a team have some special characteristics in that some of its
+fields represent an agregate of all its team members. Fields which have this
+characteristic include 'amount' and 'custom_metric_total'.
+
 ## List all Pages
 
     GET /pages
