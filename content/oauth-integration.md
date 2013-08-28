@@ -94,10 +94,6 @@ name
 : _Optional_ **string**. The full name of the person you want to
 prepopulate the sign-up form for.
 
-reference
-: _Optional_ **string**. The reference of the [Sign-in branding](/branding/)
-given to display on the sign-in form if the person is asked to sign-in.
-
 ## Token endpoint
 
     POST   passport_host/oauth/token
