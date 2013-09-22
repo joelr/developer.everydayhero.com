@@ -80,7 +80,7 @@ client_id
 
 redirect_uri
 : _Optional_ **string** If present, the requested redirect_uri must match
-the one configured for the client.
+the one configured for the client. if the redirect_uri is set to ```urn:ietf:wg:oauth:2.0:oob```, this will tell Passport to display the authorization code instead of redirecting to a client application (if this is still under development).
 
 email
 : _Optional_ **string**. The email of the person you want to prepopulate
