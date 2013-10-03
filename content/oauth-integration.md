@@ -148,7 +148,7 @@ For this type of integration you will need the following:
 * Registering a third party integration application
 
 All of this can be obtained by emailing
-[support](mailto:support@everydayhero.com).
+[support](mailto:professionalservices@everydayhero.com.au).
 
 Generally there are going to be two entry points into your campaign, the
 first will be through your website and the second will be through an
