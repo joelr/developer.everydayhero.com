@@ -51,7 +51,6 @@
               </ul>
             </li>
             <li><a href="/users/">Users</a></li>
-            <li><a href="/branding/">Sign-in Branding</a></li>
             <li><a href="/oauth-integration/">OAuth Integration</a></li>
             <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
             <li><a href="/console/">API Console</a></li>
@@ -128,7 +127,7 @@ as JSON with a Content-Type of ‘application/x-www-form-urlencoded’:</p>
 <p>There are two possible auth errors supported by the API:</p>
 
 <ol>
-  <li>
+<li>
     <p>Requesting resources that require authentication will result in a
 <code>401 Unauthorized</code> response.</p>
 
@@ -168,9 +167,7 @@ result in a <code>403 Forbidden</code> response.</p>
    “message”: “You are not authorized to view this resource”
  }</p>
   </li>
-</ol>
-
-<h2 id="validation-errors">Validation Errors</h2>
+</ol><h2 id="validation-errors">Validation Errors</h2>
 
 <p>All validation errors resulting from a POST or PUT request will contain
 a message and an array of errors. For more information on fixing the
@@ -192,7 +189,7 @@ validation errors see the corresponding documentation for the request.</p>
 <p>Where possible, the API uses the appropriate HTTP verbs</p>
 
 <dl>
-  <dt>GET</dt>
+<dt>GET</dt>
   <dd>Used for retrieving resources</dd>
   <dt>POST</dt>
   <dd>Used when creating resources</dd>
@@ -200,9 +197,7 @@ validation errors see the corresponding documentation for the request.</p>
   <dd>Used when updating resources</dd>
   <dt>DELETE</dt>
   <dd>Used when deleting resources</dd>
-</dl>
-
-<h2 id="authentication">Authentication</h2>
+</dl><h2 id="authentication">Authentication</h2>
 
 <p>There is only one authentication scheme in place for the API: Token
 Authentication. Requests that require authentication will return a
@@ -216,7 +211,6 @@ any and all information created or updated can only take place within
 the specified campaign.</p>
 
 <p>For API actions that require a UID, users will be required to authenticate with <a href="/oauth-integration/#how-to-authenticate-with-edh-passport">Giving Passport</a> which provides a UID in the returned payload.</p>
-
         
       </div>
     </section>

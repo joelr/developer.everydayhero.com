@@ -51,7 +51,6 @@
               </ul>
             </li>
             <li><a href="/users/">Users</a></li>
-            <li><a href="/branding/">Sign-in Branding</a></li>
             <li><a href="/oauth-integration/">OAuth Integration</a></li>
             <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
             <li><a href="/console/">API Console</a></li>
@@ -78,14 +77,12 @@
         
           <h1>OAuth Integration</h1>
           <ul id="markdown-toc">
-  <li><a href="#why-integrate-with-edh-passport">Why integrate with EDH Passport</a></li>
+<li><a href="#why-integrate-with-edh-passport">Why integrate with EDH Passport</a></li>
   <li><a href="#how-to-authenticate-with-edh-passport">How to Authenticate with EDH Passport</a></li>
   <li><a href="#authorize-endpoint">Authorize endpoint</a></li>
   <li><a href="#token-endpoint">Token endpoint</a></li>
   <li><a href="#registration-product-integration">Registration Product Integration</a></li>
-</ul>
-
-<p>One of the biggest questions we receive from developers is around end to
+</ul><p>One of the biggest questions we receive from developers is around end to
 end integration - the API is great for pushing and pulling information
 but what if I want to create a tighter experience with Everyday Hero?</p>
 
@@ -97,7 +94,7 @@ pages.</p>
 <h2 id="why-integrate-with-edh-passport">Why integrate with EDH Passport</h2>
 
 <ul>
-  <li>
+<li>
     <p>Ability to gain more detailed information on users because you can
 leverage any information provided by Everyday Hero</p>
   </li>
@@ -111,9 +108,7 @@ universal identifier (uid) which is our guarantee to you that this is
 the same user within Everyday Hero and your product. This is especially
 useful for year on year campaigns.</p>
   </li>
-</ul>
-
-<h2 id="how-to-authenticate-with-edh-passport">How to Authenticate with EDH Passport</h2>
+</ul><h2 id="how-to-authenticate-with-edh-passport">How to Authenticate with EDH Passport</h2>
 
 <p>Everyday Hero’s Giving Passport is our way of globally recognising a
 user within any one of our products. We are now opening this
@@ -121,7 +116,8 @@ functionality for other developers to leverage. We are using the same
 technology that powers Twitter and Facebook: OAuth2. Because this has
 predominately been an internal tool there is no user interface for
 creating and managing your OAuth applications but if you contact
-<a href="mailto:support@everydayhero.com">support</a> we can get you underway.</p>
+<a href="mailto:professionalservices@everydayhero.com.au">Professional Services</a>
+we can get you underway.</p>
 
 <p>Integrating OAuth2 into any modern system should be fairly simple.
 Everyday Hero have written (and maintain) the ruby client for
@@ -159,7 +155,7 @@ response to the authorization request.</p>
 <h3 id="parameters--prepopulation">Parameters &amp; prepopulation</h3>
 
 <dl>
-  <dt>response_type</dt>
+<dt>response_type</dt>
   <dd>
 <em>Required</em> <strong>string</strong> A value of code results in the Authorization Code
 grant type while a value of token implies the Implicit grant type.</dd>
@@ -169,7 +165,7 @@ grant type while a value of token implies the Implicit grant type.</dd>
   <dt>redirect_uri</dt>
   <dd>
 <em>Optional</em> <strong>string</strong> If present, the requested redirect_uri must match
-the one configured for the client.</dd>
+the one configured for the client. if the redirect_uri is set to <code>urn:ietf:wg:oauth:2.0:oob</code>, this will tell Passport to display the authorization code instead of redirecting to a client application (if this is still under development).</dd>
   <dt>email</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>. The email of the person you want to prepopulate
@@ -182,13 +178,7 @@ prepopulate the sign-up form for.</dd>
   <dd>
 <em>Optional</em> <strong>string</strong>. The full name of the person you want to
 prepopulate the sign-up form for.</dd>
-  <dt>reference</dt>
-  <dd>
-<em>Optional</em> <strong>string</strong>. The reference of the <a href="/branding/">Sign-in branding</a>
-given to display on the sign-in form if the person is asked to sign-in.</dd>
-</dl>
-
-<h2 id="token-endpoint">Token endpoint</h2>
+</dl><h2 id="token-endpoint">Token endpoint</h2>
 
 <pre><code>POST   passport_host/oauth/token
 </code></pre>
@@ -204,7 +194,7 @@ secret, for an access token.</p>
 <h3 id="parameters">Parameters</h3>
 
 <dl>
-  <dt>grant_type</dt>
+<dt>grant_type</dt>
   <dd>
 <em>Required</em> <strong>string</strong> use authorization_code</dd>
   <dt>client_id</dt>
@@ -220,9 +210,7 @@ secret, for an access token.</p>
   <dd>
 <em>Required</em> <strong>string</strong> the requested redirect_uri must match
 the one configured for the client.</dd>
-</dl>
-
-<h3 id="response">Response</h3>
+</dl><h3 id="response">Response</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"access_token"</span><span class="o">:</span> <span class="s2">"xxxxxxca4e6d9d09f1d6b1330ccf97d862a7b42e87c737195f90e508d0xxxxxx"</span><span class="p">,</span>
@@ -241,28 +229,23 @@ Source code for the application can be found on
 This application demonstrates:</p>
 
 <ul>
-  <li>authentication with the Giving Passport</li>
+<li>authentication with the Giving Passport</li>
   <li>using the Everyday Hero API to create a supporter page and view
 information on the campaign</li>
   <li>while still giving you ultimate control over your registration system</li>
-</ul>
-
-<p>For this type of integration you will need the following:</p>
+</ul><p>For this type of integration you will need the following:</p>
 
 <ul>
-  <li>An OAuth2 application</li>
+<li>An OAuth2 application</li>
   <li>An API key</li>
   <li>Registering a third party integration application</li>
-</ul>
-
-<p>All of this can be obtained by emailing
+</ul><p>All of this can be obtained by emailing
 <a href="mailto:support@everydayhero.com">support</a>.</p>
 
 <p>Generally there are going to be two entry points into your campaign, the
 first will be through your website and the second will be through an
 Everyday Hero supporter page. The two flows are slightly different and
 deserve separate discussions.</p>
-
         
       </div>
     </section>
