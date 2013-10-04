@@ -57,7 +57,7 @@ The endpoints are:
 
 ## Authorize endpoint
 
-    GET    passport.edheroz.com/oauth/authorize(.:format)
+    GET    https://passport.everydayhero.com/oauth/authorize(.:format)
 
 The authorization endpoint is defined in the OAuth 2.0 specification
 and is used by OAuth to interact with resource owners, authenticate
@@ -68,7 +68,7 @@ service redirects the useZ back to the client’s redirect URI with the
 response to the authorization request.
 
 ####Example:
-    https://passport.edheroz.com/oauth/authorize?response_type=code&client_id=XXXX&redirect_uri=http://MYAPP.COM/auth/passport/callback&email=john@smith.com
+    https://passport.everydayhero.com/oauth/authorize?response_type=code&client_id=XXXX&redirect_uri=http://MYAPP.COM/auth/passport/callback&email=john@smith.com
 
 ### Parameters & prepopulation
 
@@ -97,14 +97,14 @@ prepopulate the sign-up form for.
 
 ## Token endpoint
 
-    POST   passport_host/oauth/token
+    POST   https://passport.everydayhero.com/oauth/token
 
 The token endpoint is the endpoint on the authorization server where the
 client application exchanges the authorization code, client ID and client
 secret, for an access token.
 
 ####Example:
-    POST passport_host/oauth/token?code=CODE&client_id=XXXX&client_secret=XXXX&grant_type=authorization_code&redirect_uri=http://myapp.com:3000/auth/passport/callback
+    POST https://passport.everydayhero.com/oauth/token?code=CODE&client_id=XXXX&client_secret=XXXX&grant_type=authorization_code&redirect_uri=http://myapp.com:3000/auth/passport/callback
 
 ### Parameters
 

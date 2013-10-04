@@ -10,7 +10,7 @@ assocated pages.
 
 ## List all Leaderboards
 
-    GET /leaderboards
+    GET https://everydayhero.com/api/v2/leaderboards
 
 ### Visibility
 
@@ -28,7 +28,7 @@ the ids 1, 5 and 20
 
 ## View a single Leaderboard
 
-    GET /leaderboards/:id
+    GET https://everydayhero.com/api/v2/leaderboards/:id
 
 ### Visibility
 
@@ -43,7 +43,7 @@ Public.
 Campaign Leaderboards are a way of showing the top supporter pages for a
 particular campaign.
 
-    GET /campaigns/:id/leaderboard
+    GET https://everydayhero.com/api/v2/campaigns/:id/leaderboard
 
 ### Visibility
 

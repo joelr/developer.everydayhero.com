@@ -9,7 +9,7 @@ title: Teams
 * Creates a Team, Team Page and sets individual page as team leader
 
 
-      POST /teams
+      POST https://everydayhero.com/api/v2/teams
 
 ### Visibility
 

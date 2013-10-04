@@ -5,7 +5,7 @@ title: Members
 
 Add an existing page to an existing team.
 
-    POST /teams/:id/members
+    POST https://everydayhero.com/api/v2/teams/:id/members
 
 ### Visibility
 

@@ -6,7 +6,7 @@ title: Invitations
 Send an invitation to create an individual supporter page to an email
 address.
 
-    POST /individual-pages/invitations
+    POST https://everydayhero.com/api/v2/individual-pages/invitations
 
 ### Visibility
 
@@ -53,7 +53,7 @@ raise. Defaults to a predetermined value.
 Send an invitation to create an individual supporter page for a team to
 an email address.
 
-    POST /team-pages/:team_page_id/invitations
+    POST https://everydayhero.com/api/v2/team-pages/:team_page_id/invitations
 
 ### Visibility
 

@@ -12,7 +12,7 @@ characteristic include 'amount' and 'custom_metric_total'.
 
 ## List all Pages
 
-    GET /pages
+    GET https://everydayhero.com/api/v2/pages
 
 ### Visibility
 
@@ -38,7 +38,7 @@ campaign specified.
 
 ## View a single Page
 
-    GET /pages/:id
+    GET https://everydayhero.com/api/v2/pages/:id
 
 [View demo in API console](/console/?query=pages/1.json)
 
@@ -52,7 +52,7 @@ Public.
 
 ## Create an Individual Page
 
-    POST /pages
+    POST https://everydayhero.com/api/v2/pages
 
 ### Visibility
 
