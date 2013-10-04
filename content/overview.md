@@ -36,7 +36,7 @@ HTTP query string parameter:
 
     $ curl -i https://everydayhero.com/api/v2/leaderboards?ids=123
 
-In this example the `:ids` parameter is passed in query string.
+In this example the `ids` parameter is passed in the query string.
 
 For POST requests, parameters not included in the URL should be encoded
 as JSON with a Content-Type of ‘application/x-www-form-urlencoded’:
