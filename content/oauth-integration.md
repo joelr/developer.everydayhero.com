@@ -70,7 +70,7 @@ response to the authorization request.
 ####Example:
     https://passport.edheroz.com/oauth/authorize?response_type=code&client_id=XXXX&redirect_uri=http://MYAPP.COM/auth/passport/callback&email=john@smith.com
 
-### Parameters & prepopulation
+### Parameters
 
 response_type
 : _Required_ **string** A value of code results in the Authorization Code
@@ -82,6 +82,10 @@ client_id
 redirect_uri
 : _Optional_ **string** If present, the requested redirect_uri must match
 the one configured for the client. if the redirect_uri is set to ```urn:ietf:wg:oauth:2.0:oob```, this will tell Passport to display the authorization code instead of redirecting to a client application (if this is still under development).
+
+### Prepopulation
+
+These parameters will be pre-populated on the sign up/in screen.
 
 email
 : _Optional_ **string**. The email of the person you want to prepopulate
