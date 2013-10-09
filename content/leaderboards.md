@@ -22,6 +22,10 @@ ids
 : _Optional_ **string** - `1,5,20` to only retrieve leaderboards with
 the ids 1, 5 and 20
 
+### Example
+
+    https://everydayhero.com/api/v2/leaderbords.json?ids=1,5,20
+
 ### Response
 
 <%= json :leaderboards %>
@@ -33,6 +37,10 @@ the ids 1, 5 and 20
 ### Visibility
 
 Public.
+
+### Example
+
+    https://everydayhero.com/api/v2/leaderbords/1.json
 
 ### Response
 
@@ -58,6 +66,10 @@ values include `all`, `individual` and `team`. Defaults to `all`.
 limit
 : _Optional_ **integer**. The number of records retrieved. This is useful
 for showing a "top 10 supporters leaderboard". Defaults to `10`.
+
+### Example
+
+    https://everydayhero.com/api/v2/leaderbords/au-1/leaderboard.json?type=individual&limit=5
 
 ### Response
 

@@ -36,6 +36,8 @@ target
 : _Optional_ **decimal**. The amount of money this page is aiming to
 raise. Defaults to a predetermined value.
 
+### Example
+
 <%= json \
   email: 'support@everydayhero.com',
   phone: '1300798768',
@@ -78,6 +80,8 @@ to select a charity. Defaults to none.
 target
 : _Optional_ **decimal**. The amount of money this page is aiming to
 raise. Defaults to a predetermined value.
+
+### Example
 
 <%= json \
   email: 'support@everydayhero.com',

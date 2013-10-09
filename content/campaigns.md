@@ -16,6 +16,10 @@ charity_ids
 Campaigns that the specified Charity is participating in will be
 retrieved.
 
+### Example
+
+    https://everydayhero.com/api/v2/campaigns.json?charity_ids=au-1,au-2,au-3
+
 ### Response
 
 <%= json :campaigns %>
@@ -29,6 +33,10 @@ retrieved.
 ### Visibility
 
 Public.
+
+### Example
+
+    https://everydayhero.com/api/v2/campaigns/au-1.json
 
 ### Response
 

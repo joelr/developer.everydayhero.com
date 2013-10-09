@@ -25,6 +25,8 @@ name
 : _Optional_ **string**. The name of the team. This needs to be unique
 within the campaign.
 
+### Example
+
 <%= json \
   individual_page_id: 1,
   name: "My New Team"
