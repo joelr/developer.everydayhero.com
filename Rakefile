@@ -3,21 +3,23 @@ task :compile do
   `nanoc compile`
 end
 
-def commit_message
+def commit_message skip_confirmation = false
   last_commit = `git log -1 --pretty=format:"%s"`.chomp.strip
   last_commit = 'Publishing developer content to GitHub pages.' if last_commit == ''
 
-  print "Enter a commit message (default: '#{last_commit}'): "
-  STDOUT.flush
-  mesg = STDIN.gets.chomp.strip
+  unless skip_confirmation
+    print "Enter a commit message (default: '#{last_commit}'): "
+    STDOUT.flush
+    mesg = STDIN.gets.chomp.strip
+  end
 
-  mesg = last_commit if mesg == ''
+  mesg = last_commit unless mesg
   mesg.gsub(/'/, '') # to allow this to be handed off via -m '#{message}'
 end
 
 desc "Deploy to http://developer.everydayhero.com"
 task :deploy => [:compile] do
-  mesg = commit_message
+  mesg = commit_message ENV['skip_confirmation']
 
   ENV['GIT_DIR'] = File.expand_path(`git rev-parse --git-dir`.chomp)
   old_sha = `git rev-parse refs/remotes/origin/gh-pages`.chomp
