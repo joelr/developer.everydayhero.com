@@ -95,6 +95,18 @@ name
 : _Optional_ **string**. The full name of the person you want to
 prepopulate the sign-up form for.
 
+### Branding
+
+Branding is optional.
+
+These parameters are only required if you would like branding from your campaign to be used for the sign up/in screen. If you choose to implement branding, both parameters are required.
+
+reference
+: _Optional_ **string**. The campaign slug for the campaign which should be used for branding the login screen.
+
+country
+: _Optional_ **string**. The country code associated with your campaign (au, nz, uk)
+
 ## Token endpoint
 
     POST   https://passport.everydayhero.com/oauth/token
