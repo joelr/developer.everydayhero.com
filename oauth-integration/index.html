@@ -137,7 +137,7 @@ in any Everyday Hero product.</p>
 
 <h2 id="authorize-endpoint">Authorize endpoint</h2>
 
-<pre><code>GET    passport.edheroz.com/oauth/authorize(.:format)
+<pre><code>GET    https://passport.everydayhero.com/oauth/authorize(.:format)
 </code></pre>
 
 <p>The authorization endpoint is defined in the OAuth 2.0 specification
@@ -149,7 +149,7 @@ service redirects the useZ back to the client’s redirect URI with the
 response to the authorization request.</p>
 
 <h4 id="example">Example:</h4>
-<pre><code>https://passport.edheroz.com/oauth/authorize?response_type=code&amp;client_id=XXXX&amp;redirect_uri=http://MYAPP.COM/auth/passport/callback&amp;email=john@smith.com
+<pre><code>https://passport.everydayhero.com/oauth/authorize?response_type=code&amp;client_id=XXXX&amp;redirect_uri=http://MYAPP.COM/auth/passport/callback&amp;email=john@smith.com
 </code></pre>
 
 <h3 id="parameters--prepopulation">Parameters &amp; prepopulation</h3>
@@ -178,9 +178,22 @@ prepopulate the sign-up form for.</dd>
   <dd>
 <em>Optional</em> <strong>string</strong>. The full name of the person you want to
 prepopulate the sign-up form for.</dd>
+</dl><h3 id="branding">Branding</h3>
+
+<p>Branding is optional.</p>
+
+<p>These parameters are only required if you would like branding from your campaign to be used for the sign up/in screen. If you choose to implement branding, both parameters are required.</p>
+
+<dl>
+<dt>reference</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. The campaign slug for the campaign which should be used for branding the login screen.</dd>
+  <dt>country</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. The country code associated with your campaign (au, nz, uk)</dd>
 </dl><h2 id="token-endpoint">Token endpoint</h2>
 
-<pre><code>POST   passport_host/oauth/token
+<pre><code>POST   https://passport.everydayhero.com/oauth/token
 </code></pre>
 
 <p>The token endpoint is the endpoint on the authorization server where the
@@ -188,7 +201,7 @@ client application exchanges the authorization code, client ID and client
 secret, for an access token.</p>
 
 <h4 id="example-1">Example:</h4>
-<pre><code>POST passport_host/oauth/token?code=CODE&amp;client_id=XXXX&amp;client_secret=XXXX&amp;grant_type=authorization_code&amp;redirect_uri=http://myapp.com:3000/auth/passport/callback
+<pre><code>POST https://passport.everydayhero.com/oauth/token?code=CODE&amp;client_id=XXXX&amp;client_secret=XXXX&amp;grant_type=authorization_code&amp;redirect_uri=http://myapp.com:3000/auth/passport/callback
 </code></pre>
 
 <h3 id="parameters">Parameters</h3>

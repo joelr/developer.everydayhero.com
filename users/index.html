@@ -82,7 +82,7 @@
   <li><a href="#update-a-new-user-with-attributes">Update a new user with attributes</a></li>
 </ul><h2 id="list-all-users">List all Users</h2>
 
-<pre><code>GET /users
+<pre><code>GET https://passport.everydayhero.com/api/v1/users
 </code></pre>
 
 <h3 id="visibility">Visibility</h3>
@@ -138,7 +138,7 @@
 
 <h2 id="get-current-user">Get current user</h2>
 
-<pre><code>GET passport_host/api/v1/me.json?access_token=xxx
+<pre><code>GET https://passport.everydayhero.com/api/v1/me.json?access_token=xxx
 </code></pre>
 
 <h3 id="visibility-1">Visibility</h3>
@@ -151,7 +151,7 @@
 
 <h3 id="example-request">Example request</h3>
 
-<pre><code>passport_host/api/v1/me.json?access_token=dc2e3c7c72a297e9df6ffdb60a98e4c841ca384dfeca890b2db9800e830xxxxx
+<pre><code>https://passport.everydayhero.com/api/v1/me.json?access_token=dc2e3c7c72a297e9df6ffdb60a98e4c841ca384dfeca890b2db9800e830xxxxx
 </code></pre>
 
 <h3 id="response">Response</h3>
@@ -187,7 +187,7 @@
 
 <h2 id="update-a-new-user-with-attributes">Update a new user with attributes</h2>
 
-<pre><code>PUT passport_host/api/v1/me
+<pre><code>PUT https://passport.everydayhero.com/api/v1/me
 </code></pre>
 
 <h3 id="visibility-2">Visibility</h3>
@@ -204,7 +204,7 @@
 
 <h3 id="example-request-1">Example request</h3>
 
-<pre><code>PUT passport_host/api/v1/me?access_token=abc&amp;user%5Baddress%5D=someaddress&amp;user%5Bbirthday%5D=1970-01-01
+<pre><code>PUT https://passport.everydayhero.com/api/v1/me?access_token=abc&amp;user%5Baddress%5D=someaddress&amp;user%5Bbirthday%5D=1970-01-01
 </code></pre>
 
 <h3 id="repsonse-1">Repsonse</h3>
