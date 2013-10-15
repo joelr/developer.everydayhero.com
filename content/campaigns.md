@@ -3,7 +3,7 @@ title: Campaigns
 ---
 ## List all Campaigns
 
-    GET /campaigns
+    GET https://everydayhero.com/api/v2/campaigns
 
 ### Visibility
 
@@ -22,7 +22,7 @@ retrieved.
 
 ## View a single Campaign
 
-    GET /campaigns/:id
+    GET https://everydayhero.com/api/v2/campaigns/:id
 
 [View demo in API console](/console/?query=campaigns/au-0.json) 
 

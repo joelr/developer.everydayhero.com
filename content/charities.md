@@ -3,7 +3,7 @@ title: Charities
 ---
 ## List all Charities
 
-    GET /charities
+    GET https://everydayhero.com/api/v2/charities
 
 [View demo in API console](/console/?query=charities.json) 
 
@@ -23,7 +23,7 @@ Charities participating in the specified Campaigns will be retrieved.
 
 ## View a single Charity
 
-    GET /charities/:id
+    GET https://everydayhero.com/api/v2/charities/:id
 
 [View demo in API console](/console/?query=charities/au-8.json) 
 

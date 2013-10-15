@@ -5,7 +5,7 @@ title: Join Requests
 
 Join an existing team with an existing individual page.
 
-    POST /teams/:id/join-requests
+    POST https://everydayhero.com/api/v2/teams/:id/join-requests
 
 ### Visibility
 

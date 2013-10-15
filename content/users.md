@@ -7,7 +7,7 @@ title: Users
 
 ## List all Users
 
-    GET /users
+    GET https://passport.everydayhero.com/api/v1/users
 
 ### Visibility
 
@@ -23,7 +23,7 @@ search : _Optional_ **string**. Retrieve only the users with either a name, nick
 
 ## Get current user
 
-    GET passport_host/api/v1/me.json?access_token=xxx
+    GET https://passport.everydayhero.com/api/v1/me.json?access_token=xxx
 
 ### Visibility
 
@@ -35,7 +35,7 @@ access_token : _Required_ **string** User access_token provided by passport auth
 
 ### Example request
 
-    passport_host/api/v1/me.json?access_token=dc2e3c7c72a297e9df6ffdb60a98e4c841ca384dfeca890b2db9800e830xxxxx
+    https://passport.everydayhero.com/api/v1/me.json?access_token=dc2e3c7c72a297e9df6ffdb60a98e4c841ca384dfeca890b2db9800e830xxxxx
 
 ### Response
 
@@ -43,7 +43,7 @@ access_token : _Required_ **string** User access_token provided by passport auth
 
 ## Update a new user with attributes
 
-    PUT passport_host/api/v1/me
+    PUT https://passport.everydayhero.com/api/v1/me
 
 ### Visibility
 
@@ -59,7 +59,7 @@ user[address] : _optional_ **string** Full user address, example: "87 Wickham Te
 
 ### Example request
 
-    PUT passport_host/api/v1/me?access_token=abc&user%5Baddress%5D=someaddress&user%5Bbirthday%5D=1970-01-01
+    PUT https://passport.everydayhero.com/api/v1/me?access_token=abc&user%5Baddress%5D=someaddress&user%5Bbirthday%5D=1970-01-01
 
 ### Repsonse
 
