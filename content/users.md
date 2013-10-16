@@ -17,6 +17,10 @@ Restricted. Requires an authenticated user via access_token param.
 
 search : _Optional_ **string**. Retrieve only the users with either a name, nickname or email matching the provided keyword(s).
 
+### Example
+
+    https://passport.everydayhero.com/api/v1/users.json
+
 ### Repsonse
 
 <%= json :users %>
@@ -33,9 +37,9 @@ Restricted. Requires an authenticated user via access_token param.
 
 access_token : _Required_ **string** User access_token provided by passport auth hash
 
-### Example request
+### Example
 
-    https://passport.everydayhero.com/api/v1/me.json?access_token=dc2e3c7c72a297e9df6ffdb60a98e4c841ca384dfeca890b2db9800e830xxxxx
+    https://passport.everydayhero.com/api/v1/me.json?access_token=xxxxx
 
 ### Response
 
@@ -57,9 +61,9 @@ user[birthday] : _optional_ **string** User birthday, format "YYYY-MM-DD".
 
 user[address] : _optional_ **string** Full user address, example: "87 Wickham Terrace, Spring Hill, 4055, QLD"
 
-### Example request
+### Example
 
-    PUT https://passport.everydayhero.com/api/v1/me?access_token=abc&user%5Baddress%5D=someaddress&user%5Bbirthday%5D=1970-01-01
+    PUT https://passport.everydayhero.com/api/v1/me?access_token=xxxx&user%5Baddress%5D=someaddress&user%5Bbirthday%5D=1970-01-01
 
 ### Repsonse
 

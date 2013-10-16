@@ -17,6 +17,8 @@ individual_page_id
 : _Required_ **integer**. The `id` of the page you want to join a team
 with.
 
+### Example
+
 <%= json \
   individual_page_id: 1
 %>

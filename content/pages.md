@@ -32,6 +32,10 @@ campaign_id
 : _Optional_ **string**. Only retrieve pages participating in the
 campaign specified.
 
+### Example
+
+    https://everydayhero.com/api/v2/pages.json?type=individual&campaign_id=au-1
+
 ### Response
 
 <%= json :pages %>
@@ -45,6 +49,10 @@ campaign specified.
 ### Visibility
 
 Public.
+
+### Example
+
+    https://everydayhero.com/api/v2/pages/1.json
 
 ### Response
 
@@ -95,6 +103,8 @@ want to create a supporter page for.
 
 gift_aid_eligible
 : _Optional_ **boolean**. UK specific fundraising criteria.
+
+### Example
 
 <%= json \
   slug: "tim-cooper",
