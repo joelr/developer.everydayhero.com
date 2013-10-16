@@ -39,7 +39,7 @@ raise. Defaults to a predetermined value.
 ### Example
 
 <%= json \
-  email: 'support@everydayhero.com',
+  email: 'professionalservices@everydayhero.com.au',
   phone: '1300798768',
   full_name: 'Everyday Hero Support',
   charity_id: 'au-1',
@@ -84,7 +84,7 @@ raise. Defaults to a predetermined value.
 ### Example
 
 <%= json \
-  email: 'support@everydayhero.com',
+  email: 'professionalservices@everydayhero.com.au',
   full_name: 'Everyday Hero Support',
   charity_id: 'au-1',
   target: 705.5
