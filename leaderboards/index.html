@@ -20,7 +20,7 @@
       <div class="inner">
         <nav>
           <ul>
-            <li><a href="/">Intro</a></li>
+            <li><a href="/">Introduction</a></li>
             <li>
               <a href="/overview/">Overview</a>
               <ul>
@@ -99,7 +99,12 @@ assocated pages.</p>
   <dd>
 <em>Optional</em> <strong>string</strong> - <code>1,5,20</code> to only retrieve leaderboards with
 the ids 1, 5 and 20</dd>
-</dl><h3 id="response">Response</h3>
+</dl><h3 id="example">Example</h3>
+
+<pre><code>https://everydayhero.com/api/v2/leaderbords.json?ids=1,5,20
+</code></pre>
+
+<h3 id="response">Response</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"leaderboards"</span><span class="o">:</span> <span class="p">[</span>
@@ -130,6 +135,11 @@ the ids 1, 5 and 20</dd>
 <h3 id="visibility-1">Visibility</h3>
 
 <p>Public.</p>
+
+<h3 id="example-1">Example</h3>
+
+<pre><code>https://everydayhero.com/api/v2/leaderbords/1.json
+</code></pre>
 
 <h3 id="response-1">Response</h3>
 
@@ -175,7 +185,12 @@ values include <code>all</code>, <code>individual</code> and <code>team</code>. 
   <dd>
 <em>Optional</em> <strong>integer</strong>. The number of records retrieved. This is useful
 for showing a “top 10 supporters leaderboard”. Defaults to <code>10</code>.</dd>
-</dl><h3 id="response-2">Response</h3>
+</dl><h3 id="example-2">Example</h3>
+
+<pre><code>https://everydayhero.com/api/v2/leaderbords/au-1/leaderboard.json?type=individual&amp;limit=5
+</code></pre>
+
+<h3 id="response-2">Response</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"leaderboard"</span><span class="o">:</span> <span class="p">{</span>

@@ -20,7 +20,7 @@
       <div class="inner">
         <nav>
           <ul>
-            <li><a href="/">Intro</a></li>
+            <li><a href="/">Introduction</a></li>
             <li>
               <a href="/overview/">Overview</a>
               <ul>
@@ -77,37 +77,10 @@
         
           <h1>OAuth Integration</h1>
           <ul id="markdown-toc">
-<li><a href="#why-integrate-with-edh-passport">Why integrate with EDH Passport</a></li>
-  <li><a href="#how-to-authenticate-with-edh-passport">How to Authenticate with EDH Passport</a></li>
+<li><a href="#how-to-authenticate-with-edh-passport">How to Authenticate with EDH Passport</a></li>
   <li><a href="#authorize-endpoint">Authorize endpoint</a></li>
   <li><a href="#token-endpoint">Token endpoint</a></li>
   <li><a href="#registration-product-integration">Registration Product Integration</a></li>
-</ul><p>One of the biggest questions we receive from developers is around end to
-end integration - the API is great for pushing and pulling information
-but what if I want to create a tighter experience with Everyday Hero?</p>
-
-<p>Everyday Hero offer several integration points with third party software
-- the two that will be described in detail will firstly be
-authentication and secondly registration before creating supporter
-pages.</p>
-
-<h2 id="why-integrate-with-edh-passport">Why integrate with EDH Passport</h2>
-
-<ul>
-<li>
-    <p>Ability to gain more detailed information on users because you can
-leverage any information provided by Everyday Hero</p>
-  </li>
-  <li>
-    <p>Build upon data provided by Everyday Hero to customise an experience
-for you users</p>
-  </li>
-  <li>
-    <p>Global user identification. Once authenticated you will be given a
-universal identifier (uid) which is our guarantee to you that this is
-the same user within Everyday Hero and your product. This is especially
-useful for year on year campaigns.</p>
-  </li>
 </ul><h2 id="how-to-authenticate-with-edh-passport">How to Authenticate with EDH Passport</h2>
 
 <p>Everyday Hero’s Giving Passport is our way of globally recognising a
@@ -145,14 +118,14 @@ and is used by OAuth to interact with resource owners, authenticate
 them, and obtains their authorization. An OAuth client makes an
 authorization request by directing the user to the authorization endpoint.
 After completing its interaction with the user, the OAuth/Passport
-service redirects the useZ back to the client’s redirect URI with the
+service redirects the user back to the client’s redirect URI with the
 response to the authorization request.</p>
 
 <h4 id="example">Example:</h4>
 <pre><code>https://passport.everydayhero.com/oauth/authorize?response_type=code&amp;client_id=XXXX&amp;redirect_uri=http://MYAPP.COM/auth/passport/callback&amp;email=john@smith.com
 </code></pre>
 
-<h3 id="parameters--prepopulation">Parameters &amp; prepopulation</h3>
+<h3 id="parameters">Parameters</h3>
 
 <dl>
 <dt>response_type</dt>
@@ -166,7 +139,12 @@ grant type while a value of token implies the Implicit grant type.</dd>
   <dd>
 <em>Optional</em> <strong>string</strong> If present, the requested redirect_uri must match
 the one configured for the client. if the redirect_uri is set to <code>urn:ietf:wg:oauth:2.0:oob</code>, this will tell Passport to display the authorization code instead of redirecting to a client application (if this is still under development).</dd>
-  <dt>email</dt>
+</dl><h3 id="prepopulation">Prepopulation</h3>
+
+<p>These parameters will be pre-populated on the sign up/in screen.</p>
+
+<dl>
+<dt>email</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>. The email of the person you want to prepopulate
 the sign-up form for.</dd>
@@ -191,7 +169,13 @@ prepopulate the sign-up form for.</dd>
   <dt>country</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>. The country code associated with your campaign (au, nz, uk)</dd>
-</dl><h2 id="token-endpoint">Token endpoint</h2>
+</dl><h3 id="response">Response</h3>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"code"</span><span class="o">:</span> <span class="s2">"a1d74c4c1d137662fdf69615b825e4c83fa02e25"</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="token-endpoint">Token endpoint</h2>
 
 <pre><code>POST   https://passport.everydayhero.com/oauth/token
 </code></pre>
@@ -204,7 +188,7 @@ secret, for an access token.</p>
 <pre><code>POST https://passport.everydayhero.com/oauth/token?code=CODE&amp;client_id=XXXX&amp;client_secret=XXXX&amp;grant_type=authorization_code&amp;redirect_uri=http://myapp.com:3000/auth/passport/callback
 </code></pre>
 
-<h3 id="parameters">Parameters</h3>
+<h3 id="parameters-1">Parameters</h3>
 
 <dl>
 <dt>grant_type</dt>
@@ -223,7 +207,7 @@ secret, for an access token.</p>
   <dd>
 <em>Required</em> <strong>string</strong> the requested redirect_uri must match
 the one configured for the client.</dd>
-</dl><h3 id="response">Response</h3>
+</dl><h3 id="response-1">Response</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"access_token"</span><span class="o">:</span> <span class="s2">"xxxxxxca4e6d9d09f1d6b1330ccf97d862a7b42e87c737195f90e508d0xxxxxx"</span><span class="p">,</span>
@@ -253,7 +237,7 @@ information on the campaign</li>
   <li>An API key</li>
   <li>Registering a third party integration application</li>
 </ul><p>All of this can be obtained by emailing
-<a href="mailto:support@everydayhero.com">support</a>.</p>
+<a href="mailto:professionalservices@everydayhero.com.au">support</a>.</p>
 
 <p>Generally there are going to be two entry points into your campaign, the
 first will be through your website and the second will be through an

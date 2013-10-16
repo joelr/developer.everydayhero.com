@@ -20,7 +20,7 @@
       <div class="inner">
         <nav>
           <ul>
-            <li><a href="/">Intro</a></li>
+            <li><a href="/">Introduction</a></li>
             <li>
               <a href="/overview/">Overview</a>
               <ul>
@@ -93,7 +93,12 @@
 
 <p>search : <em>Optional</em> <strong>string</strong>. Retrieve only the users with either a name, nickname or email matching the provided keyword(s).</p>
 
-<h3 id="repsonse">Repsonse</h3>
+<h3 id="example">Example</h3>
+
+<pre><code>https://passport.everydayhero.com/api/v1/users.json
+</code></pre>
+
+<h3 id="response">Response</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"users"</span><span class="o">:</span> <span class="p">[</span>
@@ -149,12 +154,12 @@
 
 <p>access_token : <em>Required</em> <strong>string</strong> User access_token provided by passport auth hash</p>
 
-<h3 id="example-request">Example request</h3>
+<h3 id="example-1">Example</h3>
 
-<pre><code>https://passport.everydayhero.com/api/v1/me.json?access_token=dc2e3c7c72a297e9df6ffdb60a98e4c841ca384dfeca890b2db9800e830xxxxx
+<pre><code>https://passport.everydayhero.com/api/v1/me.json?access_token=xxxxx
 </code></pre>
 
-<h3 id="response">Response</h3>
+<h3 id="response-1">Response</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"user"</span><span class="o">:</span> <span class="p">[</span>
@@ -202,12 +207,12 @@
 
 <p>user[address] : <em>optional</em> <strong>string</strong> Full user address, example: “87 Wickham Terrace, Spring Hill, 4055, QLD”</p>
 
-<h3 id="example-request-1">Example request</h3>
+<h3 id="example-2">Example</h3>
 
-<pre><code>PUT https://passport.everydayhero.com/api/v1/me?access_token=abc&amp;user%5Baddress%5D=someaddress&amp;user%5Bbirthday%5D=1970-01-01
+<pre><code>PUT https://passport.everydayhero.com/api/v1/me?access_token=xxxx&amp;user%5Baddress%5D=someaddress&amp;user%5Bbirthday%5D=1970-01-01
 </code></pre>
 
-<h3 id="repsonse-1">Repsonse</h3>
+<h3 id="repsonse">Repsonse</h3>
 
 <pre><code>204 or 40X
 </code></pre>

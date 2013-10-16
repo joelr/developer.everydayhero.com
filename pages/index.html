@@ -20,7 +20,7 @@
       <div class="inner">
         <nav>
           <ul>
-            <li><a href="/">Intro</a></li>
+            <li><a href="/">Introduction</a></li>
             <li>
               <a href="/overview/">Overview</a>
               <ul>
@@ -80,7 +80,7 @@
 <li><a href="#list-all-pages">List all Pages</a></li>
   <li><a href="#view-a-single-page">View a single Page</a></li>
   <li><a href="#create-an-individual-page">Create an Individual Page</a></li>
-</ul><p>A page can belong to either a user or team (denotd by the ‘owner_type’ field).
+</ul><p>A page can belong to either a user or team (denoted by the ‘owner_type’ field).
 Pages belonging to a team have some special characteristics in that some of its
 fields represent an agregate of all its team members. Fields which have this
 characteristic include ‘amount’ and ‘custom_metric_total’.</p>
@@ -109,7 +109,12 @@ values include <code>all</code>, <code>individual</code> and <code>team</code>. 
   <dd>
 <em>Optional</em> <strong>string</strong>. Only retrieve pages participating in the
 campaign specified.</dd>
-</dl><h3 id="response">Response</h3>
+</dl><h3 id="example">Example</h3>
+
+<pre><code>https://everydayhero.com/api/v2/pages.json?type=individual&amp;campaign_id=au-1
+</code></pre>
+
+<h3 id="response">Response</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"pages"</span><span class="o">:</span> <span class="p">[</span>
@@ -159,6 +164,11 @@ campaign specified.</dd>
 <h3 id="visibility-1">Visibility</h3>
 
 <p>Public.</p>
+
+<h3 id="example-1">Example</h3>
+
+<pre><code>https://everydayhero.com/api/v2/pages/1.json
+</code></pre>
 
 <h3 id="response-1">Response</h3>
 
@@ -249,7 +259,9 @@ want to create a supporter page for.</dd>
   <dt>gift_aid_eligible</dt>
   <dd>
 <em>Optional</em> <strong>boolean</strong>. UK specific fundraising criteria.</dd>
-</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+</dl><h3 id="example-2">Example</h3>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"tim-cooper"</span><span class="p">,</span>
   <span class="s2">"expires_at"</span><span class="o">:</span> <span class="s2">"2013-10-21T17:15:08+10:00"</span><span class="p">,</span>
   <span class="s2">"target"</span><span class="o">:</span> <span class="s2">"500.50"</span><span class="p">,</span>

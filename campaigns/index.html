@@ -20,7 +20,7 @@
       <div class="inner">
         <nav>
           <ul>
-            <li><a href="/">Intro</a></li>
+            <li><a href="/">Introduction</a></li>
             <li>
               <a href="/overview/">Overview</a>
               <ul>
@@ -93,7 +93,12 @@
 <em>Optional</em> <strong>string</strong>. A comma-separated list of Charity IDs, only
 Campaigns that the specified Charity is participating in will be
 retrieved.</dd>
-</dl><h3 id="response">Response</h3>
+</dl><h3 id="example">Example</h3>
+
+<pre><code>https://everydayhero.com/api/v2/campaigns.json?charity_ids=au-1,au-2,au-3
+</code></pre>
+
+<h3 id="response">Response</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"campaigns"</span><span class="o">:</span> <span class="p">[</span>
@@ -132,6 +137,11 @@ retrieved.</dd>
 <h3 id="visibility-1">Visibility</h3>
 
 <p>Public.</p>
+
+<h3 id="example-1">Example</h3>
+
+<pre><code>https://everydayhero.com/api/v2/campaigns/au-1.json
+</code></pre>
 
 <h3 id="response-1">Response</h3>
 
