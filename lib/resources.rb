@@ -268,6 +268,10 @@ module EverydayHero
       users: [UserData, UserData]
     }
 
+    Authorizedata = {
+      code: "a1d74c4c1d137662fdf69615b825e4c83fa02e25"
+    }
+
     Tokendata = {
       access_token: "xxxxxxca4e6d9d09f1d6b1330ccf97d862a7b42e87c737195f90e508d0xxxxxx",
       token_type: "bearer",

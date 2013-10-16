@@ -88,6 +88,10 @@ reference
 country
 : _Optional_ **string**. The country code associated with your campaign (au, nz, uk)
 
+### Response
+
+<%= json :authorizedata %>
+
 ## Token endpoint
 
     POST   https://passport.everydayhero.com/oauth/token
