@@ -5,29 +5,6 @@ title: OAuth Integration
 * TOC
 {:toc}
 
-One of the biggest questions we receive from developers is around end to
-end integration - the API is great for pushing and pulling information
-but what if I want to create a tighter experience with Everyday Hero?
-
-Everyday Hero offer several integration points with third party software
-- the two that will be described in detail will firstly be
-authentication and secondly registration before creating supporter
-pages.
-
-## Why integrate with EDH Passport
-
-* Ability to gain more detailed information on users because you can
-leverage any information provided by Everyday Hero
-
-* Build upon data provided by Everyday Hero to customise an experience
-for you users
-
-* Global user identification. Once authenticated you will be given a
-universal identifier (uid) which is our guarantee to you that this is
-the same user within Everyday Hero and your product. This is especially
-useful for year on year campaigns.
-
-
 ## How to Authenticate with EDH Passport
 
 Everyday Hero's Giving Passport is our way of globally recognising a
