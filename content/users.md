@@ -21,7 +21,7 @@ search : _Optional_ **string**. Retrieve only the users with either a name, nick
 
     https://passport.everydayhero.com/api/v1/users.json
 
-### Repsonse
+### Response
 
 <%= json :users %>
 

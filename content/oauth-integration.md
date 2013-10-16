@@ -41,7 +41,7 @@ and is used by OAuth to interact with resource owners, authenticate
 them, and obtains their authorization. An OAuth client makes an
 authorization request by directing the user to the authorization endpoint.
 After completing its interaction with the user, the OAuth/Passport
-service redirects the useZ back to the client’s redirect URI with the
+service redirects the user back to the client’s redirect URI with the
 response to the authorization request.
 
 ####Example:
