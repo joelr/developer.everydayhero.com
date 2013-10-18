@@ -11,10 +11,8 @@ Public.
 
 ### Parameters
 
-charity_ids
-: _Optional_ **string**. A comma-separated list of Charity IDs, only
-Campaigns that the specified Charity is participating in will be
-retrieved.
+charity_ids : _optional_ **string**<br/>
+A comma-separated list of Charity IDs, only Campaigns that the specified Charity is participating in will be retrieved.
 
 ### Example
 

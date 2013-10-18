@@ -18,9 +18,8 @@ Public.
 
 ### Parameters
 
-ids
-: _Optional_ **string** - `1,5,20` to only retrieve leaderboards with
-the ids 1, 5 and 20
+ids : _optional_ **string**<br/>
+`1,5,20` to only retrieve leaderboards with the ids 1, 5 and 20
 
 ### Example
 
@@ -59,13 +58,11 @@ Public.
 
 ### Parameters
 
-type
-: _Optional_ **string**. The types of pages that are required. Supported
-values include `all`, `individual` and `team`. Defaults to `all`.
+type : _optional_ **string**<br/>
+The types of pages that are required. Supported values include `all`, `individual` and `team`. Defaults to `all`.
 
-limit
-: _Optional_ **integer**. The number of records retrieved. This is useful
-for showing a "top 10 supporters leaderboard". Defaults to `10`.
+limit : _optional_ **integer**<br/>
+The number of records retrieved. This is useful for showing a "top 10 supporters leaderboard". Defaults to `10`.
 
 ### Example
 
