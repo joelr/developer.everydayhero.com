@@ -11,7 +11,7 @@ title: Users
 
 ### Visibility
 
-Restricted. Requires an authenticated user via access_token param.
+Restricted. Requires an authenticated user via access_token parameter.
 
 ### Parameters
 
@@ -31,7 +31,7 @@ search : _Optional_ **string**. Retrieve only the users with either a name, nick
 
 ### Visibility
 
-Restricted. Requires an authenticated user via access_token param.
+Restricted. Requires an authenticated user via access_token parameter.
 
 ### Parameters
 
@@ -51,7 +51,7 @@ access_token : _Required_ **string** User access_token provided by passport auth
 
 ### Visibility
 
-Restricted. Requires an authenticated user via access_token param.
+Restricted. Requires an authenticated user via access_token parameter.
 
 ### Parameters
 
