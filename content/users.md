@@ -59,7 +59,7 @@ access_token : _Required_ **string** User access_token provided by passport auth
 
 user[birthday] : _optional_ **string** User birthday, format "YYYY-MM-DD".
 
-user[address] : _optional_ **string** Full user address, example: "87 Wickham Terrace, Spring Hill, 4055, QLD"
+user[address] : _optional_ **string** The address passed through must be locatable through the Google Maps API. Example: "87 Wickham Terrace, Spring Hill, 4000, QLD"
 
 ### Example
 
