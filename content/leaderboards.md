@@ -17,6 +17,17 @@ assocated pages.
 <div>ids : _optional_ **string**</div>
 <div>`1,5,20` to only retrieve leaderboards with the ids `1`, `5` and `20`</div>
 
+#### Pagination
+
+For more information about pagination, please see the [pagination
+overview](/overview/#pagination).
+
+limit : _optional_ **integer**<br/>
+The number of items per page.
+
+page : _optional_ **integer**<br/>
+The page number to return.
+
 ### Example
 
     https://everydayhero.com/api/v2/leaderbords.json?ids=1,5,20

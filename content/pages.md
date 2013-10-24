@@ -32,6 +32,17 @@ with the ids 1, 5 and 20.</div>
 `au-1,au-5` will retrieve pages which support charity ids `au-1` and
 `au-5`.</div>
 
+#### Pagination
+
+For more information about pagination, please see the [pagination
+overview](/overview/#pagination).
+
+limit : _optional_ **integer**<br/>
+The number of items per page.
+
+page : _optional_ **integer**<br/>
+The page number to return.
+
 ### Example
 
     https://everydayhero.com/api/v2/pages.json?type=individual&campaign_id=au-1&charity_ids=au-1,au-5

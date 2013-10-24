@@ -11,6 +11,17 @@ title: Campaigns
 <div>A comma-separated list of Charity IDs, only Campaigns that the specified
 Charity is participating in will be retrieved.</div>
 
+#### Pagination
+
+For more information about pagination, please see the [pagination
+overview](/overview/#pagination).
+
+limit : _optional_ **integer**<br/>
+The number of items per page.
+
+page : _optional_ **integer**<br/>
+The page number to return.
+
 ### Example
 
     https://everydayhero.com/api/v2/campaigns.json?charity_ids=au-1,au-2,au-3
