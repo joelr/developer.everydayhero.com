@@ -8,38 +8,50 @@ Using the [campaigns leaderboard endpoint](/leaderboards/) and the [pages endpoi
 
 Below shows a demo JQuery snippet that will load the campaign leaders, and page totals on to a page.
 
+
 <pre>
-  <code class="javascript">&lt;script src=&quot;http://code.jquery.com/jquery-latest.min.js&quot;&gt;&lt;/script&gt;
+<code class="javascript">&lt;script src="http://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt;
 &lt;script type='text/javascript'&gt;
-
-$(function() {
-  $.getJSON('https://everydayhero.com/api/v2/campaigns/au-1234/leaderboard.jsonp?callback=?', {},  function (data) {          
-    var pages = data.leaderboard.page_ids;
-    $.getJSON('https://everydayhero.com/api/v2/pages.jsonp?ids=' + pages.join(',') + '&amp;callback=?', {},  function (data) {          
-
-      $.each(data.pages, function(index, value) {  
-        var raised = value.amount;
-        $(&quot;#pages&quot;).append('&lt;li&gt;' + value.name + ' raised ' + raised.currency.symbol + (raised.cents / 100) + '&lt;/li&gt;');
-      });   
+  var campaignLeaderboard = function(campaign_slug, campaign_uid, type, limit, callback) {
+    $.getJSON('https://everydayhero.com/api/v2/campaigns/' + campaign_uid + '/leaderboard.jsonp?type=' + type + '&limit=' + limit + '&callback=?', function(leaderboard_data) {
+      if (leaderboard_data.leaderboard.page_ids.length == 0) {
+        callback([]);
+        return;
+      }
+      $.getJSON('https://everydayhero.com/api/v2/pages.jsonp?ids=' + leaderboard_data.leaderboard.page_ids.join(',') + '&callback=?', function(page_data) {
+        var leaderboard = $.map(leaderboard_data.leaderboard.page_ids, function(page_id, i) {
+          var page = $.grep(page_data.pages, function(element) {
+            return element.id == page_id;
+          })[0];
+          return {
+            name: page.name,
+            amount: '$' + (page.amount.cents / 100),
+            url: 'http://' + campaign_slug + '.everydayhero.com/au/' + page.slug
+          }
+        });
+        callback(leaderboard);
+      });
+    });
+  };
+  campaignLeaderboard('give', 'au-0', 'individual', 10, function(data) {
+    $(data).each(function(i, item) {
+      $('#leaderboard').append('&lt;li&gt;' + item.name + ' raised ' + item.amount + '&lt;/li&gt;');
     });
   });
-});  
-
-
 &lt;/script&gt;
 
-&lt;ul id='pages'&gt;&lt;/ul&gt;</code>
+&lt;ul id='leaderboard'&gt;&lt;/ul&gt;</code>
 </pre>
  
 ##This will display:
 
-- Claire raised $100
-- Sarah raised $70
-- Bill raised $70
-- John raised $50
-- Bill raised $10
-- Chris raised $10
-- Jane raised $10
-- Sam raised $5
-
-
+- Unions' Fire Appeal 2013 raised $81837.26
+- Scott Malcolm raised $67655
+- Rebuilding Dana raised $52715
+- Michael Hassett raised $50250
+- Anton raised $44170
+- Wee Erin G xxx raised $40820
+- Kicking Goals for Kids with Cancer raised $36950
+- OzForex Foreign Exchange raised $31850
+- Pritchard Francis Perth to Surf 2013 raised $30350
+- Brothers1VBrothers raised $27707.6
