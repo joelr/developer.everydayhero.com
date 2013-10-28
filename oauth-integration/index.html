@@ -77,11 +77,13 @@
         
           <h1>OAuth Integration</h1>
           <ul id="markdown-toc">
-<li><a href="#how-to-authenticate-with-edh-passport">How to Authenticate with EDH Passport</a></li>
+  <li><a href="#how-to-authenticate-with-edh-passport">How to Authenticate with EDH Passport</a></li>
   <li><a href="#authorize-endpoint">Authorize endpoint</a></li>
   <li><a href="#token-endpoint">Token endpoint</a></li>
   <li><a href="#registration-product-integration">Registration Product Integration</a></li>
-</ul><h2 id="how-to-authenticate-with-edh-passport">How to Authenticate with EDH Passport</h2>
+</ul>
+
+<h2 id="how-to-authenticate-with-edh-passport">How to Authenticate with EDH Passport</h2>
 
 <p>Everyday Hero’s Giving Passport is our way of globally recognising a
 user within any one of our products. We are now opening this
@@ -128,7 +130,7 @@ response to the authorization request.</p>
 <h3 id="parameters">Parameters</h3>
 
 <dl>
-<dt>response_type</dt>
+  <dt>response_type</dt>
   <dd>
 <em>Required</em> <strong>string</strong> A value of code results in the Authorization Code
 grant type while a value of token implies the Implicit grant type.</dd>
@@ -139,12 +141,14 @@ grant type while a value of token implies the Implicit grant type.</dd>
   <dd>
 <em>Optional</em> <strong>string</strong> If present, the requested redirect_uri must match
 the one configured for the client. if the redirect_uri is set to <code>urn:ietf:wg:oauth:2.0:oob</code>, this will tell Passport to display the authorization code instead of redirecting to a client application (if this is still under development).</dd>
-</dl><h3 id="prepopulation">Prepopulation</h3>
+</dl>
+
+<h3 id="prepopulation">Prepopulation</h3>
 
 <p>These parameters will be pre-populated on the sign up/in screen.</p>
 
 <dl>
-<dt>email</dt>
+  <dt>email</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>. The email of the person you want to prepopulate
 the sign-up form for.</dd>
@@ -156,20 +160,24 @@ prepopulate the sign-up form for.</dd>
   <dd>
 <em>Optional</em> <strong>string</strong>. The full name of the person you want to
 prepopulate the sign-up form for.</dd>
-</dl><h3 id="branding">Branding</h3>
+</dl>
+
+<h3 id="branding">Branding</h3>
 
 <p>Branding is optional.</p>
 
 <p>These parameters are only required if you would like branding from your campaign to be used for the sign up/in screen. If you choose to implement branding, both parameters are required.</p>
 
 <dl>
-<dt>reference</dt>
+  <dt>reference</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>. The campaign slug for the campaign which should be used for branding the login screen.</dd>
   <dt>country</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>. The country code associated with your campaign (au, nz, uk)</dd>
-</dl><h3 id="response">Response</h3>
+</dl>
+
+<h3 id="response">Response</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"code"</span><span class="o">:</span> <span class="s2">"a1d74c4c1d137662fdf69615b825e4c83fa02e25"</span>
@@ -191,7 +199,7 @@ secret, for an access token.</p>
 <h3 id="parameters-1">Parameters</h3>
 
 <dl>
-<dt>grant_type</dt>
+  <dt>grant_type</dt>
   <dd>
 <em>Required</em> <strong>string</strong> use authorization_code</dd>
   <dt>client_id</dt>
@@ -207,7 +215,9 @@ secret, for an access token.</p>
   <dd>
 <em>Required</em> <strong>string</strong> the requested redirect_uri must match
 the one configured for the client.</dd>
-</dl><h3 id="response-1">Response</h3>
+</dl>
+
+<h3 id="response-1">Response</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"access_token"</span><span class="o">:</span> <span class="s2">"xxxxxxca4e6d9d09f1d6b1330ccf97d862a7b42e87c737195f90e508d0xxxxxx"</span><span class="p">,</span>
@@ -226,23 +236,28 @@ Source code for the application can be found on
 This application demonstrates:</p>
 
 <ul>
-<li>authentication with the Giving Passport</li>
+  <li>authentication with the Giving Passport</li>
   <li>using the Everyday Hero API to create a supporter page and view
 information on the campaign</li>
   <li>while still giving you ultimate control over your registration system</li>
-</ul><p>For this type of integration you will need the following:</p>
+</ul>
+
+<p>For this type of integration you will need the following:</p>
 
 <ul>
-<li>An OAuth2 application</li>
+  <li>An OAuth2 application</li>
   <li>An API key</li>
   <li>Registering a third party integration application</li>
-</ul><p>All of this can be obtained by emailing
+</ul>
+
+<p>All of this can be obtained by emailing
 <a href="mailto:professionalservices@everydayhero.com.au">support</a>.</p>
 
 <p>Generally there are going to be two entry points into your campaign, the
 first will be through your website and the second will be through an
 Everyday Hero supporter page. The two flows are slightly different and
 deserve separate discussions.</p>
+
         
       </div>
     </section>

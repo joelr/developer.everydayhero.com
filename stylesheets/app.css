@@ -8,7 +8,7 @@ footer, header, hgroup, menu, nav, section {
   display: block; }
 
 body {
-  background: white url("../images/bg.jpeg") left top no-repeat;
+  background: white url("../images/bg.jpeg") center top no-repeat;
   background-attachment: fixed; }
 
 a {

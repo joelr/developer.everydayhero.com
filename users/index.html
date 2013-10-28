@@ -77,17 +77,19 @@
         
           <h1>Users</h1>
           <ul id="markdown-toc">
-<li><a href="#list-all-users">List all Users</a></li>
+  <li><a href="#list-all-users">List all Users</a></li>
   <li><a href="#get-current-user">Get current user</a></li>
   <li><a href="#update-a-new-user-with-attributes">Update a new user with attributes</a></li>
-</ul><h2 id="list-all-users">List all Users</h2>
+</ul>
+
+<h2 id="list-all-users">List all Users</h2>
 
 <pre><code>GET https://passport.everydayhero.com/api/v1/users
 </code></pre>
 
 <h3 id="visibility">Visibility</h3>
 
-<p>Restricted. Requires an authenticated user via access_token param.</p>
+<p>Restricted. Requires an authenticated user via access_token parameter.</p>
 
 <h3 id="parameters">Parameters</h3>
 
@@ -148,7 +150,7 @@
 
 <h3 id="visibility-1">Visibility</h3>
 
-<p>Restricted. Requires an authenticated user via access_token param.</p>
+<p>Restricted. Requires an authenticated user via access_token parameter.</p>
 
 <h3 id="parameters-1">Parameters</h3>
 
@@ -197,7 +199,7 @@
 
 <h3 id="visibility-2">Visibility</h3>
 
-<p>Restricted. Requires an authenticated user via access_token param.</p>
+<p>Restricted. Requires an authenticated user via access_token parameter.</p>
 
 <h3 id="parameters-2">Parameters</h3>
 
@@ -205,7 +207,7 @@
 
 <p>user[birthday] : <em>optional</em> <strong>string</strong> User birthday, format “YYYY-MM-DD”.</p>
 
-<p>user[address] : <em>optional</em> <strong>string</strong> Full user address, example: “87 Wickham Terrace, Spring Hill, 4055, QLD”</p>
+<p>user[address] : <em>optional</em> <strong>string</strong> The address passed through must be locatable through the Google Maps API. Example: “87 Wickham Terrace, Spring Hill, 4000, QLD”</p>
 
 <h3 id="example-2">Example</h3>
 
@@ -216,6 +218,7 @@
 
 <pre><code>204 or 40X
 </code></pre>
+
         
       </div>
     </section>

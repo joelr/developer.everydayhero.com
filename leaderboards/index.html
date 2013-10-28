@@ -77,10 +77,12 @@
         
           <h1>Leaderboards</h1>
           <ul id="markdown-toc">
-<li><a href="#list-all-leaderboards">List all Leaderboards</a></li>
+  <li><a href="#list-all-leaderboards">List all Leaderboards</a></li>
   <li><a href="#view-a-single-leaderboard">View a single Leaderboard</a></li>
   <li><a href="#view-a-campaign-leaderboard">View a Campaign Leaderboard</a></li>
-</ul><p>The Leaderboards API allows you to retrieve leaderboards and their
+</ul>
+
+<p>The Leaderboards API allows you to retrieve leaderboards and their
 assocated pages.</p>
 
 <h2 id="list-all-leaderboards">List all Leaderboards</h2>
@@ -95,11 +97,13 @@ assocated pages.</p>
 <h3 id="parameters">Parameters</h3>
 
 <dl>
-<dt>ids</dt>
+  <dt>ids</dt>
   <dd>
 <em>Optional</em> <strong>string</strong> - <code>1,5,20</code> to only retrieve leaderboards with
 the ids 1, 5 and 20</dd>
-</dl><h3 id="example">Example</h3>
+</dl>
+
+<h3 id="example">Example</h3>
 
 <pre><code>https://everydayhero.com/api/v2/leaderbords.json?ids=1,5,20
 </code></pre>
@@ -177,7 +181,7 @@ particular campaign.</p>
 <h3 id="parameters-1">Parameters</h3>
 
 <dl>
-<dt>type</dt>
+  <dt>type</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>. The types of pages that are required. Supported
 values include <code>all</code>, <code>individual</code> and <code>team</code>. Defaults to <code>all</code>.</dd>
@@ -185,7 +189,9 @@ values include <code>all</code>, <code>individual</code> and <code>team</code>. 
   <dd>
 <em>Optional</em> <strong>integer</strong>. The number of records retrieved. This is useful
 for showing a “top 10 supporters leaderboard”. Defaults to <code>10</code>.</dd>
-</dl><h3 id="example-2">Example</h3>
+</dl>
+
+<h3 id="example-2">Example</h3>
 
 <pre><code>https://everydayhero.com/api/v2/leaderbords/au-1/leaderboard.json?type=individual&amp;limit=5
 </code></pre>
@@ -201,6 +207,7 @@ for showing a “top 10 supporters leaderboard”. Defaults to <code>10</code>.<
     <span class="p">]</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
+
         
       </div>
     </section>
