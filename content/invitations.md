@@ -14,27 +14,20 @@ Restricted. Requires an authenticated user.
 
 ### Payload
 
-email
-: _Required_ **string**. The email address you would like the invitation
-sent to. We do not tie this email address to the user's Giving Passport
-in any way, it is only used to deliver the invitation.
+email : _required_ **string**<br/>
+The email address you would like the invitation sent to. We do not tie this email address to the user's Giving Passport in any way, it is only used to deliver the invitation.
 
-phone
-: _Optional_ **string**. The phone number of the person you want to
-invite to create a supporter page.
+phone : _optional_ **string**<br/>
+The phone number of the person you want to invite to create a supporter page.
 
-full_name
-: _Optional_ **string**. The full name of the person you want to invite
-to create a supporter page.
+full_name : _optional_ **string**<br/>
+The full name of the person you want to invite to create a supporter page.
 
-charity_id
-: _Optional_ **string**. The `id` of the charity that you want set for
-this supporter page. If no charity is supplied the user will be prompted
-to select a charity. Defaults to none.
+charity_id : _optional_ **string**<br/>
+The `id` of the charity that you want set for this supporter page. If no charity is supplied the user will be prompted to select a charity. Defaults to none.
 
-target
-: _Optional_ **decimal**. The amount of money this page is aiming to
-raise. Defaults to a predetermined value.
+target : _optional_ **decimal**<br/>
+The amount of money this page is aiming to raise. Defaults to a predetermined value.
 
 ### Example
 
@@ -63,23 +56,17 @@ Restricted. Requires an authenticated user.
 
 ### Payload
 
-email
-: _Required_ **string**. The email address you would like the invitation
-sent to. We do not tie this email address to the user's Giving Passport
-in any way, it is only used to deliver the invitation.
+email : _required_ **string**<br/>
+The email address you would like the invitation sent to. We do not tie this email address to the user's Giving Passport in any way, it is only used to deliver the invitation.
 
-full_name
-: _Optional_ **string**. The full name of the person you want to invite
-to create a supporter page.
+full_name : _optional_ **string**<br/>
+The full name of the person you want to invite to create a supporter page.
 
-charity_id
-: _Optional_ **string**. The `id` of the charity that you want set for
-this supporter page. If no charity is supplied the user will be prompted
-to select a charity. Defaults to none.
+charity_id : _optional_ **string**<br/>
+The `id` of the charity that you want set for this supporter page. If no charity is supplied the user will be prompted to select a charity. Defaults to none.
 
-target
-: _Optional_ **decimal**. The amount of money this page is aiming to
-raise. Defaults to a predetermined value.
+target : _optional_ **decimal**<br/>
+The amount of money this page is aiming to raise. Defaults to a predetermined value.
 
 ### Example
 

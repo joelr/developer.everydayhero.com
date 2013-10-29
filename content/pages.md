@@ -20,17 +20,14 @@ Public.
 
 ### Parameters
 
-ids
-: _Optional_ **string**. Only retrieve pages with the ids specified.
-`1,5,20` will retrieve pages with the ids 1, 5 and 20.
+ids : _optional_ **string**<br/>
+Only retrieve pages with the ids specified. `1,5,20` will retrieve pages with the ids 1, 5 and 20.
 
-type
-: _Optional_ **string**. The types of pages that are required. Supported
-values include `all`, `individual` and `team`. Defaults to `all`.
+type : _optional_ **string**<br/>
+The types of pages that are required. Supported values include `all`, `individual` and `team`. Defaults to `all`.
 
-campaign_id
-: _Optional_ **string**. Only retrieve pages participating in the
-campaign specified.
+campaign_id : _optional_ **string**<br/>
+Only retrieve pages participating in the campaign specified.
 
 ### Example
 
@@ -68,41 +65,32 @@ Restricted. Requires an authenticated user.
 
 ### Payload
 
-uid
-: _Required_ **integer**. The `uid` of the user that you want to create
-a page for.
+uid : _required_ **integer**<br/>
+The `uid` of the user that you want to create a page for.
 
-birthday
-: _Required_ **string**. Your birthday. In some countries there are age
-restrictions on fundraising and further action might need to be taken
-depending on the age provided.
+birthday : _required_ **string**<br/>
+Your birthday. In some countries there are age restrictions on fundraising and further action might need to be taken depending on the age provided.
 
-name
-: _Optional_ **string**. The desired name for your new supporter page.
-Defaults to the user's preferred name.
+name : _optional_ **string**<br/>
+The desired name for your new supporter page. Defaults to the user's preferred name.
 
-slug
-: _Optional_ **string**. The desired url for your new supporter page.
-https://give.everydayhero.com/au/tim-cooper.
+slug : _optional_ **string**<br/>
+The desired url for your new supporter page. https://give.everydayhero.com/au/tim-cooper.
 
-expires_at
-: _Optional_ **string**. The date and time you want the page to
-expire. ISO8601 format. Defaults to 1 month after the campaign end date.
+expires_at : _optional_ **string**<br/>
+The date and time you want the page to expire. ISO8601 format. Defaults to 1 month after the campaign end date.
 
-target
-: _Optional_ **string**. The dollar amount that you are aiming to raise (must be above 0).
+target : _optional_ **string**<br/>
+The dollar amount that you are aiming to raise (must be above 0).
 
-charity_id
-: _Optional_ **string**. The `id` of the charity to create the page for.
-Defaulted to a random charity.
+charity_id : _optional_ **string**<br/>
+The `id` of the charity to create the page for. Defaulted to a random charity.
 
-token
-: _Optional_ **string**. An invitation token to join a team. This
-invitation was created by the team leader and sent to the user that you
-want to create a supporter page for.
+token : _optional_ **string**<br/>
+An invitation token to join a team. This invitation was created by the team leader and sent to the user that you want to create a supporter page for.
 
-gift_aid_eligible
-: _Optional_ **boolean**. UK specific fundraising criteria.
+gift_aid_eligible : _optional_ **boolean**<br/>
+UK specific fundraising criteria.
 
 ### Example
 

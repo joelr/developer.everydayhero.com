@@ -49,32 +49,27 @@ response to the authorization request.
 
 ### Parameters
 
-response_type
-: _Required_ **string** A value of code results in the Authorization Code
-grant type while a value of token implies the Implicit grant type.
+response_type : _required_ **string**<br/>
+A value of code results in the Authorization Code grant type while a value of token implies the Implicit grant type.
 
-client_id
-: _Required_ **string** The client identifier.
+client_id : _required_ **string**<br./>
+The client identifier.
 
-redirect_uri
-: _Optional_ **string** If present, the requested redirect_uri must match
-the one configured for the client. if the redirect_uri is set to ```urn:ietf:wg:oauth:2.0:oob```, this will tell Passport to display the authorization code instead of redirecting to a client application (if this is still under development).
+redirect_uri : _optional_ **string**<br/>
+If present, the requested redirect_uri must match the one configured for the client. if the redirect_uri is set to ```urn:ietf:wg:oauth:2.0:oob```, this will tell Passport to display the authorization code instead of redirecting to a client application (if this is still under development).
 
 ### Prepopulation
 
 These parameters will be pre-populated on the sign up/in screen.
 
-email
-: _Optional_ **string**. The email of the person you want to prepopulate
-the sign-up form for.
+email : _optional_ **string**<br/>
+The email of the person you want to prepopulate the sign-up form for.
 
-phone
-: _Optional_ **string**. The phone number of the person you want to
-prepopulate the sign-up form for.
+phone : _optional_ **string**<br/>
+The phone number of the person you want to prepopulate the sign-up form for.
 
-name
-: _Optional_ **string**. The full name of the person you want to
-prepopulate the sign-up form for.
+name : _optional_ **string**<br/>
+The full name of the person you want to prepopulate the sign-up form for.
 
 ### Branding
 
@@ -82,11 +77,11 @@ Branding is optional.
 
 These parameters are only required if you would like branding from your campaign to be used for the sign up/in screen. If you choose to implement branding, both parameters are required.
 
-reference
-: _Optional_ **string**. The campaign slug for the campaign which should be used for branding the login screen.
+reference : _optional_ **string**<br/>
+The campaign slug for the campaign which should be used for branding the login screen.
 
-country
-: _Optional_ **string**. The country code associated with your campaign (au, nz, uk)
+country : _optional_ **string**<br/>
+The country code associated with your campaign (au, nz, uk).
 
 ### Response
 
@@ -105,21 +100,20 @@ secret, for an access token.
 
 ### Parameters
 
-grant_type
-: _Required_ **string** use authorization_code
+grant_type : _required_ **string**<br/>
+Use authorization_code.
 
-client_id
-: _Required_ **string** The client identifier.
+client_id : _required_ **string**<br/>
+The client identifier.
 
-client_secret
-: _Required_ **string** The client secret.
+client_secret : _required_ **string**<br/>
+The client secret.
 
-code
-: _Required_ **string**.
+code : _required_ **string**<br/>
+The code returned from authorize endpoint.
 
-redirect_uri
-: _Required_ **string** the requested redirect_uri must match
-the one configured for the client.
+redirect_uri : _required_ **string**<br/>
+The requested redirect_uri must match the one configured for the client.
 
 ### Response
 

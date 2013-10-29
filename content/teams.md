@@ -39,13 +39,11 @@ Restricted. Requires an authenticated user.
 
 ### Payload
 
-`individual_page_id`
-: _Required_ **integer**. The `id` of the individual page to create the
-team from.
+`individual_page_id` : _required_ **integer**<br/>
+The `id` of the individual page to create the team from.
 
-name
-: _Optional_ **string**. The name of the team. This needs to be unique
-within the campaign.
+name : _optional_ **string**<br/>
+The name of the team. This needs to be unique within the campaign.
 
 ### Example
 

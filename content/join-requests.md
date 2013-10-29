@@ -13,9 +13,8 @@ Restricted. Requires an authenticated user.
 
 ### Payload
 
-individual_page_id
-: _Required_ **integer**. The `id` of the page you want to join a team
-with.
+individual_page_id : _required_ **integer**<br/>
+The `id` of the page you want to join a team with.
 
 ### Example
 
