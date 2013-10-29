@@ -143,11 +143,10 @@ module EverydayHero
       },
       cached_offline_amount_cents: 0,
       invitation_id: nil,
-      custom_metric_total: {amount: '100', unit: 'steps'}
     }
 
     Page = {
-      page: PageData,
+      page: PageData.merge({campaign_date: nil}),
       meta: {
         url: "https://TestCampaignForAPI.edherox.com/au/tim"
       },
