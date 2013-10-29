@@ -76,7 +76,37 @@
       <div class="inner">
         
           <h1>Teams</h1>
-          <h2 id="create-a-team">Create a Team</h2>
+          <ul id="markdown-toc">
+  <li><a href="#list-all-teams">List all Teams</a></li>
+  <li><a href="#create-a-team">Create a Team</a></li>
+</ul>
+
+<h2 id="list-all-teams">List all Teams</h2>
+
+<p>List all teams in the authenticated application’s campaign.</p>
+
+<pre><code>GET https://everydayhero.com/api/v2/teams
+</code></pre>
+
+<h3 id="visibility">Visibility</h3>
+
+<p>Restricted. Requires an authenticated user.</p>
+
+<h3 id="example">Example</h3>
+
+<pre><code>https://everydayhero.com/api/v2/teams
+</code></pre>
+
+<h3 id="response">Response</h3>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"team"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Team Example"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="create-a-team">Create a Team</h2>
 
 <ul>
   <li>
@@ -90,31 +120,26 @@
   </li>
 </ul>
 
-<h3 id="visibility">Visibility</h3>
+<h3 id="visibility-1">Visibility</h3>
 
 <p>Restricted. Requires an authenticated user.</p>
 
 <h3 id="payload">Payload</h3>
 
-<dl>
-  <dt><code>individual_page_id</code></dt>
-  <dd>
-<em>Required</em> <strong>integer</strong>. The <code>id</code> of the individual page to create the
-team from.</dd>
-  <dt>name</dt>
-  <dd>
-<em>Optional</em> <strong>string</strong>. The name of the team. This needs to be unique
-within the campaign.</dd>
-</dl>
+<p><code>individual_page_id</code> : <em>required</em> <strong>integer</strong><br>
+The <code>id</code> of the individual page to create the team from.</p>
 
-<h3 id="example">Example</h3>
+<p>name : <em>optional</em> <strong>string</strong><br>
+The name of the team. This needs to be unique within the campaign.</p>
+
+<h3 id="example-1">Example</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"individual_page_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
   <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"My New Team"</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="response">Response</h3>
+<h3 id="response-1">Response</h3>
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"teampage"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>

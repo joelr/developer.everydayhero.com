@@ -129,38 +129,27 @@ response to the authorization request.</p>
 
 <h3 id="parameters">Parameters</h3>
 
-<dl>
-  <dt>response_type</dt>
-  <dd>
-<em>Required</em> <strong>string</strong> A value of code results in the Authorization Code
-grant type while a value of token implies the Implicit grant type.</dd>
-  <dt>client_id</dt>
-  <dd>
-<em>Required</em> <strong>string</strong> The client identifier.</dd>
-  <dt>redirect_uri</dt>
-  <dd>
-<em>Optional</em> <strong>string</strong> If present, the requested redirect_uri must match
-the one configured for the client. if the redirect_uri is set to <code>urn:ietf:wg:oauth:2.0:oob</code>, this will tell Passport to display the authorization code instead of redirecting to a client application (if this is still under development).</dd>
-</dl>
+<p>response_type : <em>required</em> <strong>string</strong><br>
+A value of code results in the Authorization Code grant type while a value of token implies the Implicit grant type.</p>
+
+<p>client_id : <em>required</em> <strong>string</strong><br.></br.>
+The client identifier.</p>
+
+<p>redirect_uri : <em>optional</em> <strong>string</strong><br>
+If present, the requested redirect_uri must match the one configured for the client. if the redirect_uri is set to <code>urn:ietf:wg:oauth:2.0:oob</code>, this will tell Passport to display the authorization code instead of redirecting to a client application (if this is still under development).</p>
 
 <h3 id="prepopulation">Prepopulation</h3>
 
 <p>These parameters will be pre-populated on the sign up/in screen.</p>
 
-<dl>
-  <dt>email</dt>
-  <dd>
-<em>Optional</em> <strong>string</strong>. The email of the person you want to prepopulate
-the sign-up form for.</dd>
-  <dt>phone</dt>
-  <dd>
-<em>Optional</em> <strong>string</strong>. The phone number of the person you want to
-prepopulate the sign-up form for.</dd>
-  <dt>name</dt>
-  <dd>
-<em>Optional</em> <strong>string</strong>. The full name of the person you want to
-prepopulate the sign-up form for.</dd>
-</dl>
+<p>email : <em>optional</em> <strong>string</strong><br>
+The email of the person you want to prepopulate the sign-up form for.</p>
+
+<p>phone : <em>optional</em> <strong>string</strong><br>
+The phone number of the person you want to prepopulate the sign-up form for.</p>
+
+<p>name : <em>optional</em> <strong>string</strong><br>
+The full name of the person you want to prepopulate the sign-up form for.</p>
 
 <h3 id="branding">Branding</h3>
 
@@ -168,14 +157,11 @@ prepopulate the sign-up form for.</dd>
 
 <p>These parameters are only required if you would like branding from your campaign to be used for the sign up/in screen. If you choose to implement branding, both parameters are required.</p>
 
-<dl>
-  <dt>reference</dt>
-  <dd>
-<em>Optional</em> <strong>string</strong>. The campaign slug for the campaign which should be used for branding the login screen.</dd>
-  <dt>country</dt>
-  <dd>
-<em>Optional</em> <strong>string</strong>. The country code associated with your campaign (au, nz, uk)</dd>
-</dl>
+<p>reference : <em>optional</em> <strong>string</strong><br>
+The campaign slug for the campaign which should be used for branding the login screen.</p>
+
+<p>country : <em>optional</em> <strong>string</strong><br>
+The country code associated with your campaign (au, nz, uk).</p>
 
 <h3 id="response">Response</h3>
 
@@ -198,24 +184,20 @@ secret, for an access token.</p>
 
 <h3 id="parameters-1">Parameters</h3>
 
-<dl>
-  <dt>grant_type</dt>
-  <dd>
-<em>Required</em> <strong>string</strong> use authorization_code</dd>
-  <dt>client_id</dt>
-  <dd>
-<em>Required</em> <strong>string</strong> The client identifier.</dd>
-  <dt>client_secret</dt>
-  <dd>
-<em>Required</em> <strong>string</strong> The client secret.</dd>
-  <dt>code</dt>
-  <dd>
-<em>Required</em> <strong>string</strong>.</dd>
-  <dt>redirect_uri</dt>
-  <dd>
-<em>Required</em> <strong>string</strong> the requested redirect_uri must match
-the one configured for the client.</dd>
-</dl>
+<p>grant_type : <em>required</em> <strong>string</strong><br>
+Use authorization_code.</p>
+
+<p>client_id : <em>required</em> <strong>string</strong><br>
+The client identifier.</p>
+
+<p>client_secret : <em>required</em> <strong>string</strong><br>
+The client secret.</p>
+
+<p>code : <em>required</em> <strong>string</strong><br>
+The code returned from authorize endpoint.</p>
+
+<p>redirect_uri : <em>required</em> <strong>string</strong><br>
+The requested redirect_uri must match the one configured for the client.</p>
 
 <h3 id="response-1">Response</h3>
 

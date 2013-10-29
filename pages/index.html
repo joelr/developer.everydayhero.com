@@ -98,20 +98,14 @@ characteristic include ‘amount’ and ‘custom_metric_total’.</p>
 
 <h3 id="parameters">Parameters</h3>
 
-<dl>
-  <dt>ids</dt>
-  <dd>
-<em>Optional</em> <strong>string</strong>. Only retrieve pages with the ids specified.
-<code>1,5,20</code> will retrieve pages with the ids 1, 5 and 20.</dd>
-  <dt>type</dt>
-  <dd>
-<em>Optional</em> <strong>string</strong>. The types of pages that are required. Supported
-values include <code>all</code>, <code>individual</code> and <code>team</code>. Defaults to <code>all</code>.</dd>
-  <dt>campaign_id</dt>
-  <dd>
-<em>Optional</em> <strong>string</strong>. Only retrieve pages participating in the
-campaign specified.</dd>
-</dl>
+<p>ids : <em>optional</em> <strong>string</strong><br>
+Only retrieve pages with the ids specified. <code>1,5,20</code> will retrieve pages with the ids 1, 5 and 20.</p>
+
+<p>type : <em>optional</em> <strong>string</strong><br>
+The types of pages that are required. Supported values include <code>all</code>, <code>individual</code> and <code>team</code>. Defaults to <code>all</code>.</p>
+
+<p>campaign_id : <em>optional</em> <strong>string</strong><br>
+Only retrieve pages participating in the campaign specified.</p>
 
 <h3 id="example">Example</h3>
 
@@ -226,44 +220,32 @@ campaign specified.</dd>
 
 <h3 id="payload">Payload</h3>
 
-<dl>
-  <dt>uid</dt>
-  <dd>
-<em>Required</em> <strong>integer</strong>. The <code>uid</code> of the user that you want to create
-a page for.</dd>
-  <dt>birthday</dt>
-  <dd>
-<em>Required</em> <strong>string</strong>. Your birthday. In some countries there are age
-restrictions on fundraising and further action might need to be taken
-depending on the age provided.</dd>
-  <dt>name</dt>
-  <dd>
-<em>Optional</em> <strong>string</strong>. The desired name for your new supporter page.
-Defaults to the user’s preferred name.</dd>
-  <dt>slug</dt>
-  <dd>
-<em>Optional</em> <strong>string</strong>. The desired url for your new supporter page.
-https://give.everydayhero.com/au/tim-cooper.</dd>
-  <dt>expires_at</dt>
-  <dd>
-<em>Optional</em> <strong>string</strong>. The date and time you want the page to
-expire. ISO8601 format. Defaults to 1 month after the campaign end date.</dd>
-  <dt>target</dt>
-  <dd>
-<em>Optional</em> <strong>string</strong>. The dollar amount that you are aiming to raise (must be above 0).</dd>
-  <dt>charity_id</dt>
-  <dd>
-<em>Optional</em> <strong>string</strong>. The <code>id</code> of the charity to create the page for.
-Defaulted to a random charity.</dd>
-  <dt>token</dt>
-  <dd>
-<em>Optional</em> <strong>string</strong>. An invitation token to join a team. This
-invitation was created by the team leader and sent to the user that you
-want to create a supporter page for.</dd>
-  <dt>gift_aid_eligible</dt>
-  <dd>
-<em>Optional</em> <strong>boolean</strong>. UK specific fundraising criteria.</dd>
-</dl>
+<p>uid : <em>required</em> <strong>integer</strong><br>
+The <code>uid</code> of the user that you want to create a page for.</p>
+
+<p>birthday : <em>required</em> <strong>string</strong><br>
+Your birthday. In some countries there are age restrictions on fundraising and further action might need to be taken depending on the age provided.</p>
+
+<p>name : <em>optional</em> <strong>string</strong><br>
+The desired name for your new supporter page. Defaults to the user’s preferred name.</p>
+
+<p>slug : <em>optional</em> <strong>string</strong><br>
+The desired url for your new supporter page. https://give.everydayhero.com/au/tim-cooper.</p>
+
+<p>expires_at : <em>optional</em> <strong>string</strong><br>
+The date and time you want the page to expire. ISO8601 format. Defaults to 1 month after the campaign end date.</p>
+
+<p>target : <em>optional</em> <strong>string</strong><br>
+The dollar amount that you are aiming to raise (must be above 0).</p>
+
+<p>charity_id : <em>optional</em> <strong>string</strong><br>
+The <code>id</code> of the charity to create the page for. Defaulted to a random charity.</p>
+
+<p>token : <em>optional</em> <strong>string</strong><br>
+An invitation token to join a team. This invitation was created by the team leader and sent to the user that you want to create a supporter page for.</p>
+
+<p>gift_aid_eligible : <em>optional</em> <strong>boolean</strong><br>
+UK specific fundraising criteria.</p>
 
 <h3 id="example-2">Example</h3>
 
