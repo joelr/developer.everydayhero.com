@@ -29,9 +29,13 @@ The types of pages that are required. Supported values include `all`, `individua
 campaign_id : _optional_ **string**<br/>
 Only retrieve pages participating in the campaign specified.
 
+charity_ids : _optional_ **string**<br/>
+Only retrieve pages supporting the specified charities. For example `au-1,au-5`
+will retrieve pages which support charity ids `au-1` and `au-5`.
+
 ### Example
 
-    https://everydayhero.com/api/v2/pages.json?type=individual&campaign_id=au-1
+    https://everydayhero.com/api/v2/pages.json?type=individual&campaign_id=au-1&charity_ids=au-1,au-5
 
 ### Response
 
