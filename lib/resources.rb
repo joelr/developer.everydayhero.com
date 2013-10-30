@@ -118,39 +118,38 @@ module EverydayHero
     }
 
     PageData = {
+      id: 1511,
+      slug: "tim",
+      gift_aid_eligible: false,
+      charity_uid: "au-6",
+      campaign_uid: "au-1419",
+      owner_uid: 7,
+      owner_type: "User",
+      uid: 1511,
+      state: "active",
+      target_cents: 70000,
+      name: "Tim",
+      team_uid: nil,
+      team_member_uids: [],
+      team_leader_page_uid: nil,
+      expires_at: "2013-08-29T14:00:00Z",
       amount: {
       cents: 0,
       currency: {
-          iso_code: "AUD",
-          name: "Australian Dollar",
-          symbol: "$"
+        iso_code: "AUD",
+        name: "Australian Dollar",
+        symbol: "$"
       }
       },
       cached_offline_amount_cents: 0,
-      campaign_uid: "au-1419",
-      charity_uid: "au-6",
-      expires_at: "2013-08-29T14:00:00Z",
-      gift_aid_eligible: false,
-      id: 1511,
       invitation_id: nil,
-      name: "Tim",
-      owner_type: "User",
-      owner_uid: 7,
-      slug: "tim",
-      state: "active",
-      target_cents: 70000,
-      team_leader_page_uid: nil,
-      team_member_uids: [],
-      team_uid: nil,
-      uid: 1511,
-      custom_metric_total: {amount: '100', unit: 'steps'}
     }
 
     Page = {
+      page: PageData.merge({campaign_date: nil}),
       meta: {
         url: "https://TestCampaignForAPI.edherox.com/au/tim"
       },
-      page: PageData
     }
 
     Pages = {
