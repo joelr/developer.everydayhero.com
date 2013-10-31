@@ -146,14 +146,18 @@ module EverydayHero
     }
 
     Page = {
-      page: PageData.merge({campaign_date: nil}),
-      meta: {
-        url: "https://TestCampaignForAPI.edherox.com/au/tim"
-      },
+      page: PageData
     }
 
     Pages = {
       pages: [PageData]
+    }
+
+    CreatedPage = {
+      page: PageData.merge({campaign_date: nil}),
+      meta: {
+        url: "https://test-campaign-for-api.edherox.com/au/tim"
+      },
     }
 
     TeamPageData = {
