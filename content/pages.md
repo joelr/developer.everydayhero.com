@@ -107,4 +107,4 @@ UK specific fundraising criteria.
 
 ### Response
 
-<%= json :page %>
+<%= json :created_page %>
