@@ -8,13 +8,9 @@ title: Leaderboards
 The Leaderboards API allows you to retrieve leaderboards and their
 assocated pages.
 
-## List all Leaderboards
+## List all Leaderboards <small>(public)</small>
 
     GET https://everydayhero.com/api/v2/leaderboards
-
-### Visibility
-
-Public.
 
 ### Parameters
 
@@ -29,13 +25,9 @@ ids : _optional_ **string**<br/>
 
 <%= json :leaderboards %>
 
-## View a single Leaderboard
+## View a single Leaderboard <small>(public)</small>
 
     GET https://everydayhero.com/api/v2/leaderboards/:id
-
-### Visibility
-
-Public.
 
 ### Example
 
@@ -45,16 +37,12 @@ Public.
 
 <%= json :leaderboard %>
 
-## View a Campaign Leaderboard
+## View a Campaign Leaderboard <small>(public)</small>
 
 Campaign Leaderboards are a way of showing the top supporter pages for a
 particular campaign.
 
     GET https://everydayhero.com/api/v2/campaigns/:id/leaderboard
-
-### Visibility
-
-Public.
 
 ### Parameters
 

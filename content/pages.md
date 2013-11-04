@@ -10,13 +10,9 @@ Pages belonging to a team have some special characteristics in that some of its
 fields represent an agregate of all its team members. Fields which have this
 characteristic include 'amount' and 'custom_metric_total'.
 
-## List all Pages
+## List all Pages <small>(public)</small>
 
     GET https://everydayhero.com/api/v2/pages
-
-### Visibility
-
-Public.
 
 ### Parameters
 
@@ -37,15 +33,11 @@ Only retrieve pages participating in the campaign specified.
 
 <%= json :pages %>
 
-## View a single Page
+## View a single Page <small>(public)</small>
 
     GET https://everydayhero.com/api/v2/pages/:id
 
 [View demo in API console](/console/?query=pages/1.json)
-
-### Visibility
-
-Public.
 
 ### Example
 
@@ -55,13 +47,9 @@ Public.
 
 <%= json :page %>
 
-## Create an Individual Page
+## Create an Individual Page <small>([requires authentication](/overview/#authentication))</small>
 
     POST https://everydayhero.com/api/v2/pages
-
-### Visibility
-
-Restricted. Requires an authenticated user.
 
 ### Payload
 

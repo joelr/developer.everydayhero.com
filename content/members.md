@@ -1,15 +1,11 @@
 ---
 title: Members
 ---
-## Add a Team Member
+## Add a Team Member <small>([requires authentication](/overview/#authentication))</small>
 
 Add an existing page to an existing team.
 
     POST https://everydayhero.com/api/v2/teams/:id/members
-
-### Visibility
-
-Restricted. Requires an authenticated user.
 
 ### Payload
 

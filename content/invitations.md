@@ -1,16 +1,12 @@
 ---
 title: Invitations
 ---
-## Create Individual Page Invitation
+## Create Individual Page Invitation <small>([requires authentication](/overview/#authentication))</small>
 
 Send an invitation to create an individual supporter page to an email
 address.
 
     POST https://everydayhero.com/api/v2/individual-pages/invitations
-
-### Visibility
-
-Restricted. Requires an authenticated user.
 
 ### Payload
 
@@ -43,16 +39,12 @@ The amount of money this page is aiming to raise. Defaults to a predetermined va
 
 <%= json :create_individual_page_invitation %>
 
-## Create Join a Team Invitation
+## Create Join a Team Invitation <small>([requires authentication](/overview/#authentication))</small>
 
 Send an invitation to create an individual supporter page for a team to
 an email address.
 
     POST https://everydayhero.com/api/v2/team-pages/:team_page_id/invitations
-
-### Visibility
-
-Restricted. Requires an authenticated user.
 
 ### Payload
 
