@@ -64,9 +64,13 @@ The types of pages that are required. Supported values include `all`, `individua
 limit : _optional_ **integer**<br/>
 The number of records retrieved. This is useful for showing a "top 10 supporters leaderboard". Defaults to `10`.
 
+charity_ids : _optional_ **string**<br/>
+Only retrieve pages associated to the charity(ies) specified. Multiple charities
+can be passed through as comma separated values, i.e. 'au-1,au-5'.
+
 ### Example
 
-    https://everydayhero.com/api/v2/campaigns/au-1/leaderboard.json?type=individual&limit=5
+    https://everydayhero.com/api/v2/campaigns/au-1/leaderboard.json?type=individual&charity_ids=au-1,au-5&limit=5
 
 ### Response
 
