@@ -66,7 +66,7 @@ The number of records retrieved. This is useful for showing a "top 10 supporters
 
 ### Example
 
-    https://everydayhero.com/api/v2/leaderbords/au-1/leaderboard.json?type=individual&limit=5
+    https://everydayhero.com/api/v2/campaigns/au-1/leaderboard.json?type=individual&limit=5
 
 ### Response
 
