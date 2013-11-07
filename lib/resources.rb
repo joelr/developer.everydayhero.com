@@ -222,53 +222,29 @@ module EverydayHero
       join_request: JoinRequestData
     }
 
-    PassportUserData = {
-      uid: 1,
-      id: 1,
-      name: "joel r",
-      nickname: "jo",
-      email: "abcdef@everydayhero.com.au",
-      phone: "12345",
-      profile_image: nil,
-      location: "Alderley, Queensland, Australia",
-      birthday: "1983-05-21",
-      address: "1234 Campbell Terrace, Alderley, Queensland, Australia",
-      address_components: {
-        street_address: "1234 Campbell Terrace",
-        extended_address: nil,
-        locality: "Alderley",
-        region: "Queensland",
-        postal_code: "4051",
-        country_name: "Australia"
-      },
-      address_coordinates: {
-        latitude: -27.421,
-        longitude: 153.000
-      }
-    }
-
-    Passportuser = {
-      user: [PassportUserData]
-    }
-
     UserData = {
       uid: 1,
       name: "John O'Donnell",
-      nickname: 'John',
       email: 'john@example.com',
-      phone: '1300798768',
+      nickname: 'John',
       birthday: '1980-01-13',
       street_address: '87 Wickham Terrace',
-      extended_address: nil,
       locality: 'Spring Hill',
       region: 'QLD',
       postal_code: '4006',
       country_name: 'Australia',
+      phone: '1300798768',
+      internal_id: '213',
+      id: '1',
       page_ids: [1,2],
     }
 
     Users = {
       users: [UserData, UserData]
+    }
+
+    User = {
+      user: [UserData]
     }
 
     Authorizedata = {

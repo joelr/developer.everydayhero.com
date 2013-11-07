@@ -37,7 +37,7 @@ User access_token provided by passport auth hash.
 
 ### Response
 
-<%= json :passportuser %>
+<%= json :user %>
 
 ## Update a new user with attributes <small>([requires authentication](/overview/#authentication))</small>
 
