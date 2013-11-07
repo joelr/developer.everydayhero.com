@@ -5,15 +5,11 @@ title: Teams
 * TOC
 {:toc}
 
-## List all Teams
+## List all Teams <small>([requires authentication](/overview/#authentication))</small>
 
 List all teams in the authenticated application's campaign.
 
     GET https://everydayhero.com/api/v2/teams
-
-### Visibility
-
-Restricted. Requires an authenticated user.
 
 ### Example
 
@@ -23,8 +19,7 @@ Restricted. Requires an authenticated user.
 
 <%= json :team %>
 
-## Create a Team
-
+## Create a Team <small>([requires authentication](/overview/#authentication))</small>
 
 * Must be created from an existing individual page
 
@@ -32,10 +27,6 @@ Restricted. Requires an authenticated user.
 
 
       POST https://everydayhero.com/api/v2/teams
-
-### Visibility
-
-Restricted. Requires an authenticated user.
 
 ### Payload
 

@@ -5,13 +5,9 @@ title: Users
 * TOC
 {:toc}
 
-## List all Users
+## List all Users <small>([requires authentication](/overview/#authentication))</small>
 
     GET https://passport.everydayhero.com/api/v1/users
-
-### Visibility
-
-Restricted. Requires an authenticated user via access_token parameter.
 
 ### Parameters
 
@@ -26,13 +22,9 @@ Retrieve only the users with either a name, nickname or email matching the provi
 
 <%= json :users %>
 
-## Get current user
+## Get current user <small>([requires authentication](/overview/#authentication))</small>
 
     GET https://passport.everydayhero.com/api/v1/me.json?access_token=xxx
-
-### Visibility
-
-Restricted. Requires an authenticated user via access_token parameter.
 
 ### Parameters
 
@@ -47,13 +39,9 @@ User access_token provided by passport auth hash.
 
 <%= json :passportuser %>
 
-## Update a new user with attributes
+## Update a new user with attributes <small>([requires authentication](/overview/#authentication))</small>
 
     PUT https://passport.everydayhero.com/api/v1/me
-
-### Visibility
-
-Restricted. Requires an authenticated user via access_token parameter.
 
 ### Parameters
 

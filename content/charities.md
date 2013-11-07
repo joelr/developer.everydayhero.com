@@ -1,15 +1,11 @@
 ---
 title: Charities
 ---
-## List all Charities
+## List all Charities <small>(public)</small>
 
     GET https://everydayhero.com/api/v2/charities
 
 [View demo in API console](/console/?query=charities.json) 
-
-### Visibility
-
-Public.
 
 ### Parameters
 
@@ -24,16 +20,11 @@ A comma-separated list of Campaign IDs, only Charities participating in the spec
 
 <%= json :charities %>
 
-## View a single Charity
+## View a single Charity <small>(public)</small>
 
     GET https://everydayhero.com/api/v2/charities/:id
 
 [View demo in API console](/console/?query=charities/au-8.json) 
-
-
-### Visibility
-
-Public.
 
 ### Example
 

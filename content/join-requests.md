@@ -1,15 +1,11 @@
 ---
 title: Join Requests
 ---
-## Create a Join Request
+## Create a Join Request <small>([requires authentication](/overview/#authentication))</small>
 
 Join an existing team with an existing individual page.
 
     POST https://everydayhero.com/api/v2/teams/:id/join-requests
-
-### Visibility
-
-Restricted. Requires an authenticated user.
 
 ### Payload
 
