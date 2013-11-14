@@ -59,7 +59,6 @@ $colour_picker_size: 214px;
 $input_height: 30px;
 
 @mixin clearfix {
-  *zoom: 1;
   &:before, &:after {
     content: '';
     display: table;
@@ -82,15 +81,9 @@ $input_height: 30px;
   @include vendor(box-shadow, $shadow);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  font-family: $font_stack;
-}
-
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-    display: block;
+  display: block;
 }
 
 body {
@@ -157,10 +150,6 @@ h3, .h3 {
 
 .l--30 {
   width: 30%;
-}
-
-.l--30 {
-  *width: 29.99%;
 }
 
 .l--20 {
