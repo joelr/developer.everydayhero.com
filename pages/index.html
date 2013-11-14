@@ -4,8 +4,6 @@
   <meta charset="utf-8">
   <title>EverydayHero API: Pages</title>
   <link rel="stylesheet" href="/stylesheets/pygments.css">
-  <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
-  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
   <link rel="stylesheet" href="/stylesheets/app.css">
   <!--[if lt IE 9]>
     <script src="/javascripts/html5shiv-printshiv.js"></script>
@@ -77,9 +75,9 @@
         
           <h1>Pages</h1>
           <ul id="markdown-toc">
-  <li><a href="#list-all-pages">List all Pages</a></li>
-  <li><a href="#view-a-single-page">View a single Page</a></li>
-  <li><a href="#create-an-individual-page">Create an Individual Page</a></li>
+  <li><a href="#list-all-pages-smallpublicsmall">List all Pages <small>(public)</small></a></li>
+  <li><a href="#view-a-single-page-smallpublicsmall">View a single Page <small>(public)</small></a></li>
+  <li><a href="#create-an-individual-page-smallrequires-authenticationoverviewauthenticationsmall">Create an Individual Page <small>(<a href="/overview/#authentication">requires authentication</a>)</small></a></li>
 </ul>
 
 <p>A page can belong to either a user or team (denoted by the ‘owner_type’ field).
@@ -87,14 +85,11 @@ Pages belonging to a team have some special characteristics in that some of its
 fields represent an agregate of all its team members. Fields which have this
 characteristic include ‘amount’ and ‘custom_metric_total’.</p>
 
-<h2 id="list-all-pages">List all Pages</h2>
+<h2 id="list-all-pages-smallpublicsmall">List all Pages <small>(public)</small>
+</h2>
 
 <pre><code>GET https://everydayhero.com/api/v2/pages
 </code></pre>
-
-<h3 id="visibility">Visibility</h3>
-
-<p>Public.</p>
 
 <h3 id="parameters">Parameters</h3>
 
@@ -107,9 +102,13 @@ The types of pages that are required. Supported values include <code>all</code>,
 <p>campaign_id : <em>optional</em> <strong>string</strong><br>
 Only retrieve pages participating in the campaign specified.</p>
 
+<p>charity_ids : <em>optional</em> <strong>string</strong><br>
+Only retrieve pages supporting the specified charities. For example <code>au-1,au-5</code>
+will retrieve pages which support charity ids <code>au-1</code> and <code>au-5</code>.</p>
+
 <h3 id="example">Example</h3>
 
-<pre><code>https://everydayhero.com/api/v2/pages.json?type=individual&amp;campaign_id=au-1
+<pre><code>https://everydayhero.com/api/v2/pages.json?type=individual&amp;campaign_id=au-1&amp;charity_ids=au-1,au-5
 </code></pre>
 
 <h3 id="response">Response</h3>
@@ -148,16 +147,13 @@ Only retrieve pages participating in the campaign specified.</p>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="view-a-single-page">View a single Page</h2>
+<h2 id="view-a-single-page-smallpublicsmall">View a single Page <small>(public)</small>
+</h2>
 
 <pre><code>GET https://everydayhero.com/api/v2/pages/:id
 </code></pre>
 
 <p><a href="/console/?query=pages/1.json">View demo in API console</a></p>
-
-<h3 id="visibility-1">Visibility</h3>
-
-<p>Public.</p>
 
 <h3 id="example-1">Example</h3>
 
@@ -198,14 +194,11 @@ Only retrieve pages participating in the campaign specified.</p>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="create-an-individual-page">Create an Individual Page</h2>
+<h2 id="create-an-individual-page-smallrequires-authenticationoverviewauthenticationsmall">Create an Individual Page <small>(<a href="/overview/#authentication">requires authentication</a>)</small>
+</h2>
 
 <pre><code>POST https://everydayhero.com/api/v2/pages
 </code></pre>
-
-<h3 id="visibility-2">Visibility</h3>
-
-<p>Restricted. Requires an authenticated user.</p>
 
 <h3 id="payload">Payload</h3>
 
@@ -219,7 +212,7 @@ Your birthday. In some countries there are age restrictions on fundraising and f
 The desired name for your new supporter page. Defaults to the user’s preferred name.</p>
 
 <p>slug : <em>optional</em> <strong>string</strong><br>
-The desired url for your new supporter page. https://give.everydayhero.com/au/tim-cooper.</p>
+A URL-friendly version of the name parameter. Can only contain lower case characters, numbers, and hyphens. The slug will form part of the page URL and must be unique within the campaign.</p>
 
 <p>expires_at : <em>optional</em> <strong>string</strong><br>
 The date and time you want the page to expire. ISO8601 format. Defaults to 1 month after the campaign end date.</p>

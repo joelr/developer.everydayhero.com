@@ -4,8 +4,6 @@
   <meta charset="utf-8">
   <title>EverydayHero API: Leaderboards</title>
   <link rel="stylesheet" href="/stylesheets/pygments.css">
-  <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
-  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
   <link rel="stylesheet" href="/stylesheets/app.css">
   <!--[if lt IE 9]>
     <script src="/javascripts/html5shiv-printshiv.js"></script>
@@ -77,22 +75,19 @@
         
           <h1>Leaderboards</h1>
           <ul id="markdown-toc">
-  <li><a href="#list-all-leaderboards">List all Leaderboards</a></li>
-  <li><a href="#view-a-single-leaderboard">View a single Leaderboard</a></li>
-  <li><a href="#view-a-campaign-leaderboard">View a Campaign Leaderboard</a></li>
+  <li><a href="#list-all-leaderboards-smallpublicsmall">List all Leaderboards <small>(public)</small></a></li>
+  <li><a href="#view-a-single-leaderboard-smallpublicsmall">View a single Leaderboard <small>(public)</small></a></li>
+  <li><a href="#view-a-campaign-leaderboard-smallpublicsmall">View a Campaign Leaderboard <small>(public)</small></a></li>
 </ul>
 
 <p>The Leaderboards API allows you to retrieve leaderboards and their
 assocated pages.</p>
 
-<h2 id="list-all-leaderboards">List all Leaderboards</h2>
+<h2 id="list-all-leaderboards-smallpublicsmall">List all Leaderboards <small>(public)</small>
+</h2>
 
 <pre><code>GET https://everydayhero.com/api/v2/leaderboards
 </code></pre>
-
-<h3 id="visibility">Visibility</h3>
-
-<p>Public.</p>
 
 <h3 id="parameters">Parameters</h3>
 
@@ -127,14 +122,11 @@ assocated pages.</p>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="view-a-single-leaderboard">View a single Leaderboard</h2>
+<h2 id="view-a-single-leaderboard-smallpublicsmall">View a single Leaderboard <small>(public)</small>
+</h2>
 
 <pre><code>GET https://everydayhero.com/api/v2/leaderboards/:id
 </code></pre>
-
-<h3 id="visibility-1">Visibility</h3>
-
-<p>Public.</p>
 
 <h3 id="example-1">Example</h3>
 
@@ -162,17 +154,14 @@ assocated pages.</p>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="view-a-campaign-leaderboard">View a Campaign Leaderboard</h2>
+<h2 id="view-a-campaign-leaderboard-smallpublicsmall">View a Campaign Leaderboard <small>(public)</small>
+</h2>
 
 <p>Campaign Leaderboards are a way of showing the top supporter pages for a
 particular campaign.</p>
 
 <pre><code>GET https://everydayhero.com/api/v2/campaigns/:id/leaderboard
 </code></pre>
-
-<h3 id="visibility-2">Visibility</h3>
-
-<p>Public.</p>
 
 <h3 id="parameters-1">Parameters</h3>
 
@@ -182,9 +171,13 @@ The types of pages that are required. Supported values include <code>all</code>,
 <p>limit : <em>optional</em> <strong>integer</strong><br>
 The number of records retrieved. This is useful for showing a “top 10 supporters leaderboard”. Defaults to <code>10</code>.</p>
 
+<p>charity_ids : <em>optional</em> <strong>string</strong><br>
+Only retrieve pages associated to the charity(ies) specified. Multiple charities
+can be passed through as comma separated values, i.e. ‘au-1,au-5’.</p>
+
 <h3 id="example-2">Example</h3>
 
-<pre><code>https://everydayhero.com/api/v2/campaigns/au-1/leaderboard.json?type=individual&amp;limit=5
+<pre><code>https://everydayhero.com/api/v2/campaigns/au-1/leaderboard.json?type=individual&amp;charity_ids=au-1,au-5&amp;limit=5
 </code></pre>
 
 <h3 id="response-2">Response</h3>

@@ -4,8 +4,6 @@
   <meta charset="utf-8">
   <title>EverydayHero API: Invitations</title>
   <link rel="stylesheet" href="/stylesheets/pygments.css">
-  <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
-  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
   <link rel="stylesheet" href="/stylesheets/app.css">
   <!--[if lt IE 9]>
     <script src="/javascripts/html5shiv-printshiv.js"></script>
@@ -76,17 +74,14 @@
       <div class="inner">
         
           <h1>Invitations</h1>
-          <h2 id="create-individual-page-invitation">Create Individual Page Invitation</h2>
+          <h2 id="create-individual-page-invitation-smallrequires-authenticationoverviewauthenticationsmall">Create Individual Page Invitation <small>(<a href="/overview/#authentication">requires authentication</a>)</small>
+</h2>
 
 <p>Send an invitation to create an individual supporter page to an email
 address.</p>
 
 <pre><code>POST https://everydayhero.com/api/v2/individual-pages/invitations
 </code></pre>
-
-<h3 id="visibility">Visibility</h3>
-
-<p>Restricted. Requires an authenticated user.</p>
 
 <h3 id="payload">Payload</h3>
 
@@ -126,17 +121,14 @@ The amount of money this page is aiming to raise. Defaults to a predetermined va
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="create-join-a-team-invitation">Create Join a Team Invitation</h2>
+<h2 id="create-join-a-team-invitation-smallrequires-authenticationoverviewauthenticationsmall">Create Join a Team Invitation <small>(<a href="/overview/#authentication">requires authentication</a>)</small>
+</h2>
 
 <p>Send an invitation to create an individual supporter page for a team to
 an email address.</p>
 
 <pre><code>POST https://everydayhero.com/api/v2/team-pages/:team_page_id/invitations
 </code></pre>
-
-<h3 id="visibility-1">Visibility</h3>
-
-<p>Restricted. Requires an authenticated user.</p>
 
 <h3 id="payload-1">Payload</h3>
 

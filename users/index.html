@@ -4,8 +4,6 @@
   <meta charset="utf-8">
   <title>EverydayHero API: Users</title>
   <link rel="stylesheet" href="/stylesheets/pygments.css">
-  <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
-  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
   <link rel="stylesheet" href="/stylesheets/app.css">
   <!--[if lt IE 9]>
     <script src="/javascripts/html5shiv-printshiv.js"></script>
@@ -77,19 +75,16 @@
         
           <h1>Users</h1>
           <ul id="markdown-toc">
-  <li><a href="#list-all-users">List all Users</a></li>
-  <li><a href="#get-current-user">Get current user</a></li>
-  <li><a href="#update-a-new-user-with-attributes">Update a new user with attributes</a></li>
+  <li><a href="#list-all-users-smallrequires-authenticationoverviewauthenticationsmall">List all Users <small>(<a href="/overview/#authentication">requires authentication</a>)</small></a></li>
+  <li><a href="#get-current-user-smallrequires-authenticationoverviewauthenticationsmall">Get current user <small>(<a href="/overview/#authentication">requires authentication</a>)</small></a></li>
+  <li><a href="#update-a-new-user-with-attributes-smallrequires-authenticationoverviewauthenticationsmall">Update a new user with attributes <small>(<a href="/overview/#authentication">requires authentication</a>)</small></a></li>
 </ul>
 
-<h2 id="list-all-users">List all Users</h2>
+<h2 id="list-all-users-smallrequires-authenticationoverviewauthenticationsmall">List all Users <small>(<a href="/overview/#authentication">requires authentication</a>)</small>
+</h2>
 
 <pre><code>GET https://passport.everydayhero.com/api/v1/users
 </code></pre>
-
-<h3 id="visibility">Visibility</h3>
-
-<p>Restricted. Requires an authenticated user via access_token parameter.</p>
 
 <h3 id="parameters">Parameters</h3>
 
@@ -108,16 +103,17 @@ Retrieve only the users with either a name, nickname or email matching the provi
     <span class="p">{</span>
       <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"John O'Donnell"</span><span class="p">,</span>
-      <span class="s2">"nickname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
-      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1300798768"</span><span class="p">,</span>
+      <span class="s2">"nickname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
       <span class="s2">"birthday"</span><span class="o">:</span> <span class="s2">"1980-01-13"</span><span class="p">,</span>
       <span class="s2">"street_address"</span><span class="o">:</span> <span class="s2">"87 Wickham Terrace"</span><span class="p">,</span>
-      <span class="s2">"extended_address"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"locality"</span><span class="o">:</span> <span class="s2">"Spring Hill"</span><span class="p">,</span>
       <span class="s2">"region"</span><span class="o">:</span> <span class="s2">"QLD"</span><span class="p">,</span>
       <span class="s2">"postal_code"</span><span class="o">:</span> <span class="s2">"4006"</span><span class="p">,</span>
       <span class="s2">"country_name"</span><span class="o">:</span> <span class="s2">"Australia"</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1300798768"</span><span class="p">,</span>
+      <span class="s2">"internal_id"</span><span class="o">:</span> <span class="s2">"213"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
       <span class="s2">"page_ids"</span><span class="o">:</span> <span class="p">[</span>
         <span class="mi">1</span><span class="p">,</span>
         <span class="mi">2</span>
@@ -126,16 +122,17 @@ Retrieve only the users with either a name, nickname or email matching the provi
     <span class="p">{</span>
       <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"John O'Donnell"</span><span class="p">,</span>
-      <span class="s2">"nickname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
-      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1300798768"</span><span class="p">,</span>
+      <span class="s2">"nickname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
       <span class="s2">"birthday"</span><span class="o">:</span> <span class="s2">"1980-01-13"</span><span class="p">,</span>
       <span class="s2">"street_address"</span><span class="o">:</span> <span class="s2">"87 Wickham Terrace"</span><span class="p">,</span>
-      <span class="s2">"extended_address"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"locality"</span><span class="o">:</span> <span class="s2">"Spring Hill"</span><span class="p">,</span>
       <span class="s2">"region"</span><span class="o">:</span> <span class="s2">"QLD"</span><span class="p">,</span>
       <span class="s2">"postal_code"</span><span class="o">:</span> <span class="s2">"4006"</span><span class="p">,</span>
       <span class="s2">"country_name"</span><span class="o">:</span> <span class="s2">"Australia"</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1300798768"</span><span class="p">,</span>
+      <span class="s2">"internal_id"</span><span class="o">:</span> <span class="s2">"213"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
       <span class="s2">"page_ids"</span><span class="o">:</span> <span class="p">[</span>
         <span class="mi">1</span><span class="p">,</span>
         <span class="mi">2</span>
@@ -144,14 +141,11 @@ Retrieve only the users with either a name, nickname or email matching the provi
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="get-current-user">Get current user</h2>
+<h2 id="get-current-user-smallrequires-authenticationoverviewauthenticationsmall">Get current user <small>(<a href="/overview/#authentication">requires authentication</a>)</small>
+</h2>
 
 <pre><code>GET https://passport.everydayhero.com/api/v1/me.json?access_token=xxx
 </code></pre>
-
-<h3 id="visibility-1">Visibility</h3>
-
-<p>Restricted. Requires an authenticated user via access_token parameter.</p>
 
 <h3 id="parameters-1">Parameters</h3>
 
@@ -169,39 +163,31 @@ User access_token provided by passport auth hash.</p>
   <span class="s2">"user"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"joel r"</span><span class="p">,</span>
-      <span class="s2">"nickname"</span><span class="o">:</span> <span class="s2">"jo"</span><span class="p">,</span>
-      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"abcdef@everydayhero.com.au"</span><span class="p">,</span>
-      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"12345"</span><span class="p">,</span>
-      <span class="s2">"profile_image"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"location"</span><span class="o">:</span> <span class="s2">"Alderley, Queensland, Australia"</span><span class="p">,</span>
-      <span class="s2">"birthday"</span><span class="o">:</span> <span class="s2">"1983-05-21"</span><span class="p">,</span>
-      <span class="s2">"address"</span><span class="o">:</span> <span class="s2">"1234 Campbell Terrace, Alderley, Queensland, Australia"</span><span class="p">,</span>
-      <span class="s2">"address_components"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"street_address"</span><span class="o">:</span> <span class="s2">"1234 Campbell Terrace"</span><span class="p">,</span>
-        <span class="s2">"extended_address"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="s2">"locality"</span><span class="o">:</span> <span class="s2">"Alderley"</span><span class="p">,</span>
-        <span class="s2">"region"</span><span class="o">:</span> <span class="s2">"Queensland"</span><span class="p">,</span>
-        <span class="s2">"postal_code"</span><span class="o">:</span> <span class="s2">"4051"</span><span class="p">,</span>
-        <span class="s2">"country_name"</span><span class="o">:</span> <span class="s2">"Australia"</span>
-      <span class="p">},</span>
-      <span class="s2">"address_coordinates"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"latitude"</span><span class="o">:</span> <span class="o">-</span><span class="mf">27.421</span><span class="p">,</span>
-        <span class="s2">"longitude"</span><span class="o">:</span> <span class="mf">153.0</span>
-      <span class="p">}</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"John O'Donnell"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
+      <span class="s2">"nickname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
+      <span class="s2">"birthday"</span><span class="o">:</span> <span class="s2">"1980-01-13"</span><span class="p">,</span>
+      <span class="s2">"street_address"</span><span class="o">:</span> <span class="s2">"87 Wickham Terrace"</span><span class="p">,</span>
+      <span class="s2">"locality"</span><span class="o">:</span> <span class="s2">"Spring Hill"</span><span class="p">,</span>
+      <span class="s2">"region"</span><span class="o">:</span> <span class="s2">"QLD"</span><span class="p">,</span>
+      <span class="s2">"postal_code"</span><span class="o">:</span> <span class="s2">"4006"</span><span class="p">,</span>
+      <span class="s2">"country_name"</span><span class="o">:</span> <span class="s2">"Australia"</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1300798768"</span><span class="p">,</span>
+      <span class="s2">"internal_id"</span><span class="o">:</span> <span class="s2">"213"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
+      <span class="s2">"page_ids"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="mi">2</span>
+      <span class="p">]</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="update-a-new-user-with-attributes">Update a new user with attributes</h2>
+<h2 id="update-a-new-user-with-attributes-smallrequires-authenticationoverviewauthenticationsmall">Update a new user with attributes <small>(<a href="/overview/#authentication">requires authentication</a>)</small>
+</h2>
 
 <pre><code>PUT https://passport.everydayhero.com/api/v1/me
 </code></pre>
-
-<h3 id="visibility-2">Visibility</h3>
-
-<p>Restricted. Requires an authenticated user via access_token parameter.</p>
 
 <h3 id="parameters-2">Parameters</h3>
 

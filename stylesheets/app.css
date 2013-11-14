@@ -166,9 +166,11 @@ h3, .h3 {
     padding-top: 5px; }
 
 pre {
+  padding: 10px; }
+
+pre,
+p code {
   border: 1px solid #dbdbdb;
-  line-height: 1.4em;
-  font: 12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
   overflow: auto;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -178,9 +180,18 @@ pre {
   background-clip: padding-box;
   background-color: #FAFAFB;
   color: #393939;
-  margin: 10px 0 10px 0; }
-  pre code {
+  margin: 10px 0 10px 0;
+  border-radius: 3px; }
+  pre code,
+  p code code {
     white-space: pre; }
+
+code {
+  white-space: nowrap;
+  font: 12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+  line-height: 1.2em;
+  color: #383c3e;
+  padding: 0px 3px; }
 
 dl {
   width: 100%;
