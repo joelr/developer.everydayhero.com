@@ -7,6 +7,7 @@ gem 'pygments.rb', '~> 0.3.7'
 gem 'rake', '~> 10.0.3'
 gem 'sass'
 gem 'mime-types'
+gem 'w3c_validators'
 
 gem 'yajl-ruby', '1.1.0'
 
