@@ -5,7 +5,7 @@ title: Users
 * TOC
 {:toc}
 
-## List all Users <small>([requires authentication](/overview/#authentication))</small>
+## List all Users <small>(requires authentication)</small>
 
     GET https://passport.everydayhero.com/api/v1/users
 
@@ -22,7 +22,7 @@ Retrieve only the users with either a name, nickname or email matching the provi
 
 <%= json :users %>
 
-## Get current user <small>([requires authentication](/overview/#authentication))</small>
+## Get current user <small>(requires authentication)</small>
 
     GET https://passport.everydayhero.com/api/v1/me.json?access_token=xxx
 
@@ -39,7 +39,7 @@ User access_token provided by passport auth hash.
 
 <%= json :user %>
 
-## Update a new user with attributes <small>([requires authentication](/overview/#authentication))</small>
+## Update a new user with attributes <small>(requires authentication)</small>
 
     PUT https://passport.everydayhero.com/api/v1/me
 

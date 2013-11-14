@@ -1,7 +1,7 @@
 ---
 title: Members
 ---
-## Add a Team Member <small>([requires authentication](/overview/#authentication))</small>
+## Add a Team Member <small>(requires authentication)</small>
 
 Add an existing page to an existing team.
 

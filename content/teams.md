@@ -5,7 +5,7 @@ title: Teams
 * TOC
 {:toc}
 
-## List all Teams <small>([requires authentication](/overview/#authentication))</small>
+## List all Teams <small>(requires authentication)</small>
 
 List all teams in the authenticated application's campaign.
 
@@ -19,7 +19,7 @@ List all teams in the authenticated application's campaign.
 
 <%= json :team %>
 
-## Create a Team <small>([requires authentication](/overview/#authentication))</small>
+## Create a Team <small>(requires authentication)</small>
 
 * Must be created from an existing individual page
 

@@ -1,7 +1,7 @@
 ---
 title: Join Requests
 ---
-## Create a Join Request <small>([requires authentication](/overview/#authentication))</small>
+## Create a Join Request <small>(requires authentication)</small>
 
 Join an existing team with an existing individual page.
 

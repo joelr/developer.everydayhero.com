@@ -51,7 +51,7 @@ will retrieve pages which support charity ids `au-1` and `au-5`.
 
 <%= json :page %>
 
-## Create an Individual Page <small>([requires authentication](/overview/#authentication))</small>
+## Create an Individual Page <small>(requires authentication)</small>
 
     POST https://everydayhero.com/api/v2/pages
 
