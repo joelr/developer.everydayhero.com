@@ -7,8 +7,9 @@ title: Campaigns
 
 ### Parameters
 
-charity_ids : _optional_ **string**<br/>
-A comma-separated list of Charity IDs, only Campaigns that the specified Charity is participating in will be retrieved.
+<div>charity_ids : _optional_ **string**</div>
+<div>A comma-separated list of Charity IDs, only Campaigns that the specified
+Charity is participating in will be retrieved.</div>
 
 ### Example
 

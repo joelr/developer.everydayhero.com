@@ -30,11 +30,11 @@ List all teams in the authenticated application's campaign.
 
 ### Payload
 
-`individual_page_id` : _required_ **integer**<br/>
-The `id` of the individual page to create the team from.
+<div>`individual_page_id` : _required_ **integer**</div>
+<div>The `id` of the individual page to create the team from.</div>
 
-name : _optional_ **string**<br/>
-The name of the team. This needs to be unique within the campaign.
+<div>name : _optional_ **string**</div>
+<div>The name of the team. This needs to be unique within the campaign.</div>
 
 ### Example
 

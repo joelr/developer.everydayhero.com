@@ -14,8 +14,8 @@ assocated pages.
 
 ### Parameters
 
-ids : _optional_ **string**<br/>
-`1,5,20` to only retrieve leaderboards with the ids 1, 5 and 20
+<div>ids : _optional_ **string**</div>
+<div>`1,5,20` to only retrieve leaderboards with the ids `1`, `5` and `20`</div>
 
 ### Example
 
@@ -46,15 +46,18 @@ particular campaign.
 
 ### Parameters
 
-type : _optional_ **string**<br/>
-The types of pages that are required. Supported values include `all`, `individual` and `team`. Defaults to `all`.
+<div>type : _optional_ **string**</div>
+<div>The types of pages that are required. Supported values include `all`,
+`individual` and `team`. Defaults to `all`.</div>
 
-limit : _optional_ **integer**<br/>
-The number of records retrieved. This is useful for showing a "top 10 supporters leaderboard". Defaults to `10`.
+<div>limit : _optional_ **integer**</div>
+<div>The number of records retrieved. This is useful for showing a "top 10
+supporters leaderboard". Defaults to `10`.</div>
 
-charity_ids : _optional_ **string**<br/>
-Only retrieve pages associated to the charity(ies) specified. Multiple charities
-can be passed through as comma separated values, i.e. 'au-1,au-5'.
+<div>charity_ids : _optional_ **string**</div>
+<div>Only retrieve pages associated to the charity(ies) specified. Multiple
+charities can be passed through as comma separated values, i.e.
+`au-1,au-5`.</div>
 
 ### Example
 

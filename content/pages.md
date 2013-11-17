@@ -16,18 +16,21 @@ characteristic include 'amount' and 'custom_metric_total'.
 
 ### Parameters
 
-ids : _optional_ **string**<br/>
-Only retrieve pages with the ids specified. `1,5,20` will retrieve pages with the ids 1, 5 and 20.
+<div>ids : _optional_ **string**</div>
+<div>Only retrieve pages with the ids specified. `1,5,20` will retrieve pages
+with the ids 1, 5 and 20.</div>
 
-type : _optional_ **string**<br/>
-The types of pages that are required. Supported values include `all`, `individual` and `team`. Defaults to `all`.
+<div>type : _optional_ **string**</div>
+<div>The types of pages that are required. Supported values include `all`,
+`individual` and `team`. Defaults to `all`.</div>
 
-campaign_id : _optional_ **string**<br/>
-Only retrieve pages participating in the campaign specified.
+<div>campaign_id : _optional_ **string**</div>
+<div>Only retrieve pages participating in the campaign specified.</div>
 
-charity_ids : _optional_ **string**<br/>
-Only retrieve pages supporting the specified charities. For example `au-1,au-5`
-will retrieve pages which support charity ids `au-1` and `au-5`.
+<div>charity_ids : _optional_ **string**</div>
+<div>Only retrieve pages supporting the specified charities. For example
+`au-1,au-5` will retrieve pages which support charity ids `au-1` and
+`au-5`.</div>
 
 ### Example
 
@@ -57,32 +60,39 @@ will retrieve pages which support charity ids `au-1` and `au-5`.
 
 ### Payload
 
-uid : _required_ **integer**<br/>
-The `uid` of the user that you want to create a page for.
+<div>uid : _required_ **integer**</div>
+<div>The `uid` of the user that you want to create a page for.</div>
 
-birthday : _required_ **string**<br/>
-Your birthday. In some countries there are age restrictions on fundraising and further action might need to be taken depending on the age provided.
+<div>birthday : _required_ **string**</div>
+<div>Your birthday. In some countries there are age restrictions on fundraising
+and further action might need to be taken depending on the age provided.</div>
 
-name : _optional_ **string**<br/>
-The desired name for your new supporter page. Defaults to the user's preferred name.
+<div>name : _optional_ **string**</div>
+<div>The desired name for your new supporter page. Defaults to the user's
+preferred name.</div>
 
-slug : _optional_ **string**<br/>
-A URL-friendly version of the name parameter. Can only contain lower case characters, numbers, and hyphens. The slug will form part of the page URL and must be unique within the campaign.
+<div>slug : _optional_ **string**</div>
+<div>A URL-friendly version of the name parameter. Can only contain lower case
+characters, numbers, and hyphens. The slug will form part of the page URL and
+must be unique within the campaign.</div>
 
-expires_at : _optional_ **string**<br/>
-The date and time you want the page to expire. ISO8601 format. Defaults to 1 month after the campaign end date.
+<div>expires_at : _optional_ **string**</div>
+<div>The date and time you want the page to expire. ISO8601 format. Defaults to
+1 month after the campaign end date.</div>
 
-target : _optional_ **string**<br/>
-The dollar amount that you are aiming to raise (must be above 0).
+<div>target : _optional_ **string**</div>
+<div>The dollar amount that you are aiming to raise (must be above 0).</div>
 
-charity_id : _optional_ **string**<br/>
-The `id` of the charity to create the page for. Defaulted to a random charity.
+<div>charity_id : _optional_ **string**</div>
+<div>The `id` of the charity to create the page for. Defaulted to a random
+charity.</div>
 
-token : _optional_ **string**<br/>
-An invitation token to join a team. This invitation was created by the team leader and sent to the user that you want to create a supporter page for.
+<div>token : _optional_ **string**</div>
+<div>An invitation token to join a team. This invitation was created by the team
+leader and sent to the user that you want to create a supporter page for.</div>
 
-gift_aid_eligible : _optional_ **boolean**<br/>
-UK specific fundraising criteria.
+<div>gift_aid_eligible : _optional_ **boolean**</div>
+<div>UK specific fundraising criteria.</div>
 
 ### Example
 

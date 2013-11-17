@@ -9,8 +9,8 @@ Join an existing team with an existing individual page.
 
 ### Payload
 
-individual_page_id : _required_ **integer**<br/>
-The `id` of the page you want to join a team with.
+<div>individual_page_id : _required_ **integer**</div>
+<div>The `id` of the page you want to join a team with.</div>
 
 ### Example
 
