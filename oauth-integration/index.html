@@ -125,27 +125,33 @@ response to the authorization request.</p>
 
 <h3 id="parameters">Parameters</h3>
 
-<p>response_type : <em>required</em> <strong>string</strong><br>
-A value of code results in the Authorization Code grant type while a value of token implies the Implicit grant type.</p>
+<div>response_type : _required_ **string**</div>
+<div>A value of code results in the Authorization Code grant type while a value
+of token implies the Implicit grant type.</div>
 
-<p>client_id : <em>required</em> <strong>string</strong><br.></br.>
-The client identifier.</p>
+<div>client_id : _required_ **string**</div>
+<div>The client identifier.</div>
 
-<p>redirect_uri : <em>optional</em> <strong>string</strong><br>
-If present, the requested redirect_uri must match the one configured for the client. if the redirect_uri is set to <code>urn:ietf:wg:oauth:2.0:oob</code>, this will tell Passport to display the authorization code instead of redirecting to a client application (if this is still under development).</p>
+<div>redirect_uri : _optional_ **string**</div>
+<div>If present, the requested redirect_uri must match the one configured for
+the client. if the redirect_uri is set to ```urn:ietf:wg:oauth:2.0:oob```, this
+will tell Passport to display the authorization code instead of redirecting to a
+client application (if this is still under development).</div>
 
 <h3 id="prepopulation">Prepopulation</h3>
 
 <p>These parameters will be pre-populated on the sign up/in screen.</p>
 
-<p>email : <em>optional</em> <strong>string</strong><br>
-The email of the person you want to prepopulate the sign-up form for.</p>
+<div>email : _optional_ **string**</div>
+<div>The email of the person you want to prepopulate the sign-up form for.</div>
 
-<p>phone : <em>optional</em> <strong>string</strong><br>
-The phone number of the person you want to prepopulate the sign-up form for.</p>
+<div>phone : _optional_ **string**</div>
+<div>The phone number of the person you want to prepopulate the sign-up form
+for.</div>
 
-<p>name : <em>optional</em> <strong>string</strong><br>
-The full name of the person you want to prepopulate the sign-up form for.</p>
+<div>name : _optional_ **string**</div>
+<div>The full name of the person you want to prepopulate the sign-up form
+for.</div>
 
 <h3 id="branding">Branding</h3>
 
@@ -153,11 +159,12 @@ The full name of the person you want to prepopulate the sign-up form for.</p>
 
 <p>These parameters are only required if you would like branding from your campaign to be used for the sign up/in screen. If you choose to implement branding, both parameters are required.</p>
 
-<p>reference : <em>optional</em> <strong>string</strong><br>
-The campaign slug for the campaign which should be used for branding the login screen.</p>
+<div>reference : _optional_ **string**</div>
+<div>The campaign slug for the campaign which should be used for branding the
+login screen.</div>
 
-<p>country : <em>optional</em> <strong>string</strong><br>
-The country code associated with your campaign (au, nz, uk).</p>
+<div>country : _optional_ **string**</div>
+<div>The country code associated with your campaign (au, nz, uk).</div>
 
 <h3 id="response">Response</h3>
 
@@ -180,20 +187,21 @@ secret, for an access token.</p>
 
 <h3 id="parameters-1">Parameters</h3>
 
-<p>grant_type : <em>required</em> <strong>string</strong><br>
-Use authorization_code.</p>
+<div>grant_type : _required_ **string**</div>
+<div>Use authorization_code.</div>
 
-<p>client_id : <em>required</em> <strong>string</strong><br>
-The client identifier.</p>
+<div>client_id : _required_ **string**</div>
+<div>The client identifier.</div>
 
-<p>client_secret : <em>required</em> <strong>string</strong><br>
-The client secret.</p>
+<div>client_secret : _required_ **string**</div>
+<div>The client secret.</div>
 
-<p>code : <em>required</em> <strong>string</strong><br>
-The code returned from authorize endpoint.</p>
+<div>code : _required_ **string**</div>
+<div>The code returned from authorize endpoint.</div>
 
-<p>redirect_uri : <em>required</em> <strong>string</strong><br>
-The requested redirect_uri must match the one configured for the client.</p>
+<div>redirect_uri : _required_ **string**</div>
+<div>The requested redirect_uri must match the one configured for the
+client.</div>
 
 <h3 id="response-1">Response</h3>
 
@@ -207,9 +215,8 @@ The requested redirect_uri must match the one configured for the client.</p>
 
 <h2 id="registration-product-integration">Registration Product Integration</h2>
 
-<p>A <a href="http://example-rego-integration.herokuapp.com">sample application</a> has been
-built to show one possible end to end third party registration scenario.
-Source code for the application can be found on
+<p>A sample application has been built to show one possible end to end third party
+registration scenario. Source code for the application can be found on
 <a href="https://github.com/everydayhero/example_registrations">GitHub</a>.
 This application demonstrates:</p>
 

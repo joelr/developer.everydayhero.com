@@ -74,7 +74,7 @@
       <div class="inner">
         
           <h1>Invitations</h1>
-          <h2 id="create-individual-page-invitation-smallrequires-authenticationoverviewauthenticationsmall">Create Individual Page Invitation <small>(<a href="/overview/#authentication">requires authentication</a>)</small>
+          <h2 id="create-individual-page-invitation-smallrequires-authenticationsmall">Create Individual Page Invitation <small>(requires authentication)</small>
 </h2>
 
 <p>Send an invitation to create an individual supporter page to an email
@@ -85,20 +85,27 @@ address.</p>
 
 <h3 id="payload">Payload</h3>
 
-<p>email : <em>required</em> <strong>string</strong><br>
-The email address you would like the invitation sent to. We do not tie this email address to the user’s Giving Passport in any way, it is only used to deliver the invitation.</p>
+<div>email : _required_ **string**</div>
+<div>The email address you would like the invitation sent to. We do not tie this
+email address to the user's Giving Passport in any way, it is only used to
+deliver the invitation.</div>
 
-<p>phone : <em>optional</em> <strong>string</strong><br>
-The phone number of the person you want to invite to create a supporter page.</p>
+<div>phone : _optional_ **string**</div>
+<div>The phone number of the person you want to invite to create a supporter
+page.</div>
 
-<p>full_name : <em>optional</em> <strong>string</strong><br>
-The full name of the person you want to invite to create a supporter page.</p>
+<div>full_name : _optional_ **string**</div>
+<div>The full name of the person you want to invite to create a supporter
+page.</div>
 
-<p>charity_id : <em>optional</em> <strong>string</strong><br>
-The <code>id</code> of the charity that you want set for this supporter page. If no charity is supplied the user will be prompted to select a charity. Defaults to none.</p>
+<div>charity_id : _optional_ **string**</div>
+<div>The `id` of the charity that you want set for this supporter page. If no
+charity is supplied the user will be prompted to select a charity. Defaults to
+none.</div>
 
-<p>target : <em>optional</em> <strong>decimal</strong><br>
-The amount of money this page is aiming to raise. Defaults to a predetermined value.</p>
+<div>target : _optional_ **decimal**</div>
+<div>The amount of money this page is aiming to raise. Defaults to a
+predetermined value.</div>
 
 <h3 id="example">Example</h3>
 
@@ -121,7 +128,7 @@ The amount of money this page is aiming to raise. Defaults to a predetermined va
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="create-join-a-team-invitation-smallrequires-authenticationoverviewauthenticationsmall">Create Join a Team Invitation <small>(<a href="/overview/#authentication">requires authentication</a>)</small>
+<h2 id="create-join-a-team-invitation-smallrequires-authenticationsmall">Create Join a Team Invitation <small>(requires authentication)</small>
 </h2>
 
 <p>Send an invitation to create an individual supporter page for a team to
@@ -132,17 +139,23 @@ an email address.</p>
 
 <h3 id="payload-1">Payload</h3>
 
-<p>email : <em>required</em> <strong>string</strong><br>
-The email address you would like the invitation sent to. We do not tie this email address to the user’s Giving Passport in any way, it is only used to deliver the invitation.</p>
+<div>email : _required_ **string**</div>
+<div>The email address you would like the invitation sent to. We do not tie this
+email address to the user's Giving Passport in any way, it is only used to
+deliver the invitation.</div>
 
-<p>full_name : <em>optional</em> <strong>string</strong><br>
-The full name of the person you want to invite to create a supporter page.</p>
+<div>full_name : _optional_ **string**</div>
+<div>The full name of the person you want to invite to create a supporter
+page.</div>
 
-<p>charity_id : <em>optional</em> <strong>string</strong><br>
-The <code>id</code> of the charity that you want set for this supporter page. If no charity is supplied the user will be prompted to select a charity. Defaults to none.</p>
+<div>charity_id : _optional_ **string**</div>
+<div>The `id` of the charity that you want set for this supporter page. If no
+charity is supplied the user will be prompted to select a charity. Defaults to
+none.</div>
 
-<p>target : <em>optional</em> <strong>decimal</strong><br>
-The amount of money this page is aiming to raise. Defaults to a predetermined value.</p>
+<div>target : _optional_ **decimal**</div>
+<div>The amount of money this page is aiming to raise. Defaults to a
+predetermined value.</div>
 
 <h3 id="example-1">Example</h3>
 

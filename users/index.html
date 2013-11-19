@@ -75,10 +75,10 @@
         
           <h1>Users</h1>
           <ul id="markdown-toc">
-<li><a href="#list-all-users-smallrequires-authenticationoverviewauthenticationsmall">List all Users <small>(<a href="/overview/#authentication">requires authentication</a>)</small></a></li>
-  <li><a href="#get-current-user-smallrequires-authenticationoverviewauthenticationsmall">Get current user <small>(<a href="/overview/#authentication">requires authentication</a>)</small></a></li>
-  <li><a href="#update-a-new-user-with-attributes-smallrequires-authenticationoverviewauthenticationsmall">Update a new user with attributes <small>(<a href="/overview/#authentication">requires authentication</a>)</small></a></li>
-</ul><h2 id="list-all-users-smallrequires-authenticationoverviewauthenticationsmall">List all Users <small>(<a href="/overview/#authentication">requires authentication</a>)</small>
+<li><a href="#list-all-users-smallrequires-authenticationsmall">List all Users <small>(requires authentication)</small></a></li>
+  <li><a href="#get-current-user-smallrequires-authenticationsmall">Get current user <small>(requires authentication)</small></a></li>
+  <li><a href="#update-a-new-user-with-attributes-smallrequires-authenticationsmall">Update a new user with attributes <small>(requires authentication)</small></a></li>
+</ul><h2 id="list-all-users-smallrequires-authenticationsmall">List all Users <small>(requires authentication)</small>
 </h2>
 
 <pre><code>GET https://passport.everydayhero.com/api/v1/users
@@ -86,8 +86,9 @@
 
 <h3 id="parameters">Parameters</h3>
 
-<p>search : <em>optional</em> <strong>string</strong><br>
-Retrieve only the users with either a name, nickname or email matching the provided keyword(s).</p>
+<div>search : _optional_ **string**</div>
+<div>Retrieve only the users with either a name, nickname or email matching the
+provided keyword(s).</div>
 
 <h3 id="example">Example</h3>
 
@@ -139,7 +140,7 @@ Retrieve only the users with either a name, nickname or email matching the provi
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="get-current-user-smallrequires-authenticationoverviewauthenticationsmall">Get current user <small>(<a href="/overview/#authentication">requires authentication</a>)</small>
+<h2 id="get-current-user-smallrequires-authenticationsmall">Get current user <small>(requires authentication)</small>
 </h2>
 
 <pre><code>GET https://passport.everydayhero.com/api/v1/me.json?access_token=xxx
@@ -147,8 +148,8 @@ Retrieve only the users with either a name, nickname or email matching the provi
 
 <h3 id="parameters-1">Parameters</h3>
 
-<p>access_token : <em>required</em> <strong>string</strong><br>
-User access_token provided by passport auth hash.</p>
+<div>access_token : _required_ **string**</div>
+<div>User access_token provided by passport auth hash.</div>
 
 <h3 id="example-1">Example</h3>
 
@@ -181,7 +182,7 @@ User access_token provided by passport auth hash.</p>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="update-a-new-user-with-attributes-smallrequires-authenticationoverviewauthenticationsmall">Update a new user with attributes <small>(<a href="/overview/#authentication">requires authentication</a>)</small>
+<h2 id="update-a-new-user-with-attributes-smallrequires-authenticationsmall">Update a new user with attributes <small>(requires authentication)</small>
 </h2>
 
 <pre><code>PUT https://passport.everydayhero.com/api/v1/me
@@ -189,14 +190,15 @@ User access_token provided by passport auth hash.</p>
 
 <h3 id="parameters-2">Parameters</h3>
 
-<p>access_token : <em>required</em> <strong>string</strong><br>
-User access_token provided by passport auth hash.</p>
+<div>access_token : _required_ **string**</div>
+<div>User access_token provided by passport auth hash.</div>
 
-<p>user[birthday] : <em>optional</em> <strong>string</strong><br>
-User birthday, format “YYYY-MM-DD”.</p>
+<div>user[birthday] : _optional_ **string**</div>
+<div>User birthday, format "YYYY-MM-DD".</div>
 
-<p>user[address] : <em>optional</em> <strong>string</strong><br>
-The address passed through must be locatable through the Google Maps API. Example: “87 Wickham Terrace, Spring Hill, 4000, QLD”</p>
+<div>user[address] : _optional_ **string**</div>
+<div>The address passed through must be locatable through the Google Maps API.
+Example: "87 Wickham Terrace, Spring Hill, 4000, QLD"</div>
 
 <h3 id="example-2">Example</h3>
 
