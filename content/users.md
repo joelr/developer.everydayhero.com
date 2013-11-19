@@ -5,24 +5,6 @@ title: Users
 * TOC
 {:toc}
 
-## List all Users <small>(requires authentication)</small>
-
-    GET https://passport.everydayhero.com/api/v1/users
-
-### Parameters
-
-<div>search : _optional_ **string**</div>
-<div>Retrieve only the users with either a name, nickname or email matching the
-provided keyword(s).</div>
-
-### Example
-
-    https://passport.everydayhero.com/api/v1/users.json
-
-### Response
-
-<%= json :users %>
-
 ## Get current user <small>(requires authentication)</small>
 
     GET https://passport.everydayhero.com/api/v1/me.json?access_token=xxx
