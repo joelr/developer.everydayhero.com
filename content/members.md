@@ -1,7 +1,7 @@
 ---
 title: Members
 ---
-## Add a Team Member <small>([requires authentication](/overview/#authentication))</small>
+## Add a Team Member <small>(requires authentication)</small>
 
 Add an existing page to an existing team.
 
@@ -9,8 +9,8 @@ Add an existing page to an existing team.
 
 ### Payload
 
-individual_page_id : _required_ **integer**<br/>
-The `id` of the page you want to join a team with.
+<div>individual_page_id : _required_ **integer**</div>
+<div>The `id` of the page you want to join a team with.</div>
 
 ### Example
 

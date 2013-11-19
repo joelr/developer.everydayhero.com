@@ -5,14 +5,15 @@ title: Users
 * TOC
 {:toc}
 
-## List all Users <small>([requires authentication](/overview/#authentication))</small>
+## List all Users <small>(requires authentication)</small>
 
     GET https://passport.everydayhero.com/api/v1/users
 
 ### Parameters
 
-search : _optional_ **string**<br/>
-Retrieve only the users with either a name, nickname or email matching the provided keyword(s).
+<div>search : _optional_ **string**</div>
+<div>Retrieve only the users with either a name, nickname or email matching the
+provided keyword(s).</div>
 
 ### Example
 
@@ -22,14 +23,14 @@ Retrieve only the users with either a name, nickname or email matching the provi
 
 <%= json :users %>
 
-## Get current user <small>([requires authentication](/overview/#authentication))</small>
+## Get current user <small>(requires authentication)</small>
 
     GET https://passport.everydayhero.com/api/v1/me.json?access_token=xxx
 
 ### Parameters
 
-access_token : _required_ **string**<br/>
-User access_token provided by passport auth hash.
+<div>access_token : _required_ **string**</div>
+<div>User access_token provided by passport auth hash.</div>
 
 ### Example
 
@@ -39,20 +40,21 @@ User access_token provided by passport auth hash.
 
 <%= json :user %>
 
-## Update a new user with attributes <small>([requires authentication](/overview/#authentication))</small>
+## Update a new user with attributes <small>(requires authentication)</small>
 
     PUT https://passport.everydayhero.com/api/v1/me
 
 ### Parameters
 
-access_token : _required_ **string**<br/>
-User access_token provided by passport auth hash.
+<div>access_token : _required_ **string**</div>
+<div>User access_token provided by passport auth hash.</div>
 
-user[birthday] : _optional_ **string**<br/>
-User birthday, format "YYYY-MM-DD".
+<div>user[birthday] : _optional_ **string**</div>
+<div>User birthday, format "YYYY-MM-DD".</div>
 
-user[address] : _optional_ **string**<br/>
-The address passed through must be locatable through the Google Maps API. Example: "87 Wickham Terrace, Spring Hill, 4000, QLD"
+<div>user[address] : _optional_ **string**</div>
+<div>The address passed through must be locatable through the Google Maps API.
+Example: "87 Wickham Terrace, Spring Hill, 4000, QLD"</div>
 
 ### Example
 
