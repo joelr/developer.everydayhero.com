@@ -81,39 +81,52 @@
 <p>Below shows a demo JQuery snippet that will load the campaign leaders, and page totals on to a page.</p>
 
 <pre>
-  <code class="javascript">&lt;script src="http://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt;
+<code class="javascript">&lt;script src="http://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt;
 &lt;script type='text/javascript'&gt;
-
-$(function() {
-  $.getJSON('https://everydayhero.com/api/v2/campaigns/au-1234/leaderboard.jsonp?callback=?', {},  function (data) {          
-    var pages = data.leaderboard.page_ids;
-    $.getJSON('https://everydayhero.com/api/v2/pages.jsonp?ids=' + pages.join(',') + '&amp;callback=?', {},  function (data) {          
-
-      $.each(data.pages, function(index, value) {  
-        var raised = value.amount;
-        $("#pages").append('&lt;li&gt;' + value.name + ' raised ' + raised.currency.symbol + (raised.cents / 100) + '&lt;/li&gt;');
-      });   
+  var campaignLeaderboard = function(campaign_slug, campaign_uid, type, limit, callback) {
+    $.getJSON('https://everydayhero.com/api/v2/campaigns/' + campaign_uid + '/leaderboard.jsonp?type=' + type + '&amp;limit=' + limit + '&amp;callback=?', function(leaderboard_data) {
+      if (leaderboard_data.leaderboard.page_ids.length == 0) {
+        callback([]);
+        return;
+      }
+      $.getJSON('https://everydayhero.com/api/v2/pages.jsonp?ids=' + leaderboard_data.leaderboard.page_ids.join(',') + '&amp;callback=?', function(page_data) {
+        var leaderboard = $.map(leaderboard_data.leaderboard.page_ids, function(page_id, i) {
+          var page = $.grep(page_data.pages, function(element) {
+            return element.id == page_id;
+          })[0];
+          return {
+            name: page.name,
+            amount: '$' + (page.amount.cents / 100),
+            url: 'http://' + campaign_slug + '.everydayhero.com/au/' + page.slug
+          }
+        });
+        callback(leaderboard);
+      });
+    });
+  };
+  campaignLeaderboard('give', 'au-0', 'individual', 10, function(data) {
+    $(data).each(function(i, item) {
+      $('#leaderboard').append('&lt;li&gt;' + item.name + ' raised ' + item.amount + '&lt;/li&gt;');
     });
   });
-});  
-
-
 &lt;/script&gt;
 
-&lt;ul id='pages'&gt;&lt;/ul&gt;</code>
+&lt;ul id='leaderboard'&gt;&lt;/ul&gt;</code>
 </pre>
 
 <h2 id="this-will-display">This will display:</h2>
 
 <ul>
-<li>Claire raised $100</li>
-  <li>Sarah raised $70</li>
-  <li>Bill raised $70</li>
-  <li>John raised $50</li>
-  <li>Bill raised $10</li>
-  <li>Chris raised $10</li>
-  <li>Jane raised $10</li>
-  <li>Sam raised $5</li>
+<li>Unions’ Fire Appeal 2013 raised $81837.26</li>
+  <li>Scott Malcolm raised $67655</li>
+  <li>Rebuilding Dana raised $52715</li>
+  <li>Michael Hassett raised $50250</li>
+  <li>Anton raised $44170</li>
+  <li>Wee Erin G xxx raised $40820</li>
+  <li>Kicking Goals for Kids with Cancer raised $36950</li>
+  <li>OzForex Foreign Exchange raised $31850</li>
+  <li>Pritchard Francis Perth to Surf 2013 raised $30350</li>
+  <li>Brothers1VBrothers raised $27707.6</li>
 </ul>
         
       </div>
