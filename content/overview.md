@@ -130,3 +130,34 @@ any and all information created or updated can only take place within
 the specified campaign.
 
 For API actions that require a UID, users will be required to authenticate with [Giving Passport](/oauth-integration/#how-to-authenticate-with-edh-passport) which provides a UID in the returned payload.
+
+## Pagination
+
+Every endpoint which returns data has the option to return that data in a paged
+format. Pagination allows a subset of the data to be returned instead of the entire
+dataset.
+
+### Parameters
+
+limit : _optional_ **integer**<br/>
+The number of items per page.
+
+page : _optional_ **integer**<br/>
+The page number to return.
+
+### Example
+
+    https://everydayhero.com/api/v2/pages.json?limit=10&page=1
+
+### Response
+
+    {
+      "pages":[ ... ],
+      "meta":{
+        "count":138718,
+        "current_page":1,
+        "total_pages":139,
+        "first_page":true,
+        "last_page":false
+      }
+    }
