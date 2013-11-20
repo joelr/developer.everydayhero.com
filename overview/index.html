@@ -28,6 +28,7 @@
                 <li><a href="/overview/#validation-errors">Validation Errors</a></li>
                 <li><a href="/overview/#http-verbs">HTTP Verbs</a></li>
                 <li><a href="/overview/#authentication">Authentication</a></li>
+                <li><a href="/overview/#pagination">Pagination</a></li>
                 <li><a href="/glossary/">Glossary</a></li>
               </ul>
             </li>
@@ -209,6 +210,39 @@ any and all information created or updated can only take place within
 the specified campaign.</p>
 
 <p>For API actions that require a UID, users will be required to authenticate with <a href="/oauth-integration/#how-to-authenticate-with-edh-passport">Giving Passport</a> which provides a UID in the returned payload.</p>
+
+<h2 id="pagination">Pagination</h2>
+
+<p>Every endpoint which returns data has the option to return that data in a paged
+format. Pagination allows a subset of the data to be returned instead of the entire
+dataset.</p>
+
+<h3 id="parameters-1">Parameters</h3>
+
+<p>limit : <em>optional</em> <strong>integer</strong><br>
+The number of items per page.</p>
+
+<p>page : <em>optional</em> <strong>integer</strong><br>
+The page number to return.</p>
+
+<h3 id="example">Example</h3>
+
+<pre><code>https://everydayhero.com/api/v2/pages.json?limit=10&amp;page=1
+</code></pre>
+
+<h3 id="response">Response</h3>
+
+<pre><code>{
+  "pages":[ ... ],
+  "meta":{
+    "count":138718,
+    "current_page":1,
+    "total_pages":139,
+    "first_page":true,
+    "last_page":false
+  }
+}
+</code></pre>
         
       </div>
     </section>
