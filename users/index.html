@@ -75,88 +75,25 @@
         
           <h1>Users</h1>
           <ul id="markdown-toc">
-<li><a href="#list-all-users-smallrequires-authenticationsmall">List all Users <small>(requires authentication)</small></a></li>
-  <li><a href="#get-current-user-smallrequires-authenticationsmall">Get current user <small>(requires authentication)</small></a></li>
+<li><a href="#get-current-user-smallrequires-authenticationsmall">Get current user <small>(requires authentication)</small></a></li>
   <li><a href="#update-a-new-user-with-attributes-smallrequires-authenticationsmall">Update a new user with attributes <small>(requires authentication)</small></a></li>
-</ul><h2 id="list-all-users-smallrequires-authenticationsmall">List all Users <small>(requires authentication)</small>
-</h2>
-
-<pre><code>GET https://passport.everydayhero.com/api/v1/users
-</code></pre>
-
-<h3 id="parameters">Parameters</h3>
-
-<div>search : _optional_ **string**</div>
-<div>Retrieve only the users with either a name, nickname or email matching the
-provided keyword(s).</div>
-
-<h3 id="example">Example</h3>
-
-<pre><code>https://passport.everydayhero.com/api/v1/users.json
-</code></pre>
-
-<h3 id="response">Response</h3>
-
-<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"users"</span><span class="o">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"John O'Donnell"</span><span class="p">,</span>
-      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
-      <span class="s2">"nickname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
-      <span class="s2">"birthday"</span><span class="o">:</span> <span class="s2">"1980-01-13"</span><span class="p">,</span>
-      <span class="s2">"street_address"</span><span class="o">:</span> <span class="s2">"87 Wickham Terrace"</span><span class="p">,</span>
-      <span class="s2">"locality"</span><span class="o">:</span> <span class="s2">"Spring Hill"</span><span class="p">,</span>
-      <span class="s2">"region"</span><span class="o">:</span> <span class="s2">"QLD"</span><span class="p">,</span>
-      <span class="s2">"postal_code"</span><span class="o">:</span> <span class="s2">"4006"</span><span class="p">,</span>
-      <span class="s2">"country_name"</span><span class="o">:</span> <span class="s2">"Australia"</span><span class="p">,</span>
-      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1300798768"</span><span class="p">,</span>
-      <span class="s2">"internal_id"</span><span class="o">:</span> <span class="s2">"213"</span><span class="p">,</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
-      <span class="s2">"page_ids"</span><span class="o">:</span> <span class="p">[</span>
-        <span class="mi">1</span><span class="p">,</span>
-        <span class="mi">2</span>
-      <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"John O'Donnell"</span><span class="p">,</span>
-      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
-      <span class="s2">"nickname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
-      <span class="s2">"birthday"</span><span class="o">:</span> <span class="s2">"1980-01-13"</span><span class="p">,</span>
-      <span class="s2">"street_address"</span><span class="o">:</span> <span class="s2">"87 Wickham Terrace"</span><span class="p">,</span>
-      <span class="s2">"locality"</span><span class="o">:</span> <span class="s2">"Spring Hill"</span><span class="p">,</span>
-      <span class="s2">"region"</span><span class="o">:</span> <span class="s2">"QLD"</span><span class="p">,</span>
-      <span class="s2">"postal_code"</span><span class="o">:</span> <span class="s2">"4006"</span><span class="p">,</span>
-      <span class="s2">"country_name"</span><span class="o">:</span> <span class="s2">"Australia"</span><span class="p">,</span>
-      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1300798768"</span><span class="p">,</span>
-      <span class="s2">"internal_id"</span><span class="o">:</span> <span class="s2">"213"</span><span class="p">,</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
-      <span class="s2">"page_ids"</span><span class="o">:</span> <span class="p">[</span>
-        <span class="mi">1</span><span class="p">,</span>
-        <span class="mi">2</span>
-      <span class="p">]</span>
-    <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span></code></pre>
-
-<h2 id="get-current-user-smallrequires-authenticationsmall">Get current user <small>(requires authentication)</small>
+</ul><h2 id="get-current-user-smallrequires-authenticationsmall">Get current user <small>(requires authentication)</small>
 </h2>
 
 <pre><code>GET https://passport.everydayhero.com/api/v1/me.json?access_token=xxx
 </code></pre>
 
-<h3 id="parameters-1">Parameters</h3>
+<h3 id="parameters">Parameters</h3>
 
 <div>access_token : _required_ **string**</div>
 <div>User access_token provided by passport auth hash.</div>
 
-<h3 id="example-1">Example</h3>
+<h3 id="example">Example</h3>
 
 <pre><code>https://passport.everydayhero.com/api/v1/me.json?access_token=xxxxx
 </code></pre>
 
-<h3 id="response-1">Response</h3>
+<h3 id="response">Response</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"user"</span><span class="o">:</span> <span class="p">[</span>
@@ -188,7 +125,7 @@ provided keyword(s).</div>
 <pre><code>PUT https://passport.everydayhero.com/api/v1/me
 </code></pre>
 
-<h3 id="parameters-2">Parameters</h3>
+<h3 id="parameters-1">Parameters</h3>
 
 <div>access_token : _required_ **string**</div>
 <div>User access_token provided by passport auth hash.</div>
@@ -200,7 +137,7 @@ provided keyword(s).</div>
 <div>The address passed through must be locatable through the Google Maps API.
 Example: "87 Wickham Terrace, Spring Hill, 4000, QLD"</div>
 
-<h3 id="example-2">Example</h3>
+<h3 id="example-1">Example</h3>
 
 <pre><code>PUT https://passport.everydayhero.com/api/v1/me?access_token=xxxx&amp;user%5Baddress%5D=someaddress&amp;user%5Bbirthday%5D=1970-01-01
 </code></pre>
