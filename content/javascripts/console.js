@@ -4,10 +4,7 @@ function load_api_content(url) {
     url = url.replace("?","");
     url = url.replace(".json",".jsonp?callback=?&");
     var jqxhr = $.getJSON(url, function(data) {
-       var stringify = JSON.stringify(data, undefined, 2);
-       var prettify = hljs.highlightAuto(stringify).value;
-       prettify = hljs.fixMarkup(prettify);
-       $('#console').html(prettify);
+       $('#console').html(JSON.stringify(data, undefined, 2));
      });
      setTimeout(function(){
        if ($('#console').html() == "Loading") {
