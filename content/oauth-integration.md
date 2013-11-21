@@ -49,33 +49,27 @@ response to the authorization request.
 
 ### Parameters
 
-<div>response_type : _required_ **string**</div>
-<div>A value of code results in the Authorization Code grant type while a value
-of token implies the Implicit grant type.</div>
+response_type : _required_ **string**<br/>
+A value of code results in the Authorization Code grant type while a value of token implies the Implicit grant type.
 
-<div>client_id : _required_ **string**</div>
-<div>The client identifier.</div>
+client_id : _required_ **string**<br./>
+The client identifier.
 
-<div>redirect_uri : _optional_ **string**</div>
-<div>If present, the requested redirect_uri must match the one configured for
-the client. if the redirect_uri is set to ```urn:ietf:wg:oauth:2.0:oob```, this
-will tell Passport to display the authorization code instead of redirecting to a
-client application (if this is still under development).</div>
+redirect_uri : _optional_ **string**<br/>
+If present, the requested redirect_uri must match the one configured for the client. if the redirect_uri is set to ```urn:ietf:wg:oauth:2.0:oob```, this will tell Passport to display the authorization code instead of redirecting to a client application (if this is still under development).
 
 ### Prepopulation
 
 These parameters will be pre-populated on the sign up/in screen.
 
-<div>email : _optional_ **string**</div>
-<div>The email of the person you want to prepopulate the sign-up form for.</div>
+email : _optional_ **string**<br/>
+The email of the person you want to prepopulate the sign-up form for.
 
-<div>phone : _optional_ **string**</div>
-<div>The phone number of the person you want to prepopulate the sign-up form
-for.</div>
+phone : _optional_ **string**<br/>
+The phone number of the person you want to prepopulate the sign-up form for.
 
-<div>name : _optional_ **string**</div>
-<div>The full name of the person you want to prepopulate the sign-up form
-for.</div>
+name : _optional_ **string**<br/>
+The full name of the person you want to prepopulate the sign-up form for.
 
 ### Branding
 
@@ -83,12 +77,11 @@ Branding is optional.
 
 These parameters are only required if you would like branding from your campaign to be used for the sign up/in screen. If you choose to implement branding, both parameters are required.
 
-<div>reference : _optional_ **string**</div>
-<div>The campaign slug for the campaign which should be used for branding the
-login screen.</div>
+reference : _optional_ **string**<br/>
+The campaign slug for the campaign which should be used for branding the login screen.
 
-<div>country : _optional_ **string**</div>
-<div>The country code associated with your campaign (au, nz, uk).</div>
+country : _optional_ **string**<br/>
+The country code associated with your campaign (au, nz, uk).
 
 ### Response
 
@@ -107,21 +100,20 @@ secret, for an access token.
 
 ### Parameters
 
-<div>grant_type : _required_ **string**</div>
-<div>Use authorization_code.</div>
+grant_type : _required_ **string**<br/>
+Use authorization_code.
 
-<div>client_id : _required_ **string**</div>
-<div>The client identifier.</div>
+client_id : _required_ **string**<br/>
+The client identifier.
 
-<div>client_secret : _required_ **string**</div>
-<div>The client secret.</div>
+client_secret : _required_ **string**<br/>
+The client secret.
 
-<div>code : _required_ **string**</div>
-<div>The code returned from authorize endpoint.</div>
+code : _required_ **string**<br/>
+The code returned from authorize endpoint.
 
-<div>redirect_uri : _required_ **string**</div>
-<div>The requested redirect_uri must match the one configured for the
-client.</div>
+redirect_uri : _required_ **string**<br/>
+The requested redirect_uri must match the one configured for the client.
 
 ### Response
 
@@ -129,8 +121,9 @@ client.</div>
 
 ## Registration Product Integration
 
-A sample application has been built to show one possible end to end third party
-registration scenario. Source code for the application can be found on
+A [sample application](http://example-rego-integration.herokuapp.com) has been
+built to show one possible end to end third party registration scenario.
+Source code for the application can be found on
 [GitHub](https://github.com/everydayhero/example_registrations).
 This application demonstrates:
 
@@ -152,3 +145,5 @@ Generally there are going to be two entry points into your campaign, the
 first will be through your website and the second will be through an
 Everyday Hero supporter page. The two flows are slightly different and
 deserve separate discussions.
+
+

@@ -10,27 +10,20 @@ address.
 
 ### Payload
 
-<div>email : _required_ **string**</div>
-<div>The email address you would like the invitation sent to. We do not tie this
-email address to the user's Giving Passport in any way, it is only used to
-deliver the invitation.</div>
+email : _required_ **string**<br/>
+The email address you would like the invitation sent to. We do not tie this email address to the user's Giving Passport in any way, it is only used to deliver the invitation.
 
-<div>phone : _optional_ **string**</div>
-<div>The phone number of the person you want to invite to create a supporter
-page.</div>
+phone : _optional_ **string**<br/>
+The phone number of the person you want to invite to create a supporter page.
 
-<div>full_name : _optional_ **string**</div>
-<div>The full name of the person you want to invite to create a supporter
-page.</div>
+full_name : _optional_ **string**<br/>
+The full name of the person you want to invite to create a supporter page.
 
-<div>charity_id : _optional_ **string**</div>
-<div>The `id` of the charity that you want set for this supporter page. If no
-charity is supplied the user will be prompted to select a charity. Defaults to
-none.</div>
+charity_id : _optional_ **string**<br/>
+The `id` of the charity that you want set for this supporter page. If no charity is supplied the user will be prompted to select a charity. Defaults to none.
 
-<div>target : _optional_ **decimal**</div>
-<div>The amount of money this page is aiming to raise. Defaults to a
-predetermined value.</div>
+target : _optional_ **decimal**<br/>
+The amount of money this page is aiming to raise. Defaults to a predetermined value.
 
 ### Example
 
@@ -55,23 +48,17 @@ an email address.
 
 ### Payload
 
-<div>email : _required_ **string**</div>
-<div>The email address you would like the invitation sent to. We do not tie this
-email address to the user's Giving Passport in any way, it is only used to
-deliver the invitation.</div>
+email : _required_ **string**<br/>
+The email address you would like the invitation sent to. We do not tie this email address to the user's Giving Passport in any way, it is only used to deliver the invitation.
 
-<div>full_name : _optional_ **string**</div>
-<div>The full name of the person you want to invite to create a supporter
-page.</div>
+full_name : _optional_ **string**<br/>
+The full name of the person you want to invite to create a supporter page.
 
-<div>charity_id : _optional_ **string**</div>
-<div>The `id` of the charity that you want set for this supporter page. If no
-charity is supplied the user will be prompted to select a charity. Defaults to
-none.</div>
+charity_id : _optional_ **string**<br/>
+The `id` of the charity that you want set for this supporter page. If no charity is supplied the user will be prompted to select a charity. Defaults to none.
 
-<div>target : _optional_ **decimal**</div>
-<div>The amount of money this page is aiming to raise. Defaults to a
-predetermined value.</div>
+target : _optional_ **decimal**<br/>
+The amount of money this page is aiming to raise. Defaults to a predetermined value.
 
 ### Example
 
