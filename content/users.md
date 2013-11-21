@@ -39,7 +39,7 @@ The address passed through must be locatable through the Google Maps API. Exampl
 
 ### Example
 
-    PUT https://passport.everydayhero.com/api/v1/me?access_token=xxxx&user%5Baddress%5D=someaddress&user%5Bbirthday%5D=1970-01-01
+    PUT https://passport.everydayhero.com/api/v1/me?access_token=xxxx&user%5Baddress%5D=87+Wickham+Terrace,Spring+Hill,4000,QLD&user%5Bbirthday%5D=1970-01-01
 
 ### Repsonse
 
