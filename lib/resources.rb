@@ -265,6 +265,10 @@ module EverydayHero
       name: "Team Example"
     }
 
+    Team = {
+      team: TeamData
+    }
+
     Teams = {
       teams: [TeamData]
     }
