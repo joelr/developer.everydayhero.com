@@ -92,21 +92,18 @@ characteristic include ‘amount’ and ‘custom_metric_total’.</p>
 
 <h3 id="parameters">Parameters</h3>
 
-<div>ids : _optional_ **string**</div>
-<div>Only retrieve pages with the ids specified. `1,5,20` will retrieve pages
-with the ids 1, 5 and 20.</div>
+<p>ids : <em>optional</em> <strong>string</strong><br>
+Only retrieve pages with the ids specified. <code>1,5,20</code> will retrieve pages with the ids 1, 5 and 20.</p>
 
-<div>type : _optional_ **string**</div>
-<div>The types of pages that are required. Supported values include `all`,
-`individual` and `team`. Defaults to `all`.</div>
+<p>type : <em>optional</em> <strong>string</strong><br>
+The types of pages that are required. Supported values include <code>all</code>, <code>individual</code> and <code>team</code>. Defaults to <code>all</code>.</p>
 
-<div>campaign_id : _optional_ **string**</div>
-<div>Only retrieve pages participating in the campaign specified.</div>
+<p>campaign_id : <em>optional</em> <strong>string</strong><br>
+Only retrieve pages participating in the campaign specified.</p>
 
-<div>charity_ids : _optional_ **string**</div>
-<div>Only retrieve pages supporting the specified charities. For example
-`au-1,au-5` will retrieve pages which support charity ids `au-1` and
-`au-5`.</div>
+<p>charity_ids : <em>optional</em> <strong>string</strong><br>
+Only retrieve pages supporting the specified charities. For example <code>au-1,au-5</code>
+will retrieve pages which support charity ids <code>au-1</code> and <code>au-5</code>.</p>
 
 <h4 id="pagination">Pagination</h4>
 
@@ -215,39 +212,32 @@ The page number to return.</p>
 
 <h3 id="payload">Payload</h3>
 
-<div>uid : _required_ **integer**</div>
-<div>The `uid` of the user that you want to create a page for.</div>
+<p>uid : <em>required</em> <strong>integer</strong><br>
+The <code>uid</code> of the user that you want to create a page for.</p>
 
-<div>birthday : _required_ **string**</div>
-<div>Your birthday. In some countries there are age restrictions on fundraising
-and further action might need to be taken depending on the age provided.</div>
+<p>birthday : <em>required</em> <strong>string</strong><br>
+Your birthday. In some countries there are age restrictions on fundraising and further action might need to be taken depending on the age provided.</p>
 
-<div>name : _optional_ **string**</div>
-<div>The desired name for your new supporter page. Defaults to the user's
-preferred name.</div>
+<p>name : <em>optional</em> <strong>string</strong><br>
+The desired name for your new supporter page. Defaults to the user’s preferred name.</p>
 
-<div>slug : _optional_ **string**</div>
-<div>A URL-friendly version of the name parameter. Can only contain lower case
-characters, numbers, and hyphens. The slug will form part of the page URL and
-must be unique within the campaign.</div>
+<p>slug : <em>optional</em> <strong>string</strong><br>
+A URL-friendly version of the name parameter. Can only contain lower case characters, numbers, and hyphens. The slug will form part of the page URL and must be unique within the campaign.</p>
 
-<div>expires_at : _optional_ **string**</div>
-<div>The date and time you want the page to expire. ISO8601 format. Defaults to
-1 month after the campaign end date.</div>
+<p>expires_at : <em>optional</em> <strong>string</strong><br>
+The date and time you want the page to expire. ISO8601 format. Defaults to 1 month after the campaign end date.</p>
 
-<div>target : _optional_ **string**</div>
-<div>The dollar amount that you are aiming to raise (must be above 0).</div>
+<p>target : <em>optional</em> <strong>string</strong><br>
+The dollar amount that you are aiming to raise (must be above 0).</p>
 
-<div>charity_id : _optional_ **string**</div>
-<div>The `id` of the charity to create the page for. Defaulted to a random
-charity.</div>
+<p>charity_id : <em>optional</em> <strong>string</strong><br>
+The <code>id</code> of the charity to create the page for. Defaulted to a random charity.</p>
 
-<div>token : _optional_ **string**</div>
-<div>An invitation token to join a team. This invitation was created by the team
-leader and sent to the user that you want to create a supporter page for.</div>
+<p>token : <em>optional</em> <strong>string</strong><br>
+An invitation token to join a team. This invitation was created by the team leader and sent to the user that you want to create a supporter page for.</p>
 
-<div>gift_aid_eligible : _optional_ **boolean**</div>
-<div>UK specific fundraising criteria.</div>
+<p>gift_aid_eligible : <em>optional</em> <strong>boolean</strong><br>
+UK specific fundraising criteria.</p>
 
 <h3 id="example-2">Example</h3>
 
