@@ -17,7 +17,7 @@ List all teams in the authenticated application's campaign.
 
 ### Response
 
-<%= json :team %>
+<%= json :teams %>
 
 ## Create a Team <small>(requires authentication)</small>
 

@@ -260,12 +260,13 @@ module EverydayHero
     }
 
     TeamData = {
+      id: 1,
       uid: 1,
       name: "Team Example"
     }
 
-    Team = {
-      team: TeamData
+    Teams = {
+      teams: [TeamData]
     }
   end
 end
