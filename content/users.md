@@ -7,7 +7,7 @@ title: Users
 
 ## Get current user <small>(requires authentication)</small>
 
-    GET https://passport.everydayhero.com/api/v1/me.json?access_token=xxx
+    GET https://passport.everydayhero.com/api/v1/me
 
 ### Parameters
 
