@@ -200,8 +200,10 @@ module EverydayHero
       cancelled_at: nil
     }
 
-    JoinTeamInvitationData = InvitationData.merge \
-      team_page_id: 1
+    JoinTeamInvitationData = InvitationData.merge({
+      team_page_id: 1,
+      token: 'xxxxxxxxx'
+    })
 
     CreateIndividualPageInvitation = {
       create_individual_page_invitation: InvitationData
