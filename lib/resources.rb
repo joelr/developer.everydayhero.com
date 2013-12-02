@@ -195,7 +195,7 @@ module EverydayHero
 
     InvitationData = {
       id: 1,
-      email: 'support@everydayhero.com',
+      email: 'professionalservices@everydayhero.com.au',
       accepted_at: '2013-04-01T00:00:00Z',
       cancelled_at: nil
     }
