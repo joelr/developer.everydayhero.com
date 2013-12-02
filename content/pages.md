@@ -98,7 +98,8 @@ UK specific fundraising criteria.
 ### Example
 
 <%= json \
-  slug: "tim-cooper",
+  name: "Tim",
+  slug: "tim",
   expires_at: "2013-10-21T17:15:08+10:00",
   target: "500.50",
   birthday: "1987-04-16T00:00:00+10:00",
