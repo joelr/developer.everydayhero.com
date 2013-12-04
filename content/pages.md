@@ -78,7 +78,7 @@ name : _optional_ **string**<br/>
 The desired name for your new supporter page. Defaults to the user's preferred name.
 
 slug : _optional_ **string**<br/>
-A URL-friendly version of the name parameter. Can only contain lower case characters, numbers, and hyphens. The slug will form part of the page URL and must be unique within the campaign.
+A URL-friendly version of the name parameter. Can only contain lower case characters, numbers, and hyphens. The slug will form part of the page URL and must be unique within the campaign. Maximum 60 characters.
 
 expires_at : _optional_ **string**<br/>
 The date and time you want the page to expire. ISO8601 format. Defaults to 1 month after the campaign end date.
