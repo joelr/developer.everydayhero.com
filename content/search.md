@@ -16,7 +16,7 @@ Please note, all of the search api endpoints accepts two types of parameters, sp
 
 ## Campaigns
 
-    GET https://supporter.dev/api/v2/search/campaigns
+    GET https://everydayhero.com/api/v2/search/campaigns
 
 ### Parameters
 
@@ -29,7 +29,7 @@ Retrieve campaigns with `campaign name` match or partially match to the specifie
 
 ### Example
 
-    https://supporter.dev/api/v2/search/campaigns?country_code=au&q=end
+    https://everydayhero.com/api/v2/search/campaigns?country_code=au&q=end
 
 ### Response
 
@@ -37,7 +37,7 @@ Retrieve campaigns with `campaign name` match or partially match to the specifie
 
 ## Charities
 
-    GET https://supporter.dev/api/v2/search/charities
+    GET https://everydayhero.com/api/v2/search/charities
 
 ### Parameters
 
@@ -54,7 +54,7 @@ Retrieve charities with `charity name` match or partially match to the specified
 
 ### Example
 
-    https://supporter.dev/api/v2/search/charities?country_code=au&campaign_id=au-0&q=end
+    https://everydayhero.com/api/v2/search/charities?country_code=au&campaign_id=au-0&q=end
 
 ### Response
 
@@ -62,7 +62,7 @@ Retrieve charities with `charity name` match or partially match to the specified
 
 ## Pages
 
-    GET https://supporter.dev/api/v2/search/pages
+    GET https://everydayhero.com/api/v2/search/pages
 
 ### Parameters
 
@@ -83,7 +83,7 @@ Retrieve pages with `page name` or `supporter name` match or partially match to 
 
 ### Example
 
-    https://supporter.dev/api/v2/search/pages?country_code=au&campaign_id=au-321&q=richards
+    https://everydayhero.com/api/v2/search/pages?country_code=au&campaign_id=au-321&q=richards
 
 ### Response
 
