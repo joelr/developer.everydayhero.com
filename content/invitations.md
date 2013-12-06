@@ -8,7 +8,9 @@ address.
 
     POST https://everydayhero.com/api/v2/individual-pages/invitations
 
-### Payload
+### Parameters
+
+#### POST
 
 email : _required_ **string**<br/>
 The email address you would like the invitation sent to. We do not tie this email address to the user's Giving Passport in any way, it is only used to deliver the invitation.
@@ -46,7 +48,9 @@ an email address.
 
     POST https://everydayhero.com/api/v2/team-pages/:team_page_id/invitations
 
-### Payload
+### Parameters
+
+#### POST
 
 email : _required_ **string**<br/>
 The email address you would like the invitation sent to. We do not tie this email address to the user's Giving Passport in any way, it is only used to deliver the invitation.

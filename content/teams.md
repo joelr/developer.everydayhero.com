@@ -28,7 +28,9 @@ List all teams in the authenticated application's campaign.
 
       POST https://everydayhero.com/api/v2/teams
 
-### Payload
+### Parameters
+
+#### POST
 
 individual_page_id : _required_ **integer**<br/>
 The `id` of the individual page to create the team from.

@@ -7,7 +7,14 @@ Join an existing team with an existing individual page.
 
     POST https://everydayhero.com/api/v2/teams/:id/join-requests
 
-### Payload
+### Parameters
+
+#### URL
+
+id : _required_ **string**<br/>
+The team `uid`.
+
+#### POST
 
 individual_page_id : _required_ **integer**<br/>
 The `id` of the page you want to join a team with.

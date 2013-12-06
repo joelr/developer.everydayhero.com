@@ -11,6 +11,8 @@ title: Users
 
 ### Parameters
 
+#### Query String
+
 access_token : _required_ **string**<br/>
 User access_token provided by passport auth hash.
 
@@ -27,6 +29,8 @@ User access_token provided by passport auth hash.
     PUT https://passport.everydayhero.com/api/v1/me
 
 ### Parameters
+
+#### PUT
 
 access_token : _required_ **string**<br/>
 User access_token provided by passport auth hash.

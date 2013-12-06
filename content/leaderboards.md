@@ -14,6 +14,8 @@ assocated pages.
 
 ### Parameters
 
+#### Query String
+
 ids : _optional_ **string**<br/>
 `1,5,20` to only retrieve leaderboards with the ids 1, 5 and 20
 
@@ -40,6 +42,13 @@ The page number to return.
 
     GET https://everydayhero.com/api/v2/leaderboards/:id
 
+### Parameters
+
+#### URL
+
+id : _required_ **string**<br/>
+The leaderboard `uid`.
+
 ### Example
 
     https://everydayhero.com/api/v2/leaderbords/1.json
@@ -56,6 +65,13 @@ particular campaign.
     GET https://everydayhero.com/api/v2/campaigns/:id/leaderboard
 
 ### Parameters
+
+#### URL
+
+id : _required_ **string**<br/>
+The campaign `uid`.
+
+#### Query String
 
 type : _optional_ **string**<br/>
 The types of pages that are required. Supported values include `all`, `individual` and `team`. Defaults to `all`.

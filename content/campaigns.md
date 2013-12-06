@@ -7,6 +7,8 @@ title: Campaigns
 
 ### Parameters
 
+#### POST
+
 charity_ids : _optional_ **string**<br/>
 A comma-separated list of Charity IDs, only Campaigns that the specified Charity is participating in will be retrieved.
 
@@ -32,6 +34,13 @@ The page number to return.
 ## View a single Campaign <small>(public)</small>
 
     GET https://everydayhero.com/api/v2/campaigns/:id
+
+### Parameters
+
+#### URL
+
+id : _required_ **string**<br/>
+The campaign `uid`.
 
 [View demo in API console](/console/?query=campaigns/au-0.json) 
 

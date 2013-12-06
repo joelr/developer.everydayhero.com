@@ -16,6 +16,8 @@ characteristic include 'amount' and 'custom_metric_total'.
 
 ### Parameters
 
+#### Query String
+
 ids : _optional_ **string**<br/>
 Only retrieve pages with the ids specified. `1,5,20` will retrieve pages with the ids 1, 5 and 20.
 
@@ -52,6 +54,13 @@ The page number to return.
 
     GET https://everydayhero.com/api/v2/pages/:id
 
+### Parameters
+
+#### URL
+
+id : _required_ **string**<br/>
+The page `uid`.
+
 [View demo in API console](/console/?query=pages/1.json)
 
 ### Example
@@ -66,7 +75,9 @@ The page number to return.
 
     POST https://everydayhero.com/api/v2/pages
 
-### Payload
+### Parameters
+
+#### POST
 
 uid : _required_ **integer**<br/>
 The `uid` of the user that you want to create a page for.
