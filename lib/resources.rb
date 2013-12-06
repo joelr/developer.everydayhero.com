@@ -272,6 +272,125 @@ module EverydayHero
     Teams = {
       teams: [TeamData]
     }
+
+    SearchCampaigns = {
+      campaigns: [
+        {
+          id: 3772,
+          name: "2013 Team Endurance Relay",
+          country_code: "au",
+          start_at: "2013-03-24T13:00:00.000Z",
+          finish_at: "2015-11-28T13:00:00.000Z",
+          banner_url: "campaigns/banners/original/missing.gif",
+          active: true,
+          charity_uids: [
+            "au-48"
+          ],
+          _score: 1.884049,
+          _type: "campaign"
+        },
+        {
+          id: 1904,
+          name: "BITE BACK: Help end malaria",
+          country_code: "au",
+          start_at: "2012-03-29T13:00:00.000Z",
+          finish_at: "2014-06-29T14:00:00.000Z",
+          banner_url: "campaigns/banners/original/missing.gif",
+          active: true,
+          charity_uids: [
+            "au-43"
+          ],
+          _score: 1.3550173,
+          _type: "campaign"
+        }
+      ]
+    }
+
+    SearchCharities = {
+      charities: [
+        {
+          id: 2313,
+          name: "Endeavour Foundation",
+          slug: "endeavour-foundation",
+          country_code: "au",
+          description: "Endeavour Foundation is one of the largest non-government disability service provider.",
+          logo_url: "charities/logos/original/missing.gif",
+          url: "http://core-au.edheroy.com/charity/view?charity=48",
+          active: true,
+          campaign_uids: [
+            "au-0",
+            "au-1232"
+          ],
+          _score: 3.1716847,
+          _type: "charity"
+        },
+        {
+          id: 6333,
+          name: "Community Plus + (West End Family Care Services Incorporated)",
+          slug: "community-plus-west-end-family-care-services-incorporated",
+          country_code: "au",
+          description: "Community Plus provides active centres to support strong communities.",
+          logo_url: "charities/logos/original/missing.gif",
+          url: "http://core-au.edheroy.com/charity/view?charity=3002",
+          active: true,
+          campaign_uids: [
+            "au-0",
+            "au-4791"
+          ],
+          _score: 1.8563957,
+          _type: "charity"
+        }
+      ]
+    }
+
+    SearchPages = {
+      pages: [
+        {
+          id: 231599,
+          country_code: "au",
+          active: true,
+          name: "Joel",
+          supporter: {
+            uid: 34,
+            name: "Joel Richards"
+          },
+          campaign: {
+            uid: "au-321",
+            name: "Great Strides Queensland"
+          },
+          charity: {
+            uid: "au-32",
+            name: "Cystic Fibrosis Queensland"
+          },
+          image_url: "pages/images/original/missing.gif",
+          url: "http://greatstrides-qld.edheroy.com/au/joel",
+          _score: 3.2123315,
+          _type: "page"
+        },
+        {
+          id: 231781,
+          country_code: "au",
+          active: true,
+          name: "Berry",
+          supporter: {
+            uid: 24,
+            name: "Berrichards"
+          },
+          campaign: {
+            uid: "au-321",
+            name: "Great Strides Queensland"
+          },
+          charity: {
+            uid: "au-21",
+            name: "Cystic Fibrosis Queensland"
+          },
+          image_url: "pages/images/original/missing.gif",
+          url: "http://greatstrides-qld.edheroy.com/au/berry",
+          _score: 0.2123315,
+          _type: "page"
+        }
+      ]
+    }
   end
 end
 
