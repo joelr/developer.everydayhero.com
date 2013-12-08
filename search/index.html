@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>EverydayHero API: Search</title>
+  <link rel="stylesheet" href="/stylesheets/pygments.css">
+  <link rel="stylesheet" href="/stylesheets/app.css">
+  <!--[if lt IE 9]>
+    <script src="/javascripts/html5shiv-printshiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <header class="header top a--100">
+    <a href="/"><h1>Everyday Hero: Developer</h1></a>
+  </header>
+  <section class="main center">
+    <aside class="l--30 m--100 left side-bar">
+      <div class="inner">
+        <nav>
+          <ul>
+            <li><a href="/">Introduction</a></li>
+            <li>
+              <a href="/overview/">Overview</a>
+              <ul>
+                <li><a href="/overview/#schema">Schema</a></li>
+                <li><a href="/overview/#parameters">Parameters</a></li>
+                <li><a href="/overview/#auth-errors">Auth Errors</a></li>
+                <li><a href="/overview/#validation-errors">Validation Errors</a></li>
+                <li><a href="/overview/#http-verbs">HTTP Verbs</a></li>
+                <li><a href="/overview/#authentication">Authentication</a></li>
+                <li><a href="/overview/#pagination">Pagination</a></li>
+                <li><a href="/glossary/">Glossary</a></li>
+              </ul>
+            </li>
+            <li><a href="/campaigns/">Campaigns</a></li>
+            <li><a href="/charities/">Charities</a></li>
+            <li><a href="/leaderboards/">Leaderboards</a></li>
+            <li><a href="/pages/">Pages</a></li>
+            <li>
+              <a href="/teams/">Teams</a>
+              <ul>
+                <li><a href="/invitations/">Invitations</a>
+                  <ul>
+                    <li><a href="/invitations/#create-individual-page-invitation">Individual Page</a></li>
+                    <li><a href="/invitations/#create-join-a-team-invitation">Join Team Invitation</a></li>
+                  </ul>
+                </li>
+                <li><a href="/join-requests/">Join Requests</a></li>
+                <li><a href="/members/">Members</a></li>
+              </ul>
+            </li>
+            <li><a href="/users/">Users</a></li>
+            <li><a href="/oauth-integration/">OAuth Integration</a></li>
+            <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
+            <li><a href="/console/">API Console</a></li>
+            <li>
+              Client side integration
+              <ul>
+                <li>Totals
+                  <ul>
+                    <li><a href="/client-side/campaign-totals/">Campaign totals</a></li>
+                    <li><a href="/client-side/page-total/">Page totals</a></li>
+                  </ul>
+                </li>
+                <li><a href="/client-side/leaderboards/">Leaderboards</a></li>
+
+              </ul>
+            </li>
+            <li id="api-status">API Status: <span class='status down'>Down</span></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    <section class="l--70 m--100 right content">
+      <div class="inner">
+        
+          <h1>Search</h1>
+          <ul id="markdown-toc">
+<li><a href="#campaigns">Campaigns</a></li>
+  <li><a href="#charities">Charities</a></li>
+  <li><a href="#pages">Pages</a></li>
+</ul><p>The search api enables efficient text search on entities (backed by Elastic Search) and is suitable for applications such as auto-completion. Currently, the search api endpoints returns the top 100 related results and ordered based on their similarity ranking scores (each of the result entities is also associated with a <code>_score</code> value indicating the relevence to the query specified). Additionally, in order to provide capability to support mixed entity search, each of the entities in the results is also associated with a <code>_type</code> field indicating the entity type (i.e. <code>page</code>, <code>charity</code> or <code>campaign</code>).</p>
+
+<p>Please note, all of the search api endpoints accepts two types of parameters, specifically:</p>
+
+<ul>
+<li>
+    <p>a set of <em>filter</em> parameters (e.g. <code>country_code</code>, <code>campaign_id</code>, <code>charity_id</code>). The filter parameters decide if a entity should be included in the result set or not. For example, if <code>country_code=au</code>, the result will <strong>only</strong> contain entities with <code>country_code=au</code>.</p>
+  </li>
+  <li>
+    <p>a single <em>text search</em> parameter (i.e. <code>q</code>). The text search parameter matches one or more text fields on the designated entity, and based on the relevence between the text fields and the query, a ranking score (i.e. <code>_score</code>) will be computed, and the results will be sorted based on the scores. If the text parameter is not provided or not matching anything, the endpoints will still return 100 entities conforming to the filter parameters if specifed.</p>
+  </li>
+</ul><h2 id="campaigns">Campaigns</h2>
+
+<pre><code>GET https://everydayhero.com/api/v2/search/campaigns
+</code></pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<p>country_code : <em>optional</em> <strong>string</strong><br>
+Only retrieve campaigns for the country code specified. For example <code>au</code>
+will retrieve campaigns with country code <code>au</code> (i.e. Australia).</p>
+
+<p>q : <em>optional</em> <strong>string</strong><br>
+Retrieve campaigns with <code>campaign name</code> match or partially match to the specified search string.</p>
+
+<h3 id="example">Example</h3>
+
+<pre><code>https://everydayhero.com/api/v2/search/campaigns?country_code=au&amp;q=end
+</code></pre>
+
+<h3 id="response">Response</h3>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"campaigns"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3772</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"2013 Team Endurance Relay"</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"au"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2013-03-24T13:00:00.000Z"</span><span class="p">,</span>
+      <span class="s2">"finish_at"</span><span class="o">:</span> <span class="s2">"2015-11-28T13:00:00.000Z"</span><span class="p">,</span>
+      <span class="s2">"banner_url"</span><span class="o">:</span> <span class="s2">"campaigns/banners/original/missing.gif"</span><span class="p">,</span>
+      <span class="s2">"active"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"charity_uids"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"au-48"</span>
+      <span class="p">],</span>
+      <span class="s2">"_score"</span><span class="o">:</span> <span class="mf">1.884049</span><span class="p">,</span>
+      <span class="s2">"_type"</span><span class="o">:</span> <span class="s2">"campaign"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1904</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"BITE BACK: Help end malaria"</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"au"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2012-03-29T13:00:00.000Z"</span><span class="p">,</span>
+      <span class="s2">"finish_at"</span><span class="o">:</span> <span class="s2">"2014-06-29T14:00:00.000Z"</span><span class="p">,</span>
+      <span class="s2">"banner_url"</span><span class="o">:</span> <span class="s2">"campaigns/banners/original/missing.gif"</span><span class="p">,</span>
+      <span class="s2">"active"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"charity_uids"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"au-43"</span>
+      <span class="p">],</span>
+      <span class="s2">"_score"</span><span class="o">:</span> <span class="mf">1.3550173</span><span class="p">,</span>
+      <span class="s2">"_type"</span><span class="o">:</span> <span class="s2">"campaign"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="charities">Charities</h2>
+
+<pre><code>GET https://everydayhero.com/api/v2/search/charities
+</code></pre>
+
+<h3 id="parameters-1">Parameters</h3>
+
+<p>campaign_id : <em>optional</em> <strong>string</strong><br>
+Only retrieve charities participating in the campaign specified. For example <code>gb-1</code>
+will retrieve charities for campaign id <code>gb-1</code>.</p>
+
+<p>country_code : <em>optional</em> <strong>string</strong><br>
+Only retrieve charities for the country code specified. For example <code>au</code>
+will retrieve charities with country code <code>au</code> (i.e. Australia).</p>
+
+<p>q : <em>optional</em> <strong>string</strong><br>
+Retrieve charities with <code>charity name</code> match or partially match to the specified search string.</p>
+
+<h3 id="example-1">Example</h3>
+
+<pre><code>https://everydayhero.com/api/v2/search/charities?country_code=au&amp;campaign_id=au-0&amp;q=end
+</code></pre>
+
+<h3 id="response-1">Response</h3>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"charities"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2313</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Endeavour Foundation"</span><span class="p">,</span>
+      <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"endeavour-foundation"</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"au"</span><span class="p">,</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Endeavour Foundation is one of the largest non-government disability service provider."</span><span class="p">,</span>
+      <span class="s2">"logo_url"</span><span class="o">:</span> <span class="s2">"charities/logos/original/missing.gif"</span><span class="p">,</span>
+      <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"http://core-au.edheroy.com/charity/view?charity=48"</span><span class="p">,</span>
+      <span class="s2">"active"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"campaign_uids"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"au-0"</span><span class="p">,</span>
+        <span class="s2">"au-1232"</span>
+      <span class="p">],</span>
+      <span class="s2">"_score"</span><span class="o">:</span> <span class="mf">3.1716847</span><span class="p">,</span>
+      <span class="s2">"_type"</span><span class="o">:</span> <span class="s2">"charity"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">6333</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Community Plus + (West End Family Care Services Incorporated)"</span><span class="p">,</span>
+      <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"community-plus-west-end-family-care-services-incorporated"</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"au"</span><span class="p">,</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Community Plus provides active centres to support strong communities."</span><span class="p">,</span>
+      <span class="s2">"logo_url"</span><span class="o">:</span> <span class="s2">"charities/logos/original/missing.gif"</span><span class="p">,</span>
+      <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"http://core-au.edheroy.com/charity/view?charity=3002"</span><span class="p">,</span>
+      <span class="s2">"active"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"campaign_uids"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"au-0"</span><span class="p">,</span>
+        <span class="s2">"au-4791"</span>
+      <span class="p">],</span>
+      <span class="s2">"_score"</span><span class="o">:</span> <span class="mf">1.8563957</span><span class="p">,</span>
+      <span class="s2">"_type"</span><span class="o">:</span> <span class="s2">"charity"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="pages">Pages</h2>
+
+<pre><code>GET https://everydayhero.com/api/v2/search/pages
+</code></pre>
+
+<h3 id="parameters-2">Parameters</h3>
+
+<p>charity_id : <em>optional</em> <strong>string</strong><br>
+Only retrieve pages participating in the charity specified. For example <code>au-1</code>
+will retrieve pages which support charity id <code>au-1</code>.</p>
+
+<p>campaign_id : <em>optional</em> <strong>string</strong><br>
+Only retrieve pages participating in the campaign specified. For example <code>gb-1</code>
+will retrieve pages which support campaign id <code>gb-1</code>.</p>
+
+<p>country_code : <em>optional</em> <strong>string</strong><br>
+Only retrieve pages participating in the country code specified. For example <code>au</code>
+will retrieve pages with country code <code>au</code> (i.e. Australia).</p>
+
+<p>q : <em>optional</em> <strong>string</strong><br>
+Retrieve pages with <code>page name</code> or <code>supporter name</code> match or partially match to the specified search string.</p>
+
+<h3 id="example-2">Example</h3>
+
+<pre><code>https://everydayhero.com/api/v2/search/pages?country_code=au&amp;campaign_id=au-321&amp;q=richards
+</code></pre>
+
+<h3 id="response-2">Response</h3>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"pages"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">231599</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"au"</span><span class="p">,</span>
+      <span class="s2">"active"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Joel"</span><span class="p">,</span>
+      <span class="s2">"supporter"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">34</span><span class="p">,</span>
+        <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Joel Richards"</span>
+      <span class="p">},</span>
+      <span class="s2">"campaign"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"uid"</span><span class="o">:</span> <span class="s2">"au-321"</span><span class="p">,</span>
+        <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Great Strides Queensland"</span>
+      <span class="p">},</span>
+      <span class="s2">"charity"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"uid"</span><span class="o">:</span> <span class="s2">"au-32"</span><span class="p">,</span>
+        <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cystic Fibrosis Queensland"</span>
+      <span class="p">},</span>
+      <span class="s2">"image_url"</span><span class="o">:</span> <span class="s2">"pages/images/original/missing.gif"</span><span class="p">,</span>
+      <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"http://greatstrides-qld.edheroy.com/au/joel"</span><span class="p">,</span>
+      <span class="s2">"_score"</span><span class="o">:</span> <span class="mf">3.2123315</span><span class="p">,</span>
+      <span class="s2">"_type"</span><span class="o">:</span> <span class="s2">"page"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">231781</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"au"</span><span class="p">,</span>
+      <span class="s2">"active"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Berry"</span><span class="p">,</span>
+      <span class="s2">"supporter"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">24</span><span class="p">,</span>
+        <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Berrichards"</span>
+      <span class="p">},</span>
+      <span class="s2">"campaign"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"uid"</span><span class="o">:</span> <span class="s2">"au-321"</span><span class="p">,</span>
+        <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Great Strides Queensland"</span>
+      <span class="p">},</span>
+      <span class="s2">"charity"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"uid"</span><span class="o">:</span> <span class="s2">"au-21"</span><span class="p">,</span>
+        <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cystic Fibrosis Queensland"</span>
+      <span class="p">},</span>
+      <span class="s2">"image_url"</span><span class="o">:</span> <span class="s2">"pages/images/original/missing.gif"</span><span class="p">,</span>
+      <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"http://greatstrides-qld.edheroy.com/au/berry"</span><span class="p">,</span>
+      <span class="s2">"_score"</span><span class="o">:</span> <span class="mf">0.2123315</span><span class="p">,</span>
+      <span class="s2">"_type"</span><span class="o">:</span> <span class="s2">"page"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+        
+      </div>
+    </section>
+  </section>
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/console.js"></script>
+  <script src="/javascripts/purl.js"></script>
+  <script src="/javascripts/app.js"></script>
+</body>
+</html>
