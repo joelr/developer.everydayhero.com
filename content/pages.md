@@ -87,7 +87,7 @@ target : _optional_ **string**<br/>
 The dollar amount that you are aiming to raise (must be above 0).
 
 charity_id : _optional_ **string**<br/>
-The `id` of the charity to create the page for. Defaulted to a random charity.
+The `id` of the charity to create the page for. A charity will be system nominated if there is none specified.
 
 token : _optional_ **string**<br/>
 An invitation token to join a team. This invitation was created by the team leader and sent to the user that you want to create a supporter page for.
