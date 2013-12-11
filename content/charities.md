@@ -25,11 +25,11 @@ The page number to return.
 
 ### Example
 
-    https://everydayhero.com/api/v2/charities.json?campaign_ids=au-1,au-2,au-3
+    https://everydayhero.com/api/v2/charities.json?campaign_ids=au-3707,au-1493
 
 ### Response
 
-<%= json :charities %>
+<%= json :charity_index %>
 
 ## View a single Charity <small>(public)</small>
 
@@ -39,8 +39,8 @@ The page number to return.
 
 ### Example
 
-    https://everydayhero.com/api/v2/charities/au-1.json
+    https://everydayhero.com/api/v2/charities/au-27.json
 
 ### Response
 
-<%= json :charity %>
+<%= json :charity_show %>
