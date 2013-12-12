@@ -1,6 +1,14 @@
 ---
 title: Overview
 ---
+## Environments
+
+We have two environments available for use: sandbox and production. Sandbox should be used when initiating any integration work with the Everyday Hero API. Once development and appropriate QA has been completed we will provide you with production credentials.
+
+Sandbox: [https://edheroz.com](https://edheroz.com)
+
+Production: [https://everydayhero.com](https://everydayhero.com)
+
 ## Schema
 
 All API access is over HTTPS, and accessed from the everydayhero.com/api/v2 domain. All data is sent and received as JSON. A suffix of .json is required for GET requests.
