@@ -74,6 +74,9 @@ The `uid` of the user that you want to create a page for.
 birthday : _required_ **string**<br/>
 Your birthday, format "YYYY-MM-DD". In some countries there are age restrictions on fundraising and further action might need to be taken depending on the age provided.
 
+charity_id : _optional_ **string**<br/>
+The `id` of the charity to create the page for. A charity will be system nominated if there is none specified.
+
 name : _optional_ **string**<br/>
 The desired name for your new supporter page. Defaults to the user's preferred name.
 
@@ -85,9 +88,6 @@ The date and time you want the page to expire. ISO8601 format. Defaults to 1 mon
 
 target : _optional_ **string**<br/>
 The dollar amount that you are aiming to raise (must be above 0).
-
-charity_id : _optional_ **string**<br/>
-The `id` of the charity to create the page for. A charity will be system nominated if there is none specified.
 
 token : _optional_ **string**<br/>
 An invitation token to join a team. This invitation was created by the team leader and sent to the user that you want to create a supporter page for.
