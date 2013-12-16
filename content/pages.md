@@ -72,7 +72,7 @@ uid : _required_ **integer**<br/>
 The `uid` of the user that you want to create a page for.
 
 birthday : _required_ **string**<br/>
-Your birthday. In some countries there are age restrictions on fundraising and further action might need to be taken depending on the age provided.
+Your birthday, format "YYYY-MM-DD". In some countries there are age restrictions on fundraising and further action might need to be taken depending on the age provided.
 
 name : _optional_ **string**<br/>
 The desired name for your new supporter page. Defaults to the user's preferred name.
