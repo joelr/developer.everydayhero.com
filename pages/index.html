@@ -216,7 +216,10 @@ The page number to return.</p>
 The <code>uid</code> of the user that you want to create a page for.</p>
 
 <p>birthday : <em>required</em> <strong>string</strong><br>
-Your birthday. In some countries there are age restrictions on fundraising and further action might need to be taken depending on the age provided.</p>
+Your birthday, format “YYYY-MM-DD”. In some countries there are age restrictions on fundraising and further action might need to be taken depending on the age provided.</p>
+
+<p>charity_id : <em>optional</em> <strong>string</strong><br>
+The <code>id</code> of the charity to create the page for. A charity will be system nominated if there is none specified.</p>
 
 <p>name : <em>optional</em> <strong>string</strong><br>
 The desired name for your new supporter page. Defaults to the user’s preferred name.</p>
@@ -229,9 +232,6 @@ The date and time you want the page to expire. ISO8601 format. Defaults to 1 mon
 
 <p>target : <em>optional</em> <strong>string</strong><br>
 The dollar amount that you are aiming to raise (must be above 0).</p>
-
-<p>charity_id : <em>optional</em> <strong>string</strong><br>
-The <code>id</code> of the charity to create the page for. A charity will be system nominated if there is none specified.</p>
 
 <p>token : <em>optional</em> <strong>string</strong><br>
 An invitation token to join a team. This invitation was created by the team leader and sent to the user that you want to create a supporter page for.</p>
