@@ -64,7 +64,12 @@ module EverydayHero
       registration_url: 'http://',
       banner_url: '',
       funds_raised: Money.new('1000', 'au').attributes,
-      custom_metric_total: {amount: '100', unit: 'steps'}
+      custom_metric_total: {amount: '100', unit: 'steps'},
+      fitness_activity: {
+        duration_in_seconds: 0,
+        calories: 0,
+        distance_in_meters: 0
+      }
     }
 
     Campaign = {
