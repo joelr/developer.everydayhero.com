@@ -134,12 +134,12 @@ module EverydayHero
       team_leader_page_uid: nil,
       expires_at: "2013-08-29T14:00:00Z",
       amount: {
-      cents: 0,
-      currency: {
-        iso_code: "AUD",
-        name: "Australian Dollar",
-        symbol: "$"
-      }
+        cents: 0,
+        currency: {
+          iso_code: "AUD",
+          name: "Australian Dollar",
+          symbol: "$"
+        }
       },
       cached_offline_amount_cents: 0,
       invitation_id: nil,
