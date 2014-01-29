@@ -143,6 +143,11 @@ module EverydayHero
       },
       cached_offline_amount_cents: 0,
       invitation_id: nil,
+      fitness_activity: {
+        duration_in_seconds: 0,
+        calories: 0,
+        distance_in_meters: 0
+      }
     }
 
     Page = {
