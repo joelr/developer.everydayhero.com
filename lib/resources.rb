@@ -190,8 +190,7 @@ module EverydayHero
         }
       },
       cached_offline_amount_cents: 0,
-      invitation_id: nil,
-      custom_metric_total: {amount: '100', unit: 'steps'}
+      invitation_id: nil
     }
 
     Teampage = {
