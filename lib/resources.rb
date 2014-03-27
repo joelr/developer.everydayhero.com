@@ -54,6 +54,14 @@ module EverydayHero
       end
     end
 
+    FitnessActivityOverview = {
+      run: {
+        duration_in_seconds: 20165,
+        calories: 6575,
+        distance_in_meters: 69141
+      }
+    }
+
     CampaignData = {
       id: 'au-1',
       name: 'Run Melbourne',
@@ -64,6 +72,7 @@ module EverydayHero
       registration_url: 'http://',
       banner_url: '',
       funds_raised: Money.new('1000', 'au').attributes,
+      fitness_activity_overview: FitnessActivityOverview,
       custom_metric_total: { custom_metric:
         {
           amount: '100',
@@ -147,6 +156,7 @@ module EverydayHero
       }
       },
       cached_offline_amount_cents: 0,
+      fitness_activity_overview: FitnessActivityOverview,
       invitation_id: nil,
     }
 
@@ -190,6 +200,7 @@ module EverydayHero
         }
       },
       cached_offline_amount_cents: 0,
+      fitness_activity_overview: FitnessActivityOverview,
       invitation_id: nil
     }
 
