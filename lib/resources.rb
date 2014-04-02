@@ -287,9 +287,6 @@ module EverydayHero
           finish_at: "2015-11-28T13:00:00.000Z",
           banner_url: "campaigns/banners/original/missing.gif",
           active: true,
-          charity_uids: [
-            "au-48"
-          ],
           _score: 1.884049,
           _type: "campaign"
         },
@@ -301,9 +298,6 @@ module EverydayHero
           finish_at: "2014-06-29T14:00:00.000Z",
           banner_url: "campaigns/banners/original/missing.gif",
           active: true,
-          charity_uids: [
-            "au-43"
-          ],
           _score: 1.3550173,
           _type: "campaign"
         }

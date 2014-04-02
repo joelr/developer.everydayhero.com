@@ -26,6 +26,9 @@ country_code : _optional_ **string**<br/>
 Only retrieve campaigns for the country code specified. For example `au`
 will retrieve campaigns with country code `au` (i.e. Australia).
 
+charity_ids : _optional_ **string**<br/>
+Only retrieve campaigns for the charity ids specified (in the comma separated form). For example `au-1,au-2` will retrieve campaigns with charity ids `au-1` and `au-2`.
+
 q : _optional_ **string**<br/>
 Retrieve campaigns with `campaign name` match or partially match to the specified search string.
 
