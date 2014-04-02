@@ -103,3 +103,31 @@ Retrieve pages with `page name` or `supporter name` match or partially match to 
 
 <%= json :search_pages %>
 
+## Volunteering Opportunities
+
+    GET https://everydayhero.com/api/v2/search/volunteering_opportunities
+
+### Parameters
+
+cause_ids : _optional_ **string**<br/>
+Only retrieve opportunities for the cause ids specified (in the comma separated form). For example `1,2,3` will retrieve opportunities with cause ids 1, 2 and 3.
+
+virtual : _optional_ **boolean**<br/>
+Filter the opportunities based on if the volunteering opportunity can be performed remotely (i.e. opportunities without specific locations). When this parameter is not specified, the search will contain all opportunities including for those both `virtual=true` and `virtual=false`.
+
+lat, lon : _optional_ **geo-coordinates**<br/>
+Filter the opportunities within the 100km distance range from the location at specified `lat` and `lon`. For example, `lat=-27.4679&lon=153.0278` will return opportunites within 100km distance from Brisbane Australia.
+
+order : _optional_ **string**<br/>
+Sort the result opportunities with the specified opportunity field (in ascending order). Currently, the following three sortable fields are supported: `start_date`, `created` and `coordinate`. For example, when `order=start_date` is set, the opportunites returned will be sorted by the opportunity starting dates, similarly, when `order=coordinate`, the opportunities will be sorted based on the distance between the opportunity location and the target location (based on the `lat`, `lon` specified).
+
+q : _optional_ **string**<br/>
+Retrieve opportunities with `name`, `description`, or `organization_name` match or partially match to the specified search string.
+
+### Example
+
+    https://everydayhero.com/api/v2/search/volunteering_opportunities?country_code=au&cause_ids=1,3,4&q=richards
+
+### Response
+
+<%= json :search_volunteering_opportunities %>

@@ -322,9 +322,9 @@ module EverydayHero
           kyc_status: "passed",
           claimed: true,
           tax_number: '12443251',
-          street_address: null,
-          locality: null,
-          region: null,
+          street_address: nil,
+          locality: nil,
+          region: nil,
           _score: 3.1716847,
           _type: "charity"
         },
@@ -344,9 +344,9 @@ module EverydayHero
           kyc_status: "passed",
           claimed: true,
           tax_number: '123144294',
-          street_address: null,
-          locality: null,
-          region: null,
+          street_address: nil,
+          locality: nil,
+          region: nil,
           _score: 1.8563957,
           _type: "charity"
         }
@@ -398,7 +398,49 @@ module EverydayHero
           url: "http://greatstrides-qld.edheroy.com/au/berry",
           _score: 0.2123315,
           _type: "page"
-        }
+        },
+      ]
+    }
+
+    SearchVolunteeringOpportunities = {
+      volunteering_opportunities: [
+        {
+          id: 980782,
+          name: "Assist Rhode Island!",
+          description: "Goodwill of Rhode Island is seeking volunteers.",
+          organization_name: "Goodwill Industries of Rhode Island, Inc.",
+          coordinate: {
+            lat: 41.82399,
+            lon: -71.41283
+          },
+          address: "Providence, RI, US",
+          url: "http://www.volunteermatch.org/results/opp_detail.jsp?oppid=980782&apiAccountName=everydayhero&isPublicProgramKey=true",
+          image_url: nil,
+          virtual: false,
+          created: nil,
+          ongoing: true,
+          start_date: nil,
+          end_date: nil,
+          country_code: "US",
+          active: true,
+          great_for: [ ],
+          skills_needed: nil,
+          minimum_age: nil,
+          spaces_available: nil,
+          causes: [
+            {
+              id: 3,
+              key: "education"
+            },
+            {
+              id: 31,
+              key: "human_services"
+            }
+          ],
+          _score: 1,
+          _type: "opportunity",
+          _sort: nil
+        },
       ]
     }
   end
