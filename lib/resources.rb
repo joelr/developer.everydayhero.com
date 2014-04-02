@@ -319,6 +319,12 @@ module EverydayHero
             "au-0",
             "au-1232"
           ],
+          kyc_status: "passed",
+          claimed: true,
+          tax_number: '12443251',
+          street_address: null,
+          locality: null,
+          region: null,
           _score: 3.1716847,
           _type: "charity"
         },
@@ -335,6 +341,12 @@ module EverydayHero
             "au-0",
             "au-4791"
           ],
+          kyc_status: "passed",
+          claimed: true,
+          tax_number: '123144294',
+          street_address: null,
+          locality: null,
+          region: null,
           _score: 1.8563957,
           _type: "charity"
         }

@@ -54,6 +54,15 @@ country_code : _optional_ **string**<br/>
 Only retrieve charities for the country code specified. For example `au`
 will retrieve charities with country code `au` (i.e. Australia).
 
+cause_ids : _optional_ **string**<br/>
+Only retrieve charities for the cause ids specified (in the comma separated form). For example `1,2,3` will retrieve charities with cause ids 1, 2 and 3.
+
+tax_number: _optional_ **string**<br/>
+Only retrieve charities for tax number specified. For example `13423123` will retrieve charities with tax number (or ein) `13423123`.
+
+include_failed_kyc : _optional_ **boolean** (true or false)<br/>
+By default (when this parameter is not specified), the search will only return charities that passes KYC. When `include_failed_kyc=true`, the search will return all charities including these KYC failed ones.
+
 q : _optional_ **string**<br/>
 Retrieve charities with `charity name` match or partially match to the specified search string.
 
