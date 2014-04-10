@@ -223,12 +223,14 @@ module EverydayHero
     InvitationData = {
       id: 1,
       email: 'professionalservices@everydayhero.com.au',
-      accepted_at: '2013-04-01T00:00:00Z',
+      accepted_at: nil,
       cancelled_at: nil
     }
 
-    JoinTeamInvitationData = InvitationData.merge \
-      team_page_id: 1
+    JoinTeamInvitationData = InvitationData.merge({
+      team_page_id: 1,
+      token: 'xxxxxxxxx'
+    })
 
     CreateIndividualPageInvitation = {
       create_individual_page_invitation: InvitationData
