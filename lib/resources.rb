@@ -80,22 +80,34 @@ module EverydayHero
       campaigns: [CampaignData]
     }
 
-    CharityData = {
-      id: 'au-1',
-      name: 'Starlight',
-      slug: 'starlight',
+    CharityDataAU27 = {
+      name: 'Starlight Children\'s Foundation',
+      id: 'au-27',
+      slug: 'starlight-children-s-foundation',
       country_code: 'au',
-      description: nil,
+      description: 'The Starlight Children’s Foundation transforms the experience of hospitalisation and treatment for seriously ill children and their families- Starlight is the only children’s charity with a permanent, physical presence in very major paediatric hospital in the country. \r\n\r\nEvery minute of every day a child is admitted to hospital in Australia. For thousands of these children what happens next is the diagnosis of a serious or chronic illness that changes their life, and the lives of their families, forever. \r\n\r\nThis is where Starlight steps in - delivering a range of innovative programs, built on the World Health Organisation’s social model of health, to support the well-being and resilience of these seriously ill children and their families.\r\n\r\nStarlight programs are integral to the total care of seriously ill children - while the health professionals focus on treating the illness, Starlight is there to lift the spirits of the child - giving them the opportunity to laugh and play and be a child again.\r\n\r\nFor more information on Starlight, visit www.starlight.org.au or call 1300 727 827.',
       gift_aid: false,
-      logo_url: 'http://'
+      logo_url: 'https://deplyv9vomqtj.cloudfront.net/charities/logos/au-27/original/SCF_Logo_RGB_horizontal-a499cd320b54c5b9a52dd03ffc0260d0.jpg',
+      url: 'http://everydayhero.com.au/charity/view?charity=27'
     }
 
-    Charity = {
-      charity: CharityData
+    CharityDataAU169 = {
+      name: 'Youngcare',
+      id: 'au-169',
+      slug: 'youngcare',
+      country_code: 'au',
+      description: 'YOU CAN BE PART OF THE SOLUTION\r\n\r\nRight now, 7,500 young Australians are living in aged care, simply because there are few alternatives.\r\n\r\nWith YOUR support we can drive change and keep young people out of aged care, because aged care is NO place for any young person.\r\n\r\nTo find out more about Youngcare and what we do, visit www.youngcare.com.au',
+      gift_aid: false,
+      logo_url: 'https://deplyv9vomqtj.cloudfront.net/charities/logos/au-169/original/youngcare-ebd010dfd2c0189c267a22cb3403640f.gif',
+      url: 'http://everydayhero.com.au/charity/view?charity=169'
     }
 
-    Charities = {
-      charities: [CharityData]
+    CharityIndex = {
+      charities: [CharityDataAU27, CharityDataAU169]
+    }
+
+    CharityShow = {
+      charity: CharityDataAU27
     }
 
     LeaderboardData = {
