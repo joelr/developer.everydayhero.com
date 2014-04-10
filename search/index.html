@@ -51,6 +51,7 @@
               </ul>
             </li>
             <li><a href="/users/">Users</a></li>
+            <li><a href="/search/">Search</a></li>
             <li><a href="/oauth-integration/">OAuth Integration</a></li>
             <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
             <li><a href="/console/">API Console</a></li>
@@ -77,21 +78,29 @@
         
           <h1>Search</h1>
           <ul id="markdown-toc">
-<li><a href="#campaigns">Campaigns</a></li>
+  <li><a href="#campaigns">Campaigns</a></li>
   <li><a href="#charities">Charities</a></li>
   <li><a href="#pages">Pages</a></li>
-</ul><p>The search api enables efficient text search on entities (backed by Elastic Search) and is suitable for applications such as auto-completion. Currently, the search api endpoints returns the top 100 related results and ordered based on their similarity ranking scores (each of the result entities is also associated with a <code>_score</code> value indicating the relevence to the query specified). Additionally, in order to provide capability to support mixed entity search, each of the entities in the results is also associated with a <code>_type</code> field indicating the entity type (i.e. <code>page</code>, <code>charity</code> or <code>campaign</code>).</p>
+  <li><a href="#volunteering-opportunities">Volunteering Opportunities</a></li>
+</ul>
 
-<p>Please note, all of the search api endpoints accepts two types of parameters, specifically:</p>
+<p>The search api enables efficient text search on entities (backed by Elastic Search) and is suitable for applications such as auto-completion. Currently, the search api endpoints returns the top 100 related results and ordered based on their similarity ranking scores (each of the result entities is also associated with a <code>_score</code> value indicating the relevence to the query specified). Additionally, in order to provide capability to support mixed entity search, each of the entities in the results is also associated with a <code>_type</code> field indicating the entity type (i.e. <code>page</code>, <code>charity</code> or <code>campaign</code>).</p>
+
+<p>Please note, all of the search API endpoints accepts three types of parameters, specifically:</p>
 
 <ul>
-<li>
-    <p>a set of <em>filter</em> parameters (e.g. <code>country_code</code>, <code>campaign_id</code>, <code>charity_id</code>). The filter parameters decide if a entity should be included in the result set or not. For example, if <code>country_code=au</code>, the result will <strong>only</strong> contain entities with <code>country_code=au</code>.</p>
+  <li>
+    <p>a set of <em>filter</em> parameters (e.g. <code>country_code</code>, <code>campaign_ids</code>, <code>charity_ids</code>, <code>cause_ids</code>). The filter parameters decide if a entity should be included in the result set or not. For example, if <code>country_code=au</code>, the result will <strong>only</strong> contain entities with <code>country_code=au</code>. Moreover, some of the filter parameters support mutiple filter values, and the filter values should be specified as a comma separated string. For example, <code>charity_ids=1,2</code> can be used to search entities belonging to either charity 1 and 2.</p>
   </li>
   <li>
     <p>a single <em>text search</em> parameter (i.e. <code>q</code>). The text search parameter matches one or more text fields on the designated entity, and based on the relevence between the text fields and the query, a ranking score (i.e. <code>_score</code>) will be computed, and the results will be sorted based on the scores. If the text parameter is not provided or not matching anything, the endpoints will still return 100 entities conforming to the filter parameters if specifed.</p>
   </li>
-</ul><h2 id="campaigns">Campaigns</h2>
+  <li>
+    <p>a set of <em>result size limit</em> parameters (i.e. <code>limit</code>, <code>page</code> and <code>page_size</code>). The result size limit parameters enable better search performance by limiting the number of results being returned at a single request. There are two ways currently supported for limiting the result sizes, one is with the pagination (through <code>page</code> and <code>page_size</code>) and another is without (<code>limit</code>). Users can enable pagination by specifiy the <code>page</code> parameter (page starts at 1) in the request (with <code>page_size</code> set to 100 by default), and the page size can be adjusted by the <code>page_size</code> parameter. For example, setting <code>page=2&amp;page_size=20</code> will return the second page of results set, and the first item in the page is the 21st item in the entire result set. On the other hand, to limit the result size without pagination, one can utlize the <code>limit</code> parameter to force the search only returns the top few result items.</p>
+  </li>
+</ul>
+
+<h2 id="campaigns">Campaigns</h2>
 
 <pre><code>GET https://everydayhero.com/api/v2/search/campaigns
 </code></pre>
@@ -101,6 +110,9 @@
 <p>country_code : <em>optional</em> <strong>string</strong><br>
 Only retrieve campaigns for the country code specified. For example <code>au</code>
 will retrieve campaigns with country code <code>au</code> (i.e. Australia).</p>
+
+<p>charity_ids : <em>optional</em> <strong>string</strong><br>
+Only retrieve campaigns for the charity ids specified (in the comma separated form). For example <code>au-1,au-2</code> will retrieve campaigns with charity ids <code>au-1</code> and <code>au-2</code>.</p>
 
 <p>q : <em>optional</em> <strong>string</strong><br>
 Retrieve campaigns with <code>campaign name</code> match or partially match to the specified search string.</p>
@@ -122,9 +134,6 @@ Retrieve campaigns with <code>campaign name</code> match or partially match to t
       <span class="s2">"finish_at"</span><span class="o">:</span> <span class="s2">"2015-11-28T13:00:00.000Z"</span><span class="p">,</span>
       <span class="s2">"banner_url"</span><span class="o">:</span> <span class="s2">"campaigns/banners/original/missing.gif"</span><span class="p">,</span>
       <span class="s2">"active"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"charity_uids"</span><span class="o">:</span> <span class="p">[</span>
-        <span class="s2">"au-48"</span>
-      <span class="p">],</span>
       <span class="s2">"_score"</span><span class="o">:</span> <span class="mf">1.884049</span><span class="p">,</span>
       <span class="s2">"_type"</span><span class="o">:</span> <span class="s2">"campaign"</span>
     <span class="p">},</span>
@@ -136,9 +145,6 @@ Retrieve campaigns with <code>campaign name</code> match or partially match to t
       <span class="s2">"finish_at"</span><span class="o">:</span> <span class="s2">"2014-06-29T14:00:00.000Z"</span><span class="p">,</span>
       <span class="s2">"banner_url"</span><span class="o">:</span> <span class="s2">"campaigns/banners/original/missing.gif"</span><span class="p">,</span>
       <span class="s2">"active"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"charity_uids"</span><span class="o">:</span> <span class="p">[</span>
-        <span class="s2">"au-43"</span>
-      <span class="p">],</span>
       <span class="s2">"_score"</span><span class="o">:</span> <span class="mf">1.3550173</span><span class="p">,</span>
       <span class="s2">"_type"</span><span class="o">:</span> <span class="s2">"campaign"</span>
     <span class="p">}</span>
@@ -159,6 +165,15 @@ will retrieve charities for campaign id <code>gb-1</code>.</p>
 <p>country_code : <em>optional</em> <strong>string</strong><br>
 Only retrieve charities for the country code specified. For example <code>au</code>
 will retrieve charities with country code <code>au</code> (i.e. Australia).</p>
+
+<p>cause_ids : <em>optional</em> <strong>string</strong><br>
+Only retrieve charities for the cause ids specified (in the comma separated form). For example <code>1,2,3</code> will retrieve charities with cause ids 1, 2 and 3.</p>
+
+<p>tax_number: <em>optional</em> <strong>string</strong><br>
+Only retrieve charities for tax number specified. For example <code>13423123</code> will retrieve charities with tax number (or ein) <code>13423123</code>.</p>
+
+<p>include_failed_kyc : <em>optional</em> <strong>boolean</strong> (true or false)<br>
+By default (when this parameter is not specified), the search will only return charities that passes KYC. When <code>include_failed_kyc=true</code>, the search will return all charities including these KYC failed ones.</p>
 
 <p>q : <em>optional</em> <strong>string</strong><br>
 Retrieve charities with <code>charity name</code> match or partially match to the specified search string.</p>
@@ -185,6 +200,12 @@ Retrieve charities with <code>charity name</code> match or partially match to th
         <span class="s2">"au-0"</span><span class="p">,</span>
         <span class="s2">"au-1232"</span>
       <span class="p">],</span>
+      <span class="s2">"kyc_status"</span><span class="o">:</span> <span class="s2">"passed"</span><span class="p">,</span>
+      <span class="s2">"claimed"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"tax_number"</span><span class="o">:</span> <span class="s2">"12443251"</span><span class="p">,</span>
+      <span class="s2">"street_address"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"locality"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"region"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"_score"</span><span class="o">:</span> <span class="mf">3.1716847</span><span class="p">,</span>
       <span class="s2">"_type"</span><span class="o">:</span> <span class="s2">"charity"</span>
     <span class="p">},</span>
@@ -201,6 +222,12 @@ Retrieve charities with <code>charity name</code> match or partially match to th
         <span class="s2">"au-0"</span><span class="p">,</span>
         <span class="s2">"au-4791"</span>
       <span class="p">],</span>
+      <span class="s2">"kyc_status"</span><span class="o">:</span> <span class="s2">"passed"</span><span class="p">,</span>
+      <span class="s2">"claimed"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"tax_number"</span><span class="o">:</span> <span class="s2">"123144294"</span><span class="p">,</span>
+      <span class="s2">"street_address"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"locality"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"region"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"_score"</span><span class="o">:</span> <span class="mf">1.8563957</span><span class="p">,</span>
       <span class="s2">"_type"</span><span class="o">:</span> <span class="s2">"charity"</span>
     <span class="p">}</span>
@@ -284,6 +311,80 @@ Retrieve pages with <code>page name</code> or <code>supporter name</code> match 
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+
+<h2 id="volunteering-opportunities">Volunteering Opportunities</h2>
+
+<pre><code>GET https://everydayhero.com/api/v2/search/volunteering_opportunities
+</code></pre>
+
+<h3 id="parameters-3">Parameters</h3>
+
+<p>cause_ids : <em>optional</em> <strong>string</strong><br>
+Only retrieve opportunities for the cause ids specified (in the comma separated form). For example <code>1,2,3</code> will retrieve opportunities with cause ids 1, 2 and 3.</p>
+
+<p>virtual : <em>optional</em> <strong>boolean</strong><br>
+Filter the opportunities based on if the volunteering opportunity can be performed remotely (i.e. opportunities without specific locations). When this parameter is not specified, the search will contain all opportunities including for those both <code>virtual=true</code> and <code>virtual=false</code>.</p>
+
+<p>lat, lon : <em>optional</em> <strong>geo-coordinates</strong><br>
+Filter the opportunities within the 100km distance range from the location at specified <code>lat</code> and <code>lon</code>. For example, <code>lat=-27.4679&amp;lon=153.0278</code> will return opportunites within 100km distance from Brisbane Australia.</p>
+
+<p>order : <em>optional</em> <strong>string</strong><br>
+Sort the result opportunities with the specified opportunity field (in ascending order). Currently, the following three sortable fields are supported: <code>start_date</code>, <code>created</code> and <code>coordinate</code>. For example, when <code>order=start_date</code> is set, the opportunites returned will be sorted by the opportunity starting dates, similarly, when <code>order=coordinate</code>, the opportunities will be sorted based on the distance between the opportunity location and the target location (based on the <code>lat</code>, <code>lon</code> specified).</p>
+
+<p>q : <em>optional</em> <strong>string</strong><br>
+Retrieve opportunities with <code>name</code>, <code>description</code>, or <code>organization_name</code> match or partially match to the specified search string.</p>
+
+<h3 id="example-3">Example</h3>
+
+<pre><code>https://everydayhero.com/api/v2/search/volunteering_opportunities?country_code=au&amp;cause_ids=1,3,4&amp;q=richards
+</code></pre>
+
+<h3 id="response-3">Response</h3>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"volunteering_opportunities"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">980782</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Assist Rhode Island!"</span><span class="p">,</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Goodwill of Rhode Island is seeking volunteers."</span><span class="p">,</span>
+      <span class="s2">"organization_name"</span><span class="o">:</span> <span class="s2">"Goodwill Industries of Rhode Island, Inc."</span><span class="p">,</span>
+      <span class="s2">"coordinate"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"lat"</span><span class="o">:</span> <span class="mf">41.82399</span><span class="p">,</span>
+        <span class="s2">"lon"</span><span class="o">:</span> <span class="o">-</span><span class="mf">71.41283</span>
+      <span class="p">},</span>
+      <span class="s2">"address"</span><span class="o">:</span> <span class="s2">"Providence, RI, US"</span><span class="p">,</span>
+      <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"http://www.volunteermatch.org/results/opp_detail.jsp?oppid=980782&amp;apiAccountName=everydayhero&amp;isPublicProgramKey=true"</span><span class="p">,</span>
+      <span class="s2">"image_url"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"virtual"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"created"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"ongoing"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
+      <span class="s2">"active"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"great_for"</span><span class="o">:</span> <span class="p">[</span>
+
+      <span class="p">],</span>
+      <span class="s2">"skills_needed"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"minimum_age"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"spaces_available"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"causes"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+          <span class="s2">"key"</span><span class="o">:</span> <span class="s2">"education"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">31</span><span class="p">,</span>
+          <span class="s2">"key"</span><span class="o">:</span> <span class="s2">"human_services"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"_score"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"_type"</span><span class="o">:</span> <span class="s2">"opportunity"</span><span class="p">,</span>
+      <span class="s2">"_sort"</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
         
       </div>
     </section>

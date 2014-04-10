@@ -51,6 +51,7 @@
               </ul>
             </li>
             <li><a href="/users/">Users</a></li>
+            <li><a href="/search/">Search</a></li>
             <li><a href="/oauth-integration/">OAuth Integration</a></li>
             <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
             <li><a href="/console/">API Console</a></li>
@@ -102,7 +103,7 @@ The page number to return.</p>
 
 <h3 id="example">Example</h3>
 
-<pre><code>https://everydayhero.com/api/v2/charities.json?campaign_ids=au-1,au-2,au-3
+<pre><code>https://everydayhero.com/api/v2/charities.json?campaign_ids=au-3707,au-1493
 </code></pre>
 
 <h3 id="response">Response</h3>
@@ -110,13 +111,24 @@ The page number to return.</p>
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"charities"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"au-1"</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Starlight"</span><span class="p">,</span>
-      <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"starlight"</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Starlight Children's Foundation"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"au-27"</span><span class="p">,</span>
+      <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"starlight-children-s-foundation"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"au"</span><span class="p">,</span>
-      <span class="s2">"description"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"The Starlight Children’s Foundation transforms the experience of hospitalisation and treatment for seriously ill children and their families- Starlight is the only children’s charity with a permanent, physical presence in very major paediatric hospital in the country. \\r\\n\\r\\nEvery minute of every day a child is admitted to hospital in Australia. For thousands of these children what happens next is the diagnosis of a serious or chronic illness that changes their life, and the lives of their families, forever. \\r\\n\\r\\nThis is where Starlight steps in - delivering a range of innovative programs, built on the World Health Organisation’s social model of health, to support the well-being and resilience of these seriously ill children and their families.\\r\\n\\r\\nStarlight programs are integral to the total care of seriously ill children - while the health professionals focus on treating the illness, Starlight is there to lift the spirits of the child - giving them the opportunity to laugh and play and be a child again.\\r\\n\\r\\nFor more information on Starlight, visit www.starlight.org.au or call 1300 727 827."</span><span class="p">,</span>
       <span class="s2">"gift_aid"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"logo_url"</span><span class="o">:</span> <span class="s2">"http://"</span>
+      <span class="s2">"logo_url"</span><span class="o">:</span> <span class="s2">"https://deplyv9vomqtj.cloudfront.net/charities/logos/au-27/original/SCF_Logo_RGB_horizontal-a499cd320b54c5b9a52dd03ffc0260d0.jpg"</span><span class="p">,</span>
+      <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"http://everydayhero.com.au/charity/view?charity=27"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Youngcare"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"au-169"</span><span class="p">,</span>
+      <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"youngcare"</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"au"</span><span class="p">,</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"YOU CAN BE PART OF THE SOLUTION\\r\\n\\r\\nRight now, 7,500 young Australians are living in aged care, simply because there are few alternatives.\\r\\n\\r\\nWith YOUR support we can drive change and keep young people out of aged care, because aged care is NO place for any young person.\\r\\n\\r\\nTo find out more about Youngcare and what we do, visit www.youngcare.com.au"</span><span class="p">,</span>
+      <span class="s2">"gift_aid"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"logo_url"</span><span class="o">:</span> <span class="s2">"https://deplyv9vomqtj.cloudfront.net/charities/logos/au-169/original/youngcare-ebd010dfd2c0189c267a22cb3403640f.gif"</span><span class="p">,</span>
+      <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"http://everydayhero.com.au/charity/view?charity=169"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -131,22 +143,24 @@ The page number to return.</p>
 
 <h3 id="example-1">Example</h3>
 
-<pre><code>https://everydayhero.com/api/v2/charities/au-1.json
+<pre><code>https://everydayhero.com/api/v2/charities/au-27.json
 </code></pre>
 
 <h3 id="response-1">Response</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"charity"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"au-1"</span><span class="p">,</span>
-    <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Starlight"</span><span class="p">,</span>
-    <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"starlight"</span><span class="p">,</span>
+    <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Starlight Children's Foundation"</span><span class="p">,</span>
+    <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"au-27"</span><span class="p">,</span>
+    <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"starlight-children-s-foundation"</span><span class="p">,</span>
     <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"au"</span><span class="p">,</span>
-    <span class="s2">"description"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"The Starlight Children’s Foundation transforms the experience of hospitalisation and treatment for seriously ill children and their families- Starlight is the only children’s charity with a permanent, physical presence in very major paediatric hospital in the country. \\r\\n\\r\\nEvery minute of every day a child is admitted to hospital in Australia. For thousands of these children what happens next is the diagnosis of a serious or chronic illness that changes their life, and the lives of their families, forever. \\r\\n\\r\\nThis is where Starlight steps in - delivering a range of innovative programs, built on the World Health Organisation’s social model of health, to support the well-being and resilience of these seriously ill children and their families.\\r\\n\\r\\nStarlight programs are integral to the total care of seriously ill children - while the health professionals focus on treating the illness, Starlight is there to lift the spirits of the child - giving them the opportunity to laugh and play and be a child again.\\r\\n\\r\\nFor more information on Starlight, visit www.starlight.org.au or call 1300 727 827."</span><span class="p">,</span>
     <span class="s2">"gift_aid"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="s2">"logo_url"</span><span class="o">:</span> <span class="s2">"http://"</span>
+    <span class="s2">"logo_url"</span><span class="o">:</span> <span class="s2">"https://deplyv9vomqtj.cloudfront.net/charities/logos/au-27/original/SCF_Logo_RGB_horizontal-a499cd320b54c5b9a52dd03ffc0260d0.jpg"</span><span class="p">,</span>
+    <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"http://everydayhero.com.au/charity/view?charity=27"</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
+
         
       </div>
     </section>

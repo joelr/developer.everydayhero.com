@@ -51,6 +51,7 @@
               </ul>
             </li>
             <li><a href="/users/">Users</a></li>
+            <li><a href="/search/">Search</a></li>
             <li><a href="/oauth-integration/">OAuth Integration</a></li>
             <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
             <li><a href="/console/">API Console</a></li>
@@ -77,10 +78,12 @@
         
           <h1>Pages</h1>
           <ul id="markdown-toc">
-<li><a href="#list-all-pages-smallpublicsmall">List all Pages <small>(public)</small></a></li>
+  <li><a href="#list-all-pages-smallpublicsmall">List all Pages <small>(public)</small></a></li>
   <li><a href="#view-a-single-page-smallpublicsmall">View a single Page <small>(public)</small></a></li>
   <li><a href="#create-an-individual-page-smallrequires-authenticationsmall">Create an Individual Page <small>(requires authentication)</small></a></li>
-</ul><p>A page can belong to either a user or team (denoted by the ‘owner_type’ field).
+</ul>
+
+<p>A page can belong to either a user or team (denoted by the ‘owner_type’ field).
 Pages belonging to a team have some special characteristics in that some of its
 fields represent an agregate of all its team members. Fields which have this
 characteristic include ‘amount’ and ‘custom_metric_total’.</p>
@@ -153,6 +156,13 @@ The page number to return.</p>
         <span class="p">}</span>
       <span class="p">},</span>
       <span class="s2">"cached_offline_amount_cents"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"fitness_activity_overview"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"run"</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">"duration_in_seconds"</span><span class="o">:</span> <span class="mi">20165</span><span class="p">,</span>
+          <span class="s2">"calories"</span><span class="o">:</span> <span class="mi">6575</span><span class="p">,</span>
+          <span class="s2">"distance_in_meters"</span><span class="o">:</span> <span class="mi">69141</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
       <span class="s2">"invitation_id"</span><span class="o">:</span> <span class="kc">null</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -201,6 +211,13 @@ The page number to return.</p>
       <span class="p">}</span>
     <span class="p">},</span>
     <span class="s2">"cached_offline_amount_cents"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"fitness_activity_overview"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"run"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"duration_in_seconds"</span><span class="o">:</span> <span class="mi">20165</span><span class="p">,</span>
+        <span class="s2">"calories"</span><span class="o">:</span> <span class="mi">6575</span><span class="p">,</span>
+        <span class="s2">"distance_in_meters"</span><span class="o">:</span> <span class="mi">69141</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
     <span class="s2">"invitation_id"</span><span class="o">:</span> <span class="kc">null</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
@@ -226,7 +243,7 @@ The <code>id</code> of the charity to create the page for. A charity will be sys
 The desired name for your new supporter page. Defaults to the user’s preferred name.</p>
 
 <p>slug : <em>optional</em> <strong>string</strong><br>
-A URL-friendly version of the name parameter. Can only contain lower case characters, numbers, and hyphens. The slug will form part of the page URL and must be unique within the campaign.</p>
+A URL-friendly version of the name parameter. Can only contain lower case characters, numbers, and hyphens. The slug will form part of the page URL and must be unique within the campaign. Maximum 60 characters.</p>
 
 <p>expires_at : <em>optional</em> <strong>string</strong><br>
 The date and time you want the page to expire. ISO8601 format. Defaults to 1 month after the campaign end date.</p>
@@ -284,6 +301,13 @@ UK specific fundraising criteria.</p>
       <span class="p">}</span>
     <span class="p">},</span>
     <span class="s2">"cached_offline_amount_cents"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"fitness_activity_overview"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"run"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"duration_in_seconds"</span><span class="o">:</span> <span class="mi">20165</span><span class="p">,</span>
+        <span class="s2">"calories"</span><span class="o">:</span> <span class="mi">6575</span><span class="p">,</span>
+        <span class="s2">"distance_in_meters"</span><span class="o">:</span> <span class="mi">69141</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
     <span class="s2">"invitation_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
     <span class="s2">"campaign_date"</span><span class="o">:</span> <span class="kc">null</span>
   <span class="p">},</span>
@@ -291,6 +315,7 @@ UK specific fundraising criteria.</p>
     <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"https://test-campaign-for-api.edherox.com/au/tim"</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
+
         
       </div>
     </section>
