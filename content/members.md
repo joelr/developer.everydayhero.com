@@ -21,3 +21,16 @@ The `id` of the page you want to join a team with.
 ### Response
 
 <%= json :team %>
+
+## Remove a Team Member <small>(requires authentication)</small>
+
+Remove a member from an existing team, the leader can not be the team leader.
+The page id must be a member of a campaign you are authenticated with.
+
+    DELETE https://everydayhero.com/api/v2/teams/:team_id/members/:page_id
+
+### Response
+
+`204` no content, for success
+
+`404` for invalid team or page
