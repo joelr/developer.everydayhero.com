@@ -30,7 +30,6 @@ The page id must be a member of a campaign you are authenticated with.
 
     DELETE https://everydayhero.com/api/v2/teams/:team_id/members/:page_id
 
-
 ### Response
 
 `204` no content, for success
