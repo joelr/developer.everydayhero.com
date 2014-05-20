@@ -22,7 +22,6 @@ The `id` of the page you want to join a team with.
 
 <%= json :team %>
 
-
 ## Remove a Team Member <small>(requires authentication)</small>
 
 Remove a member from an existing team, the leader can not be the team leader.
