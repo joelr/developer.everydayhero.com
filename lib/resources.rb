@@ -71,6 +71,8 @@ module EverydayHero
       country_code: 'au',
       registration_url: 'http://',
       banner_url: '',
+      charity_ids: [123, 456],
+      charity_uids: ['au-654', 'au-334'],
       funds_raised: Money.new('1000', 'au').attributes,
       fitness_activity_overview: FitnessActivityOverview,
       custom_metric_total: { custom_metric:
@@ -333,6 +335,7 @@ module EverydayHero
       charities: [
         {
           id: 2313,
+          uid: 'au-123',
           name: "Endeavour Foundation",
           slug: "endeavour-foundation",
           country_code: "au",
@@ -355,6 +358,7 @@ module EverydayHero
         },
         {
           id: 6333,
+          uid: 'au-456',
           name: "Community Plus + (West End Family Care Services Incorporated)",
           slug: "community-plus-west-end-family-care-services-incorporated",
           country_code: "au",
