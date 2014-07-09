@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>EverydayHero API: Integration</title>
+  <link rel="stylesheet" href="/stylesheets/pygments.css">
+  <link rel="stylesheet" href="/stylesheets/app.css">
+  <!--[if lt IE 9]>
+    <script src="/javascripts/html5shiv-printshiv.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <header class="header top a--100"><a href="/"><h1>Everyday Hero: Developer</h1></a></header>
+  <section class="main center">
+    <aside class="l--30 m--100 left side-bar">
+      <div class="inner">
+        <h1>Integration</h1>
+
+        <nav>
+          <ul>
+            <li>
+              <a href="/overview/">Overview</a>
+              <ul>
+                <li><a href="/overview/#schema">Schema</a></li>
+                <li><a href="/overview/#parameters">Parameters</a></li>
+                <li><a href="/overview/#auth-errors">Auth Errors</a></li>
+                <li><a href="/overview/#validation-errors">Validation Errors</a></li>
+                <li><a href="/overview/#http-verbs">HTTP Verbs</a></li>
+                <li><a href="/overview/#authentication">Authentication</a></li>
+                <li><a href="/overview/#glossary">Glossary</a></li>
+              </ul>
+            </li>
+            <li><a href="/campaigns/">Campaigns</a></li>
+            <li><a href="/charities/">Charities</a></li>
+            <li><a href="/join-requests/">Join Requests</a></li>
+            <li><a href="/leaderboards/">Leaderboards</a></li>
+            <li><a href="/invitations/">Invitations</a></li>
+            <li><a href="/pages/">Pages</a></li>
+            <li><a href="/teams/">Teams</a></li>
+            <li><a href="/users/">Users</a></li>
+            <li><a href="/integration/">Integration</a></li>
+            <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
+              <li id="api-status">API Status: <span>Loading</span></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+      <section class="l--70 m--100 right content">
+        <div class="inner">
+          
+          <ul id="markdown-toc">
+  <li><a href="#why-integrate-with-everyday-hero-for-authentication">Why integrate with Everyday Hero for Authentication</a></li>
+  <li><a href="#how-to-authenticate-with-everyday-heros-giving-passport">How to Authenticate with Everyday Hero’s Giving Passport</a></li>
+  <li><a href="#authorize-endpoint">Authorize endpoint</a></li>
+  <li><a href="#token-endpoint">Token endpoint</a></li>
+  <li><a href="#registration-product-integration">Registration Product Integration</a></li>
+</ul>
+
+<p>One of the biggest questions we receive from developers is around end to
+end integration - the API is great for pushing and pulling information
+but what if I want to create a tighter experience with Everyday Hero?</p>
+
+<p>Everyday Hero offer several integration points with third party software
+- the two that will be described in detail will firstly be
+authentication and secondly registration before creating supporter
+pages.</p>
+
+<h2 id="why-integrate-with-everyday-hero-for-authentication">Why integrate with Everyday Hero for Authentication</h2>
+
+<ul>
+  <li>Ability to gain more detailed information on users because you can
+leverage any information provided by Everyday Hero</li>
+  <li>Build upon data provided by Everyday Hero to customise an experience
+for you users</li>
+  <li>Global user identification. Once authenticated you will be given a
+universal identifier (uid) which is our guarantee to you that this is
+the same user within Everyday Hero and your product. This is especially
+useful for year on year campaigns.</li>
+</ul>
+
+<h2 id="how-to-authenticate-with-everyday-heros-giving-passport">How to Authenticate with Everyday Hero’s Giving Passport</h2>
+
+<p>Everyday Hero’s Giving Passport is our way of globally recognising a
+user within any one of our products. We are now opening this
+functionality for other developers to leverage. We are using the same
+technology that powers Twitter and Facebook: OAuth2. Because this has
+predominately been an internal tool there is no user interface for
+creating and managing your OAuth applications but if you contact
+<a href="mailto:support@everydayhero.com">support</a> we can get you underway.</p>
+
+<p>Integrating OAuth2 into any modern system should be fairly simple.
+Everyday Hero have written (and maintain) the ruby client for
+interfacing with the Giving Passport and it can be found on
+<a href="https://github.com/everydayhero/omniauth-passport">GitHub</a>. A quick
+google for your language / framework and OAuth2 should yield the best
+library for you. </p>
+
+<p>Various clients for supporting OAuth 2 in your language of choice are available 
+at <a href="http://oauth.net/2/">http://oauth.net/2/</a>.</p>
+
+<p>By authenticating with the Giving Passport you are guaranteed that the
+user you are dealing with will be the same person person that is
+represented in any Everyday Hero product.</p>
+
+<p>The endpoints are:</p>
+
+<h2 id="authorize-endpoint">Authorize endpoint</h2>
+
+<pre><code>GET    passport.edheroz.com/oauth/authorize(.:format)
+</code></pre>
+
+<p>The authorization endpoint is defined in the OAuth 2.0 specification and is used by OAuth to interact with resource owners, authenticate them, and obtains their authorization. An OAuth client makes an authorization request by directing the user to the authorization endpoint. After completing its interaction with the user, the OAuth/Passport service redirects the useZ back to the client’s redirect URI with the response to the authorization request.</p>
+
+<h4 id="example">Example:</h4>
+<pre><code>https://passport.edheroz.com/oauth/authorize?response_type=code&amp;client_id=XXXX&amp;redirect_uri=http://MYAPP.COM/auth/passport/callback&amp;email=john@smith.com
+</code></pre>
+
+<h3 id="parameters--prepopulation">Parameters &amp; prepopulation</h3>
+
+<dl>
+  <dt>response_type</dt>
+  <dd>
+<em>Required</em> <strong>string</strong> A value of code results in the Authorization Code grant type while a value of token implies the Implicit grant type.</dd>
+  <dt>client_id</dt>
+  <dd>
+<em>Required</em> <strong>string</strong> The client identifier.</dd>
+  <dt>redirect_uri</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong> If present, the requested redirect_uri must match the one configured for the client.</dd>
+  <dt>email</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. The email of the person you want to prepopulate the
+sign-up form for.</dd>
+  <dt>phone</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. The phone number of the person you want to
+prepopulate the sign-up form for.</dd>
+  <dt>name</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. The full name of the person you want to
+prepopulate the sign-up form for.</dd>
+</dl>
+
+<h2 id="token-endpoint">Token endpoint</h2>
+
+<pre><code>POST   passport.edheroz.com/oauth/token
+</code></pre>
+
+<p>The token endpoint is the endpoint on the authorization server where the client application exchanges the authorization code, client ID and client secret, for an access token.</p>
+
+<p>Passport will provide an auth hash within the response var ‘omniauth.auth’, this provides:</p>
+
+<ul>
+  <li>uid: User’s ID</li>
+  <li>email</li>
+  <li>name</li>
+  <li>birthday</li>
+</ul>
+
+<h2 id="registration-product-integration">Registration Product Integration</h2>
+
+<p>A <a href="http://example-rego-integration.herokuapp.com">sample application</a> has been
+built to show one possible end to end third party registration scenario.
+Source code for the application can be found on
+<a href="https://github.com/everydayhero/example_registrations">GitHub</a>.
+This application demonstrates:</p>
+
+<ul>
+  <li>authentication with the Giving Passport</li>
+  <li>using the Everyday Hero API to create a supporter page and view
+information on the campaign</li>
+  <li>while still giving you ultimate control over your registration system</li>
+</ul>
+
+<p>For this type of integration you will need the following:</p>
+
+<ul>
+  <li>An OAuth2 application</li>
+  <li>An API key</li>
+  <li>Registering a third party integration application</li>
+</ul>
+
+<p>All of this can be obtained by emailing
+<a href="mailto:support@everydayhero.com">support</a>.</p>
+
+<p>Generally there are going to be two entry points into your campaign, the
+first will be through your website and the second will be through an
+Everyday Hero supporter page. The two flows are slightly different and
+deserve separate discussions.</p>
+
+          
+        </div>
+      </section>
+    </div>
+  </section>
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/app.js"></script>
+</body>
+</html>
