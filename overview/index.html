@@ -30,6 +30,7 @@
                 <li><a href="/overview/#http-verbs">HTTP Verbs</a></li>
                 <li><a href="/overview/#authentication">Authentication</a></li>
                 <li><a href="/overview/#pagination">Pagination</a></li>
+                <li><a href="/overview/#caching">Caching</a></li>
                 <li><a href="/glossary/">Glossary</a></li>
               </ul>
             </li>
@@ -257,6 +258,10 @@ The page number to return.</p>
   }
 }
 </code></pre>
+
+<h2 id="caching">Caching</h2>
+
+<p>GET requests for Pages, Campaigns, Charities and Campaign Leaderboards are cached for 10minutes. The cache is a rolling 10 minute period which is unique for each endpoint. Data for these responses will be no older than 10 minutes.</p>
 
         
       </div>
