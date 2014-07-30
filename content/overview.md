@@ -169,3 +169,7 @@ The page number to return.
         "last_page":false
       }
     }
+
+## Caching
+
+GET requests for Pages, Campaigns, Charities and Campaign Leaderboards are cached for 10minutes. The cache is a rolling 10 minute period which is unique for each endpoint. Data for these responses will be no older than 10 minutes.
