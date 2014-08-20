@@ -25,7 +25,7 @@ End at date, ISO format: "2014-08-20 05:02:13", filter totals by a range.
 kind : _optional_ **string**<br/>
 Filter by donation type: peer_to_peer, charity, appeal, recurring, offline_donation.
 
-country_code : _option_ **string**<br/>
+country_code : _optional_ **string**<br/>
 Filter by region, au, uk, us, nz.
 
 ### Response
