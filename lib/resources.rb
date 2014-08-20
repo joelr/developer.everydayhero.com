@@ -62,9 +62,37 @@ module EverydayHero
       }
     }
 
+    TotalData = {
+      count: 10,
+      min: 100,
+      max: 200,
+      avg: 150,
+      sum: 1230
+    }
+
+    GroupedTotalData = {
+      total_amount_cents: TotalData,
+      total_gift_aid_amount_cents: TotalData
+    }
+
+    NestedDonationTotal = GroupedTotalData.merge({
+      doc_count: 124
+    })
+
+    TotalsData = GroupedTotalData.merge({
+      types: {
+        peer_to_peer: NestedDonationTotal,
+        charity: NestedDonationTotal,
+        appeal: NestedDonationTotal,
+        recurring: NestedDonationTotal,
+        offline_donation: NestedDonationTotal
+      }
+    })
+
     CampaignData = {
       id: 'au-1',
       name: 'Run Melbourne',
+      status: 'active',
       slug: 'run-melbourne',
       start_at: '2013-04-01T00:00:00Z',
       finish_at: '2013-04-01T00:00:00Z',
