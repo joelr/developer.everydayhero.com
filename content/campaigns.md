@@ -29,6 +29,8 @@ The page number to return.
 
 <%= json :campaigns %>
 
+**Status** will be: active, expired or disabled.
+
 ## View a single Campaign <small>(public)</small>
 
     GET https://everydayhero.com/api/v2/campaigns/:id
