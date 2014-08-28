@@ -29,6 +29,13 @@ charity_ids : _optional_ **string**<br/>
 Only retrieve pages supporting the specified charities. For example `au-1,au-5`
 will retrieve pages which support charity ids `au-1` and `au-5`.
 
+start_updated_at : _optional_ **string**<br/>
+Only retrieve pages that have been updated after the supplied date/time.
+
+end_updated_at : _optional_ **string**<br/>
+Only retrieve pages that have been updated before the supplied date/time.
+
+
 #### Pagination
 
 For more information about pagination, please see the [pagination
