@@ -98,6 +98,14 @@ body {
   background-attachment: fixed;
 }
 
+#menu_overview, #menu_teams {
+  display: none;
+}
+
+#page_overview #menu_overview, #page_teams #menu_teams {
+  display: block;
+}
+
 a {
   text-decoration: none;
 }
@@ -206,6 +214,7 @@ h4, .h4 { font-size: 1.2em; }
 }
 
 .main {
+  min-height: 800px;
   @include box-shadow($shadow);
   background: #f8f8f8;
   position: relative;
@@ -238,6 +247,8 @@ h4, .h4 { font-size: 1.2em; }
 }
 
 .side-bar {
+  position: fixed;
+  width: 300px;
   .inner {
     padding: 30px;
   }
@@ -258,6 +269,12 @@ h4, .h4 { font-size: 1.2em; }
     border-top: 1px solid lighten($dark, 70%);
     border-bottom: 1px solid lighten($dark, 70%);
   }
+}
+
+nav li.title {
+  font-weight: bold;
+  border-bottom: 1px solid #dbdbdb;
+  margin-left: -5px !important;
 }
 
 .main {
