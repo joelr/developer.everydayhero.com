@@ -1,5 +1,6 @@
 ---
 title: Join Requests
+body_id: page_teams
 ---
 ## Create a Join Request <small>(requires authentication)</small>
 

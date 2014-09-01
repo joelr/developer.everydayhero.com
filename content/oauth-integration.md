@@ -14,7 +14,31 @@ technology that powers Twitter and Facebook: OAuth2. Because this has
 predominately been an internal tool there is no user interface for
 creating and managing your OAuth applications but if you contact
 [Professional Services](mailto:professionalservices@everydayhero.com.au)
-we can get you underway.
+we can get you underway. Alternatively, you can get started with your own 
+OAuth application below.
+
+## Creating an OAuth Application
+
+You can create your own OAuth app by creating an OAuth app and going to:
+
+[Manage API Applications at everydayhero.com/developers](http://everydayhero.com/developers/oauth_applications)
+
+
+This application will give you access to all OAuth scoped endpoints. If you 
+require access to authenticated non-OAuth calls, please contact 
+[Professional Services](mailto:professionalservices@everydayhero.com.au) for
+credentials.
+
+By default new applications require an Authorization screen, shown below.
+Similar to other OAuth applications (Twitter, Facebook etc), this allows users
+to either accept the connection or Deny.
+![Authorization Screen](/images/permission.png)
+
+If your integration requires the authorization screen to be skipped, contact 
+[Professional Services](mailto:professionalservices@everydayhero.com.au) and
+the application will be reviewed.
+
+## OAuth Integration Libraries
 
 Integrating OAuth2 into any modern system should be fairly simple.
 Everyday Hero have written (and maintain) the ruby client for
@@ -30,9 +54,13 @@ By authenticating with the Giving Passport you are guaranteed that the
 user you are dealing with will be the same person that is represented
 in any Everyday Hero product.
 
-The endpoints are:
 
-## Authorize endpoint
+## Authentication endpoints
+
+Ideally your library of choice will handle the following for you, however 
+if you would like to make use of the custom parameters, see the endpoints below.
+
+### Authorize endpoint
 
     GET    https://passport.everydayhero.com/oauth/authorize(.:format)
 
@@ -47,7 +75,7 @@ response to the authorization request.
 ####Example:
     https://passport.everydayhero.com/oauth/authorize?response_type=code&client_id=XXXX&redirect_uri=http://MYAPP.COM/auth/passport/callback&email=john@smith.com
 
-### Parameters
+#### Parameters
 
 response_type : _required_ **string**<br/>
 A value of code results in the Authorization Code grant type while a value of token implies the Implicit grant type.
@@ -58,7 +86,7 @@ The client identifier.
 redirect_uri : _optional_ **string**<br/>
 If present, the requested redirect_uri must match the one configured for the client. if the redirect_uri is set to ```urn:ietf:wg:oauth:2.0:oob```, this will tell Passport to display the authorization code instead of redirecting to a client application (if this is still under development).
 
-### Prepopulation
+#### Prepopulation
 
 These parameters will be pre-populated on the sign up/in screen.
 
@@ -71,7 +99,7 @@ The phone number of the person you want to prepopulate the sign-up form for.
 name : _optional_ **string**<br/>
 The full name of the person you want to prepopulate the sign-up form for.
 
-### Branding
+#### Branding
 
 Branding is optional.
 
@@ -83,7 +111,7 @@ The campaign slug for the campaign which should be used for branding the login s
 country : _optional_ **string**<br/>
 The country code associated with your campaign (au, nz, uk).
 
-### Response
+#### Response
 
 <%= json :authorizedata %>
 

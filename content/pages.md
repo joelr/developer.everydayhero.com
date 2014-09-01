@@ -31,9 +31,11 @@ will retrieve pages which support charity ids `au-1` and `au-5`.
 
 start_updated_at : _optional_ **string**<br/>
 Only retrieve pages that have been updated after the supplied date/time.
+Format, 'YYYY-MM-DD hh:mm:ss'
 
 end_updated_at : _optional_ **string**<br/>
-Only retrieve pages that have been updated before the supplied date/time.
+Only retrieve pages that have been updated before the supplied datetime.
+Format, 'YYYY-MM-DD hh:mm:ss', timestamp optional
 
 #### Pagination
 

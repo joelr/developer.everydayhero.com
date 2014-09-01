@@ -1,5 +1,6 @@
 ---
 title: Overview
+body_id: page_overview
 ---
 ## Environments
 
@@ -11,7 +12,8 @@ Production: [https://everydayhero.com](https://everydayhero.com)
 
 ## Schema
 
-All API access is over HTTPS, and accessed from the everydayhero.com/api/v2 domain. All data is sent and received as JSON. A suffix of .json is required for GET requests.
+All API access is over HTTPS, and accessed from the everydayhero.com/api/v2 domain. All data is sent and received as JSON. A suffix of .json is required for GET requests. .jsonp suffix can be used for cross domain requests, with a require callback
+parameter.
 
     $ curl -i https://everydayhero.com/api/v2/leaderboards
 
@@ -127,9 +129,18 @@ DELETE
 
 ## Authentication
 
-There is only one authentication scheme in place for the API: Token
-Authentication. Requests that require authentication will return a
-status of 401.
+There are three methods of authentication for the API:
+
+  -  RegisteredApplication, for API calls not via OAuth
+  -  OAuthClient, for API calls directly from your OAuth Application
+  -  OAuthUser, for API calls on behalf of users
+
+
+
+### Registered Application Authentication
+
+This endpoint is used for all endpoints which aren't scoped via OAuth. This API
+key is the key provided by EDH Professional Services.
 
     $ curl -i -H "Authorization: Token token=your-token" https://everydayhero.com/api/v2
 
@@ -137,13 +148,39 @@ Authenticated API access is tied at the campaign level - this means that
 any and all information created or updated can only take place within
 the specified campaign.
 
-For API actions that require a UID, users will be required to authenticate with [Giving Passport](/oauth-integration/#how-to-authenticate-with-edh-passport) which provides a UID in the returned payload.
+For API actions that require a UID, users will be required to authenticate 
+[via OAuth](/oauth-integration/#how-to-authenticate-with-edh-passport) 
+which provides a UID in the response.
+
+## OAuth Client Authentication
+
+To fetch your Client API token, it requires doing the following request:
+
+    POST /oauth/token?grant_type=client_credentials&client_id=x&client_secret=x
+
+This will return JSON containing your OAuth Client token.
+
+## OAuth User Authentication
+
+After a user connection flow via OAuth, a token will be provided that will be
+usuable on OAuth user scoped API calls.
 
 ## Pagination
 
 Every endpoint which returns data has the option to return that data in a paged
 format. Pagination allows a subset of the data to be returned instead of the entire
 dataset.
+
+Endpoints are optionally paginated, however if the resource attempts to retrieve
+more than 1000 objects, and error will be returned. This can be resolved by
+using pagination for all requests.
+
+    {
+      "error": {
+        "status": "unprocessable_entity",
+        "message": "Response too large, please paginate"
+      }
+    }
 
 ### Parameters
 

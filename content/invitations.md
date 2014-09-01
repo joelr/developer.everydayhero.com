@@ -1,5 +1,6 @@
 ---
 title: Invitations
+body_id: page_teams
 ---
 ## Create Individual Page Invitation <small>(requires authentication)</small>
 
