@@ -9,7 +9,7 @@
     <script src="/javascripts/html5shiv-printshiv.js"></script>
   <![endif]-->
 </head>
-<body>
+<body id=''>
   <header class="header top a--100">
     <a href="/"><h1>Everyday Hero: Developer</h1></a>
   </header>
@@ -21,27 +21,29 @@
             <li><a href="/">Introduction</a></li>
             <li>
               <a href="/overview/">Overview</a>
-              <ul>
+              <ul id='menu_overview'>
                 <li><a href="/overview/#environments">Environments</a></li>
                 <li><a href="/overview/#schema">Schema</a></li>
                 <li><a href="/overview/#parameters">Parameters</a></li>
                 <li><a href="/overview/#auth-errors">Auth Errors</a></li>
                 <li><a href="/overview/#validation-errors">Validation Errors</a></li>
                 <li><a href="/overview/#http-verbs">HTTP Verbs</a></li>
-                <li><a href="/overview/#authentication">Authentication</a></li>
                 <li><a href="/overview/#pagination">Pagination</a></li>
                 <li><a href="/overview/#caching">Caching</a></li>
                 <li><a href="/glossary/">Glossary</a></li>
               </ul>
             </li>
-            <li><a href="/totals/">Totals</a></li>
+            <li><a href="/authentication/">Authentication</a></li>
+            
+
+            <li class='title'>Resources</li>
             <li><a href="/campaigns/">Campaigns</a></li>
             <li><a href="/charities/">Charities</a></li>
             <li><a href="/leaderboards/">Leaderboards</a></li>
             <li><a href="/pages/">Pages</a></li>
             <li>
               <a href="/teams/">Teams</a>
-              <ul>
+              <ul id='menu_teams'>
                 <li><a href="/invitations/">Invitations</a>
                   <ul>
                     <li><a href="/invitations/#create-individual-page-invitation">Individual Page</a></li>
@@ -53,10 +55,17 @@
               </ul>
             </li>
             <li><a href="/users/">Users</a></li>
+            <li><a href="/search/#volunteering-opportunities">Volunteering</a></li>
+
+            <li class='title'>Search &amp; Totals</li>
             <li><a href="/search/">Search</a></li>
+            <li><a href="/totals/">Totals</a></li>
+
+            <li class='title'>Integration Overviews</li>
             <li><a href="/oauth-integration/">OAuth Integration</a></li>
             <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
-            <li><a href="/console/">API Console</a></li>
+            <li class='title'>Code Examples</li>
+            
             <li>
               Client side integration
               <ul>
@@ -70,6 +79,9 @@
 
               </ul>
             </li>
+            <li class='title'>Reference</li>
+            <li><a href="/console/">API Console</a></li>
+            <li><a href="http://everydayhero.statuspage.io/">Platform Status</a></li>
             <li id="api-status">API Status: <span class='status down'>Down</span></li>
           </ul>
         </nav>
@@ -81,7 +93,9 @@
           <h1>OAuth Integration</h1>
           <ul id="markdown-toc">
   <li><a href="#how-to-authenticate-with-edh-passport">How to Authenticate with EDH Passport</a></li>
-  <li><a href="#authorize-endpoint">Authorize endpoint</a></li>
+  <li><a href="#creating-an-oauth-application">Creating an OAuth Application</a></li>
+  <li><a href="#oauth-integration-libraries">OAuth Integration Libraries</a></li>
+  <li><a href="#authentication-endpoints">Authentication endpoints</a></li>
   <li><a href="#token-endpoint">Token endpoint</a></li>
   <li><a href="#registration-product-integration">Registration Product Integration</a></li>
 </ul>
@@ -95,7 +109,30 @@ technology that powers Twitter and Facebook: OAuth2. Because this has
 predominately been an internal tool there is no user interface for
 creating and managing your OAuth applications but if you contact
 <a href="mailto:professionalservices@everydayhero.com.au">Professional Services</a>
-we can get you underway.</p>
+we can get you underway. Alternatively, you can get started with your own 
+OAuth application below.</p>
+
+<h2 id="creating-an-oauth-application">Creating an OAuth Application</h2>
+
+<p>You can create your own OAuth app by creating an OAuth app and going to:</p>
+
+<p><a href="http://everydayhero.com/developers/oauth_applications">Manage API Applications at everydayhero.com/developers</a></p>
+
+<p>This application will give you access to all OAuth scoped endpoints. If you 
+require access to authenticated non-OAuth calls, please contact 
+<a href="mailto:professionalservices@everydayhero.com.au">Professional Services</a> for
+credentials.</p>
+
+<p>By default new applications require an Authorization screen, shown below.
+Similar to other OAuth applications (Twitter, Facebook etc), this allows users
+to either accept the connection or Deny.
+<img src="/images/permission.png" alt="Authorization Screen"></p>
+
+<p>If your integration requires the authorization screen to be skipped, contact 
+<a href="mailto:professionalservices@everydayhero.com.au">Professional Services</a> and
+the application will be reviewed.</p>
+
+<h2 id="oauth-integration-libraries">OAuth Integration Libraries</h2>
 
 <p>Integrating OAuth2 into any modern system should be fairly simple.
 Everyday Hero have written (and maintain) the ruby client for
@@ -111,9 +148,12 @@ available at <a href="http://oauth.net/2/">http://oauth.net/2/</a>.</p>
 user you are dealing with will be the same person that is represented
 in any Everyday Hero product.</p>
 
-<p>The endpoints are:</p>
+<h2 id="authentication-endpoints">Authentication endpoints</h2>
 
-<h2 id="authorize-endpoint">Authorize endpoint</h2>
+<p>Ideally your library of choice will handle the following for you, however 
+if you would like to make use of the custom parameters, see the endpoints below.</p>
+
+<h3 id="authorize-endpoint">Authorize endpoint</h3>
 
 <pre><code>GET    https://passport.everydayhero.com/oauth/authorize(.:format)
 </code></pre>
@@ -130,7 +170,7 @@ response to the authorization request.</p>
 <pre><code>https://passport.everydayhero.com/oauth/authorize?response_type=code&amp;client_id=XXXX&amp;redirect_uri=http://MYAPP.COM/auth/passport/callback&amp;email=john@smith.com
 </code></pre>
 
-<h3 id="parameters">Parameters</h3>
+<h4 id="parameters">Parameters</h4>
 
 <p>response_type : <em>required</em> <strong>string</strong><br>
 A value of code results in the Authorization Code grant type while a value of token implies the Implicit grant type.</p>
@@ -141,7 +181,7 @@ The client identifier.</p>
 <p>redirect_uri : <em>optional</em> <strong>string</strong><br>
 If present, the requested redirect_uri must match the one configured for the client. if the redirect_uri is set to <code>urn:ietf:wg:oauth:2.0:oob</code>, this will tell Passport to display the authorization code instead of redirecting to a client application (if this is still under development).</p>
 
-<h3 id="prepopulation">Prepopulation</h3>
+<h4 id="prepopulation">Prepopulation</h4>
 
 <p>These parameters will be pre-populated on the sign up/in screen.</p>
 
@@ -154,7 +194,7 @@ The phone number of the person you want to prepopulate the sign-up form for.</p>
 <p>name : <em>optional</em> <strong>string</strong><br>
 The full name of the person you want to prepopulate the sign-up form for.</p>
 
-<h3 id="branding">Branding</h3>
+<h4 id="branding">Branding</h4>
 
 <p>Branding is optional.</p>
 
@@ -166,7 +206,7 @@ The campaign slug for the campaign which should be used for branding the login s
 <p>country : <em>optional</em> <strong>string</strong><br>
 The country code associated with your campaign (au, nz, uk).</p>
 
-<h3 id="response">Response</h3>
+<h4 id="response">Response</h4>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"code"</span><span class="o">:</span> <span class="s2">"a1d74c4c1d137662fdf69615b825e4c83fa02e25"</span>

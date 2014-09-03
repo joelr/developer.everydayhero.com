@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>EverydayHero API: Campaign totals</title>
+  <title>EverydayHero API: Authentication</title>
   <link rel="stylesheet" href="/stylesheets/pygments.css">
   <link rel="stylesheet" href="/stylesheets/app.css">
   <!--[if lt IE 9]>
@@ -90,32 +90,46 @@
     <section class="l--70 m--100 right content">
       <div class="inner">
         
-          <h1>Campaign totals</h1>
-          <h2 id="individual-campaign-total">Individual campaign total</h2>
+          <h1>Authentication</h1>
+          <p>There are three methods of authentication for the API:</p>
 
-<p>Using the <a href="/campaigns/">campaigns endpoint</a> with a .jsonp and callback option you can include campaign totals on websites.</p>
+<h3 id="registered-application-authentication">Registered Application Authentication</h3>
 
-<p>Below shows a demo JQuery snippet that will load the campaign total on to a page.</p>
+<p>This endpoint is used for all endpoints which aren’t scoped via OAuth. This API
+key is the key provided by EDH Professional Services.</p>
 
-<pre>
-  <code class="javascript">&lt;script src="http://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt;
-&lt;script type='text/javascript'&gt;
+<pre><code>$ curl -i -H "Authorization: Token token=your-token" https://everydayhero.com/api/v2
+</code></pre>
 
-  $(function() {
-    $.getJSON('https://everydayhero.com/api/v2/campaigns/au-1234.jsonp?callback=?', {},  function (data) {          
-      var funds = data.campaign.funds_raised;
-      $('#raised').html(funds.currency.symbol + (funds.cents / 100) + " raised");
-    })  
-  });  
+<p>Authenticated API access is tied at the campaign level - this means that
+any and all information created or updated can only take place within
+the specified campaign.</p>
 
-&lt;/script&gt;
+<p>For API actions that require a UID, users will be required to authenticate 
+<a href="/oauth-integration/#how-to-authenticate-with-edh-passport">via OAuth</a> 
+which provides a UID in the response.</p>
 
-&lt;div id='raised'&gt;&lt;/div&gt;</code>
-</pre>
+<p>To obtain an API key for this method of authentication, please email 
+<a href="mailto:professionalservices@everydayhero.com.au">professionalservices@everydayhero.com.au</a>.</p>
 
-<p>Will display</p>
+<h2 id="oauth">OAuth</h2>
 
-<p><em>$1000 raised</em></p>
+<p>To obtain your OAuth API key credentials, take a look at 
+<a href="/oauth-integration/#creating-an-oauth-application">Creating an OAuth App</a></p>
+
+<h3 id="oauth-client-authentication">OAuth Client Authentication</h3>
+
+<p>To fetch your Client API token, it requires doing the following request:</p>
+
+<pre><code>POST /oauth/token?grant_type=client_credentials&amp;client_id=x&amp;client_secret=x
+</code></pre>
+
+<p>This will return JSON containing your OAuth Client token.</p>
+
+<h3 id="oauth-user-authentication">OAuth User Authentication</h3>
+
+<p>After a user connection flow via OAuth, a token will be provided that will be
+usuable on OAuth user scoped API calls.</p>
 
         
       </div>

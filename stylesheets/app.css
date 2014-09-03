@@ -11,6 +11,12 @@ body {
   background: white url("../images/bg.jpeg") center top no-repeat;
   background-attachment: fixed; }
 
+#menu_overview, #menu_teams {
+  display: none; }
+
+#page_overview #menu_overview, #page_teams #menu_teams {
+  display: block; }
+
 a {
   text-decoration: none; }
 
@@ -114,6 +120,7 @@ h4, .h4 {
     clear: both; }
 
 .main {
+  min-height: 800px;
   -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
   -ms-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
@@ -143,8 +150,11 @@ h4, .h4 {
     border: 1px solid #dbdbdb;
     min-height: 600px; }
 
-.side-bar .inner {
-  padding: 30px; }
+.side-bar {
+  position: fixed;
+  width: 300px; }
+  .side-bar .inner {
+    padding: 30px; }
 
 .nav ul li, nav ul li {
   margin: 0px;
@@ -157,6 +167,11 @@ h4, .h4 {
 .nav ul, nav ul {
   border-top: 1px solid #dbdbdb;
   border-bottom: 1px solid #dbdbdb; }
+
+nav li.title {
+  font-weight: bold;
+  border-bottom: 1px solid #dbdbdb;
+  margin-left: -5px !important; }
 
 .main ul li {
   margin: 0px;

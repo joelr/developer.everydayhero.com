@@ -9,7 +9,7 @@
     <script src="/javascripts/html5shiv-printshiv.js"></script>
   <![endif]-->
 </head>
-<body>
+<body id='page_overview'>
   <header class="header top a--100">
     <a href="/"><h1>Everyday Hero: Developer</h1></a>
   </header>
@@ -21,27 +21,29 @@
             <li><a href="/">Introduction</a></li>
             <li>
               <a href="/overview/">Overview</a>
-              <ul>
+              <ul id='menu_overview'>
                 <li><a href="/overview/#environments">Environments</a></li>
                 <li><a href="/overview/#schema">Schema</a></li>
                 <li><a href="/overview/#parameters">Parameters</a></li>
                 <li><a href="/overview/#auth-errors">Auth Errors</a></li>
                 <li><a href="/overview/#validation-errors">Validation Errors</a></li>
                 <li><a href="/overview/#http-verbs">HTTP Verbs</a></li>
-                <li><a href="/overview/#authentication">Authentication</a></li>
                 <li><a href="/overview/#pagination">Pagination</a></li>
                 <li><a href="/overview/#caching">Caching</a></li>
                 <li><a href="/glossary/">Glossary</a></li>
               </ul>
             </li>
-            <li><a href="/totals/">Totals</a></li>
+            <li><a href="/authentication/">Authentication</a></li>
+            
+
+            <li class='title'>Resources</li>
             <li><a href="/campaigns/">Campaigns</a></li>
             <li><a href="/charities/">Charities</a></li>
             <li><a href="/leaderboards/">Leaderboards</a></li>
             <li><a href="/pages/">Pages</a></li>
             <li>
               <a href="/teams/">Teams</a>
-              <ul>
+              <ul id='menu_teams'>
                 <li><a href="/invitations/">Invitations</a>
                   <ul>
                     <li><a href="/invitations/#create-individual-page-invitation">Individual Page</a></li>
@@ -53,10 +55,17 @@
               </ul>
             </li>
             <li><a href="/users/">Users</a></li>
+            <li><a href="/search/#volunteering-opportunities">Volunteering</a></li>
+
+            <li class='title'>Search &amp; Totals</li>
             <li><a href="/search/">Search</a></li>
+            <li><a href="/totals/">Totals</a></li>
+
+            <li class='title'>Integration Overviews</li>
             <li><a href="/oauth-integration/">OAuth Integration</a></li>
             <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
-            <li><a href="/console/">API Console</a></li>
+            <li class='title'>Code Examples</li>
+            
             <li>
               Client side integration
               <ul>
@@ -70,6 +79,9 @@
 
               </ul>
             </li>
+            <li class='title'>Reference</li>
+            <li><a href="/console/">API Console</a></li>
+            <li><a href="http://everydayhero.statuspage.io/">Platform Status</a></li>
             <li id="api-status">API Status: <span class='status down'>Down</span></li>
           </ul>
         </nav>
@@ -82,6 +94,8 @@
           <h2 id="glossary">Glossary</h2>
 
 <dl>
+  <dt>Campaign</dt>
+  <dd>A Campaign is a event in the system that pages can be allocated to. This are normally within set date ranges.</dd>
   <dt>Individual Page</dt>
   <dd>A Supporter Page that is not participating in a team and is not a
 team page.</dd>
@@ -91,8 +105,13 @@ address, not related to a team.</dd>
   <dt>Join Team Invitation</dt>
   <dd>An invitation to create an individual supporter page for a team to
 an email address.</dd>
-  <dt>Passport</dt>
-  <dd>Passport is the EverydayHero OAuth2 authentication provider, used to authenticate users and returns user details.</dd>
+  <dt>Join Request</dt>
+  <dd>A join request is a request made by a user (or on behalf of the user via the API) to join a team. This join request
+has to be approved by the team leader.</dd>
+  <dt>Leaderboard</dt>
+  <dd>A leaderboard is a collection of pages, sorted by an attribute. These are normally sorted by total amount raised.</dd>
+  <dt>Leaderboard (Campaign)</dt>
+  <dd>A campaign leaderboard is a pre-generated leaderboard that contains all pages in the supplied campaign.</dd>
   <dt>Team Page</dt>
   <dd>A Supporter Page that contains other Individual Pages. These pages
 are said to be participating in a team.</dd>
