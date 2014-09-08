@@ -3,7 +3,7 @@ title: Totals
 ---
 ## Retrieve totals for Campaigns and Charities <small>(public)</small>
 
-    GET https://everydayhero.com/api/v2/totals
+    GET https://everydayhero.com/api/v2/search/totals
 
 ### Parameters
 
