@@ -68,7 +68,7 @@ Only retrieve pages associated to the charity(ies) specified. Multiple charities
 can be passed through as comma separated values, i.e. 'au-1,au-5'.
 
 all_pages : _optional_ **boolean**<br/>
-Retrieve all pages including these inactive or expired pages. It is default set to false, and therefore only active pages will be included in the results by default.
+Retrieve all pages including pages that are not active. It is *false* by default, and therefore only active pages will be included in the results.
 
 ### Example
 
