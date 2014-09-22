@@ -67,6 +67,9 @@ charity_ids : _optional_ **string**<br/>
 Only retrieve pages associated to the charity(ies) specified. Multiple charities
 can be passed through as comma separated values, i.e. 'au-1,au-5'.
 
+all_pages : _optional_ **boolean**<br/>
+Retrieve all pages including these inactive or expired pages. It is default set to false, and therefore only active pages will be included in the results by default.
+
 ### Example
 
     https://everydayhero.com/api/v2/campaigns/au-1/leaderboard.json?type=individual&charity_ids=au-1,au-5&limit=5
