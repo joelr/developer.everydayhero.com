@@ -203,6 +203,9 @@ The number of records retrieved. This is useful for showing a “top 10 supporte
 Only retrieve pages associated to the charity(ies) specified. Multiple charities
 can be passed through as comma separated values, i.e. ‘au-1,au-5’.</p>
 
+<p>all_pages : <em>optional</em> <strong>boolean</strong><br>
+Retrieve all pages including pages that are not active. It is <em>false</em> by default, and therefore only active pages will be included in the results.</p>
+
 <h3 id="example-2">Example</h3>
 
 <pre><code>https://everydayhero.com/api/v2/campaigns/au-1/leaderboard.json?type=individual&amp;charity_ids=au-1,au-5&amp;limit=5
