@@ -30,7 +30,7 @@ The page number to return.
 
 ### Example
 
-    https://everydayhero.com/api/v2/leaderbords.json?ids=1,5,20
+    https://everydayhero.com/api/v2/leaderboards.json?ids=1,5,20
 
 ### Response
 
@@ -42,7 +42,7 @@ The page number to return.
 
 ### Example
 
-    https://everydayhero.com/api/v2/leaderbords/1.json
+    https://everydayhero.com/api/v2/leaderboards/1.json
 
 ### Response
 
