@@ -247,8 +247,12 @@ h4, .h4 { font-size: 1.2em; }
 }
 
 .side-bar {
-  position: fixed;
-  width: 300px;
+
+  &.fixed {
+    position: fixed;
+    width: 300px;
+  }
+
   .inner {
     padding: 30px;
   }
