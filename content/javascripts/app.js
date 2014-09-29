@@ -20,10 +20,9 @@ $(function() {
   function heightCheck() {
     var sideBarHeight = $('.side-bar').height();
 
-    if ( $(window).height() < (sideBarHeight + 30)) {
+    if ($(window).height() < (sideBarHeight + 30)) {
       $('.side-bar').removeClass('fixed');
-    }
-    else {
+    } else {
       $('.side-bar').addClass('fixed');
     }
   }
@@ -32,5 +31,4 @@ $(function() {
   $(window).resize(function() {
     heightCheck();
   });
-
 });
