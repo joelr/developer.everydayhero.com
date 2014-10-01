@@ -150,11 +150,11 @@ h4, .h4 {
     border: 1px solid #dbdbdb;
     min-height: 600px; }
 
-.side-bar {
+.side-bar.fixed {
   position: fixed;
   width: 300px; }
-  .side-bar .inner {
-    padding: 30px; }
+.side-bar .inner {
+  padding: 30px; }
 
 .nav ul li, nav ul li {
   margin: 0px;
