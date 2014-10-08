@@ -213,7 +213,7 @@ module EverydayHero
     CreatedPage = {
       page: PageData.merge({campaign_date: nil}),
       meta: {
-        url: "https://test-campaign-for-api.edherox.com/au/tim"
+        url: "https://test-campaign-for-api.edheroz.com/au/tim"
       },
     }
 
