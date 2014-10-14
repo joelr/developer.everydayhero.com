@@ -200,6 +200,10 @@ module EverydayHero
       cached_offline_amount_cents: 0,
       fitness_activity_overview: FitnessActivityOverview,
       invitation_id: nil,
+      coordinate: {
+        lat: "-32.88111",
+        lon: "138.34959"
+      }
     }
 
     Page = {
