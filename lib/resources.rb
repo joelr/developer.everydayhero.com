@@ -201,8 +201,8 @@ module EverydayHero
       fitness_activity_overview: FitnessActivityOverview,
       invitation_id: nil,
       coordinate: {
-        lat: "-32.88111",
-        lon: "138.34959"
+        lat: -32.88,
+        lon: 138.34
       }
     }
 
