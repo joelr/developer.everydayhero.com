@@ -203,6 +203,13 @@ module EverydayHero
       coordinate: {
         lat: -32.88,
         lon: 138.34
+      },
+      image: {
+        original_image_url: "https://deplyv9vomqtj.cloudfront.net/pages/images/26366/original/image-3464747a20a5a8834f577c6ca2f66b5f.jpg",
+        tiny_image_url: "https://deplyv9vomqtj.cloudfront.net/pages/images/26366/tiny/image-3464747a20a5a8834f577c6ca2f66b5f.jpg",
+        small_image_url: "https://deplyv9vomqtj.cloudfront.net/pages/images/26366/small/image-3464747a20a5a8834f577c6ca2f66b5f.jpg",
+        medium_image_url: "https://deplyv9vomqtj.cloudfront.net/pages/images/26366/medium/image-3464747a20a5a8834f577c6ca2f66b5f.jpg",
+        large_image_url: "https://deplyv9vomqtj.cloudfront.net/pages/images/26366/large/image-3464747a20a5a8834f577c6ca2f66b5f.jpg"
       }
     }
 
