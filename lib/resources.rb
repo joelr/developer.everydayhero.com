@@ -204,6 +204,7 @@ module EverydayHero
         lat: -32.88,
         lon: 138.34
       },
+      story: "Hi Everyone, <BR><BR>\r\nMy name is Budha and I am here to; raise awareness, a substantial amount of funds and to continuously remind you of the ongoing issues of youth homelessness, specifically a program known as 'Frontyard Youth Services' inside the Melbourne CBD. \r\n<BR>\r\n\"Frontyard seeks to provide young people with choices that contribute to their health and wellbeing, and where possible, return them to their community of origin.\"\r\n<BR>\r\nBeing in this age bracket as well as living in Melbourne, I feel as if i can make a difference and so can you!\r\n<BR>\r\nMy short-term goal is to raise at least $100,000 by this time next year! My long-term goal is to continue raising awareness and to support Melbourne based programs that affect our youth.\r\n<BR>\r\nWould appreciate as much love as I can get and stay tuned for the 2 major events that \"100% Entertainment\" will be hosting throughout the year!\r\n<BR>\r\nhttp://www.facebook.com/1Hundred.Percent.Entertainment\r\n<BR>\r\nThankyou",
       image: {
         original_image_url: "https://deplyv9vomqtj.cloudfront.net/pages/images/26366/original/image-3464747a20a5a8834f577c6ca2f66b5f.jpg",
         tiny_image_url: "https://deplyv9vomqtj.cloudfront.net/pages/images/26366/tiny/image-3464747a20a5a8834f577c6ca2f66b5f.jpg",
