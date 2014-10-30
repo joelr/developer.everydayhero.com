@@ -31,11 +31,14 @@ User access_token provided by passport auth hash.
 access_token : _required_ **string**<br/>
 User access_token provided by passport auth hash.
 
+user[address] : _optional_ **string**<br/>
+The address passed through must be locatable through the Google Maps API. Example: "87 Wickham Terrace, Spring Hill, 4000, QLD"
+
 user[birthday] : _optional_ **string**<br/>
 User birthday, format "YYYY-MM-DD".
 
-user[address] : _optional_ **string**<br/>
-The address passed through must be locatable through the Google Maps API. Example: "87 Wickham Terrace, Spring Hill, 4000, QLD"
+user[phone] : _optional_ **string**<br/>
+User phone number
 
 ### Example
 
