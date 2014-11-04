@@ -220,13 +220,13 @@ module EverydayHero
     ExpandedPageData = PageData.merge({
       meta: {
         totals: {
-          total_amount_cents: 123,
-          online_amount_cents: 123,
-          offline_amount_cents: 123,
-          gift_aid_amount_cents: 123,
-          total_donations: 10,
-          total_donations_offline: 10,
-          total_donations_offline: 10,
+          total_amount_cents: 0,
+          online_amount_cents: 0,
+          offline_amount_cents: 0,
+          gift_aid_amount_cents: 0,
+          total_donations: 0,
+          total_donations_offline: 0,
+          total_donations_offline: 0,
           currency: {
             iso_code: "AUD",
             name: "Australian Dollar",
