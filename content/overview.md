@@ -36,7 +36,7 @@ Blank fields are included as null instead of being omitted.
 
 All timestamps are returned in ISO 8601 format:
 
-    YYYY-MM-DDTHH:MM:SSZ
+    YYYY-MM-DDThh:mm:ssZ
 
 ## Parameters
 
