@@ -132,6 +132,14 @@ Format, ‘YYYY-MM-DD hh:mm:ss’</p>
 Only retrieve pages that have been updated before the supplied datetime.
 Format, ‘YYYY-MM-DD hh:mm:ss’, timestamp optional</p>
 
+<p>start_created_at : <em>optional</em> <strong>string</strong><br>
+Only retrieve pages that have been created after the supplied date/time.
+Format, ‘YYYY-MM-DD hh:mm:ss’</p>
+
+<p>end_created_at : <em>optional</em> <strong>string</strong><br>
+Only retrieve pages that have been created before the supplied datetime.
+Format, ‘YYYY-MM-DD hh:mm:ss’, timestamp optional</p>
+
 <h4 id="pagination">Pagination</h4>
 
 <p>For more information about pagination, please see the <a href="/overview/#pagination">pagination
@@ -170,6 +178,9 @@ The page number to return.</p>
       <span class="p">],</span>
       <span class="s2">"team_leader_page_uid"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"expires_at"</span><span class="o">:</span> <span class="s2">"2013-08-29T14:00:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2013-08-29T14:00:00Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2013-08-29T14:00:00Z"</span><span class="p">,</span>
+      <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"https://give.everydayhero.com/au/sample"</span><span class="p">,</span>
       <span class="s2">"amount"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"cents"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">"currency"</span><span class="o">:</span> <span class="p">{</span>
@@ -209,9 +220,22 @@ The page number to return.</p>
 <pre><code>GET https://everydayhero.com/api/v2/pages/:id
 </code></pre>
 
-<p><a href="/console/?query=pages/1.json">View demo in API console</a></p>
+<p>The single page lookup includes expanded data including more granular total values.</p>
+
+<p>You can also access a page API endpoint (via a redirect), by appending .json to the end of a URL</p>
 
 <h3 id="example-1">Example</h3>
+<pre><code>https://givingtuesday2014.everydayhero.com/au/joel.json
+</code></pre>
+
+<p>redirects to</p>
+
+<pre><code>https://everydayhero.com/api/v2/pages/877323
+</code></pre>
+
+<p><a href="/console/?query=pages/1.json">View demo in API console</a></p>
+
+<h3 id="example-2">Example</h3>
 
 <pre><code>https://everydayhero.com/api/v2/pages/1.json
 </code></pre>
@@ -219,52 +243,68 @@ The page number to return.</p>
 <h3 id="response-1">Response</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"page"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1511</span><span class="p">,</span>
-    <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"tim"</span><span class="p">,</span>
-    <span class="s2">"gift_aid_eligible"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="s2">"charity_uid"</span><span class="o">:</span> <span class="s2">"au-6"</span><span class="p">,</span>
-    <span class="s2">"campaign_uid"</span><span class="o">:</span> <span class="s2">"au-1419"</span><span class="p">,</span>
-    <span class="s2">"owner_uid"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
-    <span class="s2">"owner_type"</span><span class="o">:</span> <span class="s2">"User"</span><span class="p">,</span>
-    <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">1511</span><span class="p">,</span>
-    <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"active"</span><span class="p">,</span>
-    <span class="s2">"target_cents"</span><span class="o">:</span> <span class="mi">70000</span><span class="p">,</span>
-    <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Tim"</span><span class="p">,</span>
-    <span class="s2">"team_uid"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="s2">"team_member_uids"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1511</span><span class="p">,</span>
+  <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"tim"</span><span class="p">,</span>
+  <span class="s2">"gift_aid_eligible"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"charity_uid"</span><span class="o">:</span> <span class="s2">"au-6"</span><span class="p">,</span>
+  <span class="s2">"campaign_uid"</span><span class="o">:</span> <span class="s2">"au-1419"</span><span class="p">,</span>
+  <span class="s2">"owner_uid"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+  <span class="s2">"owner_type"</span><span class="o">:</span> <span class="s2">"User"</span><span class="p">,</span>
+  <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">1511</span><span class="p">,</span>
+  <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"active"</span><span class="p">,</span>
+  <span class="s2">"target_cents"</span><span class="o">:</span> <span class="mi">70000</span><span class="p">,</span>
+  <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Tim"</span><span class="p">,</span>
+  <span class="s2">"team_uid"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"team_member_uids"</span><span class="o">:</span> <span class="p">[</span>
 
-    <span class="p">],</span>
-    <span class="s2">"team_leader_page_uid"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="s2">"expires_at"</span><span class="o">:</span> <span class="s2">"2013-08-29T14:00:00Z"</span><span class="p">,</span>
-    <span class="s2">"amount"</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">"cents"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="p">],</span>
+  <span class="s2">"team_leader_page_uid"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"expires_at"</span><span class="o">:</span> <span class="s2">"2013-08-29T14:00:00Z"</span><span class="p">,</span>
+  <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2013-08-29T14:00:00Z"</span><span class="p">,</span>
+  <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2013-08-29T14:00:00Z"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"https://give.everydayhero.com/au/sample"</span><span class="p">,</span>
+  <span class="s2">"amount"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"cents"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"currency"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"iso_code"</span><span class="o">:</span> <span class="s2">"AUD"</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Australian Dollar"</span><span class="p">,</span>
+      <span class="s2">"symbol"</span><span class="o">:</span> <span class="s2">"$"</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"cached_offline_amount_cents"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s2">"fitness_activity_overview"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"run"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"duration_in_seconds"</span><span class="o">:</span> <span class="mi">20165</span><span class="p">,</span>
+      <span class="s2">"calories"</span><span class="o">:</span> <span class="mi">6575</span><span class="p">,</span>
+      <span class="s2">"distance_in_meters"</span><span class="o">:</span> <span class="mi">69141</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"invitation_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"coordinate"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"lat"</span><span class="o">:</span> <span class="o">-</span><span class="mf">32.88</span><span class="p">,</span>
+    <span class="s2">"lon"</span><span class="o">:</span> <span class="mf">138.34</span>
+  <span class="p">},</span>
+  <span class="s2">"story"</span><span class="o">:</span> <span class="s2">"Hi Everyone, \r\nMy name is Budha and I am here to; raise awareness, a substantial amount of funds and to continuously remind you of the ongoing issues of youth homelessness, specifically a program known as 'Frontyard Youth Services' inside the Melbourne CBD. \r\n\r\n\"Frontyard seeks to provide young people with choices that contribute to their health and wellbeing, and where possible, return them to their community of origin.\"\r\n\r\nBeing in this age bracket as well as living in Melbourne, I feel as if i can make a difference and so can you!\r\n\r\nMy short-term goal is to raise at least $100,000 by this time next year! My long-term goal is to continue raising awareness and to support Melbourne based programs that affect our youth.\r\n\r\nWould appreciate as much love as I can get and stay tuned for the 2 major events that \"100% Entertainment\" will be hosting throughout the year!\r\n\r\nhttp://www.facebook.com/1Hundred.Percent.Entertainment\r\n\r\nThankyou"</span><span class="p">,</span>
+  <span class="s2">"image"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"original_image_url"</span><span class="o">:</span> <span class="s2">"https://deplyv9vomqtj.cloudfront.net/pages/images/26366/original/image-3464747a20a5a8834f577c6ca2f66b5f.jpg"</span><span class="p">,</span>
+    <span class="s2">"tiny_image_url"</span><span class="o">:</span> <span class="s2">"https://deplyv9vomqtj.cloudfront.net/pages/images/26366/tiny/image-3464747a20a5a8834f577c6ca2f66b5f.jpg"</span><span class="p">,</span>
+    <span class="s2">"small_image_url"</span><span class="o">:</span> <span class="s2">"https://deplyv9vomqtj.cloudfront.net/pages/images/26366/small/image-3464747a20a5a8834f577c6ca2f66b5f.jpg"</span><span class="p">,</span>
+    <span class="s2">"medium_image_url"</span><span class="o">:</span> <span class="s2">"https://deplyv9vomqtj.cloudfront.net/pages/images/26366/medium/image-3464747a20a5a8834f577c6ca2f66b5f.jpg"</span><span class="p">,</span>
+    <span class="s2">"large_image_url"</span><span class="o">:</span> <span class="s2">"https://deplyv9vomqtj.cloudfront.net/pages/images/26366/large/image-3464747a20a5a8834f577c6ca2f66b5f.jpg"</span>
+  <span class="p">},</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"totals"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"total_amount_cents"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"online_amount_cents"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"offline_amount_cents"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"gift_aid_amount_cents"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"total_donations"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"total_donations_offline"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"iso_code"</span><span class="o">:</span> <span class="s2">"AUD"</span><span class="p">,</span>
         <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Australian Dollar"</span><span class="p">,</span>
         <span class="s2">"symbol"</span><span class="o">:</span> <span class="s2">"$"</span>
       <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="s2">"cached_offline_amount_cents"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="s2">"fitness_activity_overview"</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">"run"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"duration_in_seconds"</span><span class="o">:</span> <span class="mi">20165</span><span class="p">,</span>
-        <span class="s2">"calories"</span><span class="o">:</span> <span class="mi">6575</span><span class="p">,</span>
-        <span class="s2">"distance_in_meters"</span><span class="o">:</span> <span class="mi">69141</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="s2">"invitation_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="s2">"coordinate"</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">"lat"</span><span class="o">:</span> <span class="o">-</span><span class="mf">32.88</span><span class="p">,</span>
-      <span class="s2">"lon"</span><span class="o">:</span> <span class="mf">138.34</span>
-    <span class="p">},</span>
-    <span class="s2">"story"</span><span class="o">:</span> <span class="s2">"Hi Everyone, \r\nMy name is Budha and I am here to; raise awareness, a substantial amount of funds and to continuously remind you of the ongoing issues of youth homelessness, specifically a program known as 'Frontyard Youth Services' inside the Melbourne CBD. \r\n\r\n\"Frontyard seeks to provide young people with choices that contribute to their health and wellbeing, and where possible, return them to their community of origin.\"\r\n\r\nBeing in this age bracket as well as living in Melbourne, I feel as if i can make a difference and so can you!\r\n\r\nMy short-term goal is to raise at least $100,000 by this time next year! My long-term goal is to continue raising awareness and to support Melbourne based programs that affect our youth.\r\n\r\nWould appreciate as much love as I can get and stay tuned for the 2 major events that \"100% Entertainment\" will be hosting throughout the year!\r\n\r\nhttp://www.facebook.com/1Hundred.Percent.Entertainment\r\n\r\nThankyou"</span><span class="p">,</span>
-    <span class="s2">"image"</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">"original_image_url"</span><span class="o">:</span> <span class="s2">"https://deplyv9vomqtj.cloudfront.net/pages/images/26366/original/image-3464747a20a5a8834f577c6ca2f66b5f.jpg"</span><span class="p">,</span>
-      <span class="s2">"tiny_image_url"</span><span class="o">:</span> <span class="s2">"https://deplyv9vomqtj.cloudfront.net/pages/images/26366/tiny/image-3464747a20a5a8834f577c6ca2f66b5f.jpg"</span><span class="p">,</span>
-      <span class="s2">"small_image_url"</span><span class="o">:</span> <span class="s2">"https://deplyv9vomqtj.cloudfront.net/pages/images/26366/small/image-3464747a20a5a8834f577c6ca2f66b5f.jpg"</span><span class="p">,</span>
-      <span class="s2">"medium_image_url"</span><span class="o">:</span> <span class="s2">"https://deplyv9vomqtj.cloudfront.net/pages/images/26366/medium/image-3464747a20a5a8834f577c6ca2f66b5f.jpg"</span><span class="p">,</span>
-      <span class="s2">"large_image_url"</span><span class="o">:</span> <span class="s2">"https://deplyv9vomqtj.cloudfront.net/pages/images/26366/large/image-3464747a20a5a8834f577c6ca2f66b5f.jpg"</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
@@ -304,7 +344,7 @@ An invitation token to join a team. This invitation was created by the team lead
 <p>gift_aid_eligible : <em>optional</em> <strong>boolean</strong><br>
 UK specific fundraising criteria.</p>
 
-<h3 id="example-2">Example</h3>
+<h3 id="example-3">Example</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Tim"</span><span class="p">,</span>
@@ -339,6 +379,9 @@ UK specific fundraising criteria.</p>
     <span class="p">],</span>
     <span class="s2">"team_leader_page_uid"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
     <span class="s2">"expires_at"</span><span class="o">:</span> <span class="s2">"2013-08-29T14:00:00Z"</span><span class="p">,</span>
+    <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2013-08-29T14:00:00Z"</span><span class="p">,</span>
+    <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2013-08-29T14:00:00Z"</span><span class="p">,</span>
+    <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"https://give.everydayhero.com/au/sample"</span><span class="p">,</span>
     <span class="s2">"amount"</span><span class="o">:</span> <span class="p">{</span>
       <span class="s2">"cents"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="p">{</span>
