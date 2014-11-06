@@ -21,6 +21,12 @@ The number of items per page.
 page : _optional_ **integer**<br/>
 The page number to return.
 
+exclude_charities : _optional_ **boolean**<br/>
+Exclude embedding of charity IDs, to reduce payload size. Default: false.
+
+exclude_pages : _optional_ **boolean**<br/>
+Exclude embedding of page IDs, to reduce payload size. Default: false.
+
 ### Example
 
     https://everydayhero.com/api/v2/campaigns.json?charity_ids=au-1,au-2,au-3
