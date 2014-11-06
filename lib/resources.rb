@@ -189,6 +189,9 @@ module EverydayHero
       team_member_uids: [],
       team_leader_page_uid: nil,
       expires_at: "2013-08-29T14:00:00Z",
+      created_at: "2013-08-29T14:00:00Z",
+      updated_at: "2013-08-29T14:00:00Z",
+      url: "https://give.everydayhero.com/au/sample",
       amount: {
       cents: 0,
       currency: {
@@ -213,6 +216,25 @@ module EverydayHero
         large_image_url: "https://deplyv9vomqtj.cloudfront.net/pages/images/26366/large/image-3464747a20a5a8834f577c6ca2f66b5f.jpg"
       }
     }
+
+    ExpandedPageData = PageData.merge({
+      meta: {
+        totals: {
+          total_amount_cents: 0,
+          online_amount_cents: 0,
+          offline_amount_cents: 0,
+          gift_aid_amount_cents: 0,
+          total_donations: 0,
+          total_donations_offline: 0,
+          total_donations_offline: 0,
+          currency: {
+            iso_code: "AUD",
+            name: "Australian Dollar",
+            symbol: "$"
+          }
+        }
+      }
+    })
 
     Page = {
       page: PageData

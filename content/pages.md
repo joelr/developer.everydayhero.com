@@ -37,6 +37,14 @@ end_updated_at : _optional_ **string**<br/>
 Only retrieve pages that have been updated before the supplied datetime.
 Format, 'YYYY-MM-DD hh:mm:ss', timestamp optional
 
+start_created_at : _optional_ **string**<br/>
+Only retrieve pages that have been created after the supplied date/time.
+Format, 'YYYY-MM-DD hh:mm:ss'
+
+end_created_at : _optional_ **string**<br/>
+Only retrieve pages that have been created before the supplied datetime.
+Format, 'YYYY-MM-DD hh:mm:ss', timestamp optional
+
 #### Pagination
 
 For more information about pagination, please see the [pagination
@@ -60,6 +68,17 @@ The page number to return.
 
     GET https://everydayhero.com/api/v2/pages/:id
 
+The single page lookup includes expanded data including more granular total values.
+
+You can also access a page API endpoint (via a redirect), by appending .json to the end of a URL
+
+### Example
+    https://givingtuesday2014.everydayhero.com/au/joel.json
+
+redirects to
+
+    https://everydayhero.com/api/v2/pages/877323
+
 [View demo in API console](/console/?query=pages/1.json)
 
 ### Example
@@ -68,7 +87,7 @@ The page number to return.
 
 ### Response
 
-<%= json :page %>
+<%= json :expanded_page_data %>
 
 ## Create an Individual Page <small>(requires authentication)</small>
 
