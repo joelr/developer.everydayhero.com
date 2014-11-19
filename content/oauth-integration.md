@@ -86,6 +86,9 @@ The client identifier.
 redirect_uri : _optional_ **string**<br/>
 If present, the requested redirect_uri must match the one configured for the client. if the redirect_uri is set to ```urn:ietf:wg:oauth:2.0:oob```, this will tell Passport to display the authorization code instead of redirecting to a client application (if this is still under development).
 
+force : _optional_ **boolean**<br/>
+If set as true, this will force the user to sign up/sign in, rather than automatically be signed in if previously.
+
 #### Prepopulation
 
 These parameters will be pre-populated on the sign up/in screen.
