@@ -24,7 +24,7 @@ List all teams in the authenticated application's campaign.
 
 * Must be created from an existing individual page
 
-* Creates a Team, Team Page and sets individual page as team leader
+Creates a team with team page, and assigns the existing individual page (specified by the `individual_page_id` parameter) as the team leader.
 
 
       POST https://everydayhero.com/api/v2/teams
@@ -32,7 +32,7 @@ List all teams in the authenticated application's campaign.
 ### Payload
 
 individual_page_id : _required_ **integer**<br/>
-The `id` of the individual page to create the team from.
+The `id` of the individual page which will become the team leader. This page must already exist.
 
 name : _optional_ **string**<br/>
 The name of the team. This needs to be unique within the campaign.
