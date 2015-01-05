@@ -126,21 +126,18 @@
 </h2>
 
 <ul>
-  <li>
-    <p>Must be created from an existing individual page</p>
-  </li>
-  <li>
-    <p>Creates a Team, Team Page and sets individual page as team leader</p>
-
-    <pre><code>POST https://everydayhero.com/api/v2/teams
-</code></pre>
-  </li>
+  <li>Must be created from an existing individual page</li>
 </ul>
+
+<p>Creates a team with team page, and assigns the existing individual page (specified by the <code>individual_page_id</code> parameter) as the team leader.</p>
+
+<pre><code>  POST https://everydayhero.com/api/v2/teams
+</code></pre>
 
 <h3 id="payload">Payload</h3>
 
 <p>individual_page_id : <em>required</em> <strong>integer</strong><br>
-The <code>id</code> of the individual page to create the team from.</p>
+The <code>id</code> of the individual page which will become the team leader. This page must already exist.</p>
 
 <p>name : <em>optional</em> <strong>string</strong><br>
 The name of the team. This needs to be unique within the campaign.</p>
