@@ -92,6 +92,9 @@ country_code : _optional_ **string**<br/>
 Only retrieve pages participating in the country code specified. For example `au`
 will retrieve pages with country code `au` (i.e. Australia).
 
+type : _optional_ **string**<br />
+Only retrieve pages that match the specified type. For example `team` will retrieve only team pages. Supported values include `all`, `user` and `team`. Defaults to `all`.
+
 q : _optional_ **string**<br/>
 Retrieve pages with `page name` or `supporter name` match or partially match to the specified search string.
 
