@@ -19,7 +19,7 @@ For API actions that require a UID, users will be required to authenticate
 which provides a UID in the response.
 
 To obtain an API key for this method of authentication, please email 
-[professionalservices@everydayhero.com.au](mailto:professionalservices@everydayhero.com.au).
+[api@everydayhero.com.au](mailto:api@everydayhero.com.au).
 
 ## OAuth
 
