@@ -33,7 +33,7 @@ User access_token provided by passport auth hash.
 
 #### User address
 
-The user address should be sent as a hash of attributes, although a single string is also supporter
+The user address should be sent as a hash of attributes, although a single string is also supported.
 
 
 user[address][street_address] : _optional_ **string**<br/>
