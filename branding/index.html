@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>EverydayHero API: Sign-in Branding</title>
+  <link rel="stylesheet" href="/stylesheets/pygments.css">
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+  <link rel="stylesheet" href="/stylesheets/app.css">
+  <!--[if lt IE 9]>
+    <script src="/javascripts/html5shiv-printshiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <header class="header top a--100">
+    <a href="/"><h1>Everyday Hero: Developer</h1></a>
+  </header>
+  <section class="main center">
+    <aside class="l--30 m--100 left side-bar">
+      <div class="inner">
+        <nav>
+          <ul>
+            <li><a href="/">Intro</a></li>
+            <li>
+              <a href="/overview/">Overview</a>
+              <ul>
+                <li><a href="/overview/#schema">Schema</a></li>
+                <li><a href="/overview/#parameters">Parameters</a></li>
+                <li><a href="/overview/#auth-errors">Auth Errors</a></li>
+                <li><a href="/overview/#validation-errors">Validation Errors</a></li>
+                <li><a href="/overview/#http-verbs">HTTP Verbs</a></li>
+                <li><a href="/overview/#authentication">Authentication</a></li>
+                <li><a href="/glossary/">Glossary</a></li>
+              </ul>
+            </li>
+            <li><a href="/campaigns/">Campaigns</a></li>
+            <li><a href="/charities/">Charities</a></li>
+            <li><a href="/leaderboards/">Leaderboards</a></li>
+            <li><a href="/pages/">Pages</a></li>
+            <li>
+              <a href="/teams/">Teams</a>
+              <ul>
+                <li><a href="/invitations/">Invitations</a>
+                  <ul>
+                    <li><a href="/invitations/#create-individual-page-invitation">Individual Page</a></li>
+                    <li><a href="/invitations/#create-join-a-team-invitation">Join Team Invitation</a></li>
+                  </ul>
+                </li>
+                <li><a href="/join-requests/">Join Requests</a></li>
+                <li><a href="/members/">Members</a></li>
+              </ul>
+            </li>
+            <li><a href="/users/">Users</a></li>
+            <li><a href="/branding/">Sign-in Branding</a></li>
+            <li><a href="/oauth-integration/">OAuth Integration</a></li>
+            <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
+            <li><a href="/console/">API Console</a></li>
+            <li>
+              Client side integration
+              <ul>
+                <li>Totals
+                  <ul>
+                    <li><a href="/client-side/campaign-totals/">Campaign totals</a></li>
+                    <li><a href="/client-side/page-total/">Page totals</a></li>
+                  </ul>
+                </li>
+                <li><a href="/client-side/leaderboards/">Leaderboards</a></li>
+
+              </ul>
+            </li>
+            <li id="api-status">API Status: <span class='status down'>Down</span></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    <section class="l--70 m--100 right content">
+      <div class="inner">
+        
+          <h1>Sign-in Branding</h1>
+          <ul id="markdown-toc">
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#usage">Usage</a></li>
+  <li><a href="#supplyupdate-branding">Supply/update branding</a></li>
+  <li><a href="#remove-branding">Remove branding</a></li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Integrating with Everyday Hero’s Giving Passport makes authenticating users
+simple but can be a disjointed experience for some. To assist, you can supply
+branding information that will be incorporated into the signing in process.
+When a user is asked to sign-up through your <a href="/oauth-integration/">OAuth integration</a>
+they will see your brand and have a consistent experience.</p>
+
+<h3 id="before">Before</h3>
+<p><img src="/images/signin_standard.png" alt="Before sign-in branding"></p>
+
+<h3 id="after">After</h3>
+<p><img src="/images/signin_branding.png" alt="After sign-in branding"></p>
+
+<h2 id="usage">Usage</h2>
+
+<p>Branding the sign-in form is a two-step process. Firstly the branding
+information must be given along with a unique reference that is managed by
+you. Then secondly, during the
+<a href="/oauth-integration/#authorize-endpoint">OAuth authorization process</a> you
+supply that reference for the branding given. This tells Giving Passport
+that you wish for the user to have a branded experience and which branding
+to use. There are no limits as to how many different brandings you can
+supply, as long as each have a unique reference.</p>
+
+<p>If no branding can be found by the given reference then the process
+defaults back to the standard Giving Passport experience.</p>
+
+<h2 id="supplyupdate-branding">Supply/update branding</h2>
+
+<p>Adds, or updates, the branding for the given reference.</p>
+
+<pre><code>PUT passport_host/api/v1/branding/:reference.json
+</code></pre>
+
+<h3 id="visibility">Visibility</h3>
+
+<p>Restricted. Requires an authenticated user.</p>
+
+<h3 id="payload">Payload</h3>
+
+<dl>
+  <dt>brand[background_colour]</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. The background colour as a hex code. ie. <code>#ff00ff</code>.</dd>
+  <dt>brand[background_image_url]</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. The URL of the image to be used in the background.
+Image width must be at least 1100px. Optimal dimensions should be 1100x800px.</dd>
+  <dt>brand[header_image_url]</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>. The URL of the image to be used in the header.
+Image width must be 890px. Optimal dimensions should be 890x290px.</dd>
+</dl>
+
+<p>At least one of these attributes must be supplied to be acceptable.</p>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"brand"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"background_colour"</span><span class="o">:</span> <span class="s2">"#f6c783"</span><span class="p">,</span>
+    <span class="s2">"background_image_url"</span><span class="o">:</span> <span class="s2">"http://developer.everydayhero.com/images/bg.jpeg"</span><span class="p">,</span>
+    <span class="s2">"header_image_url"</span><span class="o">:</span> <span class="s2">"http://developer.everydayhero.com/images/header.jpeg"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="response">Response</h3>
+
+<p>204 <em>No content</em></p>
+
+<h2 id="remove-branding">Remove branding</h2>
+
+<p>Deletes the branding.</p>
+
+<pre><code>DELETE passport_host/api/v1/branding/:reference.json
+</code></pre>
+
+<h3 id="response-1">Response</h3>
+
+<p>204 <em>No content</em></p>
+
+        
+      </div>
+    </section>
+  </section>
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/console.js"></script>  
+  <script src="/javascripts/purl.js"></script>
+  <script src="/javascripts/app.js"></script>
+</body>
+</html>
