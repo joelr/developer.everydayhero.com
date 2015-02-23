@@ -31,6 +31,22 @@ User access_token provided by passport auth hash.
 access_token : _required_ **string**<br/>
 User access_token provided by passport auth hash.
 
+#### User address
+
+The user address should be sent as a hash of attributes, although a single string is also supported.
+
+
+user[address][street_address] : _optional_ **string**<br/>
+user[address][extended_address] : _optional_ **string**<br/>
+user[address][region] : _optional_ **string**<br/>
+user[address][state_code] : _optional_ **string**<br/>
+user[address][postal_code] : _optional_ **string**<br/>
+user[address][country_name] : _optional_ **string**<br/>
+user[address][latitude] : _optional_ **string**<br/>
+user[address][longitude] : _optional_ **string**<br/>
+
+_or_
+
 user[address] : _optional_ **string**<br/>
 The address passed through must be locatable through the Google Maps API. Example: "87 Wickham Terrace, Spring Hill, 4000, QLD"
 
