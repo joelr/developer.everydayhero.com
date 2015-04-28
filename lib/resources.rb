@@ -302,7 +302,7 @@ module EverydayHero
 
     InvitationData = {
       id: 1,
-      email: 'professionalservices@everydayhero.com.au',
+      email: 'api@everydayhero.com',
       accepted_at: nil,
       cancelled_at: nil
     }

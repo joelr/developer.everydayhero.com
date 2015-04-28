@@ -22,7 +22,7 @@ Page](/pages#create-an-individual-page) for your campaign.
 ## Registering for Third Party Integration
 
 Please email
-[professionalservices@everydayhero.com.au](mailto:professionalservices@everydayhero.com.au), you will be
+[api@everydayhero.com](mailto:api@everydayhero.com), you will be
 asked to provide two registration urls, one for individuals and one for
 teams. These are used by the Everyday Hero platform to redirect to the
 third party before creating a supporter page.
