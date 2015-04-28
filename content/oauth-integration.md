@@ -13,7 +13,7 @@ functionality for other developers to leverage. We are using the same
 technology that powers Twitter and Facebook: OAuth2. Because this has
 predominately been an internal tool there is no user interface for
 creating and managing your OAuth applications but if you contact
-[Professional Services](mailto:professionalservices@everydayhero.com.au)
+[Professional Services](mailto:api@everydayhero.com)
 we can get you underway. Alternatively, you can get started with your own 
 OAuth application below.
 
@@ -26,7 +26,7 @@ You can create your own OAuth app by creating an OAuth app and going to:
 
 This application will give you access to all OAuth scoped endpoints. If you 
 require access to authenticated non-OAuth calls, please contact 
-[Professional Services](mailto:professionalservices@everydayhero.com.au) for
+[Professional Services](mailto:api@everydayhero.com) for
 credentials.
 
 By default new applications require an Authorization screen, shown below.
@@ -35,7 +35,7 @@ to either accept the connection or Deny.
 ![Authorization Screen](/images/permission.png)
 
 If your integration requires the authorization screen to be skipped, contact 
-[Professional Services](mailto:professionalservices@everydayhero.com.au) and
+[Professional Services](mailto:api@everydayhero.com) and
 the application will be reviewed.
 
 ## OAuth Integration Libraries
@@ -170,7 +170,7 @@ For this type of integration you will need the following:
 * Registering a third party integration application
 
 All of this can be obtained by emailing
-[support](mailto:professionalservices@everydayhero.com.au).
+[support](mailto:api@everydayhero.com).
 
 Generally there are going to be two entry points into your campaign, the
 first will be through your website and the second will be through an

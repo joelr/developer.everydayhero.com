@@ -29,7 +29,7 @@ The amount of money this page is aiming to raise. Defaults to a predetermined va
 ### Example
 
 <%= json \
-  email: 'professionalservices@everydayhero.com.au',
+  email: 'api@everydayhero.com',
   phone: '1300798768',
   full_name: 'Everyday Hero Support',
   charity_id: 'au-1',
@@ -64,7 +64,7 @@ The amount of money this page is aiming to raise. Defaults to a predetermined va
 ### Example
 
 <%= json \
-  email: 'professionalservices@everydayhero.com.au',
+  email: 'api@everydayhero.com',
   full_name: 'Everyday Hero Support',
   charity_id: 'au-1',
   target: 705.5
