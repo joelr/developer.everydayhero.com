@@ -474,7 +474,7 @@ module EverydayHero
           },
           campaign: {
             uid: "au-0",
-            name: "Everyday Hero",
+            name: "everydayhero",
             url: "http://core-au.edheroz.com",
             get_started_url: "https://give.edheroz.com/au/get-started"
           },

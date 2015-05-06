@@ -3,16 +3,16 @@ title: Registration Integration
 ---
 
 Through the API we allow campaign builders to extend the functionality
-of the Everyday Hero platform. We do this by allowing your chosen
+of the everydayhero platform. We do this by allowing your chosen
 registration solution to hook into the supporter page creation process.
 
 ## How Does it Work?
 
-The Everyday Hero platform supports two kinds of supporter pages:
+The everydayhero platform supports two kinds of supporter pages:
 [Individuals pages](/glossary/) and [Team
 pages](/overview#glossary/). In order to create an Individual Page
 through the API you will be required to authenticate the user through
-the Everyday Hero [Giving Passport](/oauth-integration/#how-to-authenticate-with-edh-passport) and store the
+the everydayhero [Giving Passport](/oauth-integration/#how-to-authenticate-with-edh-passport) and store the
 returned `uid` - this `uid` is our way of tracking that user within our
 platform and yours.
 
@@ -24,7 +24,7 @@ Page](/pages#create-an-individual-page) for your campaign.
 Please email
 [api@everydayhero.com](mailto:api@everydayhero.com), you will be
 asked to provide two registration urls, one for individuals and one for
-teams. These are used by the Everyday Hero platform to redirect to the
+teams. These are used by the everydayhero platform to redirect to the
 third party before creating a supporter page.
 
 ## Primary Registrant

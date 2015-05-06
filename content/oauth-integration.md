@@ -7,7 +7,7 @@ title: OAuth Integration
 
 ## How to Authenticate with EDH Passport
 
-Everyday Hero's Giving Passport is our way of globally recognising a
+everydayhero's Giving Passport is our way of globally recognising a
 user within any one of our products. We are now opening this
 functionality for other developers to leverage. We are using the same
 technology that powers Twitter and Facebook: OAuth2. Because this has
@@ -41,7 +41,7 @@ the application will be reviewed.
 ## OAuth Integration Libraries
 
 Integrating OAuth2 into any modern system should be fairly simple.
-Everyday Hero have written (and maintain) the ruby client for
+everydayhero have written (and maintain) the ruby client for
 interfacing with the Giving Passport and it can be found on
 [GitHub](https://github.com/everydayhero/omniauth-passport). A quick
 google for your language / framework and OAuth2 should yield the best
@@ -52,7 +52,7 @@ available at [http://oauth.net/2/](http://oauth.net/2/).
 
 By authenticating with the Giving Passport you are guaranteed that the
 user you are dealing with will be the same person that is represented
-in any Everyday Hero product.
+in any everydayhero product.
 
 
 ## Authentication endpoints
@@ -159,7 +159,7 @@ Source code for the application can be found on
 This application demonstrates:
 
 * authentication with the Giving Passport
-* using the Everyday Hero API to create a supporter page and view
+* using the everydayhero API to create a supporter page and view
 information on the campaign
 * while still giving you ultimate control over your registration system
 
@@ -174,7 +174,7 @@ All of this can be obtained by emailing
 
 Generally there are going to be two entry points into your campaign, the
 first will be through your website and the second will be through an
-Everyday Hero supporter page. The two flows are slightly different and
+everydayhero supporter page. The two flows are slightly different and
 deserve separate discussions.
 
 
