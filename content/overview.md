@@ -4,7 +4,7 @@ body_id: page_overview
 ---
 ## Environments
 
-We have two environments available for use: sandbox and production. Sandbox should be used when initiating any integration work with the Everyday Hero API. Once development and appropriate QA has been completed we will provide you with production credentials.
+We have two environments available for use: sandbox and production. Sandbox should be used when initiating any integration work with the everydayhero API. Once development and appropriate QA has been completed we will provide you with production credentials.
 
 Sandbox: [https://edheroz.com](https://edheroz.com)
 
