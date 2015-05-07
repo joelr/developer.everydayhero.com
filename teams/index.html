@@ -105,6 +105,24 @@
 <pre><code>GET https://everydayhero.com/api/v2/teams
 </code></pre>
 
+<h3 id="params">Params</h3>
+
+<p>start_updated_at : <em>optional</em> <strong>string</strong><br>
+Only retrieve pages that have been updated after the supplied date/time.
+Format, ‘YYYY-MM-DDThh:mm:ssZ’</p>
+
+<p>end_updated_at : <em>optional</em> <strong>string</strong><br>
+Only retrieve pages that have been updated before the supplied datetime.
+Format, ‘YYYY-MM-DDThh:mm:ssZ’, timestamp optional</p>
+
+<p>start_created_at : <em>optional</em> <strong>string</strong><br>
+Only retrieve pages that have been created after the supplied date/time.
+Format, ‘YYYY-MM-DDThh:mm:ssZ’</p>
+
+<p>end_created_at : <em>optional</em> <strong>string</strong><br>
+Only retrieve pages that have been created before the supplied datetime.
+Format, ‘YYYY-MM-DDThh:mm:ssZ’, timestamp optional</p>
+
 <h3 id="example">Example</h3>
 
 <pre><code>https://everydayhero.com/api/v2/teams
