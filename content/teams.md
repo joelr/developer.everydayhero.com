@@ -12,6 +12,24 @@ List all teams in the authenticated application's campaign.
 
     GET https://everydayhero.com/api/v2/teams
 
+### Params
+
+start_updated_at : _optional_ **string**<br/>
+Only retrieve pages that have been updated after the supplied date/time.
+Format, 'YYYY-MM-DDThh:mm:ssZ'
+
+end_updated_at : _optional_ **string**<br/>
+Only retrieve pages that have been updated before the supplied datetime.
+Format, 'YYYY-MM-DDThh:mm:ssZ', timestamp optional
+
+start_created_at : _optional_ **string**<br/>
+Only retrieve pages that have been created after the supplied date/time.
+Format, 'YYYY-MM-DDThh:mm:ssZ'
+
+end_created_at : _optional_ **string**<br/>
+Only retrieve pages that have been created before the supplied datetime.
+Format, 'YYYY-MM-DDThh:mm:ssZ', timestamp optional
+
 ### Example
 
     https://everydayhero.com/api/v2/teams
