@@ -185,6 +185,11 @@ nav li.title {
 pre {
   padding: 10px; }
 
+.info {
+  padding: 15px;
+  background-color: #fcf8e3;
+  margin: 0 0 10px; }
+
 pre,
 p code {
   border: 1px solid #dbdbdb;

@@ -93,14 +93,15 @@
           <h1>Teams</h1>
           
 <ul id="markdown-toc">
-  <li><a href="#list-all-teams-smallrequires-authenticationsmall">List all Teams <small>(requires authentication)</small></a></li>
-  <li><a href="#create-a-team-smallrequires-authenticationsmall">Create a Team <small>(requires authentication)</small></a></li>
+  <li><a href="#list-all-teams">List all Teams</a></li>
+  <li><a href="#create-a-team">Create a Team</a></li>
 </ul>
 
-<h2 id="list-all-teams-smallrequires-authenticationsmall">List all Teams <small>(requires authentication)</small>
-</h2>
+<h2 id="list-all-teams">List all Teams</h2>
 
-<p>List all teams in the authenticated application’s campaign.</p>
+<p class="info"><strong>Authentication types</strong>: Registered Application Token or OAuth User Token</p>
+
+<p>List all teams in the authenticated application’s campaign if using Registered Application authentication, or all the user’s teams if using OAuth User authentication.</p>
 
 <pre><code>GET https://everydayhero.com/api/v2/teams
 </code></pre>
@@ -140,8 +141,9 @@ Format, ‘YYYY-MM-DDThh:mm:ssZ’, timestamp optional</p>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="create-a-team-smallrequires-authenticationsmall">Create a Team <small>(requires authentication)</small>
-</h2>
+<h2 id="create-a-team">Create a Team</h2>
+
+<p class="info"><strong>Authentication types</strong>: Registered Application Token or OAuth User Token</p>
 
 <ul>
   <li>Must be created from an existing individual page</li>
@@ -156,6 +158,8 @@ Format, ‘YYYY-MM-DDThh:mm:ssZ’, timestamp optional</p>
 
 <p>individual_page_id : <em>required</em> <strong>integer</strong><br>
 The <code>id</code> of the individual page which will become the team leader. This page must already exist.</p>
+
+<p class="info">If using Registered Application authentication, any team in the application's campaign can be used. If using OAuth User authentication the affiliated user must own the team.</p>
 
 <p>name : <em>optional</em> <strong>string</strong><br>
 The name of the team. This needs to be unique within the campaign.</p>

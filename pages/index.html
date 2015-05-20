@@ -95,7 +95,7 @@
 <ul id="markdown-toc">
   <li><a href="#list-all-pages-smallpublicsmall">List all Pages <small>(public)</small></a></li>
   <li><a href="#view-a-single-page-smallpublicsmall">View a single Page <small>(public)</small></a></li>
-  <li><a href="#create-an-individual-page-smallrequires-authenticationsmall">Create an Individual Page <small>(requires authentication)</small></a></li>
+  <li><a href="#create-an-individual-page">Create an Individual Page</a></li>
 </ul>
 
 <p>A page can belong to either a user or team (denoted by the ‘owner_type’ field).
@@ -309,8 +309,9 @@ The page number to return.</p>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="create-an-individual-page-smallrequires-authenticationsmall">Create an Individual Page <small>(requires authentication)</small>
-</h2>
+<h2 id="create-an-individual-page">Create an Individual Page</h2>
+
+<p class="info"><strong>Authentication types</strong>: Registered Application Token or OAuth User Token</p>
 
 <pre><code>POST https://everydayhero.com/api/v2/pages
 </code></pre>
@@ -320,11 +321,18 @@ The page number to return.</p>
 <p>uid : <em>required</em> <strong>integer</strong><br>
 The <code>uid</code> of the user that you want to create a page for.</p>
 
+<p class="info">uid is only required if Registered Application Token authentication is being used, otherwise the relevant user affiliated to the token will be used.</p>
+
 <p>birthday : <em>required</em> <strong>string</strong><br>
 Your birthday, format “YYYY-MM-DD”. In some countries there are age restrictions on fundraising and further action might need to be taken depending on the age provided.</p>
 
 <p>charity_id : <em>optional</em> <strong>string</strong><br>
 The <code>id</code> of the charity to create the page for. A charity will be system nominated if there is none specified.</p>
+
+<p>campaign_id : <em>required</em> <strong>string</strong><br>
+The <code>id</code> of the campaign to create the page for.</p>
+
+<p class="info">campaign_id is only required if OAuth User Token authentication is being used, otherwise the registered application's campaign will be used.</p>
 
 <p>name : <em>optional</em> <strong>string</strong><br>
 The desired name for your new supporter page. Defaults to the user’s preferred name.</p>

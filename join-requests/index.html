@@ -91,8 +91,9 @@
       <div class="inner">
         
           <h1>Join Requests</h1>
-          <h2 id="create-a-join-request-smallrequires-authenticationsmall">Create a Join Request <small>(requires authentication)</small>
-</h2>
+          <h2 id="create-a-join-request">Create a Join Request</h2>
+
+<p class="info"><strong>Authentication types</strong>: Registered Application Token or OAuth User Token</p>
 
 <p>Join an existing team with an existing individual page.</p>
 
@@ -103,6 +104,8 @@
 
 <p>individual_page_id : <em>required</em> <strong>integer</strong><br>
 The <code>id</code> of the page you want to join a team with.</p>
+
+<p class="info">If using Registered Application authentication, any page in the application's campaign can be used. If using OAuth User authentication the affiliated user must own the page.</p>
 
 <h3 id="example">Example</h3>
 

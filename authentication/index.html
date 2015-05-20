@@ -124,12 +124,26 @@ which provides a UID in the response.</p>
 <pre><code>POST /oauth/token?grant_type=client_credentials&amp;client_id=x&amp;client_secret=x
 </code></pre>
 
+<p>The retrieved token can be used in the following way</p>
+
+<pre><code>$ curl -H "Authorization: Bearer &lt;auth_token&gt;" http://example.com
+</code></pre>
+
+<p>OR using a param of access_token=TOKEN on any request.</p>
+
 <p>This will return JSON containing your OAuth Client token.</p>
 
 <h3 id="oauth-user-authentication">OAuth User Authentication</h3>
 
 <p>After a user connection flow via OAuth, a token will be provided that will be
 usuable on OAuth user scoped API calls.</p>
+
+<p>Identical to OAuth App/Client auth, to use an OAuth User token, set an Authorization Token in this format</p>
+
+<pre><code>$ curl -H "Authorization: Bearer &lt;auth_token&gt;" http://example.com
+</code></pre>
+
+<p>OR using a param of access_token=TOKEN on any request.</p>
 
         
       </div>

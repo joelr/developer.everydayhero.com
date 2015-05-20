@@ -93,12 +93,13 @@
           <h1>Users</h1>
           
 <ul id="markdown-toc">
-  <li><a href="#get-current-user-smallrequires-authenticationsmall">Get current user <small>(requires authentication)</small></a></li>
-  <li><a href="#update-a-new-user-with-attributes-smallrequires-authenticationsmall">Update a new user with attributes <small>(requires authentication)</small></a></li>
+  <li><a href="#get-current-user">Get current user</a></li>
+  <li><a href="#update-a-new-user-with-attributes">Update a new user with attributes</a></li>
 </ul>
 
-<h2 id="get-current-user-smallrequires-authenticationsmall">Get current user <small>(requires authentication)</small>
-</h2>
+<h2 id="get-current-user">Get current user</h2>
+
+<p class="info"><strong>Authentication types</strong>: OAuth User Token</p>
 
 <pre><code>GET https://passport.everydayhero.com/api/v1/me
 </code></pre>
@@ -139,8 +140,9 @@ User access_token provided by passport auth hash.</p>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="update-a-new-user-with-attributes-smallrequires-authenticationsmall">Update a new user with attributes <small>(requires authentication)</small>
-</h2>
+<h2 id="update-a-new-user-with-attributes">Update a new user with attributes</h2>
+
+<p class="info"><strong>Authentication types</strong>: OAuth User Token</p>
 
 <pre><code>PUT https://passport.everydayhero.com/api/v1/me
 </code></pre>
