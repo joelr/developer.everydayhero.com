@@ -257,3 +257,6 @@ dt {
 
 .main .content ul li {
   margin-left: 20px; }
+
+.main .content img {
+  max-width: 100%; }
