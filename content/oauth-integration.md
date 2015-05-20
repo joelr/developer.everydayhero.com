@@ -80,6 +80,8 @@ response to the authorization request.
 response_type : _required_ **string**<br/>
 A value of code results in the Authorization Code grant type while a value of token implies the Implicit grant type.
 
+The recommended response_type is token, which requires using the Token endpoint to fetch the user Bearer Token after returning an auth code. However, if you are developing a client side application, use the response_type of code, this will return a Bearer Token in the URL hash of the redirect_uri provided.
+
 client_id : _required_ **string**<br./>
 The client identifier.
 
