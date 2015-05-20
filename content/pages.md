@@ -109,7 +109,7 @@ charity_id : _optional_ **string**<br/>
 The `id` of the charity to create the page for. A charity will be system nominated if there is none specified.
 
 campaign_id : _required_ **string**<br/>
-The `id` of the campaign to create the page for. A charity will be system nominated if there is none specified.
+The `id` of the campaign to create the page for.
 
 <p class='info'>campaign_id is only required if OAuth User Token authentication is being used, otherwise the registered application's campaign will be used.</p>
 
