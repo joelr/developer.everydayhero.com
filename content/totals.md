@@ -10,11 +10,11 @@ title: Totals
 charity_id : _optional_ **string**<br/>
 Charity ID, only totals for that the specified Charity will be retrieved.
 
-campaign_id : _optional_ **string** or **Array**<<br/>
+campaign_id : _optional_ **string** or **Array**<br/>
 Campaign ID, only totals for that the specified Campaign will be retrieved.
 An Array of IDs can be provided, eg: campaign_id[]=au-1&campaign_id[]=au-2
 
-page_id : _optional_ **string**br/>
+page_id : _optional_ **string**<br/>
 Page ID, only totals for that the specified Page will be retrieved.
 
 start_at : _optional_ **string/date-time**<br/>

@@ -5,7 +5,9 @@ title: Users
 * TOC
 {:toc}
 
-## Get current user <small>(requires authentication)</small>
+## Get current user
+
+<p class='info'><strong>Authentication types</strong>: OAuth User Token</p>
 
     GET https://passport.everydayhero.com/api/v1/me
 
@@ -22,7 +24,9 @@ User access_token provided by passport auth hash.
 
 <%= json :user %>
 
-## Update a new user with attributes <small>(requires authentication)</small>
+## Update a new user with attributes
+
+<p class='info'><strong>Authentication types</strong>: OAuth User Token</p>
 
     PUT https://passport.everydayhero.com/api/v1/me
 

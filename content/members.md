@@ -2,7 +2,9 @@
 title: Members
 body_id: page_teams
 ---
-## Add a Team Member <small>(requires authentication)</small>
+## Add a Team Member
+
+<p class='info'><strong>Authentication types</strong>: Registered Application Token or OAuth User Token</p>
 
 Add an existing page to an existing team.
 
@@ -12,6 +14,8 @@ Add an existing page to an existing team.
 
 individual_page_id : _required_ **integer**<br/>
 The `id` of the page you want to join a team with.
+
+<p class='info'>If using Registered Application authentication, any team in the application's campaign can be used. If using OAuth User authentication the affiliated user must own the team.</p>
 
 ### Example
 
