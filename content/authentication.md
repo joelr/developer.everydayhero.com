@@ -32,9 +32,21 @@ To fetch your Client API token, it requires doing the following request:
 
     POST /oauth/token?grant_type=client_credentials&client_id=x&client_secret=x
 
+The retrieved token can be used in the following way
+
+    $ curl -H "Authorization: Bearer <auth_token>" http://example.com
+
+OR using a param of access_token=TOKEN on any request.
+
 This will return JSON containing your OAuth Client token.
 
 ### OAuth User Authentication
 
 After a user connection flow via OAuth, a token will be provided that will be
 usuable on OAuth user scoped API calls.
+
+Identical to OAuth App/Client auth, to use an OAuth User token, set an Authorization Token in this format
+
+    $ curl -H "Authorization: Bearer <auth_token>" http://example.com
+
+OR using a param of access_token=TOKEN on any request.

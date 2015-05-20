@@ -89,7 +89,9 @@ redirects to
 
 <%= json :expanded_page_data %>
 
-## Create an Individual Page <small>(requires authentication)</small>
+## Create an Individual Page
+
+<p class='info'><strong>Authentication types</strong>: Registered Application Token or OAuth User Token</p>
 
     POST https://everydayhero.com/api/v2/pages
 
@@ -98,11 +100,19 @@ redirects to
 uid : _required_ **integer**<br/>
 The `uid` of the user that you want to create a page for.
 
+<p class='info'>uid is only required if Registered Application Token authentication is being used, otherwise the relevant user affiliated to the token will be used.</p>
+
 birthday : _required_ **string**<br/>
 Your birthday, format "YYYY-MM-DD". In some countries there are age restrictions on fundraising and further action might need to be taken depending on the age provided.
 
 charity_id : _optional_ **string**<br/>
 The `id` of the charity to create the page for. A charity will be system nominated if there is none specified.
+
+campaign_id : _required_ **string**<br/>
+The `id` of the campaign to create the page for.
+
+<p class='info'>campaign_id is only required if OAuth User Token authentication is being used, otherwise the registered application's campaign will be used.</p>
+
 
 name : _optional_ **string**<br/>
 The desired name for your new supporter page. Defaults to the user's preferred name.

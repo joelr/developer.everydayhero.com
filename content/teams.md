@@ -6,9 +6,11 @@ body_id: page_teams
 * TOC
 {:toc}
 
-## List all Teams <small>(requires authentication)</small>
+## List all Teams
 
-List all teams in the authenticated application's campaign.
+<p class='info'><strong>Authentication types</strong>: Registered Application Token or OAuth User Token</p>
+
+List all teams in the authenticated application's campaign if using Registered Application authentication, or all the user's teams if using OAuth User authentication.
 
     GET https://everydayhero.com/api/v2/teams
 
@@ -38,7 +40,9 @@ Format, 'YYYY-MM-DDThh:mm:ssZ', timestamp optional
 
 <%= json :teams %>
 
-## Create a Team <small>(requires authentication)</small>
+## Create a Team
+
+<p class='info'><strong>Authentication types</strong>: Registered Application Token or OAuth User Token</p>
 
 * Must be created from an existing individual page
 
@@ -51,6 +55,8 @@ Creates a team with team page, and assigns the existing individual page (specifi
 
 individual_page_id : _required_ **integer**<br/>
 The `id` of the individual page which will become the team leader. This page must already exist.
+
+<p class='info'>If using Registered Application authentication, any team in the application's campaign can be used. If using OAuth User authentication the affiliated user must own the team.</p>
 
 name : _optional_ **string**<br/>
 The name of the team. This needs to be unique within the campaign.

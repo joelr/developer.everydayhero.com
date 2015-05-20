@@ -2,7 +2,9 @@
 title: Invitations
 body_id: page_teams
 ---
-## Create Individual Page Invitation <small>(requires authentication)</small>
+## Create Individual Page Invitation
+
+<p class='info'><strong>Authentication types</strong>: Registered Application Token</p>
 
 Send an invitation to create an individual supporter page to an email
 address.
@@ -40,7 +42,9 @@ The amount of money this page is aiming to raise. Defaults to a predetermined va
 
 <%= json :create_individual_page_invitation %>
 
-## Create Join a Team Invitation <small>(requires authentication)</small>
+## Create Join a Team Invitation
+
+<p class='info'><strong>Authentication types</strong>: Registered Application Token</p>
 
 Send an invitation to create an individual supporter page for a team to
 an email address.
