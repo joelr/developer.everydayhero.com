@@ -9,4 +9,4 @@ Each component is responsive and can be customised via simple configuration opti
 
 The documentation is available at [EDH React Widgets](http://everydayhero.github.io/public-api-docs/#widgets)
 
-[![Widgets](/images/widgets.png)](http://everydayhero.github.io/public-api-docs/#widgets)
+[![Widgets](/images/widgets.png)](http://everydayhero.github.io/public-api-docs/)
