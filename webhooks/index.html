@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>EverydayHero API: API Console</title>
+  <title>EverydayHero API: Webhooks</title>
   <link rel="stylesheet" href="/stylesheets/pygments.css">
   <link rel="stylesheet" href="/stylesheets/app.css">
   <!--[if lt IE 9]>
     <script src="/javascripts/html5shiv-printshiv.js"></script>
   <![endif]-->
 </head>
-<body id=''>
+<body id='webhooks'>
   <header class="header top a--100">
     <a href="/"><h1>everydayhero: Developer</h1></a>
   </header>
@@ -91,21 +91,38 @@
     <section class="l--70 m--100 right content">
       <div class="inner">
         
-          <h1>API Console</h1>
-          
-<p>This API console can be used for public GET requests to provide responses from the sandbox environment.</p>
+          <h1>Webhooks</h1>
+          <p>If you have created an <a href="/oauth-integration/#creating-an-oauth-application">OAuth Application</a>, you will have the ability to create webhooks. Webhooks can be defined whilst creating/editing your OAuth application and multiple URLs can be defined by separating with a space.</p>
 
-<h3 id="query">Query</h3>
+<h3 id="usage">Usage</h3>
 
-<p>GET https://edheroz.com/api/v2/<input type="text" id="path" value="pages/1.json"></p>
+<p>Webhooks can be used as an alternative to polling endpoints to fetch updates for pages. It is important that webhook receiving endpoints return a 200 response as soon as possible, as requests will timeout after 2000ms. It is recommended not to perform any work within the receive request, but to queue the data to be processed at a later stage, so the request can be exited early.</p>
 
-<p><input type="submit" value="Run" id="run"></p>
+<p>To respond quickly to a webhook, subscribers should defer any processing of the notification until after the response is done. You may do this in a few ways, but two popular options are to spawn a new thread to handle the processing, or to place the notification in a queue for later processing. Since you’re likely already using queues for your processing, this is probably your best option.</p>
 
-<h3 id="response">Response</h3>
-<pre class="highlight">
-  <code class="javascript" id="console">
-  </code>
-</pre>
+<p>Requests will also fail and be ignored without a retry for any connectivity timeout, DNS or URL validity issues.</p>
+
+<p>Currently supported payloads: <strong>page</strong></p>
+
+<h3 id="page-payloads">Page payloads</h3>
+
+<p>Page payloads will be triggered under the following conditions:</p>
+
+<h4 id="trigger-conditions">Trigger conditions</h4>
+
+<p>Webhooks will be triggered for all pages for all users who have authenticated with your application, regardless of whether the page was created via the application or not.</p>
+
+<ul>
+  <li>Page created/updated</li>
+  <li>Donation received</li>
+  <li>Page shared</li>
+</ul>
+
+<h4 id="payload-format">Payload format</h4>
+
+<p>Payloads will be in JSON in the standard <a href="/pages/">page payload</a> format.</p>
+
+<p><strong>Custom format</strong>: If a custom payload or authentication is required, please email <a href="mailto:api@everydayhero.com">api@everydayhero.com</a> to discuss requirements.</p>
 
         
       </div>

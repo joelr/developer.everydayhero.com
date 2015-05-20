@@ -176,7 +176,6 @@ nav li.title {
 .main ul li {
   margin: 0px;
   padding: 0px;
-  list-style-type: none;
   margin-bottom: 5px; }
   .main ul li ul {
     padding-left: 20px;
@@ -255,3 +254,6 @@ dt {
 
 .down {
   color: #CC0000; }
+
+.main .content ul li {
+  margin-left: 20px; }
