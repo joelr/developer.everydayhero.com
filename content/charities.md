@@ -1,11 +1,12 @@
 ---
 title: Charities
 ---
+
 ## List all Charities <small>(public)</small>
 
     GET https://everydayhero.com/api/v2/charities
 
-[View demo in API console](/console/?query=charities.json) 
+[View demo in API console](/console/?query=charities.json)
 
 ### Parameters
 
@@ -35,7 +36,7 @@ The page number to return.
 
     GET https://everydayhero.com/api/v2/charities/:id
 
-[View demo in API console](/console/?query=charities/au-8.json) 
+[View demo in API console](/console/?query=charities/au-8.json)
 
 ### Example
 
