@@ -371,7 +371,9 @@ module EverydayHero
     TeamData = {
       id: 1,
       uid: 1,
-      name: "Team Example"
+      name: "Team Example",
+      leader_id: 42,
+      page_ids: [42, 53, 123]
     }
 
     Team = {
