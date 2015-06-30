@@ -42,8 +42,8 @@ The user address should be sent as a hash of attributes, although a single strin
 
 user[address][street_address] : _optional_ **string**<br/>
 user[address][extended_address] : _optional_ **string**<br/>
+user[address][locality] : _optional_ **string**<br/>
 user[address][region] : _optional_ **string**<br/>
-user[address][state_code] : _optional_ **string**<br/>
 user[address][postal_code] : _optional_ **string**<br/>
 user[address][country_name] : _optional_ **string**<br/>
 user[address][latitude] : _optional_ **string**<br/>
