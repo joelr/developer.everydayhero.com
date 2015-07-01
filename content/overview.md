@@ -4,11 +4,14 @@ body_id: page_overview
 ---
 ## Environments
 
-We have two environments available for use: sandbox and production. Sandbox should be used when initiating any integration work with the everydayhero API. Once development and appropriate QA has been completed we will provide you with production credentials.
+We have two environments available for use: sandbox and production. Sandbox should be used when initiating any integration work with the everydayhero API.
+Once development and appropriate QA has been completed we will provide you with additional production credentials if required.
 
-Sandbox: [https://edheroz.com](https://edheroz.com)
+Sandbox: [https://edheroz.com](https://edheroz.com)<br />
+Sandbox OAuth domain: passport.edheroz.com
 
-Production: [https://everydayhero.com](https://everydayhero.com)
+Production: [https://everydayhero.com](https://everydayhero.com)<br />
+Production OAuth domain: passport.everydayhero.com
 
 ## Schema
 
