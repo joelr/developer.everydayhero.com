@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>EverydayHero API: Page totals</title>
+  <title>EverydayHero API: Rate limits</title>
   <link rel="stylesheet" href="/stylesheets/pygments.css">
   <link rel="stylesheet" href="/stylesheets/app.css">
   <!--[if lt IE 9]>
     <script src="/javascripts/html5shiv-printshiv.js"></script>
   <![endif]-->
 </head>
-<body id=''>
+<body id='page_overview'>
   <header class="header top a--100">
     <a href="/"><h1>everydayhero: Developer</h1></a>
   </header>
@@ -92,34 +92,19 @@
     <section class="l--70 m--100 right content">
       <div class="inner">
         
-          <h1>Page totals</h1>
+          <h1>Rate limits</h1>
           
-<h2 id="individual-page-total">Individual page total</h2>
+<p>Some API endpoints are rate limited, the current endpoints with this enabled are:</p>
 
-<p>Using the <a href="/pages/">pages endpoint</a> with a .jsonp and callback option you can include a page total on a website.</p>
+<ul>
+  <li><a href="/pages/#list-all-pages-smallpublicsmall">/v2/pages</a></li>
+  <li><a href="/campaigns/">/v2/campaigns</a></li>
+  <li><a href="/charities/">/v2/charities</a></li>
+</ul>
 
-<p>Below shows a demo JQuery snippet that will load the page total on to a page.</p>
+<p>If you hit rate limits you will be served with a JSON error message long with <a href="http://tools.ietf.org/html/rfc6585#section-4">429 status code</a>. Requests made that give a 429 response do not contribute to the rate limiting count.</p>
 
-<pre>
-  <code class="javascript">&lt;script src="http://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt;
-&lt;script type='text/javascript'&gt;
-
-  $(function() {
-    $.getJSON('https://everydayhero.com/api/v2/pages/123.jsonp?callback=?', {},  function (data) {          
-      var funds = data.page.amount;
-      $('#raised').html(funds.currency.symbol + (funds.cents / 100) + " raised");
-    })  
-  });  
-
-&lt;/script&gt;
-
-&lt;div id='raised'&gt;&lt;/div&gt;</code>
-</pre>
-
-<p>Will display</p>
-
-<p><em>$1234 raised</em></p>
-
+<p>The current rate limits are a rolling 180 second period, with 25 seconds per request within a period, however this may change in the future. It is best to implement a solution that can handle and retry requests when rate limits are hit.</p>
 
         
       </div>
