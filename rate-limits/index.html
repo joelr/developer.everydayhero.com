@@ -102,7 +102,7 @@
   <li><a href="/charities/">/v2/charities</a></li>
 </ul>
 
-<p>If you hit rate limits you will be served with a JSON error message long with <a href="http://tools.ietf.org/html/rfc6585#section-4">429 status code</a>. Requests made that give a 429 response do not contribute to the rate limiting count.</p>
+<p>If you hit rate limits you will be served with a JSON error message along with <a href="http://tools.ietf.org/html/rfc6585#section-4">429 status code</a>. Requests made that give a 429 response do not contribute to the rate limiting count.</p>
 
 <p>The current rate limits are a rolling 180 second period, with 25 seconds per request within a period, however this may change in the future. It is best to implement a solution that can handle and retry requests when rate limits are hit.</p>
 
