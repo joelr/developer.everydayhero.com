@@ -8,9 +8,6 @@ If you require any of the following flags set, please contact [api@everydayhero.
 
 ## Campaigns
 
-donate_thank_you_url : **string**<br/>
-Campaigns can have a custom confirmation (thank-you url) for donations, where users are redirected after a successful donation.
-
 skip_team_approval_request : **boolean**<br/>
 Campaigns may require join-requests to teams to be auto-approved. This removes the normal requirement that a team has to confirm team join requests.
 
