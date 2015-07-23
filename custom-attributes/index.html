@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>everydayhero API: Page totals</title>
+  <title>everydayhero API: Custom Attributes</title>
   <link rel="stylesheet" href="/stylesheets/pygments.css">
   <link rel="stylesheet" href="/stylesheets/app.css">
   <!--[if lt IE 9]>
@@ -92,33 +92,28 @@
     <section class="l--70 m--100 right content">
       <div class="inner">
         
-          <h1>Page totals</h1>
+          <h1>Custom Attributes</h1>
           
-<h2 id="individual-page-total">Individual page total</h2>
+<p>There are a variety of custom attributes/flags for some objects that change behaviour which aren’t accessible via the UI or the API.</p>
 
-<p>Using the <a href="/pages/">pages endpoint</a> with a .jsonp and callback option you can include a page total on a website.</p>
+<p>If you require any of the following flags set, please contact <a href="mailto:api@everydayhero.com.au">api@everydayhero.com.au</a>.</p>
 
-<p>Below shows a demo JQuery snippet that will load the page total on to a page.</p>
+<h2 id="campaigns">Campaigns</h2>
 
-<pre>
-  <code class="javascript">&lt;script src="http://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt;
-&lt;script type='text/javascript'&gt;
+<p>skip_team_approval_request : <strong>boolean</strong><br>
+Campaigns may require join-requests to teams to be auto-approved. This removes the normal requirement that a team has to confirm team join requests.</p>
 
-  $(function() {
-    $.getJSON('https://everydayhero.com/api/v2/pages/123.jsonp?callback=?', {},  function (data) {          
-      var funds = data.page.amount;
-      $('#raised').html(funds.currency.symbol + (funds.cents / 100) + " raised");
-    })  
-  });  
+<h4 id="offline-donations">Offline donations</h4>
+<p>For regions where offlines do not exist in the campaign UI, these have to be enabled at a campaign level.
+enable_recording_offline_donations_for_supporter</p>
 
-&lt;/script&gt;
+<h2 id="charities">Charities</h2>
 
-&lt;div id='raised'&gt;&lt;/div&gt;</code>
-</pre>
+<p>dashboard_background : <strong>Image</strong><br>
+Charites have the ability to have custom dashboard backgrounds. When a user creates a page for a relevant charity, the user is prompted to whether they would like to change their dashboard background to the custom background.</p>
 
-<p>Will display</p>
-
-<p><em>$1234 raised</em></p>
+<h4 id="campaign-only-charities">Campaign-only charities</h4>
+<p>Some charities may wish to only exist within campaigns (and not within the give. everydayhero campaign), this can be enabled on request.</p>
 
 
         
