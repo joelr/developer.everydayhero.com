@@ -40,6 +40,20 @@ Format, 'YYYY-MM-DDThh:mm:ssZ', timestamp optional
 
 <%= json :teams %>
 
+## View a single team
+
+<p class='info'><strong>Authentication types</strong>: Registered Application Token or OAuth User Token</p>
+
+Get a specific team in the authenticated application's campaign if using a Registered Application authentication, or in the user's teams if using OAuth User authentication.
+
+### Example
+
+    GET https://everydayhero.com/api/v2/teams/:id
+
+### Response
+
+<%= json :team %>
+
 ## Create a Team
 
 <p class='info'><strong>Authentication types</strong>: Registered Application Token or OAuth User Token</p>
