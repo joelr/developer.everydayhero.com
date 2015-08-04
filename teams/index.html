@@ -96,6 +96,7 @@
           
 <ul id="markdown-toc">
   <li><a href="#list-all-teams">List all Teams</a></li>
+  <li><a href="#view-a-single-team">View a single team</a></li>
   <li><a href="#create-a-team">Create a Team</a></li>
 </ul>
 
@@ -149,6 +150,33 @@ Format, ‘YYYY-MM-DDThh:mm:ssZ’, timestamp optional</p>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
 
+<h2 id="view-a-single-team">View a single team</h2>
+
+<p class="info"><strong>Authentication types</strong>: Registered Application Token or OAuth User Token</p>
+
+<p>Get a specific team in the authenticated application’s campaign if using a Registered Application authentication, or in the user’s teams if using OAuth User authentication.</p>
+
+<h3 id="example-1">Example</h3>
+
+<pre><code>GET https://everydayhero.com/api/v2/teams/:id
+</code></pre>
+
+<h3 id="response-1">Response</h3>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"team"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Team Example"</span><span class="p">,</span>
+    <span class="s2">"leader_id"</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span>
+    <span class="s2">"page_ids"</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mi">42</span><span class="p">,</span>
+      <span class="mi">53</span><span class="p">,</span>
+      <span class="mi">123</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+
 <h2 id="create-a-team">Create a Team</h2>
 
 <p class="info"><strong>Authentication types</strong>: Registered Application Token or OAuth User Token</p>
@@ -172,14 +200,14 @@ The <code>id</code> of the individual page which will become the team leader. Th
 <p>name : <em>optional</em> <strong>string</strong><br>
 The name of the team. This needs to be unique within the campaign.</p>
 
-<h3 id="example-1">Example</h3>
+<h3 id="example-2">Example</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"individual_page_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
   <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"My New Team"</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="response-1">Response</h3>
+<h3 id="response-2">Response</h3>
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"page"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
