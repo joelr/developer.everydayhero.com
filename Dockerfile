@@ -9,6 +9,8 @@ RUN bundle install
 RUN git config --global user.email "deployer@everydayhero.com"
 RUN git config --global user.name "Vlad the deployer"
 
+ENV RUBYOPT "-E utf-8"
+
 ADD . /usr/src/app
 
 CMD "bin/bash"
