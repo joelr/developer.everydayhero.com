@@ -19,11 +19,6 @@ Example activity of a supporter page:
 
 ### Parameters
 
-    [:distance_in_meters, :duration_in_seconds, :calories, :public,
-      :started_at, :coordinates, :type, :caption, :elevation_series,
-      :average_watts, :average_heartrate, :average_cadence, :average_temp,
-      :description]
-
 uid : _required_ **string**<br/>
 Unique identifier to fitness activity, to be used later for updating activities if required.
 
