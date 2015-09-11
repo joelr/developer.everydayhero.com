@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>everydayhero API: Fitness Activities</title>
+  <link rel="stylesheet" href="/stylesheets/pygments.css">
+  <link rel="stylesheet" href="/stylesheets/app.css">
+  <!--[if lt IE 9]>
+    <script src="/javascripts/html5shiv-printshiv.js"></script>
+  <![endif]-->
+</head>
+<body id=''>
+  <header class="header top a--100">
+    <a href="/"><h1>everydayhero: Developer</h1></a>
+  </header>
+  <section class="main center">
+    <aside class="l--30 m--100 left side-bar">
+      <div class="inner">
+        <nav>
+          <ul>
+            <li><a href="/">Introduction</a></li>
+            <li>
+              <a href="/overview/">Overview</a>
+              <ul id='menu_overview'>
+                <li><a href="/overview/#environments">Environments</a></li>
+                <li><a href="/overview/#schema">Schema</a></li>
+                <li><a href="/overview/#parameters">Parameters</a></li>
+                <li><a href="/overview/#auth-errors">Auth Errors</a></li>
+                <li><a href="/overview/#validation-errors">Validation Errors</a></li>
+                <li><a href="/overview/#http-verbs">HTTP Verbs</a></li>
+                <li><a href="/overview/#pagination">Pagination</a></li>
+                <li><a href="/overview/#caching">Caching</a></li>
+                <li><a href="/rate-limits/">Rate limits</a></li>
+                <li><a href="/glossary/">Glossary</a></li>
+              </ul>
+            </li>
+            <li><a href="/authentication/">Authentication</a></li>
+            
+
+            <li class='title'>Resources</li>
+            <li><a href="/campaigns/">Campaigns</a></li>
+            <li><a href="/charities/">Charities</a></li>
+            <li><a href="/leaderboards/">Leaderboards</a></li>
+            <li><a href="/pages/">Pages</a></li>
+            <li>
+              <a href="/teams/">Teams</a>
+              <ul id='menu_teams'>
+                <li><a href="/invitations/">Invitations</a>
+                  <ul>
+                    <li><a href="/invitations/#create-individual-page-invitation">Individual Page</a></li>
+                    <li><a href="/invitations/#create-join-a-team-invitation">Join Team Invitation</a></li>
+                  </ul>
+                </li>
+                <li><a href="/join-requests/">Join Requests</a></li>
+                <li><a href="/members/">Members</a></li>
+              </ul>
+            </li>
+            <li><a href="/users/">Users</a></li>
+            <li><a href="/search/#volunteering-opportunities">Volunteering</a></li>
+
+            <li class='title'>Search &amp; Totals</li>
+            <li><a href="/search/">Search</a></li>
+            <li><a href="/totals/">Totals</a></li>
+
+            <li class='title'>Integration Overviews</li>
+            <li><a href="/oauth-integration/">OAuth Integration</a></li>
+            <li><a href="/webhooks/">Webhooks</a></li>
+            <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
+            <li class='title'>Code Examples</li>
+            
+            <li>
+              Client side integration
+              <ul>
+                <li>Totals
+                  <ul>
+                    <li><a href="/client-side/campaign-totals/">Campaign totals</a></li>
+                    <li><a href="/client-side/page-total/">Page totals</a></li>
+                  </ul>
+                </li>
+                <li><a href="/widgets/">Widgets</a></li>
+
+              </ul>
+            </li>
+            <li class='title'>Reference</li>
+            <li><a href="/console/">API Console</a></li>
+            <li><a href="http://everydayhero.statuspage.io/">Platform Status</a></li>
+            <li id="api-status">API Status: <span class='status down'>Down</span></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    <section class="l--70 m--100 right content">
+      <div class="inner">
+        
+          <h1>Fitness Activities</h1>
+          
+<p>Pages can have fitness activities associated with them. Complementary to fitness 
+activities synced from within the application (e.g. Strava, MapMyFitness),
+applications can create their own activities.</p>
+
+<p>Example activity of a supporter page:</p>
+
+<p><img src="/images/fitness.jpg" alt="Authorization Screen"></p>
+
+<h2 id="createupdate-fitness-activity">Create/Update Fitness Activity</h2>
+
+<p class="info"><strong>Authentication types</strong>: OAuth User Token only</p>
+
+<pre><code>POST https://everydayhero.com/api/v2/fitness_activities
+</code></pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<p>uid : <em>required</em> <strong>string</strong><br>
+Unique identifier to fitness activity, to be used later for updating activities if required.</p>
+
+<p>type : <em>required</em> <strong>string</strong><br>
+Fitness activity type, supported types: bike, gym, hike, run, swim, walk and sport.</p>
+
+<p>duration_in_seconds : <em>required</em> <strong>integer</strong><br>
+Duration of activity, in seconds.</p>
+
+<p>public : <em>required</em> <strong>boolean</strong><br>
+Must be true for the fitness activity to be visible.</p>
+
+<p>started_at : <em>required</em> <strong>date/time</strong><br>
+Timestamp for start of activity, ISO8601 format.</p>
+
+<p>caption : <em>required</em> <strong>string</strong><br>
+Title/caption for activity.</p>
+
+<p>distance_in_meters : <em>optional</em>  <strong>integer</strong><br>
+Distance covered for activity, in meters.</p>
+
+<p>calories : <em>optional</em> <strong>integer</strong><br>
+kcals total burned per activity, e.g. ~600 for a 10km run.</p>
+
+<p>coordinates : <em>optional</em> <strong>Array</strong><br>
+To be used to render a map, if provided. Array of lat/longs,<br>
+e.g. [[10.614, -7.031],[10.612, -7.027],[10.609, -7.020]..]</p>
+
+<p>elevation_series : <em>optional</em> <strong>Array</strong><br>
+Array of elevation points (in meters), used to render an elevation chart if provided.<br>
+e.g. [0.2, 0.8, 1.2, 5.6]</p>
+
+<p>average_watts : <em>optional</em> <strong>integer</strong><br>
+Average power output for an activity (normally a ‘bike’ activity).</p>
+
+<p>average_heartrate : <em>optional</em> <strong>integer</strong><br>
+Average heart rate in bpm for an activity.</p>
+
+<p>average_cadence : <em>optional</em> <strong>integer</strong><br>
+Average cadence in rpm for an activity (normally a ‘bike’ activity).</p>
+
+<p>average_temp : <em>optional</em> <strong>integer</strong><br>
+Average external temperature in degrees celcius for an activity.</p>
+
+<p>description : <em>optional</em> <strong>string</strong><br>
+Description of an activity.</p>
+
+<h3 id="example">Example</h3>
+
+<pre><code>curl -H "Authorization: Bearer XXX" \
+-d "{\"uid\":\"abc\",\"type\":\"bike\",\"duration_in_seconds\":1234,\"public\":true,\"started_at\":\"2015-01-01 09:00:00\",\"distance_in_meters\":1234,\"calories\":100,\"coordinates\":[[10.614,-7.031],[10.612,-7.027],[10.609,-7.02]],\"elevation_series\":[0.2,0.8,1.2,5.6],\"caption\":\"test-ride\"}" \
+https://everydayhero.com/api/v2/fitness_activities.json
+</code></pre>
+
+<h3 id="response">Response</h3>
+
+<p>201 CREATED</p>
+
+<p>or </p>
+
+<p>422 Unprocessable Entity</p>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"error"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"message"</span><span class="o">:</span> <span class="s2">"Validation failed"</span><span class="p">,</span>
+    <span class="s2">"error"</span><span class="o">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">"field"</span><span class="o">:</span> <span class="s2">"type"</span><span class="p">,</span>
+        <span class="s2">"code"</span><span class="o">:</span> <span class="s2">"invalid"</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+
+        
+      </div>
+    </section>
+  </section>
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/console.js"></script>
+  <script src="/javascripts/purl.js"></script>
+  <script src="/javascripts/app.js"></script>
+</body>
+</html>
