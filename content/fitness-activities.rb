@@ -6,7 +6,7 @@ Pages can have fitness activities associated with them. Complementary to fitness
 activities synced from within the application (e.g. Strava, MapMyFitness),
 applications can create their own activities.
 
-Example activity of a supporter page:
+Example activity on a supporter page:
 
 ![Authorization Screen](/images/fitness.jpg)
 
