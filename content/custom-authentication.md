@@ -1,0 +1,126 @@
+---
+title: Custom Authentication Integration
+---
+
+* TOC
+{:toc}
+
+## Create a new user / Sign in
+
+<p class='info'><strong>Authentication types</strong>: Public OAuth Client ID</p>
+
+    POST https://everydayhero.com/api/v2/authentication/sign_up
+
+### Payload
+
+user[name] : _required_ **string**<br/>
+The name of the new user.
+
+user[email] : _required_ **string**<br/>
+The email of the new user.
+
+user[password] : _required_ **string**<br/>
+The password of the new user.
+
+user[phone] : _required_ **string**<br/>
+The phone number of the new user.
+
+country : _required_ **string**<br/>
+The region of the new user, valid regions: AU, NZ, UK, US, IE.
+
+client_id: _required_ **integer**<br/>
+The client ID of the OAuth application.
+
+
+The response will either be 201, 422 or a 404.
+
+If the response is successful, the response will include a user OAuth token,
+along with the user_id. This can be used with the [user endpoint](/users/#get-current-user) 
+to fetch the user details.
+
+### Response
+
+Success:
+
+<%= json \
+  token: 'abc',
+  user_id: 123
+%>
+
+If the request failures, a hash of errors will be returned.
+If the user tries to sign up with an existing email, the API will respond with a success if the provided password matches,
+if not, a 422 with an related error will be returned.
+A 404 will be returned if a country, or client_id is mising.
+
+Failure:
+
+<%= json \
+  error: {
+    message: "Validation failed",
+    errors: [{
+      field: "email",
+      code: "invalid"
+    }
+    ]
+  }
+%>
+
+
+## Authenticate a user / Login
+
+<p class='info'><strong>Authentication types</strong>: Public OAuth Client ID</p>
+
+    POST https://everydayhero.com/api/v2/authentication/sign_in
+
+### Payload
+
+user[email] : _required_ **string**<br/>
+The email of the user.
+
+user[password] : _required_ **string**<br/>
+The password of the user.
+
+client_id: _required_ **integer**<br/>
+The client ID of the OAuth application.
+
+
+The response will either be 200 or 404.
+
+If the response is successful, the response will include a user OAuth token,
+along with the user_id. This can be used with the [user endpoint](/users/#get-current-user) 
+to fetch the user details.
+The response will be a 404 if the user details are incorrect, or the client_id is missing.
+
+### Response
+
+Success:
+
+<%= json \
+  token: 'abc',
+  user_id: 123
+%>
+
+## Reset a user password
+
+<p class='info'><strong>Authentication types</strong>: Public OAuth Client ID</p>
+
+This API endpoint will trigger a password reset email for the specified user.
+
+    POST https://everydayhero.com/api/v2/authentication/reset_password
+
+### Payload
+
+user[email] : _required_ **string**<br/>
+The email of the user.
+
+user[password] : _required_ **string**<br/>
+The password of the user.
+
+client_id: _required_ **integer**<br/>
+The client ID of the OAuth application.
+
+
+The response will either be 204 or 404.
+
+If the response is successful, the response will be a 204 no-content.
+The response will be a 404 if the user email is invalid, or the client_id is missing.
