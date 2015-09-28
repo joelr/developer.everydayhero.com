@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>everydayhero API: Custom Authentication Integration</title>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/stylesheets/pygments.css">
+  <link rel="stylesheet" href="/stylesheets/app.css">
+  <!--[if lt IE 9]>
+    <script src="/javascripts/html5shiv-printshiv.js"></script>
+  <![endif]-->
+</head>
+<body id=''>
+  <header class="header top a--100">
+    <a href="/"><h1>everydayhero: Developer</h1></a>
+  </header>
+  <section class="main center">
+    <aside class="l--30 m--100 left side-bar">
+      <div class="inner">
+        <nav>
+          <ul>
+            <li><a href="/">Introduction</a></li>
+            <li>
+              <a href="/overview/">Overview</a>
+              <ul id='menu_overview'>
+                <li><a href="/overview/#environments">Environments</a></li>
+                <li><a href="/overview/#schema">Schema</a></li>
+                <li><a href="/overview/#parameters">Parameters</a></li>
+                <li><a href="/overview/#auth-errors">Auth Errors</a></li>
+                <li><a href="/overview/#validation-errors">Validation Errors</a></li>
+                <li><a href="/overview/#http-verbs">HTTP Verbs</a></li>
+                <li><a href="/overview/#pagination">Pagination</a></li>
+                <li><a href="/overview/#caching">Caching</a></li>
+                <li><a href="/rate-limits/">Rate limits</a></li>
+                <li><a href="/glossary/">Glossary</a></li>
+              </ul>
+            </li>
+            <li><a href="/authentication/">Authentication</a></li>
+            
+
+            <li class='title'>Resources</li>
+            <li><a href="/campaigns/">Campaigns</a></li>
+            <li><a href="/charities/">Charities</a></li>
+            <li><a href="/leaderboards/">Leaderboards</a></li>
+            <li><a href="/fitness-activities/">Fitness Activities</a></li>
+            <li><a href="/pages/">Pages</a></li>
+            <li>
+              <a href="/teams/">Teams</a>
+              <ul id='menu_teams'>
+                <li><a href="/invitations/">Invitations</a>
+                  <ul>
+                    <li><a href="/invitations/#create-individual-page-invitation">Individual Page</a></li>
+                    <li><a href="/invitations/#create-join-a-team-invitation">Join Team Invitation</a></li>
+                  </ul>
+                </li>
+                <li><a href="/join-requests/">Join Requests</a></li>
+                <li><a href="/members/">Members</a></li>
+              </ul>
+            </li>
+            <li><a href="/users/">Users</a></li>
+            <li><a href="/search/#volunteering-opportunities">Volunteering</a></li>
+
+            <li class='title'>Search &amp; Totals</li>
+            <li><a href="/search/">Search</a></li>
+            <li><a href="/totals/">Totals</a></li>
+
+            <li class='title'>Integration Overviews</li>
+            <li><a href="/oauth-integration/">OAuth Integration</a></li>
+            <li><a href="/webhooks/">Webhooks</a></li>
+            <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
+            <li class='title'>Code Examples</li>
+            
+            <li>
+              Client side integration
+              <ul>
+                <li>Totals
+                  <ul>
+                    <li><a href="/client-side/campaign-totals/">Campaign totals</a></li>
+                    <li><a href="/client-side/page-total/">Page totals</a></li>
+                  </ul>
+                </li>
+                <li><a href="/widgets/">Widgets</a></li>
+
+              </ul>
+            </li>
+            <li class='title'>Reference</li>
+            <li><a href="/console/">API Console</a></li>
+            <li><a href="http://everydayhero.statuspage.io/">Platform Status</a></li>
+            <li id="api-status">API Status: <span class='status down'>Down</span></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    <section class="l--70 m--100 right content">
+      <div class="inner">
+        
+          <h1>Custom Authentication Integration</h1>
+          
+<ul id="markdown-toc">
+  <li><a href="#create-a-new-user--sign-in">Create a new user / Sign in</a></li>
+  <li><a href="#authenticate-a-user--login">Authenticate a user / Login</a></li>
+  <li><a href="#reset-a-user-password">Reset a user password</a></li>
+</ul>
+
+<h2 id="create-a-new-user--sign-in">Create a new user / Sign in</h2>
+
+<p class="info"><strong>Authentication types</strong>: Public OAuth Client ID</p>
+
+<pre><code>POST https://everydayhero.com/api/v2/authentication/sign_up
+</code></pre>
+
+<h3 id="payload">Payload</h3>
+
+<p>user[name] : <em>required</em> <strong>string</strong><br>
+The name of the new user.</p>
+
+<p>user[email] : <em>required</em> <strong>string</strong><br>
+The email of the new user.</p>
+
+<p>user[password] : <em>required</em> <strong>string</strong><br>
+The password of the new user.</p>
+
+<p>user[phone] : <em>required</em> <strong>string</strong><br>
+The phone number of the new user.</p>
+
+<p>country : <em>required</em> <strong>string</strong><br>
+The region of the new user, valid regions: AU, NZ, UK, US, IE.</p>
+
+<p>client_id: <em>required</em> <strong>integer</strong><br>
+The client ID of the OAuth application.</p>
+
+<p>The response will either be 201, 422 or a 404.</p>
+
+<p>If the response is successful, the response will include a user OAuth token,
+along with the user_id. This can be used with the <a href="/users/#get-current-user">user endpoint</a> 
+to fetch the user details.</p>
+
+<h3 id="response">Response</h3>
+
+<p>Success:</p>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"token"</span><span class="o">:</span> <span class="s2">"abc"</span><span class="p">,</span>
+  <span class="s2">"user_id"</span><span class="o">:</span> <span class="mi">123</span>
+<span class="p">}</span></code></pre>
+
+<p>If the request failures, a hash of errors will be returned.
+If the user tries to sign up with an existing email, the API will respond with a success if the provided password matches,
+if not, a 422 with an related error will be returned.
+A 404 will be returned if a country, or client_id is mising.</p>
+
+<p>Failure:</p>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"error"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"message"</span><span class="o">:</span> <span class="s2">"Validation failed"</span><span class="p">,</span>
+    <span class="s2">"errors"</span><span class="o">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">"field"</span><span class="o">:</span> <span class="s2">"email"</span><span class="p">,</span>
+        <span class="s2">"code"</span><span class="o">:</span> <span class="s2">"invalid"</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="authenticate-a-user--login">Authenticate a user / Login</h2>
+
+<p class="info"><strong>Authentication types</strong>: Public OAuth Client ID</p>
+
+<pre><code>POST https://everydayhero.com/api/v2/authentication/sign_in
+</code></pre>
+
+<h3 id="payload-1">Payload</h3>
+
+<p>user[email] : <em>required</em> <strong>string</strong><br>
+The email of the user.</p>
+
+<p>user[password] : <em>required</em> <strong>string</strong><br>
+The password of the user.</p>
+
+<p>client_id: <em>required</em> <strong>integer</strong><br>
+The client ID of the OAuth application.</p>
+
+<p>The response will either be 200 or 404.</p>
+
+<p>If the response is successful, the response will include a user OAuth token,
+along with the user_id. This can be used with the <a href="/users/#get-current-user">user endpoint</a> 
+to fetch the user details.
+The response will be a 404 if the user details are incorrect, or the client_id is missing.</p>
+
+<h3 id="response-1">Response</h3>
+
+<p>Success:</p>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"token"</span><span class="o">:</span> <span class="s2">"abc"</span><span class="p">,</span>
+  <span class="s2">"user_id"</span><span class="o">:</span> <span class="mi">123</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="reset-a-user-password">Reset a user password</h2>
+
+<p class="info"><strong>Authentication types</strong>: Public OAuth Client ID</p>
+
+<p>This API endpoint will trigger a password reset email for the specified user.</p>
+
+<pre><code>POST https://everydayhero.com/api/v2/authentication/reset_password
+</code></pre>
+
+<h3 id="payload-2">Payload</h3>
+
+<p>user[email] : <em>required</em> <strong>string</strong><br>
+The email of the user.</p>
+
+<p>user[password] : <em>required</em> <strong>string</strong><br>
+The password of the user.</p>
+
+<p>client_id: <em>required</em> <strong>integer</strong><br>
+The client ID of the OAuth application.</p>
+
+<p>The response will either be 204 or 404.</p>
+
+<p>If the response is successful, the response will be a 204 no-content.
+The response will be a 404 if the user email is invalid, or the client_id is missing.</p>
+
+        
+      </div>
+    </section>
+  </section>
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/console.js"></script>
+  <script src="/javascripts/purl.js"></script>
+  <script src="/javascripts/app.js"></script>
+</body>
+</html>

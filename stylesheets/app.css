@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: helvetica, arial, sans-serif; }
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif; }
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -30,13 +30,13 @@ a:hover {
   color: #021921; }
 
 h1, .h1 {
-  font-size: 2.5em; }
-
-h2, .h2 {
   font-size: 1.9em; }
 
-h3, .h3 {
+h2, .h2 {
   font-size: 1.5em; }
+
+h3, .h3 {
+  font-size: 1.3em; }
 
 h4, .h4 {
   font-size: 1.2em; }
@@ -100,7 +100,7 @@ h4, .h4 {
   .header h1, .header .h1 {
     font-size: 16px;
     color: white;
-    font-family: helvetica, arial, sans-serif;
+    font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
     margin-left: 10px; }
 
 .section, section, .aside, aside {
@@ -133,7 +133,8 @@ h4, .h4 {
 .main p {
   margin: 15px 0;
   font-size: 15px;
-  line-height: 24px; }
+  line-height: 24px;
+  color: #6B6E6C; }
 
 .main li {
   font-size: 15px;
@@ -142,7 +143,7 @@ h4, .h4 {
 .content {
   background: white; }
   .content h2, .content .h2 {
-    margin-top: 40px;
+    margin-top: 20px;
     padding-top: 20px;
     border-top: 1px solid #dbdbdb; }
   .content .inner {
