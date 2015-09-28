@@ -9,7 +9,7 @@ title: Custom Authentication Integration
 
 <p class='info'><strong>Authentication types</strong>: Public OAuth Client ID</p>
 
-    POST https://everydayhero-staging.com/api/v2/authentication/sign_up
+    POST https://everydayhero.com/api/v2/authentication/sign_up
 
 ### Payload
 
@@ -70,7 +70,7 @@ Failure:
 
 <p class='info'><strong>Authentication types</strong>: Public OAuth Client ID</p>
 
-    POST https://everydayhero-staging.com/api/v2/authentication/sign_in
+    POST https://everydayhero.com/api/v2/authentication/sign_in
 
 ### Payload
 
@@ -106,7 +106,7 @@ Success:
 
 This API endpoint will trigger a password reset email for the specified user.
 
-    POST https://everydayhero-staging.com/api/v2/authentication/reset_password
+    POST https://everydayhero.com/api/v2/authentication/reset_password
 
 ### Payload
 
