@@ -114,6 +114,9 @@ The `id` of the campaign to create the page for.
 <p class='info'>campaign_id is only required if OAuth User Token authentication is being used, otherwise the registered application's campaign will be used.</p>
 
 
+image : _optional_ **string** <br/>
+The URL of the image we want to upload as the page's default image.
+
 name : _optional_ **string**<br/>
 The desired name for your new supporter page. Defaults to the user's preferred name.
 
