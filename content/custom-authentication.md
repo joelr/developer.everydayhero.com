@@ -11,6 +11,9 @@ title: Custom Authentication Integration
 
     POST https://everydayhero.com/api/v2/authentication/sign_up
 
+
+Using this API you have to ensure that users have agreed to the everydayhero Terms of Service ([AU](https://everydayhero.com/au/terms), [NZ](https://everydayhero.com/nz/terms), [US](https://everydayhero.com/us/terms), [UK](https://everydayhero.com/uk/terms), [IE](https://everydayhero.com/ie/terms)).
+
 ### Payload
 
 user[name] : _required_ **string**<br/>
