@@ -550,11 +550,11 @@ module EverydayHero
       fitness_activities: [
         {
           id: 13342,
-          uid: "strava-421075464",
+          uid: "trailyoursteps-3476623",
           page_id: 297062,
           team_id: 24093,
-          charity_uid: "ie-599",
-          campaign_uid: "ie-0",
+          charity_uid: "au-599",
+          campaign_uid: "au-0",
           type: "bike",
           virtual: true,
           manual: false,
@@ -586,8 +586,8 @@ module EverydayHero
           duration_in_seconds: 1351500,
           page: {
             id: 274309,
-            name: "AutoTest0001 Page Deux for Stay in Bed Day 2013",
-            url: "https://thisisaverylongsubdomainforstayinbedday2013.everydayhero-staging.com/au/kgsdk934",
+            name: "Sam's Page",
+            url: "https://give.everydayhero.com/au/samantha",
             target_cents: 58100,
             charity_name: "Australian Mitochondrial Disease Foundation",
             image: {
