@@ -55,7 +55,7 @@ The page number to return.
 
 ### Example
 
-    https://everydayhero.com/api/v2/search/fitness_activities.json?campaign_id=ie-0
+    https://everydayhero.com/api/v2/search/fitness_activities.json?campaign_id=au-0
 
 ### Response
 
@@ -79,7 +79,7 @@ calories. Default: distance_in_meters
 
 ### Example
 
-    https://everydayhero.com/api/v2/search/fitness_activities_totals.json?campaign_id=ie-0&type=bike&group_by=page
+    https://everydayhero.com/api/v2/search/fitness_activities_totals.json?campaign_id=au-0&type=bike&group_by=pages
 
 ### Response
 
