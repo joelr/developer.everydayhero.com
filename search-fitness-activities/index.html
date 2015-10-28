@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>everydayhero API: Search Fitness Activities</title>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/stylesheets/pygments.css">
+  <link rel="stylesheet" href="/stylesheets/app.css">
+  <!--[if lt IE 9]>
+    <script src="/javascripts/html5shiv-printshiv.js"></script>
+  <![endif]-->
+</head>
+<body id=''>
+  <header class="header top a--100">
+    <a href="/"><h1>everydayhero: Developer</h1></a>
+  </header>
+  <section class="main center">
+    <aside class="l--30 m--100 left side-bar">
+      <div class="inner">
+        <nav>
+          <ul>
+            <li><a href="/">Introduction</a></li>
+            <li>
+              <a href="/overview/">Overview</a>
+              <ul id='menu_overview'>
+                <li><a href="/overview/#environments">Environments</a></li>
+                <li><a href="/overview/#schema">Schema</a></li>
+                <li><a href="/overview/#parameters">Parameters</a></li>
+                <li><a href="/overview/#auth-errors">Auth Errors</a></li>
+                <li><a href="/overview/#validation-errors">Validation Errors</a></li>
+                <li><a href="/overview/#http-verbs">HTTP Verbs</a></li>
+                <li><a href="/overview/#pagination">Pagination</a></li>
+                <li><a href="/overview/#caching">Caching</a></li>
+                <li><a href="/rate-limits/">Rate limits</a></li>
+                <li><a href="/glossary/">Glossary</a></li>
+              </ul>
+            </li>
+            <li><a href="/authentication/">Authentication</a></li>
+            
+
+            <li class='title'>Resources</li>
+            <li><a href="/campaigns/">Campaigns</a></li>
+            <li><a href="/charities/">Charities</a></li>
+            <li><a href="/leaderboards/">Leaderboards</a></li>
+            <li><a href="/fitness-activities/">Fitness Activities</a></li>
+            <li><a href="/pages/">Pages</a></li>
+            <li>
+              <a href="/teams/">Teams</a>
+              <ul id='menu_teams'>
+                <li><a href="/invitations/">Invitations</a>
+                  <ul>
+                    <li><a href="/invitations/#create-individual-page-invitation">Individual Page</a></li>
+                    <li><a href="/invitations/#create-join-a-team-invitation">Join Team Invitation</a></li>
+                  </ul>
+                </li>
+                <li><a href="/join-requests/">Join Requests</a></li>
+                <li><a href="/members/">Members</a></li>
+              </ul>
+            </li>
+            <li><a href="/users/">Users</a></li>
+            <li><a href="/search/#volunteering-opportunities">Volunteering</a></li>
+
+            <li class='title'>Search &amp; Totals</li>
+            <li><a href="/search/">Search</a></li>
+            <li><a href="/totals/">Totals</a></li>
+
+            <li class='title'>Integration Overviews</li>
+            <li><a href="/oauth-integration/">OAuth Integration</a></li>
+            <li><a href="/webhooks/">Webhooks</a></li>
+            <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
+            <li class='title'>Code Examples</li>
+            
+            <li>
+              Client side integration
+              <ul>
+                <li>Totals
+                  <ul>
+                    <li><a href="/client-side/campaign-totals/">Campaign totals</a></li>
+                    <li><a href="/client-side/page-total/">Page totals</a></li>
+                  </ul>
+                </li>
+                <li><a href="/widgets/">Widgets</a></li>
+
+              </ul>
+            </li>
+            <li class='title'>Reference</li>
+            <li><a href="/console/">API Console</a></li>
+            <li><a href="http://everydayhero.statuspage.io/">Platform Status</a></li>
+            <li id="api-status">API Status: <span class='status down'>Down</span></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    <section class="l--70 m--100 right content">
+      <div class="inner">
+        
+          <h1>Search Fitness Activities</h1>
+          
+<ul id="markdown-toc">
+  <li><a href="#retreive-a-list-of-fitness-activities">Retreive a list of Fitness Activities</a></li>
+  <li><a href="#retreive-a-fitness-activities-leaderboard">Retreive a Fitness Activities Leaderboard</a></li>
+</ul>
+
+<h2 id="retreive-a-list-of-fitness-activities">Retreive a list of Fitness Activities</h2>
+
+<pre><code>GET https://everydayhero.com/api/v2/search/fitness_activities
+</code></pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<p>charity_id : <em>optional</em> <strong>string</strong> or <strong>Array</strong><br>
+Charity ID, only totals for that the specified Charity will be retrieved.
+An Array of IDs can be provided, eg: charity_id[]=au-1&amp;charity_id[]=au-2</p>
+
+<p>campaign_id : <em>optional</em> <strong>string</strong> or <strong>Array</strong><br>
+Campaign ID, only totals for that the specified Campaign will be retrieved.
+An Array of IDs can be provided, eg: campaign_id[]=au-1&amp;campaign_id[]=au-2</p>
+
+<p>team_id : <em>optional</em> <strong>string</strong><br>
+team_uid : <em>optional</em> <strong>string</strong><br>
+team_page_id : <em>optional</em> <strong>string</strong><br>
+Team ID, only totals for that the specified Team will be retrieved.</p>
+
+<p>start_at : <em>optional</em> <strong>string/date-time</strong><br>
+Start at date, ISO format: “2014-08-20 05:02:13”, filter totals by a range.</p>
+
+<p>end_at : <em>optional</em> <strong>string/date-time</strong><br>
+End at date, ISO format: “2014-08-20 05:02:13”, filter totals by a range.</p>
+
+<p>type : <em>optional</em> <strong>string</strong><br>
+Filter by activity type: e.g. bike, gym, hike, run, sport, swim, walk</p>
+
+<p>include_manual : <em>optional</em> <strong>boolean</strong><br>
+Include manually entered activities. Default: false.</p>
+
+<p>exclude_virtual : <em>optional</em> <strong>boolean</strong><br>
+Exclude virtual activities. Default: false</p>
+
+<p>exclude_non_virtual : <em>optional</em> <strong>boolean</strong><br>
+Exclude non-virtual activities. Default: false</p>
+
+<h4 id="pagination">Pagination</h4>
+
+<p>For more information about pagination, please see the <a href="/overview/#pagination">pagination
+overview</a>.</p>
+
+<p>limit : <em>optional</em> <strong>integer</strong><br>
+The number of items per page.</p>
+
+<p>page : <em>optional</em> <strong>integer</strong><br>
+The page number to return.</p>
+
+<h3 id="example">Example</h3>
+
+<pre><code>https://everydayhero.com/api/v2/search/fitness_activities.json?campaign_id=ie-0
+</code></pre>
+
+<h3 id="response">Response</h3>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"fitness_activities"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">13342</span><span class="p">,</span>
+      <span class="s2">"uid"</span><span class="o">:</span> <span class="s2">"strava-421075464"</span><span class="p">,</span>
+      <span class="s2">"page_id"</span><span class="o">:</span> <span class="mi">297062</span><span class="p">,</span>
+      <span class="s2">"team_id"</span><span class="o">:</span> <span class="mi">24093</span><span class="p">,</span>
+      <span class="s2">"charity_uid"</span><span class="o">:</span> <span class="s2">"ie-599"</span><span class="p">,</span>
+      <span class="s2">"campaign_uid"</span><span class="o">:</span> <span class="s2">"ie-0"</span><span class="p">,</span>
+      <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"bike"</span><span class="p">,</span>
+      <span class="s2">"virtual"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"manual"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"trainer"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"flagged"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"public"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"deleted"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"started_at"</span><span class="o">:</span> <span class="s2">"2015-10-27T01:32:25.000Z"</span><span class="p">,</span>
+      <span class="s2">"coordinate"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"lat"</span><span class="o">:</span> <span class="mf">37.54106</span><span class="p">,</span>
+        <span class="s2">"lon"</span><span class="o">:</span> <span class="o">-</span><span class="mf">77.4341</span>
+      <span class="p">},</span>
+      <span class="s2">"distance_in_meters"</span><span class="o">:</span> <span class="mi">10107</span><span class="p">,</span>
+      <span class="s2">"elevation_in_meters"</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
+      <span class="s2">"calories"</span><span class="o">:</span> <span class="mi">273</span><span class="p">,</span>
+      <span class="s2">"duration_in_seconds"</span><span class="o">:</span> <span class="mi">957</span><span class="p">,</span>
+      <span class="s2">"caption"</span><span class="o">:</span> <span class="s2">"Lunch Ride"</span><span class="p">,</span>
+      <span class="s2">"_score"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"_type"</span><span class="o">:</span> <span class="s2">"fitness_activity"</span><span class="p">,</span>
+      <span class="s2">"_sort"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="mi">1445909545000</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="retreive-a-fitness-activities-leaderboard">Retreive a Fitness Activities Leaderboard</h2>
+
+<pre><code>GET https://everydayhero.com/api/v2/search/fitness_activities_totals
+</code></pre>
+
+<h3 id="parameters-1">Parameters</h3>
+
+<p>Includes all above paramaters as well as</p>
+
+<p>group_by : <em>optional</em> <strong>string</strong><br>
+Group results by pages or teams. Default: pages</p>
+
+<p>sort_by : <em>optional</em> <strong>string</strong><br>
+Sort results by distance_in_meters, duration_in_seconds, elevation_in_meters or
+calories. Default: distance_in_meters</p>
+
+<h3 id="example-1">Example</h3>
+
+<pre><code>https://everydayhero.com/api/v2/search/fitness_activities_totals.json?campaign_id=ie-0&amp;type=bike&amp;group_by=page
+</code></pre>
+
+<h3 id="response-1">Response</h3>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"results"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"count"</span><span class="o">:</span> <span class="mi">374</span><span class="p">,</span>
+      <span class="s2">"calories"</span><span class="o">:</span> <span class="mi">95173</span><span class="p">,</span>
+      <span class="s2">"elevation_in_meters"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"distance_in_meters"</span><span class="o">:</span> <span class="mi">22419600</span><span class="p">,</span>
+      <span class="s2">"duration_in_seconds"</span><span class="o">:</span> <span class="mi">1351500</span><span class="p">,</span>
+      <span class="s2">"page"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"id"</span><span class="o">:</span> <span class="mi">274309</span><span class="p">,</span>
+        <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"AutoTest0001 Page Deux for Stay in Bed Day 2013"</span><span class="p">,</span>
+        <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"https://thisisaverylongsubdomainforstayinbedday2013.everydayhero-staging.com/au/kgsdk934"</span><span class="p">,</span>
+        <span class="s2">"target_cents"</span><span class="o">:</span> <span class="mi">58100</span><span class="p">,</span>
+        <span class="s2">"charity_name"</span><span class="o">:</span> <span class="s2">"Australian Mitochondrial Disease Foundation"</span><span class="p">,</span>
+        <span class="s2">"image"</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">"original_image_url"</span><span class="o">:</span> <span class="s2">"https://d3r0m2twuddj1w.cloudfront.net/assets/pages/images/original/missing-287b7881555195b87fb952fff10d1055.gif"</span><span class="p">,</span>
+          <span class="s2">"tiny_image_url"</span><span class="o">:</span> <span class="s2">"https://d3r0m2twuddj1w.cloudfront.net/assets/pages/images/tiny/missing-86b4014d2c2a8802376800af9035e6f2.gif"</span><span class="p">,</span>
+          <span class="s2">"small_image_url"</span><span class="o">:</span> <span class="s2">"https://d3r0m2twuddj1w.cloudfront.net/assets/pages/images/small/missing-8f1165a727871b3370402cd59ec43690.gif"</span><span class="p">,</span>
+          <span class="s2">"medium_image_url"</span><span class="o">:</span> <span class="s2">"https://d3r0m2twuddj1w.cloudfront.net/assets/pages/images/medium/missing-b2926d047013659ed9e5cb85add1de64.gif"</span><span class="p">,</span>
+          <span class="s2">"large_image_url"</span><span class="o">:</span> <span class="s2">"https://d3r0m2twuddj1w.cloudfront.net/assets/pages/images/large/missing-73dc8fb87713b4c3fd2eba7ba6f3085b.gif"</span><span class="p">,</span>
+          <span class="s2">"extra_large_image_url"</span><span class="o">:</span> <span class="s2">"https://d3r0m2twuddj1w.cloudfront.net/pages/images/extra_large/missing.gif"</span>
+        <span class="p">},</span>
+        <span class="s2">"amount"</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">"cents"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="s2">"currency"</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">"iso_code"</span><span class="o">:</span> <span class="s2">"AUD"</span><span class="p">,</span>
+            <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Australian Dollar"</span><span class="p">,</span>
+            <span class="s2">"symbol"</span><span class="o">:</span> <span class="s2">"$"</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+        
+      </div>
+    </section>
+  </section>
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/console.js"></script>
+  <script src="/javascripts/purl.js"></script>
+  <script src="/javascripts/app.js"></script>
+</body>
+</html>
