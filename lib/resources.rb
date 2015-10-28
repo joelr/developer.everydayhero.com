@@ -545,6 +545,71 @@ module EverydayHero
         },
       ]
     }
+
+    SearchFitnessActivities = {
+      fitness_activities: [
+        {
+          id: 13342,
+          uid: "strava-421075464",
+          page_id: 297062,
+          team_id: 24093,
+          charity_uid: "ie-599",
+          campaign_uid: "ie-0",
+          type: "bike",
+          virtual: true,
+          manual: false,
+          trainer: false,
+          flagged: false,
+          public: true,
+          deleted: false,
+          started_at: "2015-10-27T01:32:25.000Z",
+          coordinate: {lat: 37.54106, lon: -77.4341},
+          distance_in_meters: 10107,
+          elevation_in_meters: 12,
+          calories: 273,
+          duration_in_seconds: 957,
+          caption: "Lunch Ride",
+          _score: nil,
+          _type: "fitness_activity",
+          _sort: [1445909545000]
+        }
+      ]
+    }
+
+    FitnessActivitiesTotals = {
+      results: [
+        {
+          count: 374,
+          calories: 95173,
+          elevation_in_meters: 0,
+          distance_in_meters: 22419600,
+          duration_in_seconds: 1351500,
+          page: {
+            id: 274309,
+            name: "AutoTest0001 Page Deux for Stay in Bed Day 2013",
+            url: "https://thisisaverylongsubdomainforstayinbedday2013.everydayhero-staging.com/au/kgsdk934",
+            target_cents: 58100,
+            charity_name: "Australian Mitochondrial Disease Foundation",
+            image: {
+              original_image_url: "https://d3r0m2twuddj1w.cloudfront.net/assets/pages/images/original/missing-287b7881555195b87fb952fff10d1055.gif",
+              tiny_image_url: "https://d3r0m2twuddj1w.cloudfront.net/assets/pages/images/tiny/missing-86b4014d2c2a8802376800af9035e6f2.gif",
+              small_image_url: "https://d3r0m2twuddj1w.cloudfront.net/assets/pages/images/small/missing-8f1165a727871b3370402cd59ec43690.gif",
+              medium_image_url: "https://d3r0m2twuddj1w.cloudfront.net/assets/pages/images/medium/missing-b2926d047013659ed9e5cb85add1de64.gif",
+              large_image_url: "https://d3r0m2twuddj1w.cloudfront.net/assets/pages/images/large/missing-73dc8fb87713b4c3fd2eba7ba6f3085b.gif",
+              extra_large_image_url: "https://d3r0m2twuddj1w.cloudfront.net/pages/images/extra_large/missing.gif"
+            },
+            amount: {
+              cents: 0,
+              currency: {
+                  iso_code: "AUD",
+                  name: "Australian Dollar",
+                  symbol: "$"
+              }
+            }
+          }
+        }
+      ]
+    }
   end
 end
 
