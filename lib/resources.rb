@@ -612,28 +612,28 @@ module EverydayHero
     }
 
     KeyData = {
-      "id": 1,
-      "name": "test key",
-      "description": "test test",
-      "object_type": "Page"
+      id: 1,
+      name: "test key",
+      description: "test test",
+      object_type: "Page",
     }
 
     Keys = {
-      "keys":[KeyData]
+      keys:[KeyData]
     }
 
     KeyStats = {
-      "count": 10
+      count: 10
     }
 
     MetaData = {
-      "metadata": [
+      metadata: [
         {
-          "type": "Page",
-          "id": 1,
-          "labels": {
-            "constituent_id": 3,
-            "donor_id": 5
+          type: "Page",
+          id: 1,
+          labels: {
+            constituent_id: 3,
+            donor_id: 5
           }
         }
       ]
