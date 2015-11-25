@@ -5,6 +5,12 @@ title: Metadata
 * TOC
 {:toc}
 
+The metadata service allows keys to be specified for object types, and values to
+be specified for specific objects of that type.
+
+There is no traditional authentication required for this service, instead we
+scope the data under the token you provide.
+
 ## List all Keys
 
     GET https://mds.everydayhero.io/api/v1/keys
