@@ -18,8 +18,10 @@ scope the data under the token you provide.
 ### Parameters
 
 type : _required_ **string**<br />
+The object type (Page, Campaign, etc).
 
 token : _required_ **string**<br />
+Scope for the data required.
 
 ### Example
 
@@ -36,12 +38,16 @@ token : _required_ **string**<br />
 ### Parameters
 
 token : _required_ **string**<br/>
+Scope for the data specified.
 
 key : _required_ **string**<br/>
+The key you would like to add for this type.
 
 type : _required_ **string**<br/>
+The object type (Page, Campaign, etc).
 
 description : _required_ **string**<br/>
+Describe what values for this key should represent.
 
 ### Example
 
@@ -65,12 +71,16 @@ description : _required_ **string**<br/>
 ### Parameters
 
 token : _required_ **string**<br/>
+Scope for the data specified.
 
 id : _required_ **integer**<br/>
+ID of the key you would like to update.
 
 key : _required_ **string**<br/>
+The new key name.
 
 description : _required_ **string**<br/>
+The new key description.
 
 ### Example
 
@@ -94,8 +104,10 @@ description : _required_ **string**<br/>
 ### Parameters
 
 token : _required_ **string**<br/>
+Scope for the data specified.
 
 id : _required_ **integer**<br/>
+ID of the key to destroy.
 
 ### Example
 
@@ -114,8 +126,10 @@ id : _required_ **integer**<br/>
 ### Parameters
 
 token : _required_ **string**<br/>
+Scope for the data required.
 
 id : _required_ **integer**<br/>
+ID of the key you would like stats for.
 
 ### Example
 
@@ -132,10 +146,13 @@ id : _required_ **integer**<br/>
 ### Parameters
 
 token : _required_ **string**<br/>
+Scope for the data required.
 
 type : _required_ **string**<br/>
+The object type (Page, Campaign, etc).
 
 ids : _required_ **string**<br/>
+IDs of the objects of the specified type you would like metadata for.
 
 ### Example
 
@@ -152,14 +169,19 @@ ids : _required_ **string**<br/>
 ### Parameters
 
 token : _required_ **string**<br/>
+Scope for the data specified.
 
 type : _required_ **string**<br/>
+The object type (Page, Campaign, etc).
 
 id : _required_ **integer**<br/>
+ID of the object of this type you would like to set a value for.
 
 key : _required_ **string**<br/>
+The key you would like to set a value for.
 
 value : _required_ **string**<br/>
+The value for this key.
 
 ### Example
 
