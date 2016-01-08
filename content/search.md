@@ -95,12 +95,12 @@ will retrieve pages with country code `au` (i.e. Australia).
 type : _optional_ **string**<br />
 Only retrieve pages that match the specified type. For example `team` will retrieve only team pages. Supported values include `all`, `user` and `team`. Defaults to `all`.
 
-q : _optional_ **string**<br/>
-Retrieve pages with `page name` or `supporter name` match or partially match to the specified search string.
+group_value : _optional_ **String/Array**<br/>
+Return pages matching specific page group value, or any of the provided array values.
 
 ### Example
 
-    https://everydayhero.com/api/v2/search/pages?country_code=au&campaign_id=au-321&q=richards
+    https://everydayhero.com/api/v2/search/pages?country_code=au&campaign_id=au-321&q=richards&group_value[]=QLD
 
 ### Response
 

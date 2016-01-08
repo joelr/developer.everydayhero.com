@@ -1,6 +1,10 @@
 ---
-title: Leaderboards
+title: Static Leaderboards
 ---
+
+Static leaderboards are leaderboards that have been manually built within the supporter application.
+
+If you are looking for dynamically generated & filterable leaderboards, see [Dynamic leaderboards](/dynamic-leaderboards/)
 
 * TOC
 {:toc}

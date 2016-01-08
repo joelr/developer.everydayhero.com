@@ -135,6 +135,9 @@ An invitation token to join a team. This invitation was created by the team lead
 gift_aid_eligible : _optional_ **boolean**<br/>
 UK specific fundraising criteria.
 
+group_values : _optional_ **Hash/Array**<br/>
+If a campaign has group values available, these can be set, see the payload below for an example.
+
 ### Example
 
 <%= json \
@@ -146,7 +149,11 @@ UK specific fundraising criteria.
   gift_aid_eligible: nil,
   uid: 1,
   charity_id: 'au-1',
-  token: '1234567890'
+  token: '1234567890',
+  group_values: {
+    school: 'Abc',
+    state: 'QLD'
+  }
 %>
 
 ### Response
