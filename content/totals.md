@@ -29,6 +29,11 @@ Filter by donation type: peer_to_peer, charity, appeal, recurring, offline_donat
 country_code : _optional_ **string**<br/>
 Filter by region, au, uk, us, nz.
 
+group_value : _optional_ **String/Array**<br/>
+Return donations matching specific page group value, or any of the provided array values.
+An Array of values can be provided, eg: group_value[]=QLD&group_value[]=ABC
+
+
 ### Response
 
 Top level donation items include all totals.

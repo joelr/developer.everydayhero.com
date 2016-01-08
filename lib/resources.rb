@@ -546,6 +546,39 @@ module EverydayHero
       ]
     }
 
+    PagesTotals = {
+      results: [
+        {
+          count: 123,
+          amount_cents: 1234,
+          gift_aid_amount_cents: 1234,
+          page: {
+            id: 274309,
+            name: "Sam's Page",
+            url: "https://give.everydayhero.com/au/samantha",
+            target_cents: 58100,
+            charity_name: "Australian Mitochondrial Disease Foundation",
+            image: {
+              original_image_url: "https://d3r0m2twuddj1w.cloudfront.net/assets/pages/images/original/missing-287b7881555195b87fb952fff10d1055.gif",
+              tiny_image_url: "https://d3r0m2twuddj1w.cloudfront.net/assets/pages/images/tiny/missing-86b4014d2c2a8802376800af9035e6f2.gif",
+              small_image_url: "https://d3r0m2twuddj1w.cloudfront.net/assets/pages/images/small/missing-8f1165a727871b3370402cd59ec43690.gif",
+              medium_image_url: "https://d3r0m2twuddj1w.cloudfront.net/assets/pages/images/medium/missing-b2926d047013659ed9e5cb85add1de64.gif",
+              large_image_url: "https://d3r0m2twuddj1w.cloudfront.net/assets/pages/images/large/missing-73dc8fb87713b4c3fd2eba7ba6f3085b.gif",
+              extra_large_image_url: "https://d3r0m2twuddj1w.cloudfront.net/pages/images/extra_large/missing.gif"
+            },
+            amount: {
+              cents: 0,
+              currency: {
+                  iso_code: "AUD",
+                  name: "Australian Dollar",
+                  symbol: "$"
+              }
+            }
+          }
+        }
+      ]
+    }
+
     SearchFitnessActivities = {
       fitness_activities: [
         {
