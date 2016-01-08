@@ -41,7 +41,6 @@
             <li class='title'>Resources</li>
             <li><a href="/campaigns/">Campaigns</a></li>
             <li><a href="/charities/">Charities</a></li>
-            <li><a href="/leaderboards/">Leaderboards</a></li>
             <li><a href="/fitness-activities/">Fitness Activities</a></li>
             <li><a href="/metadata/">Metadata</a></li>
             <li><a href="/pages/">Pages</a></li>
@@ -60,7 +59,10 @@
             </li>
             <li><a href="/users/">Users</a></li>
             <li><a href="/search/#volunteering-opportunities">Volunteering</a></li>
-
+            <li class='title'>Leaderboards</li>
+            <li><a href="/leaderboards/">Static Page Leaderboards</a></li>
+            <li><a href="/dynamic-leaderboards/">Dynamic Page Leaderboards</a></li>
+            <li><a href="/search-fitness-activities/">Fitness Activity Leaderboards</a></li>
             <li class='title'>Search &amp; Totals</li>
             <li><a href="/search/">Search</a></li>
             <li><a href="/totals/">Totals</a></li>
@@ -360,6 +362,9 @@ An invitation token to join a team. This invitation was created by the team lead
 <p>gift_aid_eligible : <em>optional</em> <strong>boolean</strong><br>
 UK specific fundraising criteria.</p>
 
+<p>group_values : <em>optional</em> <strong>Hash/Array</strong><br>
+If a campaign has group values available, these can be set, see the payload below for an example.</p>
+
 <h3 id="example-3">Example</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
@@ -371,7 +376,11 @@ UK specific fundraising criteria.</p>
   <span class="s2">"gift_aid_eligible"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
   <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
   <span class="s2">"charity_id"</span><span class="o">:</span> <span class="s2">"au-1"</span><span class="p">,</span>
-  <span class="s2">"token"</span><span class="o">:</span> <span class="s2">"1234567890"</span>
+  <span class="s2">"token"</span><span class="o">:</span> <span class="s2">"1234567890"</span><span class="p">,</span>
+  <span class="s2">"group_values"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"school"</span><span class="o">:</span> <span class="s2">"Abc"</span><span class="p">,</span>
+    <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"QLD"</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
 <h3 id="response-2">Response</h3>

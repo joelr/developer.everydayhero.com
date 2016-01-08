@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>everydayhero API: Search Fitness Activities</title>
+  <title>everydayhero API: Dynamic Leaderboards</title>
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/stylesheets/pygments.css">
   <link rel="stylesheet" href="/stylesheets/app.css">
@@ -97,39 +97,55 @@
     <section class="l--70 m--100 right content">
       <div class="inner">
         
-          <h1>Search Fitness Activities</h1>
+          <h1>Dynamic Leaderboards</h1>
           
-<h2 id="fitness-activities-leaderboard">Fitness Activities Leaderboard</h2>
+<h2 id="leaderboard-of-pages-sorted-by-donation-value">Leaderboard of pages, sorted by donation value</h2>
 
-<pre><code>GET https://everydayhero.com/api/v2/search/fitness_activities_totals
+<pre><code>GET https://everydayhero.com/api/v2/search/pages_totals
 </code></pre>
 
 <h3 id="parameters">Parameters</h3>
 
-<p>Includes all above paramaters as well as</p>
+<p>charity_id : <em>optional</em> <strong>string</strong> or <strong>Array</strong><br>
+Charity ID, only totals for that the specified Charity will be retrieved.
+An Array of IDs can be provided, eg: charity_id[]=au-1&amp;charity_id[]=au-2</p>
 
-<p>group_by : <em>optional</em> <strong>string</strong><br>
-Group results by pages or teams. Default: pages</p>
+<p>campaign_id : <em>optional</em> <strong>string</strong> or <strong>Array</strong><br>
+Campaign ID, only totals for that the specified Campaign will be retrieved.
+An Array of IDs can be provided, eg: campaign_id[]=au-1&amp;campaign_id[]=au-2</p>
 
-<p>sort_by : <em>optional</em> <strong>string</strong><br>
-Sort results by distance_in_meters, duration_in_seconds, elevation_in_meters or
-calories. Default: distance_in_meters</p>
+<p>start_at : <em>optional</em> <strong>string/date-time</strong><br>
+Start at date, ISO format: “2014-08-20 05:02:13”, filter totals by a range.</p>
+
+<p>end_at : <em>optional</em> <strong>string/date-time</strong><br>
+End at date, ISO format: “2014-08-20 05:02:13”, filter totals by a range.</p>
+
+<p>group_value : <em>optional</em> <strong>String/Array</strong><br>
+Return donations matching specific page group value, or any of the provided array values.
+An Array of values can be provided, eg: group_value[]=QLD&amp;group_value[]=ABC</p>
+
+<h4 id="pagination">Pagination</h4>
+
+<p>For more information about pagination, please see the <a href="/overview/#pagination">pagination
+overview</a>.</p>
+
+<p>limit : <em>optional</em> <strong>integer</strong><br>
+The number of items per page.</p>
+
+<p>page : <em>optional</em> <strong>integer</strong><br>
+The page number to return.</p>
 
 <h3 id="example">Example</h3>
 
-<pre><code>https://everydayhero.com/api/v2/search/fitness_activities_totals.json?campaign_id=au-0&amp;type=bike&amp;group_by=pages
+<pre><code>https://everydayhero.com/api/v2/search/pages_totals.json?campaign_id=au-0
 </code></pre>
-
-<h3 id="response">Response</h3>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"results"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"count"</span><span class="o">:</span> <span class="mi">374</span><span class="p">,</span>
-      <span class="s2">"calories"</span><span class="o">:</span> <span class="mi">95173</span><span class="p">,</span>
-      <span class="s2">"elevation_in_meters"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"distance_in_meters"</span><span class="o">:</span> <span class="mi">22419600</span><span class="p">,</span>
-      <span class="s2">"duration_in_seconds"</span><span class="o">:</span> <span class="mi">1351500</span><span class="p">,</span>
+      <span class="s2">"count"</span><span class="o">:</span> <span class="mi">123</span><span class="p">,</span>
+      <span class="s2">"amount_cents"</span><span class="o">:</span> <span class="mi">1234</span><span class="p">,</span>
+      <span class="s2">"gift_aid_amount_cents"</span><span class="o">:</span> <span class="mi">1234</span><span class="p">,</span>
       <span class="s2">"page"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"id"</span><span class="o">:</span> <span class="mi">274309</span><span class="p">,</span>
         <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Sam's Page"</span><span class="p">,</span>

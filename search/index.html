@@ -41,7 +41,6 @@
             <li class='title'>Resources</li>
             <li><a href="/campaigns/">Campaigns</a></li>
             <li><a href="/charities/">Charities</a></li>
-            <li><a href="/leaderboards/">Leaderboards</a></li>
             <li><a href="/fitness-activities/">Fitness Activities</a></li>
             <li><a href="/metadata/">Metadata</a></li>
             <li><a href="/pages/">Pages</a></li>
@@ -60,7 +59,10 @@
             </li>
             <li><a href="/users/">Users</a></li>
             <li><a href="/search/#volunteering-opportunities">Volunteering</a></li>
-
+            <li class='title'>Leaderboards</li>
+            <li><a href="/leaderboards/">Static Page Leaderboards</a></li>
+            <li><a href="/dynamic-leaderboards/">Dynamic Page Leaderboards</a></li>
+            <li><a href="/search-fitness-activities/">Fitness Activity Leaderboards</a></li>
             <li class='title'>Search &amp; Totals</li>
             <li><a href="/search/">Search</a></li>
             <li><a href="/totals/">Totals</a></li>
@@ -278,12 +280,12 @@ will retrieve pages with country code <code>au</code> (i.e. Australia).</p>
 <p>type : <em>optional</em> <strong>string</strong><br>
 Only retrieve pages that match the specified type. For example <code>team</code> will retrieve only team pages. Supported values include <code>all</code>, <code>user</code> and <code>team</code>. Defaults to <code>all</code>.</p>
 
-<p>q : <em>optional</em> <strong>string</strong><br>
-Retrieve pages with <code>page name</code> or <code>supporter name</code> match or partially match to the specified search string.</p>
+<p>group_value : <em>optional</em> <strong>String/Array</strong><br>
+Return pages matching specific page group value, or any of the provided array values.</p>
 
 <h3 id="example-2">Example</h3>
 
-<pre><code>https://everydayhero.com/api/v2/search/pages?country_code=au&amp;campaign_id=au-321&amp;q=richards
+<pre><code>https://everydayhero.com/api/v2/search/pages?country_code=au&amp;campaign_id=au-321&amp;q=richards&amp;group_value[]=QLD
 </code></pre>
 
 <h3 id="response-2">Response</h3>
