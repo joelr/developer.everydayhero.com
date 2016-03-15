@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>EverydayHero API: Custom Attributes</title>
+  <title>everydayhero API: Campaigns Groups</title>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/stylesheets/pygments.css">
   <link rel="stylesheet" href="/stylesheets/app.css">
   <!--[if lt IE 9]>
@@ -39,8 +40,10 @@
 
             <li class='title'>Resources</li>
             <li><a href="/campaigns/">Campaigns</a></li>
+            <li><a href="/campaign-groups/"> - Groups</a></li>
             <li><a href="/charities/">Charities</a></li>
-            <li><a href="/leaderboards/">Leaderboards</a></li>
+            <li><a href="/fitness-activities/">Fitness Activities</a></li>
+            <li><a href="/metadata/">Metadata</a></li>
             <li><a href="/pages/">Pages</a></li>
             <li>
               <a href="/teams/">Teams</a>
@@ -57,7 +60,10 @@
             </li>
             <li><a href="/users/">Users</a></li>
             <li><a href="/search/#volunteering-opportunities">Volunteering</a></li>
-
+            <li class='title'>Leaderboards</li>
+            <li><a href="/leaderboards/">Static Page Leaderboards</a></li>
+            <li><a href="/dynamic-leaderboards/">Dynamic Page Leaderboards</a></li>
+            <li><a href="/search-fitness-activities/">Fitness Activity Leaderboards</a></li>
             <li class='title'>Search &amp; Totals</li>
             <li><a href="/search/">Search</a></li>
             <li><a href="/totals/">Totals</a></li>
@@ -92,24 +98,44 @@
     <section class="l--70 m--100 right content">
       <div class="inner">
         
-          <h1>Custom Attributes</h1>
+          <h1>Campaigns Groups</h1>
           
-<h2 id="campaigns">Campaigns</h2>
+<p>Campaign groups are attributes that as assigned to a page on creation (and can be edited later if required.).</p>
 
-<p>donate_thank_you_url</p>
+<p>Groups are <em>required</em> on page creation where groups exist.</p>
 
-<p>all_charities</p>
+<h2 id="list-groups-for-campaign-smallpublicsmall">List Groups for campaign <small>(public)</small>
+</h2>
 
-<p>skip_team_approval_request</p>
+<p>Example request to fetch groups for campaign au-1234:</p>
 
-<p>enable_recording_offline_donations_for_supporter / enable_recording_offline_donations_for_admin_only</p>
+<pre><code>GET https://everydayhero.com/api/v2/campaigns/au-1234/groups
+</code></pre>
 
-<h2 id="charities">Charities</h2>
+<h2 id="response">Response</h2>
 
-<p>dashboard_background</p>
+<p>The response for campaign groups returns an array of available groups, along with a label, key and array of values.</p>
 
-<p>BAU-less</p>
+<p>The key and an associated value should be used when creating a page for the specific campaign, see <a href="/pages/#create-an-individual-page">page creation</a>.</p>
 
+<p>If the campaign has no available groups, the response will be an empty array.</p>
+
+<h3 id="example-response">Example response</h3>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"campaign_groups"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">123</span><span class="p">,</span>
+      <span class="s2">"key"</span><span class="o">:</span> <span class="s2">"school"</span><span class="p">,</span>
+      <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"School"</span><span class="p">,</span>
+      <span class="s2">"values"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"A school"</span><span class="p">,</span>
+        <span class="s2">"Another school"</span><span class="p">,</span>
+        <span class="s2">"Another place"</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
 
         
       </div>
