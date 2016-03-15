@@ -111,6 +111,22 @@ module EverydayHero
       }
     }
 
+    CampaignGroups = {
+      campaign_groups: [
+        {
+          id: 123,
+          key: 'school',
+          label: 'School',
+          values: [
+            'A school',
+            'Another school',
+            'Another place'
+          ]
+
+        }
+      ]
+    }
+
     Campaign = {
       campaign: CampaignData
     }
