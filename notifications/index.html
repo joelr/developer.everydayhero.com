@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>EverydayHero API: Custom Attributes</title>
+  <title>everydayhero API: Notifications & Alerts</title>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/stylesheets/pygments.css">
   <link rel="stylesheet" href="/stylesheets/app.css">
   <!--[if lt IE 9]>
     <script src="/javascripts/html5shiv-printshiv.js"></script>
   <![endif]-->
 </head>
-<body id=''>
+<body id='notifications'>
   <header class="header top a--100">
     <a href="/"><h1>everydayhero: Developer</h1></a>
   </header>
@@ -39,8 +40,10 @@
 
             <li class='title'>Resources</li>
             <li><a href="/campaigns/">Campaigns</a></li>
+            <li><a href="/campaign-groups/"> - Groups</a></li>
             <li><a href="/charities/">Charities</a></li>
-            <li><a href="/leaderboards/">Leaderboards</a></li>
+            <li><a href="/fitness-activities/">Fitness Activities</a></li>
+            <li><a href="/metadata/">Metadata</a></li>
             <li><a href="/pages/">Pages</a></li>
             <li>
               <a href="/teams/">Teams</a>
@@ -57,13 +60,17 @@
             </li>
             <li><a href="/users/">Users</a></li>
             <li><a href="/search/#volunteering-opportunities">Volunteering</a></li>
-
+            <li class='title'>Leaderboards</li>
+            <li><a href="/leaderboards/">Static Page Leaderboards</a></li>
+            <li><a href="/dynamic-leaderboards/">Dynamic Page Leaderboards</a></li>
+            <li><a href="/search-fitness-activities/">Fitness Activity Leaderboards</a></li>
             <li class='title'>Search &amp; Totals</li>
             <li><a href="/search/">Search</a></li>
             <li><a href="/totals/">Totals</a></li>
 
             <li class='title'>Integration Overviews</li>
             <li><a href="/oauth-integration/">OAuth Integration</a></li>
+            <li><a href="/notifications/">Alerts/Notifications</a></li>
             <li><a href="/webhooks/">Webhooks</a></li>
             <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
             <li class='title'>Code Examples</li>
@@ -92,24 +99,14 @@
     <section class="l--70 m--100 right content">
       <div class="inner">
         
-          <h1>Custom Attributes</h1>
-          
-<h2 id="campaigns">Campaigns</h2>
+          <h1>Notifications & Alerts</h1>
+          <p>If you have created an <a href="/oauth-integration/#creating-an-oauth-application">OAuth Application</a>, or have a RegisteredApplication, you will have the ability to receive notifications &amp; errors for failed API requests.</p>
 
-<p>donate_thank_you_url</p>
+<h3 id="usage">Usage</h3>
 
-<p>all_charities</p>
+<p>If you have created an OAuthApplication, you can edit the notification email address under the <a href="/oauth-integration/#creating-an-oauth-application">OAuth Application Management</a> screen. If you are using a RegisteredApplication, you will need to request the email be set via Professional Services</p>
 
-<p>skip_team_approval_request</p>
-
-<p>enable_recording_offline_donations_for_supporter / enable_recording_offline_donations_for_admin_only</p>
-
-<h2 id="charities">Charities</h2>
-
-<p>dashboard_background</p>
-
-<p>BAU-less</p>
-
+<p>Notifications will be sent for <code>unprocessable_entity, forbidden and bad_request</code> responses. Details of the request, along with authentication, payload and error details will be provided within the email. Some errors are not able to be raised via email if for example, the JSON payload is unprocessable, or the API authentication has failed.</p>
 
         
       </div>
