@@ -101,6 +101,12 @@ Title/caption for activity.
 distance_in_meters : _optional_  **integer**<br/>
 Distance covered for activity, in meters.
 
+distance : _optional_  **integer**<br/>
+Distance covered for activity, in any distance format. Requires **unit** attributes to be sent<br/>
+
+unit : _optional_  **string**<br/>
+Unit for distance, e.g.: meter, foot, step, yard, mile, km. Requires **distance** attribute to be sent.<br/>
+
 calories : _optional_ **integer**<br/>
 kcals total burned per activity, e.g. ~600 for a 10km run.
 
