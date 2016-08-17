@@ -82,8 +82,6 @@ redirects to
 
     https://everydayhero.com/api/v2/pages/877323
 
-[View demo in API console](/console/?query=pages/1.json)
-
 ### Example
 
     https://everydayhero.com/api/v2/pages/1.json

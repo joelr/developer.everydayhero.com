@@ -41,8 +41,6 @@ Exclude embedding of page IDs, to reduce payload size. Default: false.
 
     GET https://everydayhero.com/api/v2/campaigns/:id
 
-[View demo in API console](/console/?query=campaigns/au-0.json) 
-
 ### Example
 
     https://everydayhero.com/api/v2/campaigns/au-1.json

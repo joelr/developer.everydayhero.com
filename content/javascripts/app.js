@@ -1,14 +1,4 @@
 $(function() {
-  $('#run').click(function() {
-    load_api_content($('#path').val());
-  });
-
-  var query = $.url().param('query');
-  if (query) {
-    $('#path').val(query);
-    load_api_content(query);
-  }
-
   function heightCheck() {
     var sideBarHeight = $('.side-bar').height();
 
