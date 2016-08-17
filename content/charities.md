@@ -6,8 +6,6 @@ title: Charities
 
     GET https://everydayhero.com/api/v2/charities
 
-[View demo in API console](/console/?query=charities.json)
-
 ### Parameters
 
 campaign_ids : _optional_ **string**<br/>
@@ -35,8 +33,6 @@ The page number to return.
 ## View a single Charity <small>(public)</small>
 
     GET https://everydayhero.com/api/v2/charities/:id
-
-[View demo in API console](/console/?query=charities/au-8.json)
 
 ### Example
 
