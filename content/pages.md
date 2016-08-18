@@ -45,9 +45,6 @@ end_created_at : _optional_ **string**<br/>
 Only retrieve pages that have been created before the supplied datetime.
 Format, 'YYYY-MM-DDThh:mm:ssZ', timestamp optional
 
-skip_notification: _optional_ **boolean**<br/>
-This skips sending the everydayhero page creation email if set as `true`, defaults to `false`.
-
 #### Pagination
 
 For more information about pagination, please see the [pagination
@@ -138,6 +135,9 @@ UK specific fundraising criteria.
 
 group_values : _optional_ **Hash/Array**<br/>
 If a campaign has group values available, these can be set, see the payload below for an example.
+
+skip_notification: _optional_ **boolean**<br/>
+This skips sending the everydayhero page creation email if set as `true`, defaults to `false`.
 
 ### Example
 
