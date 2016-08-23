@@ -247,15 +247,6 @@ dt {
 
   .s--50 {
     width: 50%; } }
-.status {
-  font-weight: bold; }
-
-.available {
-  color: #009933; }
-
-.down {
-  color: #CC0000; }
-
 .main .content ul li {
   margin-left: 20px; }
 

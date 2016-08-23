@@ -36,7 +36,7 @@
               </ul>
             </li>
             <li><a href="/authentication/">Authentication</a></li>
-            
+
 
             <li class='title'>Resources</li>
             <li><a href="/campaigns/">Campaigns</a></li>
@@ -74,7 +74,7 @@
             <li><a href="/webhooks/">Webhooks</a></li>
             <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
             <li class='title'>Code Examples</li>
-            
+
             <li>
               Client side integration
               <ul>
@@ -89,9 +89,7 @@
               </ul>
             </li>
             <li class='title'>Reference</li>
-            <li><a href="/console/">API Console</a></li>
             <li><a href="http://everydayhero.statuspage.io/">Platform Status</a></li>
-            <li id="api-status">API Status: <span class='status down'>Down</span></li>
           </ul>
         </nav>
       </div>
@@ -235,6 +233,12 @@ Title/caption for activity.</p>
 <p>distance_in_meters : <em>optional</em>  <strong>integer</strong><br>
 Distance covered for activity, in meters.</p>
 
+<p>distance : <em>optional</em>  <strong>integer</strong><br>
+Distance covered for activity, in any distance format. Requires <strong>unit</strong> attributes to be sent<br></p>
+
+<p>unit : <em>optional</em>  <strong>string</strong><br>
+Unit for distance, e.g.: meter, foot, step, yard, mile, km. Requires <strong>distance</strong> attribute to be sent.<br></p>
+
 <p>calories : <em>optional</em> <strong>integer</strong><br>
 kcals total burned per activity, e.g. ~600 for a 10km run.</p>
 
@@ -293,8 +297,6 @@ https://everydayhero.com/api/v2/fitness_activities.json
     </section>
   </section>
   <script src="/javascripts/jquery.js"></script>
-  <script src="/javascripts/console.js"></script>
-  <script src="/javascripts/purl.js"></script>
   <script src="/javascripts/app.js"></script>
 </body>
 </html>
