@@ -127,6 +127,10 @@ An Array of IDs can be provided, eg: charity_id[]=au-1&amp;charity_id[]=au-2</p>
 Campaign ID, only totals for that the specified Campaign will be retrieved.
 An Array of IDs can be provided, eg: campaign_id[]=au-1&amp;campaign_id[]=au-2</p>
 
+<p>page_id : <em>optional</em> <strong>string</strong> or <strong>Array</strong><br>
+Page ID, only totals for the specified Pages will be retrieved.
+An Array of IDs can be provided, eg: page_id[]=111&amp;page_id[]=456</p>
+
 <p>team_id : <em>optional</em> <strong>string</strong><br>
 team_uid : <em>optional</em> <strong>string</strong><br>
 team_page_id : <em>optional</em> <strong>string</strong><br>
@@ -220,6 +224,15 @@ Fitness activity type, supported types: bike, gym, hike, run, swim, walk and spo
 
 <p>duration_in_seconds : <em>required</em> <strong>integer</strong><br>
 Duration of activity, in seconds.</p>
+
+<p>manual : <em>optional</em> <strong>boolean</strong><br>
+Manually logged activity, should be true if this manually user created activity, false if it is logged via an application.<br></p>
+
+<p>virtual : <em>optional</em> <strong>boolean</strong><br>
+Virtually logged activity, should be true if this is via a virtual app, eg Zwift, false for most cases.<br></p>
+
+<p>trainer : <em>optional</em> <strong>boolean</strong><br>
+Trainer logged activity, should be true if this is via a cycling turbo trainer, false for most cases.<br></p>
 
 <p>public : <em>required</em> <strong>boolean</strong><br>
 Must be true for the fitness activity to be visible.</p>

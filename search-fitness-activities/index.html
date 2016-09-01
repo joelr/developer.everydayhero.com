@@ -106,6 +106,41 @@
 
 <h3 id="parameters">Parameters</h3>
 
+<p>charity_id : <em>optional</em> <strong>string</strong> or <strong>Array</strong><br>
+Charity ID, only totals for that the specified Charity will be retrieved.
+An Array of IDs can be provided, eg: charity_id[]=au-1&amp;charity_id[]=au-2</p>
+
+<p>campaign_id : <em>optional</em> <strong>string</strong> or <strong>Array</strong><br>
+Campaign ID, only totals for that the specified Campaign will be retrieved.
+An Array of IDs can be provided, eg: campaign_id[]=au-1&amp;campaign_id[]=au-2</p>
+
+<p>page_id : <em>optional</em> <strong>string</strong> or <strong>Array</strong><br>
+Page ID, only totals for the specified Pages will be retrieved.
+An Array of IDs can be provided, eg: page_id[]=111&amp;page_id[]=456</p>
+
+<p>team_id : <em>optional</em> <strong>string</strong><br>
+team_uid : <em>optional</em> <strong>string</strong><br>
+team_page_id : <em>optional</em> <strong>string</strong><br>
+Team ID, only totals for that the specified Team will be retrieved.</p>
+
+<p>start_at : <em>optional</em> <strong>string/date-time</strong><br>
+Start at date, ISO format: “2014-08-20 05:02:13”, filter totals by a range.</p>
+
+<p>end_at : <em>optional</em> <strong>string/date-time</strong><br>
+End at date, ISO format: “2014-08-20 05:02:13”, filter totals by a range.</p>
+
+<p>type : <em>optional</em> <strong>string</strong><br>
+Filter by activity type: e.g. bike, gym, hike, run, sport, swim, walk</p>
+
+<p>include_manual : <em>optional</em> <strong>boolean</strong><br>
+Include manually entered activities. Default: false.</p>
+
+<p>exclude_virtual : <em>optional</em> <strong>boolean</strong><br>
+Exclude virtual activities. Default: false</p>
+
+<p>exclude_non_virtual : <em>optional</em> <strong>boolean</strong><br>
+Exclude non-virtual activities. Default: false</p>
+
 <p>Includes all above paramaters as well as</p>
 
 <p>group_by : <em>optional</em> <strong>string</strong><br>
