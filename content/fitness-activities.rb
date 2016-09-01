@@ -28,6 +28,10 @@ campaign_id : _optional_ **string** or **Array**<br/>
 Campaign ID, only totals for that the specified Campaign will be retrieved.
 An Array of IDs can be provided, eg: campaign_id[]=au-1&campaign_id[]=au-2
 
+page_id : _optional_ **string** or **Array**<br/>
+Page ID, only totals for the specified Pages will be retrieved.
+An Array of IDs can be provided, eg: page_id[]=111&page_id[]=456
+
 team_id : _optional_ **string**<br/>
 team_uid : _optional_ **string**<br/>
 team_page_id : _optional_ **string**<br/>
@@ -88,6 +92,15 @@ Fitness activity type, supported types: bike, gym, hike, run, swim, walk and spo
 
 duration_in_seconds : _required_ **integer**<br/>
 Duration of activity, in seconds.
+
+manual : _optional_ **boolean**<br/>
+Manually logged activity, should be true if this manually user created activity, false if it is logged via an application.<br/>
+
+virtual : _optional_ **boolean**<br/>
+Virtually logged activity, should be true if this is via a virtual app, eg Zwift, false for most cases.<br/>
+
+trainer : _optional_ **boolean**<br/>
+Trainer logged activity, should be true if this is via a cycling turbo trainer, false for most cases.<br/>
 
 public : _required_ **boolean**<br/>
 Must be true for the fitness activity to be visible.
