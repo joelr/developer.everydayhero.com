@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>everydayhero API: Campaigns Groups Internal</title>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/stylesheets/pygments.css">
+  <link rel="stylesheet" href="/stylesheets/app.css">
+  <!--[if lt IE 9]>
+    <script src="/javascripts/html5shiv-printshiv.js"></script>
+  <![endif]-->
+</head>
+<body id=''>
+  <header class="header top a--100">
+    <a href="/"><h1>everydayhero: Developer</h1></a>
+  </header>
+  <section class="main center">
+    <aside class="l--30 m--100 left side-bar">
+      <div class="inner">
+        <nav>
+          <ul>
+            <li><a href="/">Introduction</a></li>
+            <li>
+              <a href="/overview/">Overview</a>
+              <ul id='menu_overview'>
+                <li><a href="/overview/#environments">Environments</a></li>
+                <li><a href="/overview/#schema">Schema</a></li>
+                <li><a href="/overview/#parameters">Parameters</a></li>
+                <li><a href="/overview/#auth-errors">Auth Errors</a></li>
+                <li><a href="/overview/#validation-errors">Validation Errors</a></li>
+                <li><a href="/overview/#http-verbs">HTTP Verbs</a></li>
+                <li><a href="/overview/#pagination">Pagination</a></li>
+                <li><a href="/overview/#caching">Caching</a></li>
+                <li><a href="/rate-limits/">Rate limits</a></li>
+                <li><a href="/glossary/">Glossary</a></li>
+              </ul>
+            </li>
+            <li><a href="/authentication/">Authentication</a></li>
+
+
+            <li class='title'>Resources</li>
+            <li><a href="/campaigns/">Campaigns</a></li>
+            <li> - <a href="/campaign-groups/">Groups</a></li>
+            <li><a href="/charities/">Charities</a></li>
+            
+            <li><a href="/metadata/">Metadata</a></li>
+            <li><a href="/pages/">Pages</a></li>
+            <li> - <a href="/fitness-activities/">Fitness Activities</a></li>
+            <li> - <a href="/posts/">Posts</a></li>
+            <li>
+              <a href="/teams/">Teams</a>
+              <ul id='menu_teams'>
+                <li><a href="/invitations/">Invitations</a>
+                  <ul>
+                    <li><a href="/invitations/#create-individual-page-invitation">Individual Page</a></li>
+                    <li><a href="/invitations/#create-join-a-team-invitation">Join Team Invitation</a></li>
+                  </ul>
+                </li>
+                <li><a href="/join-requests/">Join Requests</a></li>
+                <li><a href="/members/">Members</a></li>
+              </ul>
+            </li>
+            <li><a href="/users/">Users</a></li>
+            <li><a href="/search/#volunteering-opportunities">Volunteering</a></li>
+            <li class='title'>Leaderboards</li>
+            <li><a href="/leaderboards/">Static Page Leaderboards</a></li>
+            <li><a href="/dynamic-leaderboards/">Dynamic Page Leaderboards</a></li>
+            <li><a href="/search-fitness-activities/">Fitness Activity Leaderboards</a></li>
+            <li class='title'>Search &amp; Totals</li>
+            <li><a href="/search/">Search</a></li>
+            <li><a href="/totals/">Totals</a></li>
+
+            <li class='title'>Integration Overviews</li>
+            <li><a href="/oauth-integration/">OAuth Integration</a></li>
+            <li><a href="/notifications/">Alerts/Notifications</a></li>
+            <li><a href="/webhooks/">Webhooks</a></li>
+            <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
+            <li class='title'>Code Examples</li>
+
+            <li>
+              Client side integration
+              <ul>
+                <li>Totals
+                  <ul>
+                    <li><a href="/client-side/campaign-totals/">Campaign totals</a></li>
+                    <li><a href="/client-side/page-total/">Page totals</a></li>
+                  </ul>
+                </li>
+                <li><a href="/widgets/">Widgets</a></li>
+
+              </ul>
+            </li>
+            <li class='title'>Reference</li>
+            <li><a href="http://everydayhero.statuspage.io/">Platform Status</a></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    <section class="l--70 m--100 right content">
+      <div class="inner">
+        
+          <h1>Campaigns Groups Internal</h1>
+          
+<p>Creating groups 
+Groups are <em>required</em> on page creation where groups exist.</p>
+
+<p class="info"><strong>Authentication types</strong>: Registered (Internal) Application Token</p>
+
+<h2 id="create-groups-for-campaign">Create Groups for campaign</h2>
+
+<p>Example request to create a group</p>
+
+<pre><code>POST /api/v2/internal/campaigns/CAMPAIGN_UID_OR_UUID/groups
+Authorization: Bearer APP_BEARER_TOKEN
+Content-Type: application/json
+
+{"key":"some_key","label":"Some label"}
+</code></pre>
+
+<p>Example request to update a group</p>
+
+<pre><code>PATCH /api/v2/internal/campaigns/CAMPAIGN_UID_OR_UUID/groups/GROUP_ID
+Authorization: Bearer APP_BEARER_TOKEN
+Content-Type: application/json
+
+{"key":"some_key","label":"Some label"}
+</code></pre>
+
+<p>Example request to delete a group</p>
+
+<pre><code>DELETE /api/v2/internal/campaigns/CAMPAIGN_UID_OR_UUID/groups/GROUP_ID
+Authorization: Bearer APP_BEARER_TOKEN
+</code></pre>
+
+<h2 id="create-groups-values-within-a-group">Create Groups values within a group</h2>
+
+<p>Example request to create a group value</p>
+
+<pre><code>POST /api/v2/internal/campaigns/CAMPAIGN_UID_OR_UUID/groups/GROUP_ID/group_values
+Authorization: Bearer APP_BEARER_TOKEN
+Content-Type: application/json
+
+{"value":"A group value"}
+</code></pre>
+
+<p>Example request to update a group value</p>
+
+<pre><code>PATCH /api/v2/internal/campaigns/CAMPAIGN_UID_OR_UUID/groups/GROUP_ID/group_values/GROUP_VALUE_ID
+Authorization: Bearer APP_BEARER_TOKEN
+Content-Type: application/json
+
+{"value":"A newer group value"}
+</code></pre>
+
+<p>Example request to delete a group value</p>
+
+<pre><code>DELETE /api/v2/internal/campaigns/CAMPAIGN_UID_OR_UUID/groups/GROUP_ID/group_values/GROUP_VALUE_ID
+Authorization: Bearer APP_BEARER_TOKEN
+</code></pre>
+
+        
+      </div>
+    </section>
+  </section>
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/app.js"></script>
+</body>
+</html>
