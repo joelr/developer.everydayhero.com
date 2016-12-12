@@ -95,8 +95,9 @@
 
 <h3 id="registered-application-authentication">Registered Application Authentication</h3>
 
-<p>This endpoint is used for all endpoints which aren’t scoped via OAuth. This API
-key is the key provided by EDH Professional Services.</p>
+<p>This endpoint is used for all endpoints which aren’t scoped via OAuth, this is mostly limited to a few team related API requests. The majority of API requests can be authenticated with OAuth User Authentication (see below). The API
+key for Registered App Auth is provided by EDH Professional Services, please email 
+<a href="mailto:api@everydayhero.com.au">api@everydayhero.com.au</a>.</p>
 
 <pre><code>$ curl -i -H "Authorization: Token token=your-token" https://everydayhero.com/api/v2
 </code></pre>
@@ -109,15 +110,14 @@ the specified campaign.</p>
 <a href="/oauth-integration/#how-to-authenticate-with-edh">via OAuth</a> 
 which provides a UID in the response.</p>
 
-<p>To obtain an API key for this method of authentication, please email 
-<a href="mailto:api@everydayhero.com.au">api@everydayhero.com.au</a>.</p>
-
 <h2 id="oauth">OAuth</h2>
 
 <p class="notice">To obtain your OAuth API key credentials, and for more details around OAuth endpoints for users flows take a look at 
 <a href="/oauth-integration/#creating-an-oauth-application">Creating an OAuth App</a></p>
 
 <h3 id="oauth-client-authentication">OAuth Client Authentication</h3>
+
+<p>This method of authentication is scoped at the OAuth application level. The majority of API requests are authenticated with OAuth user authentication below.</p>
 
 <p>To fetch your Client API token, it requires doing the following request:</p>
 
@@ -136,7 +136,7 @@ which provides a UID in the response.</p>
 <h3 id="oauth-user-authentication">OAuth User Authentication</h3>
 
 <p>After a user connection flow via OAuth, a token will be provided that will be
-usuable on OAuth user scoped API calls.</p>
+usuable on OAuth user scoped API calls. This authentication method is scoped by user and application.</p>
 
 <p>Identical to OAuth App/Client auth, to use an OAuth User token, set an Authorization Token in this format</p>
 
