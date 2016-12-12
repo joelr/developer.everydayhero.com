@@ -10,11 +10,7 @@ title: OAuth Integration
 everydayhero's OAuth account is our way of globally recognising a
 user within any one of our products. We are now opening this
 functionality for other developers to leverage. We are using the same
-technology that powers Twitter and Facebook: OAuth2. Because this has
-predominately been an internal tool there is no user interface for
-creating and managing your OAuth applications but if you contact
-[Professional Services](mailto:api@everydayhero.com)
-we can get you underway. Alternatively, you can get started with your own 
+technology that powers Twitter and Facebook: OAuth2. You can get started with your own 
 OAuth application below.
 
 ## Creating an OAuth Application
