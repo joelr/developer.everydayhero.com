@@ -102,7 +102,7 @@
           <h1>OAuth Integration</h1>
           
 <ul id="markdown-toc">
-  <li><a href="#how-to-authenticate-with-edh-passport">How to Authenticate with EDH Passport</a></li>
+  <li><a href="#how-to-authenticate-with-edh">How to Authenticate with EDH</a></li>
   <li><a href="#creating-an-oauth-application">Creating an OAuth Application</a></li>
   <li><a href="#oauth-integration-libraries">OAuth Integration Libraries</a></li>
   <li><a href="#authentication-endpoints">Authentication endpoints</a></li>
@@ -110,9 +110,9 @@
   <li><a href="#registration-product-integration">Registration Product Integration</a></li>
 </ul>
 
-<h2 id="how-to-authenticate-with-edh-passport">How to Authenticate with EDH Passport</h2>
+<h2 id="how-to-authenticate-with-edh">How to Authenticate with EDH</h2>
 
-<p>everydayhero’s Giving Passport is our way of globally recognising a
+<p>everydayhero’s OAuth account is our way of globally recognising a
 user within any one of our products. We are now opening this
 functionality for other developers to leverage. We are using the same
 technology that powers Twitter and Facebook: OAuth2. Because this has
@@ -146,7 +146,7 @@ the application will be reviewed.</p>
 
 <p>Integrating OAuth2 into any modern system should be fairly simple.
 everydayhero have written (and maintain) the ruby client for
-interfacing with the Giving Passport and it can be found on
+interfacing with the EDH OAuth accounts and it can be found on
 <a href="https://github.com/everydayhero/omniauth-passport">GitHub</a>. A quick
 google for your language / framework and OAuth2 should yield the best
 library for you.</p>
@@ -154,7 +154,7 @@ library for you.</p>
 <p>Various clients for supporting OAuth 2 in your language of choice are
 available at <a href="http://oauth.net/2/">http://oauth.net/2/</a>.</p>
 
-<p>By authenticating with the Giving Passport you are guaranteed that the
+<p>By authenticating with the EDH OAuth account you are guaranteed that the
 user you are dealing with will be the same person that is represented
 in any everydayhero product.</p>
 
@@ -172,7 +172,7 @@ if you would like to make use of the custom parameters, see the endpoints below.
 and is used by OAuth to interact with resource owners, authenticate
 them, and obtains their authorization. An OAuth client makes an
 authorization request by directing the user to the authorization endpoint.
-After completing its interaction with the user, the OAuth/Passport
+After completing its interaction with the user, the OAuth
 service redirects the user back to the client’s redirect URI with the
 response to the authorization request.</p>
 
@@ -191,7 +191,7 @@ A value of code results in the Authorization Code grant type while a value of to
 The client identifier.</p>
 
 <p>redirect_uri : <em>optional</em> <strong>string</strong><br>
-If present, the requested redirect_uri must match the one configured for the client. if the redirect_uri is set to <code>urn:ietf:wg:oauth:2.0:oob</code>, this will tell Passport to display the authorization code instead of redirecting to a client application (if this is still under development).</p>
+If present, the requested redirect_uri must match the one configured for the client. if the redirect_uri is set to <code>urn:ietf:wg:oauth:2.0:oob</code>, this will tell EDH to display the authorization code instead of redirecting to a client application (if this is still under development).</p>
 
 <p>force : <em>optional</em> <strong>boolean</strong><br>
 If set as true, this will force the user to sign up/sign in. If this is not set, and a user is signed in, the user will automatically continue their OAuth flow without requiring sign in.</p>
@@ -276,7 +276,7 @@ Source code for the application can be found on
 This application demonstrates:</p>
 
 <ul>
-  <li>authentication with the Giving Passport</li>
+  <li>authentication with EDH</li>
   <li>using the everydayhero API to create a supporter page and view
 information on the campaign</li>
   <li>while still giving you ultimate control over your registration system</li>

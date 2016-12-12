@@ -185,10 +185,15 @@ nav li.title {
 pre {
   padding: 10px; }
 
-.info {
+.info, .notice {
   padding: 15px;
-  background-color: #fcf8e3;
   margin: 0 0 10px; }
+
+.info {
+  background-color: #fcf8e3; }
+
+.notice {
+  background-color: #e6ffe6; }
 
 pre,
 p code {
