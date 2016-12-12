@@ -12,7 +12,7 @@ The everydayhero platform supports two kinds of supporter pages:
 [Individuals pages](/glossary/) and [Team
 pages](/overview#glossary/). In order to create an Individual Page
 through the API you will be required to authenticate the user through
-the everydayhero [Giving Passport](/oauth-integration/#how-to-authenticate-with-edh-passport) and store the
+the everydayhero [EDH OAuth](/oauth-integration/#how-to-authenticate-with-edh) and store the
 returned `uid` - this `uid` is our way of tracking that user within our
 platform and yours.
 

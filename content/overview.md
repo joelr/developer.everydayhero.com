@@ -152,7 +152,7 @@ any and all information created or updated can only take place within
 the specified campaign.
 
 For API actions that require a UID, users will be required to authenticate 
-[via OAuth](/oauth-integration/#how-to-authenticate-with-edh-passport) 
+[via OAuth](/oauth-integration/#how-to-authenticate-with-edh) 
 which provides a UID in the response.
 
 ## OAuth Client Authentication

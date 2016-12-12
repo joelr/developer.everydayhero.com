@@ -5,9 +5,9 @@ title: OAuth Integration
 * TOC
 {:toc}
 
-## How to Authenticate with EDH Passport
+## How to Authenticate with EDH
 
-everydayhero's Giving Passport is our way of globally recognising a
+everydayhero's OAuth account is our way of globally recognising a
 user within any one of our products. We are now opening this
 functionality for other developers to leverage. We are using the same
 technology that powers Twitter and Facebook: OAuth2. Because this has
@@ -42,7 +42,7 @@ the application will be reviewed.
 
 Integrating OAuth2 into any modern system should be fairly simple.
 everydayhero have written (and maintain) the ruby client for
-interfacing with the Giving Passport and it can be found on
+interfacing with the EDH OAuth accounts and it can be found on
 [GitHub](https://github.com/everydayhero/omniauth-passport). A quick
 google for your language / framework and OAuth2 should yield the best
 library for you.
@@ -50,7 +50,7 @@ library for you.
 Various clients for supporting OAuth 2 in your language of choice are
 available at [http://oauth.net/2/](http://oauth.net/2/).
 
-By authenticating with the Giving Passport you are guaranteed that the
+By authenticating with the EDH OAuth account you are guaranteed that the
 user you are dealing with will be the same person that is represented
 in any everydayhero product.
 
@@ -68,7 +68,7 @@ The authorization endpoint is defined in the OAuth 2.0 specification
 and is used by OAuth to interact with resource owners, authenticate
 them, and obtains their authorization. An OAuth client makes an
 authorization request by directing the user to the authorization endpoint.
-After completing its interaction with the user, the OAuth/Passport
+After completing its interaction with the user, the OAuth
 service redirects the user back to the client’s redirect URI with the
 response to the authorization request.
 
@@ -86,7 +86,7 @@ client_id : _required_ **string**<br./>
 The client identifier.
 
 redirect_uri : _optional_ **string**<br/>
-If present, the requested redirect_uri must match the one configured for the client. if the redirect_uri is set to ```urn:ietf:wg:oauth:2.0:oob```, this will tell Passport to display the authorization code instead of redirecting to a client application (if this is still under development).
+If present, the requested redirect_uri must match the one configured for the client. if the redirect_uri is set to ```urn:ietf:wg:oauth:2.0:oob```, this will tell EDH to display the authorization code instead of redirecting to a client application (if this is still under development).
 
 force : _optional_ **boolean**<br/>
 If set as true, this will force the user to sign up/sign in. If this is not set, and a user is signed in, the user will automatically continue their OAuth flow without requiring sign in.
@@ -160,7 +160,7 @@ Source code for the application can be found on
 [GitHub](https://github.com/everydayhero/example_registrations).
 This application demonstrates:
 
-* authentication with the Giving Passport
+* authentication with EDH
 * using the everydayhero API to create a supporter page and view
 information on the campaign
 * while still giving you ultimate control over your registration system

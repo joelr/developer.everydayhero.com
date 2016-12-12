@@ -15,7 +15,7 @@ any and all information created or updated can only take place within
 the specified campaign.
 
 For API actions that require a UID, users will be required to authenticate 
-[via OAuth](/oauth-integration/#how-to-authenticate-with-edh-passport) 
+[via OAuth](/oauth-integration/#how-to-authenticate-with-edh) 
 which provides a UID in the response.
 
 To obtain an API key for this method of authentication, please email 
@@ -23,8 +23,8 @@ To obtain an API key for this method of authentication, please email
 
 ## OAuth
 
-To obtain your OAuth API key credentials, take a look at 
-[Creating an OAuth App](/oauth-integration/#creating-an-oauth-application)
+<p class='notice'>To obtain your OAuth API key credentials, and for more details around OAuth endpoints for users flows take a look at 
+<a href='/oauth-integration/#creating-an-oauth-application'>Creating an OAuth App</a></p>
 
 ### OAuth Client Authentication
 

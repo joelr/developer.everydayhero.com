@@ -14,7 +14,7 @@ address.
 ### Payload
 
 email : _required_ **string**<br/>
-The email address you would like the invitation sent to. We do not tie this email address to the user's Giving Passport in any way, it is only used to deliver the invitation.
+The email address you would like the invitation sent to. We do not tie this email address to the user's EDH account in any way, it is only used to deliver the invitation.
 
 phone : _optional_ **string**<br/>
 The phone number of the person you want to invite to create a supporter page.
@@ -54,7 +54,7 @@ an email address.
 ### Payload
 
 email : _required_ **string**<br/>
-The email address you would like the invitation sent to. We do not tie this email address to the user's Giving Passport in any way, it is only used to deliver the invitation.
+The email address you would like the invitation sent to. We do not tie this email address to the user's EDH account in any way, it is only used to deliver the invitation.
 
 full_name : _optional_ **string**<br/>
 The full name of the person you want to invite to create a supporter page.

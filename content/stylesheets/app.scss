@@ -298,10 +298,17 @@ pre {
   padding: 10px;
 }
 
-.info {
+.info, .notice {
   padding: 15px;
-  background-color: #fcf8e3;
   margin: 0 0 10px;
+}
+
+.info {
+  background-color: #ccffcc;
+}
+
+.notice {
+  background-color: #e6ffe6;
 }
 
 pre,
