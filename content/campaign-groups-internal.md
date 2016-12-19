@@ -8,6 +8,21 @@ Groups are *required* on page creation where groups exist.
 <p class='info'><strong>Authentication types</strong>: Registered (Internal) Application Token</p>
 
 
+## List Groups for campaign
+
+Example request to list a group and it's values (public)
+
+    GET /api/v2/campaigns/CAMPAIGN_UID/groups
+    Content-Type: application/json
+
+## List Group values for specific group
+
+Example request to list a group's values
+
+    GET /api/v2/internal/campaigns/CAMPAIGN_UID_OR_UUID/groups/GROUP_ID/group_values
+    Authorization: Bearer APP_BEARER_TOKEN
+    Content-Type: application/json
+
 ## Create Groups for campaign
 
 Example request to create a group
