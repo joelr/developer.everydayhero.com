@@ -57,6 +57,14 @@ Position starts at 1 (ie, not 0)
 
     {"value":"A group value"}
 
+Example request to create a batch update:
+
+    POST /api/v2/internal/campaigns/CAMPAIGN_UID_OR_UUID/groups/GROUP_ID/group_values
+    Authorization: Bearer APP_BEARER_TOKEN
+    Content-Type: application/json
+
+    {"group_values":[{"value":"A group value"},{"value":"A group value 2"},{"value":"A group value 3"}]}
+
 Example request to update a group value.
 Position starts at 1 (ie, not 0)
 
