@@ -98,11 +98,19 @@ body {
   background-attachment: fixed;
 }
 
-#menu_overview, #menu_teams {
+#menu_overview, #menu_teams, #partner_api, #internal_api {
   display: none;
 }
 
 #page_overview #menu_overview, #page_teams #menu_teams {
+  display: block;
+}
+
+#partner_overview #partner_api, #internal_overview #partner_api {
+  display: block;
+}
+
+#internal_overview #internal_api {
   display: block;
 }
 
@@ -269,10 +277,6 @@ h4, .h4 { font-size: 1.2em; }
       padding-left: 20px;
       padding-top: 5px;
     }
-  }
-  ul {
-    border-top: 1px solid lighten($dark, 70%);
-    border-bottom: 1px solid lighten($dark, 70%);
   }
 }
 

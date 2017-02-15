@@ -1,5 +1,6 @@
 ---
 title: Custom Authentication Integration
+body_id: partner_overview
 ---
 
 * TOC
@@ -7,7 +8,7 @@ title: Custom Authentication Integration
 
 ## Create a new user / Sign in
 
-<p class='info'><strong>Authentication types</strong>: Public OAuth Client ID</p>
+<p class='info'><strong>Authentication types</strong>: Public OAuth Client ID (Partner permissions)</p>
 
     POST https://everydayhero.com/api/v2/authentication/sign_up
 
