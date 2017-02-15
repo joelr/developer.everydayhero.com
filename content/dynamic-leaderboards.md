@@ -8,6 +8,14 @@ title: Dynamic Leaderboards
 
 ### Parameters
 
+page_ids : _optional_ **string** or **Array**<br/>
+Page ID, only totals for that the specified page or pages will be retrieved.
+An Array of IDs can be provided, eg: page_ids[]=1&page_ids[]=2
+
+exclude_page_ids : _optional_ **string** or **Array**<br/>
+Page ID, exclude the specified pages from results.
+An Array of IDs can be provided, eg: exclude_page_ids[]=1&exclude_page_ids[]=2
+
 charity_id : _optional_ **string** or **Array**<br/>
 Charity ID, only totals for that the specified Charity will be retrieved.
 An Array of IDs can be provided, eg: charity_id[]=au-1&charity_id[]=au-2
