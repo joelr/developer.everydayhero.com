@@ -1,6 +1,5 @@
 ---
 title: Authentication
-body_id: partner_overview
 ---
 There are three methods of authentication for the API:
 
