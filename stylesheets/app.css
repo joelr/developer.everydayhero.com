@@ -11,10 +11,16 @@ body {
   background: white url("../images/bg.jpeg") center top no-repeat;
   background-attachment: fixed; }
 
-#menu_overview, #menu_teams {
+#menu_overview, #menu_teams, #partner_api, #internal_api {
   display: none; }
 
 #page_overview #menu_overview, #page_teams #menu_teams {
+  display: block; }
+
+#partner_overview #partner_api, #internal_overview #partner_api {
+  display: block; }
+
+#internal_overview #internal_api {
   display: block; }
 
 a {
@@ -165,9 +171,6 @@ h4, .h4 {
   .nav ul li ul, nav ul li ul {
     padding-left: 20px;
     padding-top: 5px; }
-.nav ul, nav ul {
-  border-top: 1px solid #dbdbdb;
-  border-bottom: 1px solid #dbdbdb; }
 
 nav li.title {
   font-weight: bold;

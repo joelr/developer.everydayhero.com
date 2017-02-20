@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>everydayhero API: Campaigns Groups Internal</title>
+  <title>everydayhero API: Campaigns Groups</title>
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/stylesheets/pygments.css">
   <link rel="stylesheet" href="/stylesheets/app.css">
@@ -10,7 +10,7 @@
     <script src="/javascripts/html5shiv-printshiv.js"></script>
   <![endif]-->
 </head>
-<body id=''>
+<body id='internal_overview'>
   <header class="header top a--100">
     <a href="/"><h1>everydayhero: Developer</h1></a>
   </header>
@@ -18,6 +18,27 @@
     <aside class="l--30 m--100 left side-bar">
       <div class="inner">
         <nav>
+            <div id='internal_api'>
+              <ul>
+                <li><a href="/internal/">Internal API</a>
+                  <ul>
+                    <li><a href="/internal/campaign-groups/">Campaign Groups</a></li>
+                    <li><a href="/internal/charities/">Charities</a></li>
+                    <li><a href="/internal/campaigns/">Campaigns</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div id='partner_api'>
+              
+              <ul>
+                <li><a href="/partner/">Partner API</a>
+                  <ul>
+                    <li><a href="/partner/custom-authentication/">Custom Authentication</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           <ul>
             <li><a href="/">Introduction</a></li>
             <li>
@@ -90,12 +111,12 @@
     <section class="l--70 m--100 right content">
       <div class="inner">
         
-          <h1>Campaigns Groups Internal</h1>
+          <h1>Campaigns Groups</h1>
           
 <p>Creating groups 
 Groups are <em>required</em> on page creation where groups exist.</p>
 
-<p class="info"><strong>Authentication types</strong>: Registered (Internal) Application Token</p>
+<p class="info"><strong>Authentication types</strong>: OAuth (Internal) Application Token</p>
 
 <h2 id="list-groups-for-campaign">List Groups for campaign</h2>
 

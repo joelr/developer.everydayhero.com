@@ -18,6 +18,27 @@
     <aside class="l--30 m--100 left side-bar">
       <div class="inner">
         <nav>
+            <div id='internal_api'>
+              <ul>
+                <li><a href="/internal/">Internal API</a>
+                  <ul>
+                    <li><a href="/internal/campaign-groups/">Campaign Groups</a></li>
+                    <li><a href="/internal/charities/">Charities</a></li>
+                    <li><a href="/internal/campaigns/">Campaigns</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div id='partner_api'>
+              
+              <ul>
+                <li><a href="/partner/">Partner API</a>
+                  <ul>
+                    <li><a href="/partner/custom-authentication/">Custom Authentication</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           <ul>
             <li><a href="/">Introduction</a></li>
             <li>
@@ -98,6 +119,14 @@
 </code></pre>
 
 <h3 id="parameters">Parameters</h3>
+
+<p>page_ids : <em>optional</em> <strong>string</strong> or <strong>Array</strong><br>
+Page ID, only totals for that the specified page or pages will be retrieved.
+An Array of IDs can be provided, eg: page_ids[]=1&amp;page_ids[]=2</p>
+
+<p>exclude_page_ids : <em>optional</em> <strong>string</strong> or <strong>Array</strong><br>
+Page ID, exclude the specified pages from results.
+An Array of IDs can be provided, eg: exclude_page_ids[]=1&amp;exclude_page_ids[]=2</p>
 
 <p>charity_id : <em>optional</em> <strong>string</strong> or <strong>Array</strong><br>
 Charity ID, only totals for that the specified Charity will be retrieved.

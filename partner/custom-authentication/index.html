@@ -10,7 +10,7 @@
     <script src="/javascripts/html5shiv-printshiv.js"></script>
   <![endif]-->
 </head>
-<body id=''>
+<body id='partner_overview'>
   <header class="header top a--100">
     <a href="/"><h1>everydayhero: Developer</h1></a>
   </header>
@@ -18,6 +18,27 @@
     <aside class="l--30 m--100 left side-bar">
       <div class="inner">
         <nav>
+            <div id='internal_api'>
+              <ul>
+                <li><a href="/internal/">Internal API</a>
+                  <ul>
+                    <li><a href="/internal/campaign-groups/">Campaign Groups</a></li>
+                    <li><a href="/internal/charities/">Charities</a></li>
+                    <li><a href="/internal/campaigns/">Campaigns</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div id='partner_api'>
+              
+              <ul>
+                <li><a href="/partner/">Partner API</a>
+                  <ul>
+                    <li><a href="/partner/custom-authentication/">Custom Authentication</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           <ul>
             <li><a href="/">Introduction</a></li>
             <li>
@@ -100,7 +121,7 @@
 
 <h2 id="create-a-new-user--sign-in">Create a new user / Sign in</h2>
 
-<p class="info"><strong>Authentication types</strong>: Public OAuth Client ID</p>
+<p class="info"><strong>Authentication types</strong>: Public OAuth Client ID (Partner permissions)</p>
 
 <pre><code>POST https://everydayhero.com/api/v2/authentication/sign_up
 </code></pre>
