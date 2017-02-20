@@ -2,7 +2,7 @@
 title: Registered Applications
 ---
 
-<p class='info'><strong>Authentication types</strong>: OAuth (Internal) Bearer Token</p>
+<p class='info'><strong>Authentication types</strong>: OAuth (Partner) Bearer Token</p>
 
 ## Listing Registered Applications 
 

@@ -1,11 +1,12 @@
 ---
-title: Campaigns Groups Internal
+title: Campaigns Groups
+body_id: internal_overview
 ---
 
 Creating groups 
 Groups are *required* on page creation where groups exist.
 
-<p class='info'><strong>Authentication types</strong>: Registered (Internal) Application Token</p>
+<p class='info'><strong>Authentication types</strong>: OAuth (Internal) Application Token</p>
 
 
 ## List Groups for campaign
