@@ -32,7 +32,7 @@ The page number to return.
 
 ## View a single Charity <small>(public)</small>
 
-    GET https://everydayhero.com/api/v2/charities/:id
+    GET https://everydayhero.com/api/v2/charities/CHARITY_ID_OR_UUID
 
 ### Example
 
