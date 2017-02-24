@@ -35,7 +35,7 @@ Name of the application
 
 #### Example curl request
 
-  curl -X POST -H "Authorization: Bearer xxx" -H "Content-Type: application/json" -d '{"registered_application":{"campaign_uid":"xxx","name":"test"}}' "http://everydayhero.com/api/v2/internal/registered_applications"
+    curl -X POST -H "Authorization: Bearer xxx" -H "Content-Type: application/json" -d '{"registered_application":{"campaign_uid":"xxx","name":"test"}}' "http://everydayhero.com/api/v2/internal/registered_applications"
 
 
 ## Updating a registered application
@@ -60,7 +60,7 @@ Name of the application
 
 #### Example curl request
 
-  curl -X PATCH -H "Authorization: Bearer xxx" -H "Content-Type: application/json" -d '{"registered_application":{"name":"test2"}}' "http://everydayhero.com/api/v2/internal/registered_applications/APPLICATION_UID"
+    curl -X PATCH -H "Authorization: Bearer xxx" -H "Content-Type: application/json" -d '{"registered_application":{"name":"test2"}}' "http://everydayhero.com/api/v2/internal/registered_applications/APPLICATION_UID"
 
 
 ## Viewing a registered application
