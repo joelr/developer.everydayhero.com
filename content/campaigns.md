@@ -39,7 +39,7 @@ Exclude embedding of page IDs, to reduce payload size. Default: false.
 
 ## View a single Campaign <small>(public)</small>
 
-    GET https://everydayhero.com/api/v2/campaigns/:id
+    GET https://everydayhero.com/api/v2/campaigns/CAMPAIGN_ID_OR_UUID
 
 ### Example
 

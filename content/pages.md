@@ -66,7 +66,7 @@ The page number to return.
 
 ## View a single Page <small>(public)</small>
 
-    GET https://everydayhero.com/api/v2/pages/:id
+    GET https://everydayhero.com/api/v2/pages/PAGE_ID_OR_UUID
 
 The single page lookup includes expanded data including more granular total values.
 
