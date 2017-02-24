@@ -145,7 +145,8 @@ Name of the application</p>
 
 <h4 id="example-curl-request">Example curl request</h4>
 
-<p>curl -X POST -H “Authorization: Bearer xxx” -H “Content-Type: application/json” -d ‘{“registered_application”:{“campaign_uid”:”xxx”,”name”:”test”}}’ “http://everydayhero.com/api/v2/internal/registered_applications”</p>
+<pre><code>curl -X POST -H "Authorization: Bearer xxx" -H "Content-Type: application/json" -d '{"registered_application":{"campaign_uid":"xxx","name":"test"}}' "http://everydayhero.com/api/v2/internal/registered_applications"
+</code></pre>
 
 <h2 id="updating-a-registered-application">Updating a registered application</h2>
 
@@ -169,7 +170,8 @@ Name of the application</p>
 
 <h4 id="example-curl-request-1">Example curl request</h4>
 
-<p>curl -X PATCH -H “Authorization: Bearer xxx” -H “Content-Type: application/json” -d ‘{“registered_application”:{“name”:”test2”}}’ “http://everydayhero.com/api/v2/internal/registered_applications/APPLICATION_UID”</p>
+<pre><code>curl -X PATCH -H "Authorization: Bearer xxx" -H "Content-Type: application/json" -d '{"registered_application":{"name":"test2"}}' "http://everydayhero.com/api/v2/internal/registered_applications/APPLICATION_UID"
+</code></pre>
 
 <h2 id="viewing-a-registered-application">Viewing a registered application</h2>
 
