@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>everydayhero API: Charities</title>
+  <title>everydayhero API: Registered Applications</title>
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/stylesheets/pygments.css">
   <link rel="stylesheet" href="/stylesheets/app.css">
@@ -112,24 +112,75 @@
     <section class="l--70 m--100 right content">
       <div class="inner">
         
-          <h1>Charities</h1>
+          <h1>Registered Applications</h1>
           
-<p>Charities can be updated via the internal API</p>
+<p>Registered Applications</p>
+
+<p class="warning">Registered Applications are not the optiomal method of authenticating with the API. All API endpoints are now available via OAuth and can be self-served via <a href="/oauth-integration/#how-to-authenticate-with-edh">Authentication</a>.</p>
 
 <p class="info"><strong>Authentication types</strong>: OAuth (Internal) Application Token</p>
 
-<h2 id="example-request-to-hide-from-search">Example request to hide from search</h2>
+<h2 id="creating-a-registered-application">Creating a registered application</h2>
 
-<pre><code>PATCH /api/v2/internal/charities/CHARITY_UID_OR_UUID
+<pre><code>POST /api/v2/internal/registered_applications
 Authorization: Bearer APP_BEARER_TOKEN
 Content-Type: application/json
 
-{"campaign":{"hidden":false}}
+{"registered_application":{"name":"test","campaign_uid":"au-123"}}
 </code></pre>
 
-<p>Example curl request</p>
+<h4 id="available-params">Available params:</h4>
 
-<pre><code>curl -X PATCH -H "Authorization: Bearer BEARER_TOKEN" -H "Content-Type: application/json" -d '{"charity":{"hidden":true}}' "https://everydayhero-staging.com/api/v2/internal/charities/CHARITY_UID_OR_UUID"
+<p>campaign_uid : <em>required</em> <strong>string</strong><br>
+UID of the campaign</p>
+
+<p>individual_registration_url : <em>optional</em> <strong>string</strong><br>
+Registration redirect for individual pages (when a user accesses get-started)</p>
+
+<p>team_registration_url : <em>optional</em> <strong>string</strong><br>
+Registration redirect for individual pages joining teams (when a user accesses join team)</p>
+
+<p>name : <em>required</em> <strong>string</strong><br>
+Name of the application</p>
+
+<h4 id="example-curl-request">Example curl request</h4>
+
+<p>curl -X POST -H “Authorization: Bearer xxx” -H “Content-Type: application/json” -d ‘{“registered_application”:{“campaign_uid”:”xxx”,”name”:”test”}}’ “http://everydayhero.com/api/v2/internal/registered_applications”</p>
+
+<h2 id="updating-a-registered-application">Updating a registered application</h2>
+
+<pre><code>PATCH /api/v2/internal/registered_applications/APPLICATION_UID
+Authorization: Bearer APP_BEARER_TOKEN
+Content-Type: application/json
+
+{"registered_application":{"name":"test"}}
+</code></pre>
+
+<h4 id="available-params-1">Available params:</h4>
+
+<p>individual_registration_url : <em>optional</em> <strong>string</strong><br>
+Registration redirect for individual pages (when a user accesses get-started)</p>
+
+<p>team_registration_url : <em>optional</em> <strong>string</strong><br>
+Registration redirect for individual pages joining teams (when a user accesses join team)</p>
+
+<p>name : <strong>string</strong><br>
+Name of the application</p>
+
+<h4 id="example-curl-request-1">Example curl request</h4>
+
+<p>curl -X PATCH -H “Authorization: Bearer xxx” -H “Content-Type: application/json” -d ‘{“registered_application”:{“name”:”test2”}}’ “http://everydayhero.com/api/v2/internal/registered_applications/APPLICATION_UID”</p>
+
+<h2 id="viewing-a-registered-application">Viewing a registered application</h2>
+
+<pre><code>GET /api/v2/internal/registered_applications/APPLICATION_UID?access_token=ACCESS_TOKEN
+</code></pre>
+
+<h2 id="deleting-a-registered-application">Deleting a registered application</h2>
+
+<pre><code>DELETE /api/v2/internal/registered_applications/APPLICATION_UID
+Authorization: Bearer APP_BEARER_TOKEN
+Content-Type: application/json
 </code></pre>
 
         
