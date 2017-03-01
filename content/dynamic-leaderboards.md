@@ -34,6 +34,18 @@ group_value : _optional_ **String/Array**<br/>
 Return donations matching specific page group value, or any of the provided array values.
 An Array of values can be provided, eg: group_value[]=QLD&group_value[]=ABC
 
+max_amount_cents : _optional_ **integer**<br/>
+Cents value for the max amount a page should have raised to be displayable.
+
+min_amount_cents : _optional_ **integer**<br/>
+Cents value for the min amount a page should have raised to be displayable.
+
+group_by : _optional_ **String**<br/>
+Group leaderboard by type, supported values: pages, teams, groups. default: pages.
+
+group_id : _optional_ **integer**<br/>
+If group_by is set as groups, group_id is required, and should be the ID of the group to display on the leaderboard.
+
 #### Pagination
 
 For more information about pagination, please see the [pagination
