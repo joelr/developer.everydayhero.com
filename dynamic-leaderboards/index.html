@@ -147,6 +147,18 @@ End at date, ISO format: “2014-08-20 05:02:13”, filter totals by a range.</p
 Return donations matching specific page group value, or any of the provided array values.
 An Array of values can be provided, eg: group_value[]=QLD&amp;group_value[]=ABC</p>
 
+<p>max_amount_cents : <em>optional</em> <strong>integer</strong><br>
+Cents value for the max amount a page should have raised to be displayable.</p>
+
+<p>min_amount_cents : <em>optional</em> <strong>integer</strong><br>
+Cents value for the min amount a page should have raised to be displayable.</p>
+
+<p>group_by : <em>optional</em> <strong>String</strong><br>
+Group leaderboard by type, supported values: pages, teams, groups. default: pages.</p>
+
+<p>group_id : <em>optional</em> <strong>integer</strong><br>
+If group_by is set as groups, group_id is required, and should be the ID of the group to display on the leaderboard.</p>
+
 <h4 id="pagination">Pagination</h4>
 
 <p>For more information about pagination, please see the <a href="/overview/#pagination">pagination
