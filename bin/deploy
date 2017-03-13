@@ -1,4 +1,11 @@
 #!/bin/bash
 
+mkdir -p ~/.ssh
+ssh-keyscan github.com > ~/.ssh/known_hosts
+chmod -R 0700 ~/.ssh
+
+git config --global user.email "deployer@everydayhero.com"
+git config --global user.name "Vlad the deployer"
+
 bundle install
 bundle exec rake deploy skip_confirmation=true
