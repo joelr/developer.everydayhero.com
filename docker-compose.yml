@@ -1,5 +1,10 @@
 docs:
-  build: .
+  image: ruby:2.1.5
+  working_dir: /app
+  environment:
+    RUBYOPT: "-E utf-8"
+    SSH_AUTH_SOCK: "/ssh-agent"
   volumes:
-    - .:/usr/src/app
-    - /root/.ssh:/root/.ssh
+    - ".:/app"
+    - "$SSH_AUTH_SOCK:/ssh-agent"
+  command: /app/bin/deploy
