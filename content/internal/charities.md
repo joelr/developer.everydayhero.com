@@ -14,7 +14,7 @@ Charities can be updated via the internal API
     Authorization: Bearer APP_BEARER_TOKEN
     Content-Type: application/json
 
-    {"campaign":{"hidden":false}}
+    {"charity":{"hidden":true}}
 
 Example curl request
 
