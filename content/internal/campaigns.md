@@ -14,7 +14,7 @@ Campaigns can be updated via the internal API
     Authorization: Bearer APP_BEARER_TOKEN
     Content-Type: application/json
 
-    {"campaign":{"hidden":false}}
+    {"campaign":{"hidden":true}}
 
 Example curl request
 
