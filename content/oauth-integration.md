@@ -148,6 +148,25 @@ The requested redirect_uri must match the one configured for the client.
 
 <%= json :tokendata %>
 
+## Single Sign On to Everydayhero
+
+<p class='info'><strong>Authentication types</strong>: OAuth User Token </p>
+
+After the OAuth Flow, a Third party application obtains a token to perform some changes on behalf of a user.
+E.g: create a Supporter Page.
+
+However, by default this user is not authenticated on Everydayhero's website. A third party application can create a form which posts at the URL below to sign the user in Everydayhero before to redirect them.
+
+    POST https://everydayhero.com/api/v2/authentication/sessions
+
+### Payload
+
+access_token : _required_ **string**<br/>
+The token obtained during the OAuth Flow.
+
+return_to : _optional_ **string**<br/>
+The URL the end point will redirect to once the authentication is done. Default when unprovided is the user's Dashboard.
+
 ## Registration Product Integration
 
 A [sample application](http://example-rego-integration.herokuapp.com) has been

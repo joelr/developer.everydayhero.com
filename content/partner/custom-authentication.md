@@ -128,3 +128,7 @@ The response will either be 204 or 404.
 
 If the response is successful, the response will be a 204 no-content.
 The response will be a 404 if the user email is invalid, or the client_id is missing.
+
+## Single Sign On to Everydayhero
+
+See [OAuth Integration](/oauth-integration#single-sign-on-to-everydayhero)
