@@ -118,6 +118,13 @@
 
 <p class="info"><strong>Authentication types</strong>: OAuth (Internal) Application Token</p>
 
+<h2 id="listing-registered-applications">Listing Registered Applications</h2>
+
+<pre><code>GET /api/v2/internal/registered_applications?registered_application[campaign_uid]=CAMPAIGN_UID
+Authorization: Bearer APP_BEARER_TOKEN
+Content-Type: application/json
+</code></pre>
+
 <h2 id="creating-a-registered-application">Creating a registered application</h2>
 
 <pre><code>POST /api/v2/internal/registered_applications
@@ -140,6 +147,9 @@ Registration redirect for individual pages joining teams (when a user accesses j
 
 <p>name : <em>required</em> <strong>string</strong><br>
 Name of the application</p>
+
+<p>trusted : <em>optional</em> <strong>boolean</strong><br>
+Trusted or not, default false. This removes the permissions consent screen on connection if set to true.</p>
 
 <h4 id="example-curl-request">Example curl request</h4>
 
@@ -165,6 +175,9 @@ Registration redirect for individual pages joining teams (when a user accesses j
 
 <p>name : <strong>string</strong><br>
 Name of the application</p>
+
+<p>trusted : <em>optional</em> <strong>boolean</strong><br>
+Trusted or not, default false. This removes the permissions consent screen on connection if set to true.</p>
 
 <h4 id="example-curl-request-1">Example curl request</h4>
 
