@@ -8,6 +8,12 @@ body_id: internal_overview
 
 <p class='info'><strong>Authentication types</strong>: OAuth (Internal) Application Token</p>
 
+## Listing Registered Applications 
+
+    GET /api/v2/internal/registered_applications?registered_application[campaign_uid]=CAMPAIGN_UID
+    Authorization: Bearer APP_BEARER_TOKEN
+    Content-Type: application/json
+
 ## Creating a registered application
 
     POST /api/v2/internal/registered_applications
@@ -29,6 +35,9 @@ Registration redirect for individual pages joining teams (when a user accesses j
 
 name : _required_ **string**<br/>
 Name of the application
+
+trusted : _optional_ **boolean**<br/>
+Trusted or not, default false. This removes the permissions consent screen on connection if set to true.
 
 
 #### Example curl request
@@ -55,6 +64,8 @@ Registration redirect for individual pages joining teams (when a user accesses j
 name : **string**<br/>
 Name of the application
 
+trusted : _optional_ **boolean**<br/>
+Trusted or not, default false. This removes the permissions consent screen on connection if set to true.
 
 #### Example curl request
 
