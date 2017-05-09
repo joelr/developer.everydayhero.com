@@ -114,13 +114,10 @@ This API endpoint will trigger a password reset email for the specified user.
 
 ### Payload
 
-user[email] : _required_ **string**<br/>
+email : _required_ **string**<br/>
 The email of the user.
 
-user[password] : _required_ **string**<br/>
-The password of the user.
-
-client_id: _required_ **integer**<br/>
+client_id: _required_ **string**<br/>
 The client ID of the OAuth application.
 
 
