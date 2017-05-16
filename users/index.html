@@ -117,6 +117,7 @@
 <ul id="markdown-toc">
   <li><a href="#get-current-user">Get current user</a></li>
   <li><a href="#update-a-new-user-with-attributes">Update a new user with attributes</a></li>
+  <li><a href="#list-all-users-for-registered-applications-campaign">List all Users for Registered Application’s Campaign</a></li>
 </ul>
 
 <h2 id="get-current-user">Get current user</h2>
@@ -206,6 +207,58 @@ User phone number</p>
 <h3 id="repsonse">Repsonse</h3>
 
 <p><code>204</code> or <code>40X</code></p>
+
+<h2 id="list-all-users-for-registered-applications-campaign">List all Users for Registered Application’s Campaign</h2>
+
+<p class="info"><strong>Authentication types</strong>: Registered Application Token</p>
+
+<pre><code>GET https://everydayhero.com/api/v2/users
+</code></pre>
+
+<h3 id="response-1">Response</h3>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"users"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"John O'Donnell"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
+      <span class="s2">"nickname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
+      <span class="s2">"birthday"</span><span class="o">:</span> <span class="s2">"1980-01-13"</span><span class="p">,</span>
+      <span class="s2">"street_address"</span><span class="o">:</span> <span class="s2">"87 Wickham Terrace"</span><span class="p">,</span>
+      <span class="s2">"locality"</span><span class="o">:</span> <span class="s2">"Spring Hill"</span><span class="p">,</span>
+      <span class="s2">"region"</span><span class="o">:</span> <span class="s2">"QLD"</span><span class="p">,</span>
+      <span class="s2">"postal_code"</span><span class="o">:</span> <span class="s2">"4006"</span><span class="p">,</span>
+      <span class="s2">"country_name"</span><span class="o">:</span> <span class="s2">"Australia"</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1300798768"</span><span class="p">,</span>
+      <span class="s2">"internal_id"</span><span class="o">:</span> <span class="s2">"213"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
+      <span class="s2">"page_ids"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="mi">2</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">"uid"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"John O'Donnell"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
+      <span class="s2">"nickname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
+      <span class="s2">"birthday"</span><span class="o">:</span> <span class="s2">"1980-01-13"</span><span class="p">,</span>
+      <span class="s2">"street_address"</span><span class="o">:</span> <span class="s2">"87 Wickham Terrace"</span><span class="p">,</span>
+      <span class="s2">"locality"</span><span class="o">:</span> <span class="s2">"Spring Hill"</span><span class="p">,</span>
+      <span class="s2">"region"</span><span class="o">:</span> <span class="s2">"QLD"</span><span class="p">,</span>
+      <span class="s2">"postal_code"</span><span class="o">:</span> <span class="s2">"4006"</span><span class="p">,</span>
+      <span class="s2">"country_name"</span><span class="o">:</span> <span class="s2">"Australia"</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1300798768"</span><span class="p">,</span>
+      <span class="s2">"internal_id"</span><span class="o">:</span> <span class="s2">"213"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
+      <span class="s2">"page_ids"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="mi">2</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
 
         
       </div>
