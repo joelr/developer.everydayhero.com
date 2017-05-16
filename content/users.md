@@ -67,3 +67,13 @@ User phone number
 ### Repsonse
 
 `204` or `40X`
+
+## List all Users for Registered Application's Campaign
+
+<p class='info'><strong>Authentication types</strong>: Registered Application Token</p>
+
+    GET https://everydayhero.com/api/v2/users
+
+### Response
+
+<%= json :users %>
