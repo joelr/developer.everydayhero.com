@@ -248,7 +248,10 @@ module EverydayHero
             name: "Australian Dollar",
             symbol: "$"
           }
-        }
+        },
+        has_set_image: true,
+        has_set_story: true,
+        self_donated: true
       }
     })
 
