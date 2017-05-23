@@ -22,6 +22,9 @@ The number of items per page.
 page : _optional_ **integer**<br/>
 The page number to return.
 
+country_code : _optional_ **string**<br/>
+Return charities from specific region, uk, au, nz, ie, us.
+
 ### Example
 
     https://everydayhero.com/api/v2/charities.json?campaign_ids=au-3707,au-1493
