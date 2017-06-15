@@ -84,9 +84,17 @@ charity_id : _optional_ **string**<br/>
 Only retrieve pages participating in the charity specified. For example `au-1`
 will retrieve pages which support charity id `au-1`.
 
+charity_uuid : _optional_ **string**<br/>
+Only retrieve pages participating in the charity specified. For example `4d8a65ae-b0fe-481e-9fe7-02dee71b285d`
+will retrieve pages which support charity uuid `4d8a65ae-b0fe-481e-9fe7-02dee71b285d`.
+
 campaign_id : _optional_ **string**<br/>
 Only retrieve pages participating in the campaign specified. For example `gb-1`
 will retrieve pages which support campaign id `gb-1`.
+
+campaign_uuid : _optional_ **string**<br/>
+Only retrieve pages participating in the campaign specified. For example `dcaa7c04-8fb1-4ba3-8376-6eb89db057cd`
+will retrieve pages which support campaign uuid `dcaa7c04-8fb1-4ba3-8376-6eb89db057cd`.
 
 country_code : _optional_ **string**<br/>
 Only retrieve pages participating in the country code specified. For example `au`
