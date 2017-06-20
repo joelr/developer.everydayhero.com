@@ -121,49 +121,62 @@
 
 <h3 id="parameters">Parameters</h3>
 
-<p>charity_id : <em>optional</em> <strong>string</strong> or <strong>Array</strong><br>
+<p>charity_id : <em>optional</em> <strong>String</strong> or <strong>Array</strong><br>
 Charity ID, only totals for that the specified Charity will be retrieved.
 An Array of IDs can be provided, eg: charity_id[]=au-1&amp;charity_id[]=au-2</p>
 
-<p>campaign_id : <em>optional</em> <strong>string</strong> or <strong>Array</strong><br>
+<p>campaign_id : <em>optional</em> <strong>String</strong> or <strong>Array</strong><br>
 Campaign ID, only totals for that the specified Campaign will be retrieved.
 An Array of IDs can be provided, eg: campaign_id[]=au-1&amp;campaign_id[]=au-2</p>
 
-<p>page_id : <em>optional</em> <strong>string</strong> or <strong>Array</strong><br>
+<p>page_id : <em>optional</em> <strong>String</strong> or <strong>Array</strong><br>
 Page ID, only totals for the specified Pages will be retrieved.
 An Array of IDs can be provided, eg: page_id[]=111&amp;page_id[]=456</p>
 
-<p>team_id : <em>optional</em> <strong>string</strong><br>
-team_uid : <em>optional</em> <strong>string</strong><br>
-team_page_id : <em>optional</em> <strong>string</strong><br>
+<p>team_id : <em>optional</em> <strong>String</strong><br>
+team_uid : <em>optional</em> <strong>String</strong><br>
+team_page_id : <em>optional</em> <strong>String</strong><br>
 Team ID, only totals for that the specified Team will be retrieved.</p>
 
-<p>start_at : <em>optional</em> <strong>string/date-time</strong><br>
+<p>start_at : <em>optional</em> <strong>String/date-time</strong><br>
 Start at date, ISO format: “2014-08-20 05:02:13”, filter totals by a range.</p>
 
-<p>end_at : <em>optional</em> <strong>string/date-time</strong><br>
+<p>end_at : <em>optional</em> <strong>String/date-time</strong><br>
 End at date, ISO format: “2014-08-20 05:02:13”, filter totals by a range.</p>
 
-<p>type : <em>optional</em> <strong>string</strong><br>
+<p>type : <em>optional</em> <strong>String</strong><br>
 Filter by activity type: e.g. bike, gym, hike, run, sport, swim, walk</p>
 
-<p>include_manual : <em>optional</em> <strong>boolean</strong><br>
+<p>include_manual : <em>optional</em> <strong>Boolean</strong><br>
 Include manually entered activities. Default: false.</p>
 
-<p>exclude_virtual : <em>optional</em> <strong>boolean</strong><br>
+<p>exclude_virtual : <em>optional</em> <strong>Boolean</strong><br>
 Exclude virtual activities. Default: false</p>
 
-<p>exclude_non_virtual : <em>optional</em> <strong>boolean</strong><br>
+<p>group_value : <em>optional</em> <strong>String/Array</strong><br>
+Return pages matching specific page group value, or any of the provided array values.
+An Array of values can be provided, eg: group_value[]=QLD&amp;group_value[]=ABC</p>
+
+<p>min_distance_in_meters : <em>optional</em> <strong>Integer</strong><br>
+Returns pages that have achieved a specified distance value. This is a post-filter action that may reduce the result set lower than the limit.</p>
+
+<p>max_distance_in_meters : <em>optional</em> <strong>Integer</strong><br>
+Returns pages that are under a specified distance value. This is a post-filter action that may reduce the result set lower than the limit.</p>
+
+<p>exclude_non_virtual : <em>optional</em> <strong>Boolean</strong><br>
 Exclude non-virtual activities. Default: false</p>
 
 <p>Includes all above paramaters as well as</p>
 
-<p>group_by : <em>optional</em> <strong>string</strong><br>
+<p>group_by : <em>optional</em> <strong>String</strong><br>
 Group results by pages or teams. Default: pages</p>
 
-<p>sort_by : <em>optional</em> <strong>string</strong><br>
+<p>sort_by : <em>optional</em> <strong>String</strong><br>
 Sort results by distance_in_meters, duration_in_seconds, elevation_in_meters or
 calories. Default: distance_in_meters</p>
+
+<p>limit : <em>optional</em> <strong>Integer</strong><br>
+Returns a specified number of records. Default: 200.</p>
 
 <h3 id="example">Example</h3>
 
