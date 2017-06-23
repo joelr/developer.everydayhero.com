@@ -106,6 +106,12 @@ Only retrieve pages that match the specified type. For example `team` will retri
 group_value : _optional_ **String/Array**<br/>
 Return pages matching specific page group value, or any of the provided array values.
 
+active : _optional_  **string**<br />
+Only retrieve pages based on whether they are active or not. Valid values are `true`, `false`, or `all`.  Default is `true`, meaning only active pages are returned by default.
+
+expires_after : _optional_ **date-time**<br />
+Only retrieve pages that expire after the given date.  Values are in iso8601 date time format.  For example, `2015-01-01` would show pages that expire after January 1, 2015.  The default is the current data and time.
+
 ### Example
 
     https://everydayhero.com/api/v2/search/pages?country_code=au&campaign_id=au-321&q=richards&group_value[]=QLD
