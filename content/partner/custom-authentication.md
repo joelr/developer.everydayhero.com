@@ -39,7 +39,7 @@ The client ID of the OAuth application.
 The response will either be 201, 422 or a 404.
 
 If the response is successful, the response will include a user OAuth token,
-along with the user_id. This can be used with the [user endpoint](/users/#get-current-user) 
+along with the user_id. This can be used with the [user endpoint](/users/#get-current-user)
 to fetch the user details.
 
 ### Response
@@ -91,7 +91,7 @@ The client ID of the OAuth application.
 The response will either be 200 or 404.
 
 If the response is successful, the response will include a user OAuth token,
-along with the user_id. This can be used with the [user endpoint](/users/#get-current-user) 
+along with the user_id. This can be used with the [user endpoint](/users/#get-current-user)
 to fetch the user details.
 The response will be a 404 if the user details are incorrect, or the client_id is missing.
 
@@ -120,6 +120,11 @@ The email of the user.
 client_id: _required_ **string**<br/>
 The client ID of the OAuth application.
 
+reference : _optional_ **string**<br/>
+The campaign slug for the campaign which should be used for branding the reset password screen. It will also prefill the default `return_to` url for signup if no `return_to` param is supplied.
+
+return_to : _optional_ **string**<br/>
+A URL to redirect the user to after completing the reset password process. If not set it will default to BAU campaign signup for the user's country (or a campaign signup if `reference` is provided – see above).
 
 The response will either be 204 or 404.
 
