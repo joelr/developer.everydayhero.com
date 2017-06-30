@@ -56,7 +56,10 @@ Exclude non-virtual activities. Default: false
 Includes all above paramaters as well as
 
 group_by : _optional_ **String**<br/>
-Group results by pages or teams. Default: pages
+Group results by pages, groups or teams. Default: pages
+
+group_id : _optional_ **Integer**<br/>
+Required if group_by: teams is set. Used to specify the group being filtered by.
 
 sort_by : _optional_ **String**<br/>
 Sort results by distance_in_meters, duration_in_seconds, elevation_in_meters or
