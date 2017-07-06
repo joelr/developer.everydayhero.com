@@ -33,23 +33,23 @@ Supported params available at [Fitness leaderboard](/search-fitness-activities/)
     {"campaign":{"fitness_total_options":{"start_at":"2016-01-01","end_at":"2019-01-01"}}}
 
 ### Other campaign options
-``disable_tracker_activities``
+`disable_tracker_activities`
 Disables daily fitbit activities within a campaign. Manual and individual activities from fitbit will sync, but daily tracked activities will not sync.
 
-``donation_trigger_thresholds``
+`donation_trigger_thresholds`
 Donation raised thresholds in cents/pence. Defaults to: [2500, 5000, 10000, 20000, 50000, 100000, 250000, 500000]. Triggers will be sent at the specified threshold for behavioral emails.
 
-``fitness_total_options``
+`fitness_total_options`
 See examples above, supported params available at [Fitness leaderboard](/search-fitness-activities/).
 
-``hidden``
+`hidden`
 Removes campaign from search (eg, get-started campaign suggestions).
 
-``opgs_fitness_goal``
+`opgs_fitness_goal`
 Enable fitness goals to be entered on One Page Get-Started
 
-``preferred_fitness_unit``
+`preferred_fitness_unit`
 See example above, mi, km are supported.
 
-``skip_page_create_notification``
+`skip_page_create_notification`
 Skips emailing the user after page creation.
