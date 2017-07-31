@@ -1,0 +1,310 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>everydayhero API: Activity Feed</title>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/stylesheets/pygments.css">
+  <link rel="stylesheet" href="/stylesheets/app.css">
+  <!--[if lt IE 9]>
+    <script src="/javascripts/html5shiv-printshiv.js"></script>
+  <![endif]-->
+</head>
+<body id='activity_feed'>
+  <header class="header top a--100">
+    <a href="/"><h1>everydayhero: Developer</h1></a>
+  </header>
+  <section class="main center">
+    <aside class="l--30 m--100 left side-bar">
+      <div class="inner">
+        <nav>
+            <div id='internal_api'>
+              <ul>
+                <li><a href="/internal/">Internal API</a>
+                  <ul>
+                    <li><a href="/internal/campaign-groups/">Campaign Groups</a></li>
+                    <li><a href="/internal/charities/">Charities</a></li>
+                    <li><a href="/internal/campaigns/">Campaigns</a></li>
+                    <li><a href="/internal/registered-applications/">Registered Applications</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div id='partner_api'>
+              
+              <ul>
+                <li><a href="/partner/">Partner API</a>
+                  <ul>
+                    <li><a href="/partner/custom-authentication/">Custom Authentication</a></li>
+                    <li><a href="/partner/feed/">Activity Feed</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          <ul>
+            <li><a href="/">Introduction</a></li>
+            <li>
+              <a href="/overview/">Overview</a>
+              <ul id='menu_overview'>
+                <li><a href="/overview/#environments">Environments</a></li>
+                <li><a href="/overview/#schema">Schema</a></li>
+                <li><a href="/overview/#parameters">Parameters</a></li>
+                <li><a href="/overview/#auth-errors">Auth Errors</a></li>
+                <li><a href="/overview/#validation-errors">Validation Errors</a></li>
+                <li><a href="/overview/#http-verbs">HTTP Verbs</a></li>
+                <li><a href="/overview/#pagination">Pagination</a></li>
+                <li><a href="/overview/#caching">Caching</a></li>
+                <li><a href="/rate-limits/">Rate limits</a></li>
+                <li><a href="/glossary/">Glossary</a></li>
+              </ul>
+            </li>
+            <li><a href="/authentication/">Authentication</a></li>
+
+
+            <li class='title'>Resources</li>
+            <li><a href="/campaigns/">Campaigns</a></li>
+            <li> - <a href="/campaign-groups/">Groups</a></li>
+            <li><a href="/charities/">Charities</a></li>
+            
+            <li><a href="/metadata/">Metadata</a></li>
+            <li><a href="/pages/">Pages</a></li>
+            <li> - <a href="/fitness-activities/">Fitness Activities</a></li>
+            <li> - <a href="/posts/">Posts</a></li>
+            <li>
+              <a href="/teams/">Teams</a>
+              <ul id='menu_teams'>
+                <li><a href="/invitations/">Invitations</a>
+                  <ul>
+                    <li><a href="/invitations/#create-individual-page-invitation">Individual Page</a></li>
+                    <li><a href="/invitations/#create-join-a-team-invitation">Join Team Invitation</a></li>
+                  </ul>
+                </li>
+                <li><a href="/join-requests/">Join Requests</a></li>
+                <li><a href="/members/">Members</a></li>
+              </ul>
+            </li>
+            <li><a href="/users/">Users</a></li>
+            <li><a href="/search/#volunteering-opportunities">Volunteering</a></li>
+            <li class='title'>Leaderboards</li>
+            <li><a href="/leaderboards/">Static Page Leaderboards</a></li>
+            <li><a href="/dynamic-leaderboards/">Dynamic Page Leaderboards</a></li>
+            <li><a href="/search-fitness-activities/">Fitness Activity Leaderboards</a></li>
+            <li class='title'>Search &amp; Totals</li>
+            <li><a href="/search/">Search</a></li>
+            <li><a href="/totals/">Totals</a></li>
+
+            <li class='title'>Integration Overviews</li>
+            <li><a href="/oauth-integration/">OAuth Integration</a></li>
+            <li><a href="/notifications/">Alerts/Notifications</a></li>
+            <li><a href="/webhooks/">Webhooks</a></li>
+            <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
+            <li class='title'>Client side Examples</li>
+            <li>Totals
+              <ul>
+                <li><a href="/client-side/campaign-totals/">Campaign totals</a></li>
+                <li><a href="/client-side/page-total/">Page totals</a></li>
+              </ul>
+            </li>
+            <li><a href="/widgets/">Widgets</a></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    <section class="l--70 m--100 right content">
+      <div class="inner">
+        
+          <h1>Activity Feed</h1>
+          
+<p>This API is used for fetching activities for display on activities feeds including the following items:</p>
+
+<ul>
+  <li>Donations (Both offline &amp; online)</li>
+  <li>Fitness Activities</li>
+  <li>Posts</li>
+  <li>Charity / Event messages</li>
+</ul>
+
+<h2 id="url">URL</h2>
+
+<pre><code>GET https://everydayhero.com/api/v2/search/feed
+</code></pre>
+
+<h3 id="params">Params</h3>
+
+<p>page_id : <em>optional</em> <strong>string</strong><br>
+The ID of the page(s) to fetch items for, multiple pages can be comma separated.</p>
+
+<p>team_id : <em>optional</em> <strong>string</strong><br>
+The ID of the team(s) to fetch items for, multiple teams can be comma separated.</p>
+
+<p>page_id : <em>optional</em> <strong>string</strong><br>
+The ID of the page to fetch items for, multiple pages can be comma separated.</p>
+
+<p>campaign_id : <em>optional</em> <strong>string</strong><br>
+The UID of the campaign(s) to fetch items for, multiple campaigns can be comma separated.</p>
+
+<p>charity_id : <em>optional</em> <strong>string</strong><br>
+The UID of the charity(s) to fetch items for, multiple charities can be comma separated.</p>
+
+<p>type : <em>optional</em> <strong>string</strong><br>
+The object types to be returned, multiple types can be comma separated.
+Permitted values are: <code>OnlineDonation, OfflineDonation, MessageReference, Post, FitnessActivity</code>.</p>
+
+<p>sort : <em>optional</em> <strong>string</strong><br>
+The sorting order. The default order is newest to oldest, other options include <code>amount_desc, amount_asc</code>. These values can only be used when restricting results to OnlineDonation and/or OfflineDonation.</p>
+
+<h3 id="response">Response</h3>
+
+<p>The response will return an array within a <code>results</code> attribute, by default pagination is limited to 100 records:</p>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"results"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"example feed item"</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"pagination"</span><span class="o">:</span> <span class="kc">null</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="pagination">Pagination</h3>
+
+<p>For pagination to be enabled, a <code>page_size</code> and <code>page</code> param need to be provided, this will add additional data to the pagination response.</p>
+
+<pre><code>https://everydayhero.com/api/v2/search/feed?page_size=1&amp;page=1 eg
+</code></pre>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"results"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"example feed item"</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"pagination"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"current_page"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"count"</span><span class="o">:</span> <span class="mi">1234</span><span class="p">,</span>
+      <span class="s2">"total_pages"</span><span class="o">:</span> <span class="mi">1234</span><span class="p">,</span>
+      <span class="s2">"first_page"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"last_page"</span><span class="o">:</span> <span class="kc">false</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="object-response-formats">Object response formats</h2>
+
+<p>Response formats for each activity type is listed below:</p>
+
+<h3 id="donations">Donations</h3>
+
+<p><code>page_groups</code> includes an array of page group values if defined on a page.</p>
+
+<p><code>_type</code> can be either <code>online_donation</code> or <code>offline_donation</code>.</p>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"amount"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"cents"</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="s2">"currency"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"symbol"</span><span class="o">:</span> <span class="s2">"$"</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Australian Dollar"</span><span class="p">,</span>
+      <span class="s2">"iso_code"</span><span class="o">:</span> <span class="s2">"AUD"</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-07-31T05:53:29.000Z"</span><span class="p">,</span>
+  <span class="s2">"team_id"</span><span class="o">:</span> <span class="mi">1234</span><span class="p">,</span>
+  <span class="s2">"page_groups"</span><span class="o">:</span> <span class="p">[</span>
+
+  <span class="p">],</span>
+  <span class="s2">"message"</span><span class="o">:</span> <span class="s2">"Good luck!"</span><span class="p">,</span>
+  <span class="s2">"campaign_uid"</span><span class="o">:</span> <span class="s2">"au-123"</span><span class="p">,</span>
+  <span class="s2">"page_id"</span><span class="o">:</span> <span class="mi">123</span><span class="p">,</span>
+  <span class="s2">"charity_uid"</span><span class="o">:</span> <span class="s2">"au-123"</span><span class="p">,</span>
+  <span class="s2">"nickname"</span><span class="o">:</span> <span class="s2">"mr donor"</span><span class="p">,</span>
+  <span class="s2">"thankyou_message"</span><span class="o">:</span> <span class="s2">"Thanks!"</span><span class="p">,</span>
+  <span class="s2">"_type"</span><span class="o">:</span> <span class="s2">"online_donation"</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="fitness-activity">Fitness Activity</h3>
+
+<p><code>page_groups</code> includes an array of page group values if defined on a page.</p>
+
+<p><code>source</code> if provided defines the source provider, currently: fitbit, mapmyfitness or strava.</p>
+
+<p><code>trainer</code> is a boolean which indicates if the activity was performed on an indoor trainer.</p>
+
+<p><code>virtual</code> is a boolean which indicates if the activity was performed virtually, for example using Zwift.</p>
+
+<p><code>coordinate</code> if provided, is the start location of the activity.</p>
+
+<p><code>elevation_series</code> if provided, provides a samples timeseries of elevation points in meters.</p>
+
+<p><code>polyline</code> if provided, provides a <a href="https://developers.google.com/maps/documentation/utilities/polylinealgorithm">encoded polyline</a> version of the lat/lon points of the activity.</p>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"virtual"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"caption"</span><span class="o">:</span> <span class="s2">"My run!"</span><span class="p">,</span>
+  <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-07-31T05:35:33.000Z"</span><span class="p">,</span>
+  <span class="s2">"team_id"</span><span class="o">:</span> <span class="mi">1234</span><span class="p">,</span>
+  <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"mapmyfitness"</span><span class="p">,</span>
+  <span class="s2">"uid"</span><span class="o">:</span> <span class="s2">"mapmyfitness-123456"</span><span class="p">,</span>
+  <span class="s2">"page_id"</span><span class="o">:</span> <span class="mi">1234</span><span class="p">,</span>
+  <span class="s2">"trainer"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"charity_uid"</span><span class="o">:</span> <span class="s2">"au-123"</span><span class="p">,</span>
+  <span class="s2">"campaign_uid"</span><span class="o">:</span> <span class="s2">"au-123"</span><span class="p">,</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1234</span><span class="p">,</span>
+  <span class="s2">"coordinate"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"lat"</span><span class="o">:</span> <span class="mf">0.1234</span><span class="p">,</span>
+    <span class="s2">"lon"</span><span class="o">:</span> <span class="mf">0.2456</span>
+  <span class="p">},</span>
+  <span class="s2">"calories"</span><span class="o">:</span> <span class="mi">1234</span><span class="p">,</span>
+  <span class="s2">"page_groups"</span><span class="o">:</span> <span class="p">[</span>
+
+  <span class="p">],</span>
+  <span class="s2">"elevation_series"</span><span class="o">:</span> <span class="p">[</span>
+
+  <span class="p">],</span>
+  <span class="s2">"distance_in_meters"</span><span class="o">:</span> <span class="mf">123.456</span><span class="p">,</span>
+  <span class="s2">"duration_in_seconds"</span><span class="o">:</span> <span class="mi">2000</span><span class="p">,</span>
+  <span class="s2">"polyline"</span><span class="o">:</span> <span class="s2">"ozvbIfn_K?c@I]QIKUC]QEOOMYSK...."</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="posts">Posts</h3>
+
+<p><code>image_url</code> if provided defines the post image.</p>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"caption"</span><span class="o">:</span> <span class="s2">"This is my post content"</span><span class="p">,</span>
+  <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-07-31T05:35:33.000Z"</span><span class="p">,</span>
+  <span class="s2">"team_id"</span><span class="o">:</span> <span class="mi">1234</span><span class="p">,</span>
+  <span class="s2">"page_id"</span><span class="o">:</span> <span class="mi">1234</span><span class="p">,</span>
+  <span class="s2">"charity_uid"</span><span class="o">:</span> <span class="s2">"au-123"</span><span class="p">,</span>
+  <span class="s2">"campaign_uid"</span><span class="o">:</span> <span class="s2">"au-123"</span><span class="p">,</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1234</span><span class="p">,</span>
+  <span class="s2">"image_url"</span><span class="o">:</span> <span class="s2">"https://deplyv9vomqtj.cloudfront.net/posts/images/783807...."</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="charity--event-messages">Charity / Event messages</h3>
+
+<p><code>image_url</code> if provided defines the post image.</p>
+
+<p><code>caption</code> markdown string of the message.</p>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"caption"</span><span class="o">:</span> <span class="s2">"This is my post content"</span><span class="p">,</span>
+  <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-07-31T05:35:33.000Z"</span><span class="p">,</span>
+  <span class="s2">"team_id"</span><span class="o">:</span> <span class="mi">1234</span><span class="p">,</span>
+  <span class="s2">"page_id"</span><span class="o">:</span> <span class="mi">1234</span><span class="p">,</span>
+  <span class="s2">"charity_uid"</span><span class="o">:</span> <span class="s2">"au-123"</span><span class="p">,</span>
+  <span class="s2">"campaign_uid"</span><span class="o">:</span> <span class="s2">"au-123"</span><span class="p">,</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1234</span>
+<span class="p">}</span></code></pre>
+
+        
+      </div>
+    </section>
+  </section>
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/app.js"></script>
+</body>
+</html>

@@ -17,7 +17,7 @@ body {
 #page_overview #menu_overview, #page_teams #menu_teams {
   display: block; }
 
-#partner_overview #partner_api, #internal_overview #partner_api {
+#partner_overview #partner_api, #internal_overview #partner_api, #activity_feed #partner_api {
   display: block; }
 
 #internal_overview #internal_api {
