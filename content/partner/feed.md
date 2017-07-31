@@ -23,9 +23,6 @@ The ID of the page(s) to fetch items for, multiple pages can be comma separated.
 team_id : _optional_ **string**<br/>
 The ID of the team(s) to fetch items for, multiple teams can be comma separated.
 
-page_id : _optional_ **string**<br/>
-The ID of the page to fetch items for, multiple pages can be comma separated.
-
 campaign_id : _optional_ **string**<br/>
 The UID of the campaign(s) to fetch items for, multiple campaigns can be comma separated.
 
