@@ -124,6 +124,9 @@ A URL-friendly version of the name parameter. Can only contain lower case charac
 expires_at : _optional_ **string**<br/>
 The date and time you want the page to expire. ISO8601 format. Defaults to 1 month after the campaign end date.
 
+campaign_date : _optional_ **string**<br />
+The individual event date for the page. ISO8601 format. Defaults to null.
+
 target : _optional_ **string**<br/>
 The dollar amount that you are aiming to raise (must be above 0).
 
@@ -145,6 +148,7 @@ This skips sending the everydayhero page creation email if set as `true`, defaul
   name: "Tim",
   slug: "tim",
   expires_at: "2013-10-21T17:15:08+10:00",
+  campaign_date: "2018-10-21T17:15:08+10:00",
   target: "500.50",
   birthday: "1987-04-16T00:00:00+10:00",
   gift_aid_eligible: nil,
