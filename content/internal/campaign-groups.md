@@ -79,3 +79,18 @@ Example request to delete a group value
 
     DELETE /api/v2/internal/campaigns/CAMPAIGN_UID_OR_UUID/groups/GROUP_ID/group_values/GROUP_VALUE_ID
     Authorization: Bearer APP_BEARER_TOKEN
+
+Example request to delete a group value and associate pages to another group value
+
+Here there's an optional NEW_GROUP_VALUE_ID which can be used to associate pages from the group to be deleted to the new group. If this is not provided, any pages with the previous group will become invalid. the Assign method can be used to associate unassinged pages to a group.
+
+    DELETE /api/v2/internal/campaigns/CAMPAIGN_UID_OR_UUID/groups/GROUP_ID/group_values/GROUP_VALUE_ID?new_group_value_id=NEW_GROUP_VALUE_ID
+    Authorization: Bearer APP_BEARER_TOKEN
+
+## Assign unassigned/invalid pages to a group
+
+This request can be used to associate pages with no group value to the specified group value. This is useful if a group value has been deleted with no fallback, or if groups are added to a campaign after pages have been created.
+
+    POST /api/v2/internal/campaigns/CAMPAIGN_UID_OR_UUID/groups/GROUP_ID/group_values/GROUP_VALUE_ID/assign
+    Authorization: Bearer APP_BEARER_TOKEN
+    Content-Type: application/json
