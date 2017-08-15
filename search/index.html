@@ -116,6 +116,7 @@
           <h1>Search</h1>
           
 <ul id="markdown-toc">
+  <li><a href="#consistent-paginationordering">Consistent pagination/ordering</a></li>
   <li><a href="#campaigns">Campaigns</a></li>
   <li><a href="#charities">Charities</a></li>
   <li><a href="#pages">Pages</a></li>
@@ -138,6 +139,31 @@
   </li>
 </ul>
 
+<h2 id="consistent-paginationordering">Consistent pagination/ordering</h2>
+
+<p>For bulk imports of data, or iterating through results sets you may wish to use consistent ordering. This effectively provides a snapshot in time of the requested data, and allows iteration through the results set within a window time.</p>
+
+<p>Campaigns, Charities, and Pages endpoints support this feature.</p>
+
+<p>It can be accessed by adding a param of <code>scroll=true</code> to the first query (along with other required query params). Results are provided in 1000 record batches. The results can be iterated by appending the <code>scroll_id</code> attribute from the meta hash to the following query. The param <code>scroll=true</code> should only be used for the first request, and subsequent requests to iterate through results set should use the <code>scroll_id</code> param, which changes for each request.</p>
+
+<h4 id="example">Example</h4>
+
+<pre><code>GET https://everydayhero.com/api/v2/search/campaigns?scroll=true
+</code></pre>
+
+<p>Response (partial for brevity):</p>
+
+<pre><code>{"charities": [...], meta: {scroll_id: "c2NhMjY5Ow==", ...}}
+</code></pre>
+
+<p>Subsequent request:</p>
+
+<pre><code>GET https://everydayhero.com/api/v2/search/campaigns?scroll_id=c2NhMjY5Ow==
+</code></pre>
+
+<p>Subsequent requests should use the <code>scroll_id</code> from the previous request. Other pagination and query params are ignored if a <code>scroll_id</code> is present.</p>
+
 <h2 id="campaigns">Campaigns</h2>
 
 <pre><code>GET https://everydayhero.com/api/v2/search/campaigns
@@ -155,7 +181,7 @@ Only retrieve campaigns for the charity ids specified (in the comma separated fo
 <p>q : <em>optional</em> <strong>string</strong><br>
 Retrieve campaigns with <code>campaign name</code> match or partially match to the specified search string.</p>
 
-<h3 id="example">Example</h3>
+<h3 id="example-1">Example</h3>
 
 <pre><code>https://everydayhero.com/api/v2/search/campaigns?country_code=au&amp;q=end
 </code></pre>
@@ -216,7 +242,7 @@ By default (when this parameter is not specified), the search will only return c
 <p>q : <em>optional</em> <strong>string</strong><br>
 Retrieve charities with <code>charity name</code> match or partially match to the specified search string.</p>
 
-<h3 id="example-1">Example</h3>
+<h3 id="example-2">Example</h3>
 
 <pre><code>https://everydayhero.com/api/v2/search/charities?country_code=au&amp;campaign_id=au-0&amp;q=end
 </code></pre>
@@ -313,7 +339,7 @@ Only retrieve pages based on whether they are active or not. Valid values are <c
 <p>expires_after : <em>optional</em> <strong>date-time</strong><br>
 Only retrieve pages that expire after the given date.  Values are in iso8601 date time format.  For example, <code>2015-01-01</code> would show pages that expire after January 1, 2015.  The default is the current data and time.</p>
 
-<h3 id="example-2">Example</h3>
+<h3 id="example-3">Example</h3>
 
 <pre><code>https://everydayhero.com/api/v2/search/pages?country_code=au&amp;campaign_id=au-321&amp;q=richards&amp;group_value[]=QLD
 </code></pre>
@@ -384,7 +410,7 @@ Sort the result opportunities with the specified opportunity field (in ascending
 <p>q : <em>optional</em> <strong>string</strong><br>
 Retrieve opportunities with <code>name</code>, <code>description</code>, or <code>organization_name</code> match or partially match to the specified search string.</p>
 
-<h3 id="example-3">Example</h3>
+<h3 id="example-4">Example</h3>
 
 <pre><code>https://everydayhero.com/api/v2/search/volunteering_opportunities?country_code=au&amp;cause_ids=1,3,4&amp;q=richards
 </code></pre>
