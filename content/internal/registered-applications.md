@@ -37,7 +37,7 @@ name : _required_ **string**<br/>
 Name of the application
 
 trusted : _optional_ **boolean**<br/>
-Trusted or not, default false. This removes the permissions consent screen on connection if set to true.
+Trusted or not, default false. This is a deprecated permission, required for accessing the v1 API.
 
 
 #### Example curl request
@@ -65,7 +65,7 @@ name : **string**<br/>
 Name of the application
 
 trusted : _optional_ **boolean**<br/>
-Trusted or not, default false. This removes the permissions consent screen on connection if set to true.
+Trusted or not, default false. This is a deprecated permission, required for accessing the v1 API.
 
 #### Example curl request
 
