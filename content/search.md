@@ -15,6 +15,28 @@ Please note, all of the search API endpoints accepts three types of parameters, 
 
 * a set of *result size limit* parameters (i.e. `limit`, `page` and `page_size`). The result size limit parameters enable better search performance by limiting the number of results being returned at a single request. There are two ways currently supported for limiting the result sizes, one is with the pagination (through `page` and `page_size`) and another is without (`limit`). Users can enable pagination by specifiy the `page` parameter (page starts at 1) in the request (with `page_size` set to 100 by default), and the page size can be adjusted by the `page_size` parameter. For example, setting `page=2&page_size=20` will return the second page of results set, and the first item in the page is the 21st item in the entire result set. On the other hand, to limit the result size without pagination, one can utlize the `limit` parameter to force the search only returns the top few result items.
 
+## Consistent pagination/ordering
+
+For bulk imports of data, or iterating through results sets you may wish to use consistent ordering. This effectively provides a snapshot in time of the requested data, and allows iteration through the results set within a window time.
+
+Campaigns, Charities, and Pages endpoints support this feature.
+
+It can be accessed by adding a param of `scroll=true` to the first query (along with other required query params). Results are provided in 1000 record batches. The results can be iterated by appending the `scroll_id` attribute from the meta hash to the following query. The param `scroll=true` should only be used for the first request, and subsequent requests to iterate through results set should use the `scroll_id` param, which changes for each request.
+
+
+#### Example
+
+    GET https://everydayhero.com/api/v2/search/campaigns?scroll=true
+
+Response (partial for brevity):
+
+    {"charities": [...], meta: {scroll_id: "c2NhMjY5Ow==", ...}}
+
+Subsequent request:
+
+    GET https://everydayhero.com/api/v2/search/campaigns?scroll_id=c2NhMjY5Ow==
+
+Subsequent requests should use the `scroll_id` from the previous request. Other pagination and query params are ignored if a `scroll_id` is present.
 
 ## Campaigns
 
