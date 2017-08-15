@@ -21,7 +21,7 @@ For bulk imports of data, or iterating through results sets you may wish to use 
 
 Campaigns, Charities, and Pages endpoints support this feature.
 
-It can be accessed by adding a param of `scroll=true` to the first query (along with other required query params). Results are provided in 1000 record batches. The results can be iterated by appending the `scroll_id` attribute from the meta hash to the following query. The param `scroll=true` should only be used for the first request, and subsequent requests to iterate through results set should use the `scroll_id` param, which changes for each request.
+It can be accessed by adding a param of `scroll=true` to the first query (along with other required query params). Results are provided in 5000 record batches. The results can be iterated by appending the `scroll_id` attribute from the meta hash to the following query. The param `scroll=true` should only be used for the first request, and subsequent requests to iterate through results set should use the `scroll_id` param, which changes for each request.
 
 
 #### Example
