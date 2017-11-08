@@ -2,8 +2,8 @@
 $black: black;
 $white: white;
 
-$dark: #282828;
-$light: white;
+$dark: #203a44;
+$light: #ebf1f3;
 
 $background: #f3f3f3;
 
@@ -18,7 +18,7 @@ $medium: #ff6600;
 
 $destructive: #990000;
 
-$link: #12a8dd;
+$link: #2491bb;
 $link_focus: mix($link, $white, 15%);
 $link_hover: mix($link, $black, 15%);
 
@@ -34,7 +34,7 @@ $accent_light: rgba(0, 0, 0, 0.05);
 $accent_outline: rgba(0, 0, 0, 0.1);
 $accent_strong: rgba(0, 0, 0, 0.25);
 
-$font_stack: "Lato", "Helvetica Neue", Arial, sans-serif;
+$font_stack: "Proxima Nova", "Lato", "Helvetica Neue", Arial, sans-serif;
 
 $container_width: 940px;
 $masthead_height: 290px;
@@ -94,8 +94,8 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-  background: $light url("../images/bg.jpeg") center top no-repeat;
-  background-attachment: fixed;
+  background: $light;
+  color: $dark;
 }
 
 #menu_overview, #menu_teams, #partner_api, #internal_api {
@@ -196,7 +196,7 @@ h4, .h4 { font-size: 1.2em; }
 }
 
 .header {
-  background: $dark url("../images/pattern_black_push_right.png") repeat;
+  background: $dark;
   display: block;
   line-height: 53px;
   position: relative;
@@ -210,7 +210,19 @@ h4, .h4 { font-size: 1.2em; }
     font-family: $font_stack;
     margin-left: 10px;
   }
-  @include box-shadow($shadow);
+}
+
+.header-logo {
+  background: url("../images/edh-logo-white.png") no-repeat left;
+  background-size: 10rem;
+  text-indent: -9999px;
+  text-align: left;
+  overflow: hidden;
+  width: 13rem;
+  height: 53px;
+  display: block;
+  margin: auto;
+  margin-left: 1rem;
 }
 
 .section, section, .aside, aside {
@@ -223,8 +235,8 @@ h4, .h4 { font-size: 1.2em; }
 
 .main {
   min-height: 800px;
-  @include box-shadow($shadow);
   background: #f8f8f8;
+  box-shadow: 0 0 5rem #c2d1d6;
   position: relative;
   max-width: 945px;
 }
@@ -249,7 +261,7 @@ h4, .h4 { font-size: 1.2em; }
   }
   .inner {
     padding: 30px;
-    border: 1px solid lighten($dark, 70%);
+    border-left: 1px solid lighten($dark, 70%);
     min-height: 870px;
   }
   background: $light;
