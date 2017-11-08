@@ -4,11 +4,11 @@ body_id: page_overview
 ---
 ## Environments
 
-We have two environments available for use: sandbox and production. Sandbox should be used when initiating any integration work with the everydayhero API.
+We have two environments available for use: staging and production. Staging should be used when initiating any integration work with the everydayhero API.
 Once development and appropriate QA has been completed we will provide you with additional production credentials if required.
 
-Sandbox: [https://edheroz.com](https://edheroz.com)<br />
-Sandbox OAuth domain: passport.edheroz.com
+Staging: [https://everydayhero-staging.com](https://everydayhero-staging.com)<br />
+Staging OAuth domain: passport.everydayhero-staging.com
 
 Production: [https://everydayhero.com](https://everydayhero.com)<br />
 Production OAuth domain: passport.everydayhero.com
@@ -151,8 +151,8 @@ Authenticated API access is tied at the campaign level - this means that
 any and all information created or updated can only take place within
 the specified campaign.
 
-For API actions that require a UID, users will be required to authenticate 
-[via OAuth](/oauth-integration/#how-to-authenticate-with-edh) 
+For API actions that require a UID, users will be required to authenticate
+[via OAuth](/oauth-integration/#how-to-authenticate-with-edh)
 which provides a UID in the response.
 
 ## OAuth Client Authentication
