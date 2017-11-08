@@ -138,6 +138,14 @@ h3, .h3 { font-size: 1.3em; }
 
 h4, .h4 { font-size: 1.2em; }
 
+h1, h2, h3, h4 {
+  margin: 0.75em 0;
+
+  &:first-child {
+    margin-top: 0.25em;
+  }
+}
+
 .a--100 {
   width: 100%;
 }
@@ -254,24 +262,27 @@ h4, .h4 { font-size: 1.2em; }
 }
 
 .content {
+  background: $white;
+
   h2, .h2 {
     margin-top: 20px;
     padding-top: 20px;
     border-top: 1px solid lighten($dark, 70%);
   }
+
   .inner {
     padding: 30px;
     border-left: 1px solid lighten($dark, 70%);
     min-height: 870px;
   }
-  background: $light;
 }
 
 .side-bar {
-
-  &.fixed {
-    position: fixed;
-    width: 300px;
+  @media (min-width: 890px) {
+    &.fixed {
+      position: sticky;
+      top: 0;
+    }
   }
 
   .inner {
