@@ -1,15 +1,15 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Lato", "Helvetica Neue", Arial, sans-serif; }
+  font-family: "Proxima Nova", "Lato", "Helvetica Neue", Arial, sans-serif; }
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
 body {
-  background: white url("../images/bg.jpeg") center top no-repeat;
-  background-attachment: fixed; }
+  background: #ebf1f3;
+  color: #203a44; }
 
 #menu_overview, #menu_teams, #partner_api, #internal_api {
   display: none; }
@@ -27,13 +27,13 @@ a {
   text-decoration: none; }
 
 a:link {
-  color: #12a8dd; }
+  color: #2491bb; }
 
 a:visited {
-  color: #0e84ae; }
+  color: #1c7090; }
 
 a:hover {
-  color: #021921; }
+  color: #05151c; }
 
 h1, .h1 {
   font-size: 1.9em; }
@@ -91,23 +91,30 @@ h4, .h4 {
   margin-right: auto; }
 
 .header {
-  background: #282828 url("../images/pattern_black_push_right.png") repeat;
+  background: #203a44;
   display: block;
   line-height: 53px;
-  position: relative;
-  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
-  -ms-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
-  -o-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5); }
+  position: relative; }
   .header.top {
     height: 53px;
     z-index: 2; }
   .header h1, .header .h1 {
     font-size: 16px;
-    color: white;
-    font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+    color: #ebf1f3;
+    font-family: "Proxima Nova", "Lato", "Helvetica Neue", Arial, sans-serif;
     margin-left: 10px; }
+
+.header-logo {
+  background: url("../images/edh-logo-white.png") no-repeat left;
+  background-size: 10rem;
+  text-indent: -9999px;
+  text-align: left;
+  overflow: hidden;
+  width: 13rem;
+  height: 53px;
+  display: block;
+  margin: auto;
+  margin-left: 1rem; }
 
 .section, section, .aside, aside {
   *zoom: 1; }
@@ -127,12 +134,8 @@ h4, .h4 {
 
 .main {
   min-height: 800px;
-  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
-  -ms-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
-  -o-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
   background: #f8f8f8;
+  box-shadow: 0 0 5rem #c2d1d6;
   position: relative;
   max-width: 945px; }
 
@@ -147,14 +150,14 @@ h4, .h4 {
   line-height: 20px; }
 
 .content {
-  background: white; }
+  background: #ebf1f3; }
   .content h2, .content .h2 {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid #dbdbdb; }
+    border-top: 1px solid #dbe9ee; }
   .content .inner {
     padding: 30px;
-    border: 1px solid #dbdbdb;
+    border-left: 1px solid #dbe9ee;
     min-height: 870px; }
 
 .side-bar.fixed {
@@ -203,7 +206,7 @@ pre {
 
 pre,
 p code {
-  border: 1px solid #dbdbdb;
+  border: 1px solid #dbe9ee;
   overflow: auto;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
