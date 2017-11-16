@@ -47,6 +47,11 @@ h3, .h3 {
 h4, .h4 {
   font-size: 1.2em; }
 
+h1, h2, h3, h4 {
+  margin: 0.75em 0; }
+  h1:first-child, h2:first-child, h3:first-child, h4:first-child {
+    margin-top: 0.25em; }
+
 .a--100 {
   width: 100%; }
 
@@ -160,9 +165,10 @@ h4, .h4 {
     border-left: 1px solid #dbe9ee;
     min-height: 870px; }
 
-.side-bar.fixed {
-  position: fixed;
-  width: 300px; }
+@media (min-width: 890px) {
+  .side-bar.fixed {
+    position: sticky;
+    top: 0; } }
 .side-bar .inner {
   padding: 30px; }
 
