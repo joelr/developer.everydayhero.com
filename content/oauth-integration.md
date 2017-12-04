@@ -100,6 +100,9 @@ The phone number of the person you want to prepopulate the sign-up form for.
 name : _optional_ **string**<br/>
 The full name of the person you want to prepopulate the sign-up form for.
 
+login_action : _optional_ **string**<br/>
+Set it to `sign-in` to be redirected to the sign-in form instead of the regular sign-up form.
+
 #### Branding
 
 Branding is optional.
