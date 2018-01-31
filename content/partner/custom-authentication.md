@@ -6,7 +6,7 @@ body_id: partner_overview
 * TOC
 {:toc}
 
-## Create a new user / Sign in
+## Create a new user / Sign up
 
 <p class='info'><strong>Authentication types</strong>: Public OAuth Client ID (Partner permissions)</p>
 
