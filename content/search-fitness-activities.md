@@ -26,10 +26,10 @@ team_page_id : _optional_ **String**<br/>
 Team ID, only totals for that the specified Team will be retrieved.
 
 start_at : _optional_ **String/date-time**<br/>
-Start at date, ISO format: "2014-08-20 05:02:13", filter totals by a range.
+Start at date, ISO 8601 format: "2014-08-20T05:02:13", filter totals by a range.
 
 end_at : _optional_ **String/date-time**<br/>
-End at date, ISO format: "2014-08-20 05:02:13", filter totals by a range.
+End at date, ISO 8601 format: "2014-08-20T05:02:13", filter totals by a range.
 
 type : _optional_ **String**<br/>
 Filter by activity type: e.g. bike, gym, hike, run, sport, swim, walk

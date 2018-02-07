@@ -25,10 +25,10 @@ Campaign ID, only totals for that the specified Campaign will be retrieved.
 An Array of IDs can be provided, eg: campaign_id[]=au-1&campaign_id[]=au-2
 
 start_at : _optional_ **string/date-time**<br/>
-Start at date, ISO format: "2014-08-20 05:02:13", filter totals by a range.
+Start at date, ISO 8601 format: "2014-08-20T05:02:13", filter totals by a range.
 
 end_at : _optional_ **string/date-time**<br/>
-End at date, ISO format: "2014-08-20 05:02:13", filter totals by a range.
+End at date, ISO 8601 format: "2014-08-20T05:02:13", filter totals by a range.
 
 group_value : _optional_ **String/Array**<br/>
 Return donations matching specific page group value, or any of the provided array values.
