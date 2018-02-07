@@ -136,8 +136,10 @@ An invitation token to join a team. This invitation was created by the team lead
 gift_aid_eligible : _optional_ **boolean**<br/>
 UK specific fundraising criteria.
 
-group_values : _optional_ **Hash/Array**<br/>
+group_values : _required_ **Hash/Array**<br/>
 If a campaign has group values available, these can be set, see the payload below for an example.
+
+<p class='info'>group_values are only required if groups have been created for the campaign.</p>
 
 skip_notification: _optional_ **boolean**<br/>
 This skips sending the everydayhero page creation email if set as `true`, defaults to `false`.
