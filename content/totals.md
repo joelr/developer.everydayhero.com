@@ -18,10 +18,10 @@ page_id : _optional_ **string**<br/>
 Page ID, only totals for that the specified Page will be retrieved.
 
 start_at : _optional_ **string/date-time**<br/>
-Start at date, ISO format: "2014-08-20 05:02:13", filter totals by a range.
+Start at date, ISO 8601 format: "2014-08-20T05:02:13", filter totals by a range.
 
 end_at : _optional_ **string/date-time**<br/>
-End at date, ISO format: "2014-08-20 05:02:13", filter totals by a range.
+End at date, ISO 8601 format: "2014-08-20T05:02:13", filter totals by a range.
 
 type : _optional_ **string**<br/>
 Filter by donation type: peer_to_peer, charity, appeal, recurring, offline_donation.
