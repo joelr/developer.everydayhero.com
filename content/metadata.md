@@ -13,7 +13,7 @@ scope the data under the token you provide.
 
 ## List all Keys
 
-    GET https://mds.everydayhero.io/api/v1/keys
+    GET https://mds-engineering.everydayhero.com/api/v1/keys
 
 ### Parameters
 
@@ -25,7 +25,7 @@ Scope for the data required.
 
 ### Example
 
-    https://mds.everydayhero.io/api/v1/keys?type=Page&token=30e466c3-ffae-413a-a5cc-59563d16605d
+    https://mds-engineering.everydayhero.com/api/v1/keys?type=Page&token=30e466c3-ffae-413a-a5cc-59563d16605d
 
 ### Response
 
@@ -33,7 +33,7 @@ Scope for the data required.
 
 ## Create a key
 
-    POST https://mds.everydayhero.io/api/v1/keys
+    POST https://mds-engineering.everydayhero.com/api/v1/keys
 
 ### Parameters
 
@@ -66,7 +66,7 @@ Describe what values for this key should represent.
 
 ## Update a key
 
-    PUT https://mds.everydayhero.io/api/v1/keys/:id
+    PUT https://mds-engineering.everydayhero.com/api/v1/keys/:id
 
 ### Parameters
 
@@ -99,7 +99,7 @@ The new key description.
 
 ## Destroy a key
 
-    DELETE https://mds.everydayhero.io/api/v1/keys/:id
+    DELETE https://mds-engineering.everydayhero.com/api/v1/keys/:id
 
 ### Parameters
 
@@ -111,7 +111,7 @@ ID of the key to destroy.
 
 ### Example
 
-    https://mds.everydayhero.io/api/v1/keys/30?token=30e466c3-ffae-413a-a5cc-59563d16605d
+    https://mds-engineering.everydayhero.com/api/v1/keys/30?token=30e466c3-ffae-413a-a5cc-59563d16605d
 
 ### Response
 
@@ -141,7 +141,7 @@ ID of the key you would like stats for.
 
 ## List all metadata
 
-    GET https://mds.everydayhero.io/api/v1/metadata
+    GET https://mds-engineering.everydayhero.com/api/v1/metadata
 
 ### Parameters
 
@@ -156,7 +156,7 @@ IDs of the objects of the specified type you would like metadata for.
 
 ### Example
 
-    https://mds.everydayhero.io/api/v1/metadata?token=30e466c3-ffae-413a-a5cc-59563d16605d&type=Page&ids=1,2,3,5,8
+    https://mds-engineering.everydayhero.com/api/v1/metadata?token=30e466c3-ffae-413a-a5cc-59563d16605d&type=Page&ids=1,2,3,5,8
 
 ### Response
 
@@ -164,7 +164,7 @@ IDs of the objects of the specified type you would like metadata for.
 
 ## Create metadata
 
-    POST https://mds.everydayhero.io/api/v1/metadata
+    POST https://mds-engineering.everydayhero.com/api/v1/metadata
 
 ### Parameters
 
