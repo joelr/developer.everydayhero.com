@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>everydayhero API: Dynamic Leaderboards</title>
+  <title>everydayhero API: Leaderboards</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="//experience.everydayhero.do/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="//experience.everydayhero.do/favicon-16x16.png" sizes="16x16">
@@ -24,93 +24,23 @@
     <aside class="l--30 m--100 left side-bar">
       <div class="inner">
         <nav>
-            <div id='internal_api'>
-              <ul>
-                <li><a href="/internal/">Internal API</a>
-                  <ul>
-                    <li><a href="/internal/campaign-groups/">Campaign Groups</a></li>
-                    <li><a href="/internal/charities/">Charities</a></li>
-                    <li><a href="/internal/campaigns/">Campaigns</a></li>
-                    <li><a href="/internal/registered-applications/">Registered Applications</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-            <div id='partner_api'>
-
-              <ul>
-                <li><a href="/partner/">Partner API</a>
-                  <ul>
-                    <li><a href="/partner/custom-authentication/">Custom Authentication</a></li>
-                    <li><a href="/partner/feed/">Activity Feed</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
           <ul>
             <li><a href="/">Introduction</a></li>
-            <li>
-              <a href="/overview/">Overview</a>
-              <ul id='menu_overview'>
-                <li><a href="/overview/#environments">Environments</a></li>
-                <li><a href="/overview/#schema">Schema</a></li>
-                <li><a href="/overview/#parameters">Parameters</a></li>
-                <li><a href="/overview/#auth-errors">Auth Errors</a></li>
-                <li><a href="/overview/#validation-errors">Validation Errors</a></li>
-                <li><a href="/overview/#http-verbs">HTTP Verbs</a></li>
-                <li><a href="/overview/#pagination">Pagination</a></li>
-                <li><a href="/overview/#caching">Caching</a></li>
-                <li><a href="/rate-limits/">Rate limits</a></li>
-                <li><a href="/glossary/">Glossary</a></li>
-              </ul>
-            </li>
-            <li><a href="/authentication/">Authentication</a></li>
 
 
             <li class='title'>Resources</li>
             <li><a href="/campaigns/">Campaigns</a></li>
-            <li> - <a href="/campaign-groups/">Groups</a></li>
             <li><a href="/charities/">Charities</a></li>
+            <li><a href="/feed/">Feed</a></li>
 
-            <li><a href="/metadata/">Metadata</a></li>
             <li><a href="/pages/">Pages</a></li>
-            <li> - <a href="/fitness-activities/">Fitness Activities</a></li>
-            <li> - <a href="/posts/">Posts</a></li>
-            <li>
-              <a href="/teams/">Teams</a>
-              <ul id='menu_teams'>
-                <li><a href="/invitations/">Invitations</a>
-                  <ul>
-                    <li><a href="/invitations/#create-individual-page-invitation">Individual Page</a></li>
-                    <li><a href="/invitations/#create-join-a-team-invitation">Join Team Invitation</a></li>
-                  </ul>
-                </li>
-                <li><a href="/join-requests/">Join Requests</a></li>
-                <li><a href="/members/">Members</a></li>
-              </ul>
-            </li>
-            <li><a href="/users/">Users</a></li>
             <li class='title'>Leaderboards</li>
-            <li><a href="/leaderboards/">Static Page Leaderboards</a></li>
             <li><a href="/dynamic-leaderboards/">Dynamic Page Leaderboards</a></li>
             <li><a href="/search-fitness-activities/">Fitness Activity Leaderboards</a></li>
-            <li class='title'>Search &amp; Totals</li>
+            <li class='title'>Search</li>
             <li><a href="/search/">Search</a></li>
+            <li class='title'>Totals</li>
             <li><a href="/totals/">Totals</a></li>
-
-            <li class='title'>Integration Overviews</li>
-            <li><a href="/oauth-integration/">OAuth Integration</a></li>
-            <li><a href="/notifications/">Alerts/Notifications</a></li>
-            <li><a href="/webhooks/">Webhooks</a></li>
-            <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
-            <li class='title'>Client side Examples</li>
-            <li>Totals
-              <ul>
-                <li><a href="/client-side/campaign-totals/">Campaign totals</a></li>
-                <li><a href="/client-side/page-total/">Page totals</a></li>
-              </ul>
-            </li>
-            <li><a href="/widgets/">Widgets</a></li>
           </ul>
         </nav>
       </div>
@@ -118,9 +48,9 @@
     <section class="l--70 m--100 right content">
       <div class="inner">
         
-          <h1>Dynamic Leaderboards</h1>
+          <h1>Leaderboards</h1>
           
-<h2 id="leaderboard-of-pages-sorted-by-donation-value">Leaderboard of pages, sorted by donation value</h2>
+<h2 id="pages-teams-or-groups-sorted-by-donation-value">Pages, teams or groups sorted by donation value</h2>
 
 <pre><code>GET https://everydayhero.com/api/v2/search/pages_totals
 </code></pre>
@@ -135,13 +65,14 @@ An Array of IDs can be provided, eg: page_ids[]=1&amp;page_ids[]=2</p>
 Page ID, exclude the specified pages from results.
 An Array of IDs can be provided, eg: exclude_page_ids[]=1&amp;exclude_page_ids[]=2</p>
 
-<p>charity_id : <em>optional</em> <strong>string</strong> or <strong>Array</strong><br>
-Charity ID, only totals for that the specified Charity will be retrieved.
-An Array of IDs can be provided, eg: charity_id[]=au-1&amp;charity_id[]=au-2</p>
+<p>charity_ids : <em>optional</em> <strong>string</strong> or <strong>Array</strong><br>
+Charity IDs, only totals for that the specified charities will be retrieved.</p>
 
-<p>campaign_id : <em>optional</em> <strong>string</strong> or <strong>Array</strong><br>
-Campaign ID, only totals for that the specified Campaign will be retrieved.
-An Array of IDs can be provided, eg: campaign_id[]=au-1&amp;campaign_id[]=au-2</p>
+<p>campaign_ids : <em>optional</em> <strong>string</strong> or <strong>Array</strong><br>
+Campaign IDs, only totals for that the specified campaigns will be retrieved.</p>
+
+<p>event_ids : <em>optional</em> <strong>string</strong> or <strong>Array</strong><br>
+Events IDs, only totals for that the specified events will be retrieved.</p>
 
 <p>start_at : <em>optional</em> <strong>string/date-time</strong><br>
 Start at date, ISO 8601 format: “2014-08-20T05:02:13”, filter totals by a range.</p>

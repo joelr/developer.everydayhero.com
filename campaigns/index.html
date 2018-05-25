@@ -24,93 +24,23 @@
     <aside class="l--30 m--100 left side-bar">
       <div class="inner">
         <nav>
-            <div id='internal_api'>
-              <ul>
-                <li><a href="/internal/">Internal API</a>
-                  <ul>
-                    <li><a href="/internal/campaign-groups/">Campaign Groups</a></li>
-                    <li><a href="/internal/charities/">Charities</a></li>
-                    <li><a href="/internal/campaigns/">Campaigns</a></li>
-                    <li><a href="/internal/registered-applications/">Registered Applications</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-            <div id='partner_api'>
-
-              <ul>
-                <li><a href="/partner/">Partner API</a>
-                  <ul>
-                    <li><a href="/partner/custom-authentication/">Custom Authentication</a></li>
-                    <li><a href="/partner/feed/">Activity Feed</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
           <ul>
             <li><a href="/">Introduction</a></li>
-            <li>
-              <a href="/overview/">Overview</a>
-              <ul id='menu_overview'>
-                <li><a href="/overview/#environments">Environments</a></li>
-                <li><a href="/overview/#schema">Schema</a></li>
-                <li><a href="/overview/#parameters">Parameters</a></li>
-                <li><a href="/overview/#auth-errors">Auth Errors</a></li>
-                <li><a href="/overview/#validation-errors">Validation Errors</a></li>
-                <li><a href="/overview/#http-verbs">HTTP Verbs</a></li>
-                <li><a href="/overview/#pagination">Pagination</a></li>
-                <li><a href="/overview/#caching">Caching</a></li>
-                <li><a href="/rate-limits/">Rate limits</a></li>
-                <li><a href="/glossary/">Glossary</a></li>
-              </ul>
-            </li>
-            <li><a href="/authentication/">Authentication</a></li>
 
 
             <li class='title'>Resources</li>
             <li><a href="/campaigns/">Campaigns</a></li>
-            <li> - <a href="/campaign-groups/">Groups</a></li>
             <li><a href="/charities/">Charities</a></li>
+            <li><a href="/feed/">Feed</a></li>
 
-            <li><a href="/metadata/">Metadata</a></li>
             <li><a href="/pages/">Pages</a></li>
-            <li> - <a href="/fitness-activities/">Fitness Activities</a></li>
-            <li> - <a href="/posts/">Posts</a></li>
-            <li>
-              <a href="/teams/">Teams</a>
-              <ul id='menu_teams'>
-                <li><a href="/invitations/">Invitations</a>
-                  <ul>
-                    <li><a href="/invitations/#create-individual-page-invitation">Individual Page</a></li>
-                    <li><a href="/invitations/#create-join-a-team-invitation">Join Team Invitation</a></li>
-                  </ul>
-                </li>
-                <li><a href="/join-requests/">Join Requests</a></li>
-                <li><a href="/members/">Members</a></li>
-              </ul>
-            </li>
-            <li><a href="/users/">Users</a></li>
             <li class='title'>Leaderboards</li>
-            <li><a href="/leaderboards/">Static Page Leaderboards</a></li>
             <li><a href="/dynamic-leaderboards/">Dynamic Page Leaderboards</a></li>
             <li><a href="/search-fitness-activities/">Fitness Activity Leaderboards</a></li>
-            <li class='title'>Search &amp; Totals</li>
+            <li class='title'>Search</li>
             <li><a href="/search/">Search</a></li>
+            <li class='title'>Totals</li>
             <li><a href="/totals/">Totals</a></li>
-
-            <li class='title'>Integration Overviews</li>
-            <li><a href="/oauth-integration/">OAuth Integration</a></li>
-            <li><a href="/notifications/">Alerts/Notifications</a></li>
-            <li><a href="/webhooks/">Webhooks</a></li>
-            <li><a href="/third-party-registration-integration/">Registration Integration</a></li>
-            <li class='title'>Client side Examples</li>
-            <li>Totals
-              <ul>
-                <li><a href="/client-side/campaign-totals/">Campaign totals</a></li>
-                <li><a href="/client-side/page-total/">Page totals</a></li>
-              </ul>
-            </li>
-            <li><a href="/widgets/">Widgets</a></li>
           </ul>
         </nav>
       </div>
@@ -164,37 +94,9 @@ Exclude embedding of page IDs, to reduce payload size. Default: false.</p>
       <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2013-04-01T00:00:00Z"</span><span class="p">,</span>
       <span class="s2">"finish_at"</span><span class="o">:</span> <span class="s2">"2013-04-01T00:00:00Z"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"au"</span><span class="p">,</span>
+      <span class="s2">"event_id"</span><span class="o">:</span> <span class="s2">"au-123"</span><span class="p">,</span>
       <span class="s2">"registration_url"</span><span class="o">:</span> <span class="s2">"http://"</span><span class="p">,</span>
-      <span class="s2">"banner_url"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
-      <span class="s2">"charity_ids"</span><span class="o">:</span> <span class="p">[</span>
-        <span class="mi">123</span><span class="p">,</span>
-        <span class="mi">456</span>
-      <span class="p">],</span>
-      <span class="s2">"charity_uids"</span><span class="o">:</span> <span class="p">[</span>
-        <span class="s2">"au-654"</span><span class="p">,</span>
-        <span class="s2">"au-334"</span>
-      <span class="p">],</span>
-      <span class="s2">"funds_raised"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"cents"</span><span class="o">:</span> <span class="s2">"1000"</span><span class="p">,</span>
-        <span class="s2">"currency"</span><span class="o">:</span> <span class="p">{</span>
-          <span class="s2">"iso_code"</span><span class="o">:</span> <span class="s2">"AUD"</span><span class="p">,</span>
-          <span class="s2">"symbol"</span><span class="o">:</span> <span class="s2">"$"</span><span class="p">,</span>
-          <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Australian Dollar"</span>
-        <span class="p">}</span>
-      <span class="p">},</span>
-      <span class="s2">"fitness_activity_overview"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"run"</span><span class="o">:</span> <span class="p">{</span>
-          <span class="s2">"duration_in_seconds"</span><span class="o">:</span> <span class="mi">20165</span><span class="p">,</span>
-          <span class="s2">"calories"</span><span class="o">:</span> <span class="mi">6575</span><span class="p">,</span>
-          <span class="s2">"distance_in_meters"</span><span class="o">:</span> <span class="mi">69141</span>
-        <span class="p">}</span>
-      <span class="p">},</span>
-      <span class="s2">"custom_metric_total"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"custom_metric"</span><span class="o">:</span> <span class="p">{</span>
-          <span class="s2">"amount"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
-          <span class="s2">"unit"</span><span class="o">:</span> <span class="s2">"steps"</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
+      <span class="s2">"banner_url"</span><span class="o">:</span> <span class="s2">""</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -223,37 +125,9 @@ Exclude embedding of page IDs, to reduce payload size. Default: false.</p>
     <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2013-04-01T00:00:00Z"</span><span class="p">,</span>
     <span class="s2">"finish_at"</span><span class="o">:</span> <span class="s2">"2013-04-01T00:00:00Z"</span><span class="p">,</span>
     <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"au"</span><span class="p">,</span>
+    <span class="s2">"event_id"</span><span class="o">:</span> <span class="s2">"au-123"</span><span class="p">,</span>
     <span class="s2">"registration_url"</span><span class="o">:</span> <span class="s2">"http://"</span><span class="p">,</span>
-    <span class="s2">"banner_url"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
-    <span class="s2">"charity_ids"</span><span class="o">:</span> <span class="p">[</span>
-      <span class="mi">123</span><span class="p">,</span>
-      <span class="mi">456</span>
-    <span class="p">],</span>
-    <span class="s2">"charity_uids"</span><span class="o">:</span> <span class="p">[</span>
-      <span class="s2">"au-654"</span><span class="p">,</span>
-      <span class="s2">"au-334"</span>
-    <span class="p">],</span>
-    <span class="s2">"funds_raised"</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">"cents"</span><span class="o">:</span> <span class="s2">"1000"</span><span class="p">,</span>
-      <span class="s2">"currency"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"iso_code"</span><span class="o">:</span> <span class="s2">"AUD"</span><span class="p">,</span>
-        <span class="s2">"symbol"</span><span class="o">:</span> <span class="s2">"$"</span><span class="p">,</span>
-        <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Australian Dollar"</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="s2">"fitness_activity_overview"</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">"run"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"duration_in_seconds"</span><span class="o">:</span> <span class="mi">20165</span><span class="p">,</span>
-        <span class="s2">"calories"</span><span class="o">:</span> <span class="mi">6575</span><span class="p">,</span>
-        <span class="s2">"distance_in_meters"</span><span class="o">:</span> <span class="mi">69141</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="s2">"custom_metric_total"</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">"custom_metric"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"amount"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
-        <span class="s2">"unit"</span><span class="o">:</span> <span class="s2">"steps"</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
+    <span class="s2">"banner_url"</span><span class="o">:</span> <span class="s2">""</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
